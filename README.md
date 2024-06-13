@@ -146,9 +146,8 @@ bash scripts/record_results.sh
 ## Code structure
 
 You can find all experimental configurations in [`configs`](https://github.com/eth-sri/SynthPAI/blob/main/configs) 
-- [`/configs/eval`](https://github.com/eth-sri/SynthPAI/blob/main/configs/eval) Contains configuration files to run evaluations for model prediction. Files are sorted in folders for different model providers.
-- [`/configs/predict`](https://github.com/eth-sri/SynthPAI/blob/main/configs/predict) Contains configuration files to run inference on different models, including Anthropic, OpenAI, Meta, MisrtalAI models and other models provided by TogetherAI.
-- [`/configs/eval_labels.yaml`](https://github.com/eth-sri/SynthPAI/blob/main/configs/eval_labels.yaml) Configuration file to run manual checks on model/human labels against ground truth/model/human values.
+- [`/configs/eval`](https://github.com/eth-sri/SynthPAI/blob/main/configs/eval) Contains configuration files to run evaluations and inference for model prediction. Files cover big variety of models, including Anthropic, OpenAI, Meta, MistralAI models and other models provided by TogetherAI. Files are sorted in folders for different model providers.
+- [`/configs/eval/eval_labels.yaml`](https://github.com/eth-sri/SynthPAI/blob/main/configs/eval/eval_labels.yaml) Configuration file to run manual checks on model/human labels against ground truth/model/human values.
 - [`/configs/thread/thread.yaml`](https://github.com/eth-sri/SynthPAI/blob/main/configs/thread/thread.yaml) Configuration file to run thread generation.
 
 All used and generated data is stored in [`data`](https://github.com/eth-sri/SynthPAI/blob/main/data) folder.
@@ -178,7 +177,7 @@ Scripts to run experiments are stored in [`scripts`](https://github.com/eth-sri/
 - [`/utils`](https://github.com/eth-sri/SynthPAI/blob/main/src/utils) Contains python files with various helper funtions used in experiment runs.
 - [`/visualization`](https://github.com/eth-sri/SynthPAI/blob/main/src/visualization) Contains python files with various helper funtions used for plotting experiment results.
 - [`/thread`](https://github.com/eth-sri/SynthPAI/blob/main/src/thread) Contains the main code for dataset generation:
-  - [`/thread/collect_data.py`](https://github.com/eth-sri/SynthPAI/blob/main/src/collect_data.py) Contains the code to collect comments from all generated threads into combined dataset files.
+  - [`/thread/collect_data.py`](https://github.com/eth-sri/SynthPAI/blob/main/src/thread/collect_data.py) Contains the code to collect comments from all generated threads into combined dataset files.
   - [`/thread/eval_synthetic_labels.py`](https://github.com/eth-sri/SynthPAI/blob/main/src/thread/eval_synthetic_labels.py) Contains the code for human evaluation of comment tags.
   - [`/thread/eval_thread.py`](https://github.com/eth-sri/SynthPAI/blob/main/src/thread/eval_thread.py) Contains the code for helper functions with GPT-assisted comment tagging.
   - [`/thread/generate_online_profiles.py`](https://github.com/eth-sri/SynthPAI/blob/main/src/thread/generate_online_profiles.py) Contains the code to generate writing styles for synthetic profiles.
