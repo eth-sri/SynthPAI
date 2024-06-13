@@ -89,8 +89,6 @@ If you simply want to view the dataset we recommend either the respective datase
 
 ### Generating synthetic threads
 
-```bash
-
 To generate threads and collect all generated comments into one file, use the following command:
 
 ```bash
