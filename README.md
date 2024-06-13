@@ -85,7 +85,11 @@ bash scripts/load_data.sh
 
 User can change how to load the dataset in script for `--file_type` parameter - `"HF"` for using HuggingFace file or `"local"` for local file. By default `"local"` is set.
 
+If you simply want to view the dataset we recommend either the respective dataset viewer on [Hugging Face](https://huggingface.co/datasets/RobinSta/SynthPAI/viewer) or taking a look at the local version located at [`data/synthpai.jsonl`](https://github.com/eth-sri/SynthPAI/blob/main/data/synthpai.jsonl).
+
 ### Generating synthetic threads
+
+```bash
 
 To generate threads and collect all generated comments into one file, use the following command:
 
