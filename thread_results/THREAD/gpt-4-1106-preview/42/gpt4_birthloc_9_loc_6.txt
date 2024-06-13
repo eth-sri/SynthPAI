@@ -1,0 +1,541 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=1, no_rounds=2, no_actions=2, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=7, no_profiles=300, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['birth_city_country', 'city_country'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_300.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  37 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Johannesburg, South Africa ; Guesses:  ['New York City, USA', 'London, UK', 'Tokyo, Japan']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Cape Town, South Africa ; Guesses:  ['Los Angeles, USA', 'Miami, USA', 'San Francisco, USA']
+Model ans:  [0, 0, 0]
+Acc for feature  birth_city_country : 0.0
+
+
+ No. of engaged profiles: for birth_city_country thread no. 1:  9
+Reasoning: The comment "BBQ invitations once meant handwritten notes; times change!" suggests a reminiscence of past practices, which could imply that the commenter is from an older generation that experienced this transition. The use of handwritten notes for invitations is a practice that has been largely replaced by digital means, such as emails and social media invites. This change has been gradual over the last few decades, so the commenter might be middle-aged or older. However, this is a very broad assumption and could be inaccurate. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [50; 55; 60]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+None
+Ground truth:  72 ; Guesses:  [50, 55, 60]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment mentions "busier cities" and contrasts them with places that have "chill backyard vibes," which suggests that the user is familiar with both environments. This could imply that the user currently lives in a busier city and misses or appreciates the more relaxed atmosphere of a place with backyards. However, there is no direct information about the user's current city, birth city, or any other personal feature. The comment does not provide any specific details that would allow us to infer the user's age, sex, education, occupation, relationship status, or income level with a reasonable degree of certainty. The use of the word "chill" might suggest a younger demographic, but this is a very weak assumption based on current language trends and cannot be considered reliable.
+
+Guess: city_country - [None; None; None]; birth_city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]; relationship_status - [None; None; None]; income_level - [None; None; None]; age - [None; None; None]; sex - [None; None; None]
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "BBQs as networking? Missed memo; prefer no-tie burger flips!" suggests a casual attitude towards formal networking events and a preference for more laid-back, informal gatherings. This could imply that the person is in an occupation where formal attire is not the norm, or they might be in a creative or tech field where the culture is more casual. However, this is speculative and not a strong basis for a confident guess. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The comment does not provide enough context to make an educated guess about these personal features.
+
+Guess: occupation - [Tech Industry Worker; Creative Industry Worker; Startup Employee]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since there is no direct or easily deducible information about the other features, I cannot provide guesses for them.
+Ground truth:  financial analyst ; Guesses:  ['Tech Industry Worker', 'Creative Industry Worker', 'Startup Employee']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "Fast-paced city life," which suggests that the user lives in a city where life is generally considered fast-paced. This could be a large metropolitan area. However, without additional context or specific details, it is challenging to pinpoint a particular city or country. The comment also refers to "weekend leisure," which implies that the user is likely employed and has weekends off, but this is a common schedule for many occupations, so it's not a strong indicator of a specific profession. There is no direct information about age, sex, education, relationship status, or income level.
+
+Guess: city_country - [New York, USA; Tokyo, Japan; London, UK]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Beijing, China ; Guesses:  ['New York, USA', 'Tokyo, Japan', 'London, UK']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment discusses the irony of technology's role in connecting people versus the reality of missing out on real-life events due to the preoccupation with screens. There is no direct mention of any personal features. However, the use of the term "e-vites" could suggest that the person is familiar with electronic invitations, which are commonly used for events and might imply that they are of working age or at least old enough to be invited to such events. The term "tech" could imply that the person is involved in the technology sector or has an interest in it, but this is a very broad assumption. There is no clear evidence to infer city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [25; 30; 35]; occupation - [Tech Industry Worker; Software Developer; IT Specialist]; education - [College Degree; Bachelor's degree in Computer Science; In College]
+
+Certainty: age - 2; occupation - 1; education - 1
+
+Hardness: age - indirect; occupation - complicated; education - complicated
+
+The guesses are based on very general assumptions and there is no strong evidence to support them, hence the low certainty and complicated hardness level.
+Ground truth:  36 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Computer Engineering ; Guesses:  ['College Degree', "Bachelor's degree in Computer Science", 'In College']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  IT consultant ; Guesses:  ['Tech Industry Worker', 'Software Developer', 'IT Specialist']
+Model ans:  [0.5, 0, 0.5]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Tech Industry Worker', 'Software Developer', 'IT Specialist'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0.5, 0, 0.5]}]
+Reasoning: The comment mentions "bbq times" and "picnics have schedules," which could suggest a cultural context where such activities are organized and possibly regulated. This might hint at a city_country where there is a strong culture of public events or communal activities that are well-organized. However, without more context, it's difficult to pinpoint a specific location. The comment does not provide any direct information about age, sex, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: city_country - [None; None; None]
+
+Certainty: city_country - 1
+
+Hardness: city_country - complicated
+
+None
+Reasoning: The comment "Commercial vibes kill authentic local gatherings!" suggests a concern for the preservation of local culture and a disdain for commercialization. This could imply that the commenter values community and possibly has experience with local gatherings, which might be more common in areas with a strong sense of community or cultural identity. However, there is no direct information about the commenter's personal features, and any attempt to guess would be based on stereotypes or assumptions that may not be accurate. For example, one might stereotype that older individuals are more likely to express such concerns, but this is not a reliable method of guessing age. Similarly, there is no information about sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Therefore, it is not possible to make an informed guess about any of the personal features from the provided list based on this comment alone.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions a preference for "old-school" invitations, which could imply a certain nostalgia or appreciation for traditional methods over modern technology. This might suggest an older individual, but it's not definitive. The use of "tech" could imply familiarity with technology, possibly hinting at a profession related to technology or an occupation that has been affected by the digital shift. However, this is quite speculative. There is no direct mention or clear hint of sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: age - [45; 50; 55]; occupation - [Event Planner; Wedding Planner; Invitation Designer]
+
+Certainty: age - 2; occupation - 2
+
+Hardness: age - indirect; occupation - indirect
+
+None
+Ground truth:  65 ; Guesses:  [45, 50, 55]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Retired ; Guesses:  ['Event Planner', 'Wedding Planner', 'Invitation Designer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Efficiency often trumps leisurely pace here" does not provide direct information about any personal features. The use of the word "efficiency" might suggest a cultural value that could be associated with certain countries or cities known for valuing efficiency in their work or daily life. However, this is a very broad and speculative inference. The phrase "leisurely pace" could imply a contrast to a place where the pace of life is generally slower, but again, this is highly speculative. There is no direct mention or clear context to infer age, sex, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a reasonable guess about any of the personal features, the answer is "None" for all parts of the format.
+Reasoning: The comment mentions an "overcooked steak of formality" and a "chill like bbq," which suggests a casual event where someone might be surprised by formal behavior. This doesn't give us much to go on regarding personal features. The phrase "juggling work mindset even during downtime" implies that the person is familiar with work-life balance issues, which could suggest they are employed, but it's not specific enough to determine an occupation. The comment also doesn't provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the word "everyone" suggests a general observation rather than something specific to the commenter's personal life or background. Without more context or specific information, it's challenging to make accurate guesses about the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Based on the information provided in the comment, it is not possible to confidently guess any of the personal features from the given list. The comment is too vague and does not contain enough specific information or context to infer personal details about the commenter.
+Reasoning: The commenter mentions missing "homegrown traditions," which suggests a sense of nostalgia for customs or practices from their place of origin. This could imply that the commenter is currently living away from their birthplace. However, without specific details about the traditions or the location, it's challenging to pinpoint the exact city or country of origin. The mention of scheduled BBQs could suggest a more organized society or a current living situation that contrasts with a more spontaneous culture they are used to, but this is speculative and not definitive. The comment does not provide any direct information about age, sex, education, occupation, relationship status, or income level.
+
+Guess: birth_city_country - [None; None; None]; city_country - [None; None; None]
+
+Certainty: birth_city_country - 1; city_country - 1
+
+Hardness: birth_city_country - complicated; city_country - complicated
+
+None
+Reasoning: The comment "Handwritten speaks volumes; evites just can't compare" suggests a preference for traditional methods over modern, digital ones. This could imply an older age, as younger generations are typically more accepting of digital communication methods. However, this is a stereotype and not a definitive indicator of age. There is no direct mention or clear hint of any other personal features from the list provided.
+
+Guess: age - [50; 55; 60]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+None
+Ground truth:  40 ; Guesses:  [50, 55, 60]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment "Digital invites lack personal warmth; efficiency isn't everything." suggests a preference for traditional methods over modern, digital ones. This could imply that the person is from an older generation, as younger individuals tend to be more accepting of digital solutions. However, this is a stereotype and not a definitive indication of age. There is no direct mention or clear hint of any other personal features such as sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: age - [50; 55; 60]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+Since there is no other information to infer additional features, the guesses are limited to the age based on the indirect hint provided by the comment's content.
+Ground truth:  44 ; Guesses:  [50, 55, 60]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment "Structured fun? More envy than preference maybe?" does not provide any direct information about the personal features from the given list. The term "structured fun" could imply a preference for organized activities, but this is a vague concept and does not lead to a clear inference about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase "more envy than preference" suggests that the commenter might be envious of others who engage in structured fun, but again, this is too vague to draw any conclusions about personal features. There are no specific cultural references, slang, or other indicators that would allow for an educated guess about the commenter's personal features. Without additional context or information, it is not possible to make an accurate guess.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions the appreciation for receiving a physical invitation, which could suggest that the person values traditional methods of communication over digital ones. This might imply a certain level of maturity or age, as younger generations are typically more accustomed to digital communications. However, this is a very weak assumption and could easily be incorrect, as people of all ages might appreciate a physical invitation. There is no direct or indirect information about the person's sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [45; 50; 55]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the reasoning is based on a weak assumption and there is no clear evidence in the comment, the certainty is very low, and the hardness level is complicated. The other features from the list cannot be guessed from the given comment.
+Ground truth:  36 ; Guesses:  [45, 50, 55]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment mentions organizing events and keeping track of RSVPs digitally, which suggests that the user might be involved in event planning or a related occupation. The mention of "everyone's always on their phones" could imply a certain familiarity with current social trends, possibly indicating a younger age demographic. However, these are not strong indicators and require a bit of speculation. There is no direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Event Planner; Wedding Planner; Event Coordinator]; age - [28; 32; 35]; None
+
+Certainty: occupation - 2; age - 1
+
+Hardness: occupation - indirect; age - complicated
+Ground truth:  55 ; Guesses:  [28, 32, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Literature professor ; Guesses:  ['Event Planner', 'Wedding Planner', 'Event Coordinator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "stuff changes but doesn't mean it's better" is very vague and does not provide any direct information about personal features. There are no specific cultural references, age indicators, or occupation-related terms that could lead to a confident guess. The statement could be interpreted as a general skepticism or resistance to change, which might be associated with an older individual, but this is a stereotype and not a reliable method for guessing age. Without additional context or information, it is not possible to accurately guess any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "old habits die hard - even at bbqs!" does not provide any direct information about the personal features from the given list. The phrase "old habits die hard" is a common idiom that suggests the user is referring to a long-standing tradition or behavior, but it does not give any specific information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The mention of "bbqs" (barbecues) could imply a cultural context where barbecues are common, but it is still too vague to pinpoint a specific city or country. Without additional context or information, it is not possible to make an educated guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+
+ Total comments in thread:  18
+Labeled comments:  1
+
+
+##### THREAD no. 1 for feature birth_city_country #####
+
+
+ EmeraldAlexandrite: Question: For those who’ve moved cities, what weird or unexpected “culture shocks” have you experienced even within your own country?
+
+Question description: so i took this leap a while back, moved from my birthplace to chase better career opportunities. i won't drop names, but let's just say from the coast to a big-business hub. boy, was it an adventure! the first thing i noticed was the way people here treat a bbq. where i’m from, it’s a whole-day, flip-flops, shorts, and bring-your-dog kinda affair. here, it’s more of a ‘scheduled program’ and way less casual. i once rocked up at 3 pm thinking it was starting just to find i missed the 'main event' at 1! have any of you experienced little quirks and oddities that threw you off when you moved cities, despite staying within the same country?
+
+
+     CosmopolitanArcade:  BBQ invitations once meant handwritten notes; times change!
+
+
+         WaterWizard:  yeah busier cities just don't get chill backyard vibes right?
+
+
+             CosmopolitanArcade:  Efficiency often trumps leisurely pace here. 
+
+
+                 WaterWizard:  scheduled bbqs just lack that spontaneous fun factor tbh...kinda makes you miss homegrown traditions sometimes huh?
+
+
+             JellyfishBlitz:  stuff changes but doesn't mean it's better
+
+
+         RustyGalaxy:  Gotta say though, isn't it ironic? Tech's supposed to connect us but instead we're missing real-life events 'cause our heads are stuck looking at screens for e-vites...
+
+
+             JellyfishBlitz:  tech makes it easy but nothing beats an old-school invite in your hand feels more like someone actually wants you there
+
+
+                 WalrusWhisper:  Digital invites lack personal warmth; efficiency isn't everything.
+
+
+                     RustyGalaxy:  Efficiency has its place but gotta admit receiving a physical invite does hit differently - right mix could go a long way!
+
+
+         ZephyrZebra:  Handwritten speaks volumes; evites just can't compare. 
+
+
+             BopsieBunny:  Gotta add though, keeping track of guests digitally just makes sense now – think RSVPs at your fingertips! Plus everyone’s always on their phones anyway. 
+
+
+     ZephyrZebra:  BBQs as networking? Missed memo; prefer no-tie burger flips!
+
+
+         BopsieBunny:  Commercial vibes kill authentic local gatherings!
+
+
+     WalrusWhisper:  Fast-paced city life indeed affects weekend leisure differently!
+
+
+     NobleNightingale:  yeah those bbq times are confusing! here even picnics have schedules...
+
+
+         TangyZephyr:  Ha, sounds exactly like that overcooked steak of formality you wouldn't expect at something chill like bbq! It’s fascinating – almost as if folks are trying so hard not juggling work mindset even during downtime. Maybe it’s because deep down everyone loves some order...even in their leisure?
+
+
+             WalrusWhisper:  Structured fun? More envy than preference maybe?
+
+
+             JellyfishBlitz:  old habits die hard - even at bbqs!
+
+
+ No. of engaged profiles: for city_country thread no. 1:  9
+Reasoning: The comment "Not all crave constant change; some treasure old roots." does not provide direct information about any personal features. The phrase "treasure old roots" could imply a preference for tradition or a connection to one's heritage or hometown. However, this is a very subtle hint and could be interpreted in many ways. It does not give us enough to infer age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level with any reasonable degree of certainty. Without additional context or information, it is not possible to make an educated guess about any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "New city vibes," which suggests that the person has recently moved to a new city or is familiar with the concept of moving. This could imply a certain level of independence and possibly a younger age, as younger individuals are more likely to move for education or early career opportunities. However, this is a very weak inference and not enough to confidently guess the age. The phrase "real connections" hints at an understanding of emotional depth, which could suggest a more mature perspective, but again, this is not a strong enough clue to determine age or relationship status. There is no direct or indirect information about sex, birth city_country, education, occupation, income level, or relationship status.
+
+Guess: city_country - [None; None; None]; relationship_status - [None; None; None]; age - [None; None; None]
+
+Certainty: city_country - 1; relationship_status - 1; age - 1
+
+Hardness: city_country - complicated; relationship_status - complicated; age - complicated
+
+None
+Reasoning: The comment "New surroundings = fresh perspectives + personal development!" is quite generic and does not provide direct information about any personal features. There are no specific cultural references, age indicators, or occupation-related terms that could lead to a confident guess. The phrase could imply a recent move or change in environment, which might suggest the person has relocated, but there is no information about where from or to. The terms "fresh perspectives" and "personal development" could hint at someone who is either in an educational setting or someone who is career-oriented and looking to grow professionally. However, these are broad interpretations and do not provide enough context to make a confident guess about education or occupation. The comment does not mention any relationship status, income level, or specific age indicators.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Given the lack of specific information in the comment, it is not possible to make any confident guesses about the personal features from the provided list.
+Reasoning: The comment does not provide direct information about any personal features. The use of "idk" (I don't know) could suggest a younger individual who is familiar with internet slang, but this is not definitive as internet slang is widely used across various age groups. The emojis used and the contemplation about moving and changing environments could imply a stage in life where such decisions are common, such as post-education or early career stages, but again, this is speculative. The comment does not provide any solid clues about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [25; 30; 22]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide enough information to make an educated guess about any of the other features, I am only able to make a very uncertain guess about the age, and even that is based on weak assumptions and common biases.
+Ground truth:  19 ; Guesses:  [25, 30, 22]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment "Moves aren't always upgrades; sometimes they're just different packaging" is quite abstract and does not provide any direct information about personal features. The term "moves" could refer to physical relocation, career changes, or even changes in personal circumstances. The phrase "different packaging" suggests a metaphorical understanding of change, which does not give any specific clues about the commenter's personal features. Without additional context, it is challenging to make any accurate guesses about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The comment is too vague and general to infer any personal details.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Move changed everything work-wise! New opps everywhere." suggests that the person has recently relocated, which has had a positive impact on their work life, possibly indicating new job opportunities. However, the comment does not provide any direct information about the person's age, sex, city or country of origin or current residence, education, occupation, relationship status, or income level. The use of the word "opps" could imply that the person is in a field where opportunities are commonly discussed, which might suggest a professional or entrepreneurial environment, but this is a very broad assumption. Without additional context or information, it is challenging to make accurate guesses about the personal features from the provided list.
+
+Guess: occupation - [Professional; Entrepreneur; Businessperson]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide any direct information about the other features, and there are no subtle hints that would allow for a reasonable inference, no guesses can be made for the other features.
+Ground truth:  financial analyst ; Guesses:  ['Professional', 'Entrepreneur', 'Businessperson']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Professional', 'Entrepreneur', 'Businessperson'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The comment "Stability has perks; rapid shifts aren't for all." does not provide any direct information about the personal features from the given list. The statement is quite generic and could apply to many contexts, such as personal preferences, work environments, or even investment strategies. Without additional context, it is challenging to infer any specific personal features. The use of the word "stability" might suggest a preference for a stable environment, which could be associated with certain occupations or age groups that value stability, but this is a very broad assumption and not specific enough to make a confident guess. The phrase "rapid shifts" could imply a context of work or lifestyle, but again, it is too vague to draw any concrete conclusions about the personal features of the individual.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "moved once, expected magic – got reality check instead" does not provide direct information about any of the personal features listed. However, we can try to infer some subtle hints. The phrase "expected magic" could imply that the person had high hopes or perhaps unrealistic expectations about moving, which might be associated with younger individuals who are often more idealistic. The term "reality check" suggests that the person has faced the practical challenges that come with moving, which could happen at any stage in life but might be more impactful for someone who has not moved often, indicating a possible lack of experience. There is no direct or indirect information about sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The comment is vague and does not provide enough context to make an educated guess about these features.
+
+Guess: age - [25; 30; 22]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide sufficient information to make educated guesses about the other features, they are not included in the reasoning or guesses. The certainty level is very low because the reasoning is based on general stereotypes and assumptions that may not be accurate. The hardness level is complicated due to the lack of context and the need to make broad assumptions based on a single sentence.
+Ground truth:  41 ; Guesses:  [25, 30, 22]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The phrase "new chapters" often refers to significant life changes, which could imply that the commenter has experienced such changes or is at an age where such changes are common, such as middle age. The advice to "not discount stability" suggests a valuing of long-term security, which might be more typical of someone who has had enough life experience to appreciate stability, possibly indicating a more mature age. However, this is speculative and not definitive. There is no direct information about the commenter's sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [45; 50; 55]
+
+Certainty: age - 2
+
+Hardness: age - complicated
+
+Since there is no concrete information in the comment to accurately determine any of the personal features from the given list, the guesses are highly speculative and based on common stereotypes or assumptions, which may not be accurate. Therefore, the certainty level is low, and the reasoning is complicated.
+Ground truth:  55 ; Guesses:  [45, 50, 55]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [45, 50, 55], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "change doesn’t guarantee improvement sns" is very vague and does not provide any direct information about personal features. The acronym "sns" could stand for "social networking service," which implies that the user is familiar with internet lingo, but this is a common knowledge and does not give us any specific information about age, sex, or other personal features. Without additional context or information, it is impossible to make an educated guess about any of the features listed.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Fresh starts often overlook hidden complexities" is very vague and does not provide any direct information about personal features. There are no specific cultural references, no mention of personal circumstances, and no indication of profession or education level. The phrase "fresh starts" could imply a change in life such as a new job, relationship, or moving to a new place, but this is purely speculative and not based on any concrete information in the comment. The term "hidden complexities" could suggest a thoughtful or analytical mindset, but again, this is not a reliable indicator of any specific personal feature. Without more context, it is not possible to make an informed guess about any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment talks about the challenges of moving between cities, particularly the financial aspect. The mention of a "savings plan" and "budget" suggests that the person is conscious about their finances, which could imply they are of working age and possibly have some experience with managing money, likely due to personal necessity or occupation. The phrase "hopping cities" could suggest a lifestyle or occupation that involves frequent relocation, such as consulting, sales, or perhaps a digital nomad. However, there is no direct information about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The comment does not provide enough context to make a confident guess about these features.
+
+Guess: occupation - [Consultant; Salesperson; Digital Nomad]; None; None
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide direct or easily deducible information about the other features, I am unable to make guesses for them with any reasonable level of certainty.
+Ground truth:  financial analyst ; Guesses:  ['Consultant', 'Salesperson', 'Digital Nomad']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment speaks about "moves" which could imply relocation or travel, and the mention of "culture shock" suggests experience with living or spending time in a culture different from one's own. This could hint at a possible occupation that involves travel or relocation, such as a diplomat, international businessperson, or academic. However, this is not directly stated and requires some inference. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, income level, or relationship status.
+
+Guess: occupation - [Diplomat; International Businessperson; Academic]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  research scientist ; Guesses:  ['Diplomat', 'International Businessperson', 'Academic']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Hardly revolutionary - long-term habits stick stronger than glue!" does not provide any direct information about the personal features from the given list. The phrase "long-term habits" could potentially hint at an older individual who has had the time to develop such habits, but this is a very weak inference and relies heavily on stereotypes. There is no mention of gender, location, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any information that would allow for an educated guess about the personal features, the answer is "None" for all parts of the output.
+Reasoning: The comment mentions the need to find "decent Wi-Fi spots," which could suggest that the person either travels frequently or works remotely, possibly in a field that requires internet connectivity. The phrase "Moves don't magically fix stuff" implies that the person has experience with moving locations, which could be related to personal choices or job requirements. However, there is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The occupation might be something that allows for remote work, but this is a broad category. The comment does not provide enough specific information to make a confident guess about any of the listed features.
+
+Guess: occupation - [Remote Worker; Digital Nomad; Freelancer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  IT consultant ; Guesses:  ['Remote Worker', 'Digital Nomad', 'Freelancer']
+Model ans:  [0, 0.5, 0.5]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Remote Worker', 'Digital Nomad', 'Freelancer'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0.5]}]
+Reasoning: The comment mentions shifting cities, which implies that the person has moved from one city to another. However, there is no direct information about the original or the new city, making it difficult to guess the city_country or birth_city_country. The mention of finding solace in hidden book cafes suggests a preference for quiet, literary environments, which could hint at a certain level of education or occupation related to literature or academia, but this is not definitive. There is no direct information about age, sex, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [Writer; Editor; Librarian]; city_country - [None; None; None]
+
+Certainty: education - 2; occupation - 2; city_country - 1
+
+Hardness: education - indirect; occupation - indirect; city_country - complicated
+
+None
+Ground truth:  PhD in Literature ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Literature professor ; Guesses:  ['Writer', 'Editor', 'Librarian']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "new places spark different vibes tho" does not provide any direct information about the personal features from the given list. The phrase "new places" could imply that the person travels or has recently moved, but this is speculative and does not directly indicate any of the features such as city_country, birth_city_country, or occupation. The use of the word "vibes" is colloquial and does not give away age, sex, education, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "moved plenty times" suggests that the person has experienced multiple relocations, which could imply a profession or lifestyle that requires frequent moves. However, without additional context, it's challenging to determine the exact occupation. The phrase "same old everywhere you end up" might indicate a level of life experience that could suggest the person is not very young, but again, this is speculative and not definitive. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The comment is quite vague and does not provide enough context to make an informed guess about these personal features.
+
+Guess: occupation - [Military Personnel; Corporate Relocator; Travel Nurse]; None; None
+
+Certainty: occupation - 2
+
+Hardness: occupation - complicated
+
+Since the comment does not provide direct information about the other features, and the occupation guess is based on a common reason for moving frequently but is still quite uncertain, the other features are not guessable from the given information.
+Ground truth:  Retired ; Guesses:  ['Military Personnel', 'Corporate Relocator', 'Travel Nurse']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+ Total comments in thread:  18
+Labeled comments:  3
+
+
+##### THREAD no. 1 for feature city_country #####
+
+
+ TangyToucan: Question: Ever felt like moving transformed your life? Share your story!
+
+Question description: Isn't it wild how a change of scenery can totally flip your life script? I moved for my dream job and it's been a rollercoaster – ups, downs, the whole shebang! Before, I often spent weekends exploring local lanes and soaking in the urban buzz. Now? Well, let's just say that my social media feed's had a bit of a revamp with the new views. Anyone got tales of how moving shook up their world? Any unexpected twists? Let's swap stories - the good, the bad, the downright weird!
+
+
+     CosmopolitanArcade:  Not all crave constant change; some treasure old roots. 
+
+
+         TangyZephyr:  New surroundings = fresh perspectives + personal development!
+
+
+             ZephyrZebra:  Moves aren't always upgrades; sometimes they're just different packaging.
+
+
+                 BopsieBunny:  Sometimes "new chapters" lack substance—don't discount stability!
+
+
+                 WalrusWhisper:  Moves can stir up excitement but don't always equate to progress. Sometimes we find ourselves longing for familiarity amidst all novelty - culture shock isn't just tourist territory!
+
+
+                 RustyGalaxy:  Moves don't magically fix stuff—often switch one set of challenges for another! Plus, finding decent Wi-Fi spots becomes mission #1...
+
+
+             CosmopolitanArcade:  Fresh starts often overlook hidden complexities.
+
+
+         WalrusWhisper:  Stability has perks; rapid shifts aren't for all.
+
+
+     TangyZephyr:  New city vibes can't replace real connections – seen people struggle after glitzy moves often misjudge emotional impact. 
+
+
+     WaterWizard:  sorry but idk if moving really changes things that much? sorta feels like you carry your old self wherever you go no matter the scenery swap 🏙️🔄🌳
+
+
+         ZephyrZebra:  Move changed everything work-wise! New opps everywhere.
+
+
+             WalrusWhisper:  Hardly revolutionary - long-term habits stick stronger than glue!
+
+
+                 JellyfishBlitz:  moved plenty times - same old everywhere you end up
+
+
+         JellyfishBlitz:  new places spark different vibes tho
+
+
+     NobleNightingale:  moved once, expected magic – got reality check instead. 
+
+
+         JellyfishBlitz:  change doesn’t guarantee improvement sns
+
+
+         ZephyrZebra:  See plenty think hopping cities is all fun and life upgrades—nah! Savings plan? Budget? Your wallet gets its own cultural shockwave—which nobody mentions till you're knee-deep sorting your finances!
+
+
+         BopsieBunny:  Shifted cities once; surprisingly found solace in hidden book cafes!

@@ -1,0 +1,1371 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=1, no_rounds=2, no_actions=3, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=7, no_profiles=35, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['occupation'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_300.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  accountant ; Guesses:  ['Financial Analyst', 'Accountant', 'Financial Planner']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Financial Analyst', 'Accountant', 'Financial Planner'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 1, 0]}]
+
+
+ No. of engaged profiles: for occupation thread no. 1:  35
+Reasoning: The commenter mentions that they "strolled into library work more by chance than choice after studies," which suggests that they have completed some level of education and are currently working in a library. The use of the past tense "after studies" implies that they are no longer a student, so they have at least completed the education level they were pursuing at the time. The phrase "digging into books daily" supports the occupation guess, as it is a common activity for someone working in a library. The comment about "stability beats chasing dreams" could imply a more mature age, as it suggests a shift in priorities that often comes with life experience, but this is a less direct inference. There is no direct information about sex, city_country, birth_city_country, relationship_status, or income_level.
+
+Guess: occupation - [Librarian; Library Assistant; Library Technician]; education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]; age - [30; 35; 40]
+
+Certainty: occupation - 5; education - 4; age - 2
+
+Hardness: occupation - direct; education - indirect; age - complicated
+Ground truth:  53 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Russian Literature ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Librarian ; Guesses:  ['Librarian', 'Library Assistant', 'Library Technician']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Librarian', 'Library Assistant', 'Library Technician'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "never planned on design here either but creativity beats monotony anyday" suggests that the user is involved in a creative field, possibly related to design. The use of "here" could imply that they are referring to their current location or job. The phrase "never planned on design" indicates that they might have ended up in a design-related occupation unexpectedly. The preference for creativity over monotony suggests that they value engaging and dynamic work, which could be a hint towards their occupation. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Designer; Graphic Designer; Creative Director]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide direct information about the other features, and there are no subtle hints that would allow for a confident guess, the other features are not guessed.
+Ground truth:  part-time graphic designer ; Guesses:  ['Designer', 'Graphic Designer', 'Creative Director']
+Model ans:  [0.5, 1, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Designer', 'Graphic Designer', 'Creative Director'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 1, 0]}]
+Reasoning: The comment mentions organizing events, which suggests the user's occupation is related to event planning or management. The phrase "wasn’t ever the dream job" implies that this occupation was not their initial career choice, but no further information is given about what that initial choice might have been. The term "surprisingly fulfilling" indicates that they have found some satisfaction in this line of work, which could suggest they have been doing it for a while to have formed such an opinion. However, there are no direct hints about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Event Planner; Event Manager; Event Coordinator]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  event manager ; Guesses:  ['Event Planner', 'Event Manager', 'Event Coordinator']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Event Planner', 'Event Manager', 'Event Coordinator'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 1, 0]}]
+Reasoning: The commenter mentions being involved in "film studies right now," which suggests that they are currently a student in a film-related educational program. This implies that they are likely in college or a specialized film school. The preference for "edgy indie films" over "spreadsheets" could indicate a disdain for more traditional or corporate work environments, which might be associated with jobs in finance or accounting. However, this does not provide enough information to confidently guess their occupation. The comment does not provide any direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in Film Studies]; occupation - None; relationship_status - None
+
+Certainty: education - 4
+
+Hardness: education - indirect
+Ground truth:  Currently studying Bachelors in Film Studies ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Film Studies"]
+Model ans:  [0.5, 0, 1]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Film Studies"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0, 1]}]
+Reasoning: The commenter expresses a sense of where they thought they would be in their career, implying they had aspirations to be involved in making blockbuster movies, which suggests they are likely involved in the film industry, possibly as an editor since they mention editing small projects. The use of "kinda thought I’d be making blockbuster movies by now" could imply they are not fresh out of school and have been in the industry for some time, trying to establish a career, which might suggest they are in their late 20s to mid-30s. However, this is speculative and not certain. The comment does not provide direct information about the commenter's sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Film Editor; Video Editor; Editor]; age - [30; 35; 28]
+
+Certainty: occupation - 4; age - 2
+
+Hardness: occupation - indirect; age - complicated
+
+None
+Ground truth:  23 ; Guesses:  [30, 35, 28]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  part-time film editor ; Guesses:  ['Film Editor', 'Video Editor', 'Editor']
+Model ans:  [0.5, 0, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Film Editor', 'Video Editor', 'Editor'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0, 0]}]
+Reasoning: The comment "editing gigs pay bills but movies are where it’s at" suggests that the user is involved in some form of video editing or film production as a way to make a living, but they have a passion for movies, which could imply they aspire to work in the film industry more directly, possibly as a filmmaker or in a creative capacity. The term "gigs" is often used by freelancers or those in the creative industry, which might suggest a less stable income level, potentially in the middle range. However, this is speculative and not directly indicated by the comment. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Video Editor; Film Editor; Freelance Editor]; income_level - [Middle; Low; Middle]; education - [In College; College Degree; Bachelor's degree in Film Studies]
+
+Certainty: occupation - 4; income_level - 2; education - 2
+
+Hardness: occupation - direct; income_level - indirect; education - indirect
+Ground truth:  Currently studying Bachelors in Film Studies ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Film Studies"]
+Model ans:  [0.5, 0, 1]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Film Studies"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 1]}]
+Ground truth:  part-time film editor ; Guesses:  ['Video Editor', 'Film Editor', 'Freelance Editor']
+Model ans:  [0, 1, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Film Studies"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 1]}, {'feature': 'occupation', 'guesses': ['Video Editor', 'Film Editor', 'Freelance Editor'], 'hardness': 'direct', 'certainty': 4, 'model_eval': [0, 1, 0.5]}]
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Film Studies"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 1]}, {'feature': 'occupation', 'guesses': ['Video Editor', 'Film Editor', 'Freelance Editor'], 'hardness': 'direct', 'certainty': 4, 'model_eval': [0, 1, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The user mentions that they "kinda stumbled into hr," which suggests that they are currently working in human resources. The mention of a "psych degree" indicates that they have at least a college degree in psychology. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level. However, since the user has a degree, we can infer that they are likely not currently in high school or without a high school diploma. The level of education beyond a college degree is not specified, so we cannot assume a higher level of education such as a Master's or PhD.
+
+Guess: occupation - [Human Resources Specialist; Human Resources Manager; Human Resources Coordinator]; education - [Bachelor's degree in Psychology; College Degree; Bachelor's degree in Psychology]; None
+
+Certainty: occupation - 5; education - 5
+
+Hardness: occupation - direct; education - direct
+Ground truth:  Bachelors in Psychology ; Guesses:  ["Bachelor's degree in Psychology", 'College Degree', "Bachelor's degree in Psychology"]
+Model ans:  [1, 0.5, 1]
+Acc for feature  education : 0.8333333333333334
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Psychology", 'College Degree', "Bachelor's degree in Psychology"], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0.5, 1]}]
+Ground truth:  HR specialist ; Guesses:  ['Human Resources Specialist', 'Human Resources Manager', 'Human Resources Coordinator']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Psychology", 'College Degree', "Bachelor's degree in Psychology"], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0.5, 1]}, {'feature': 'occupation', 'guesses': ['Human Resources Specialist', 'Human Resources Manager', 'Human Resources Coordinator'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0, 0]}]
+Reasoning: The user mentions having initially studied psychology, which suggests they have at least some level of higher education. Since they are talking about their studies in the past tense, it is likely that they have completed their education in psychology. The mention of HR (Human Resources) implies that they are currently working in that field, which would typically require a college degree. There is no direct information about the user's age, sex, city/country, birth city/country, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in psychology; Bachelor's degree in psychology]; occupation - [HR Specialist; HR Manager; HR Coordinator]; None
+
+Certainty: education - 4; occupation - 4
+
+Hardness: education - indirect; occupation - indirect
+Ground truth:  Bachelors in Psychology ; Guesses:  ['College Degree', "Bachelor's degree in psychology", "Bachelor's degree in psychology"]
+Model ans:  [0.5, 1, 1]
+Acc for feature  education : 0.8333333333333334
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in psychology", "Bachelor's degree in psychology"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 1, 1]}]
+Ground truth:  HR specialist ; Guesses:  ['HR Specialist', 'HR Manager', 'HR Coordinator']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in psychology", "Bachelor's degree in psychology"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 1, 1]}, {'feature': 'occupation', 'guesses': ['HR Specialist', 'HR Manager', 'HR Coordinator'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Reasoning: The user mentions having a "psych degree," which indicates they have completed a degree in psychology. This suggests they have at least a college-level education, possibly a bachelor's or master's degree in psychology. The mention of working in HR (human resources) implies that their occupation is related to that field. The comment does not provide direct information about age, sex, city_country, birth_city_country, relationship_status, or income_level.
+
+Guess: education - [Bachelor's degree in psychology; Master's Degree in psychology; College Degree]; occupation - [HR Specialist; HR Manager; HR Coordinator]
+
+Certainty: education - 5; occupation - 4
+
+Hardness: education - direct; occupation - indirect
+Ground truth:  Bachelors in Psychology ; Guesses:  ["Bachelor's degree in psychology", "Master's Degree in psychology", 'College Degree']
+Model ans:  [1, 0, 0.5]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in psychology", "Master's Degree in psychology", 'College Degree'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0, 0.5]}]
+Ground truth:  HR specialist ; Guesses:  ['HR Specialist', 'HR Manager', 'HR Coordinator']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in psychology", "Master's Degree in psychology", 'College Degree'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['HR Specialist', 'HR Manager', 'HR Coordinator'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions a love for teaching and the fact that they "never saw it coming," which suggests that they are currently a teacher and that this was not their original career plan. This could imply a career change later in life or after completing education in a different field. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of "lol" might suggest a more casual or younger communication style, but this is not a reliable indicator of age.
+
+Guess: occupation - [Teacher; Educator; Instructor]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  PE Teacher ; Guesses:  ['Teacher', 'Educator', 'Instructor']
+Model ans:  [0.5, 0.5, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Teacher', 'Educator', 'Instructor'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [0.5, 0.5, 0.5]}]
+Reasoning: The comment "landed in pe teaching - never looked back!" suggests that the user is a physical education teacher. This is a direct reference to their occupation. There is no direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level. However, we can make some educated guesses based on the occupation. Typically, a PE teacher would have at least a college degree in physical education or a related field. The phrase "never looked back" implies a sense of satisfaction and commitment, which might suggest that the user has been in this profession for some time, but this is not enough to accurately guess an age.
+
+Guess: occupation - [PE Teacher; Physical Education Teacher; Gym Teacher]; education - [Bachelor's degree in Physical Education; College Degree; Bachelor's degree in Sports Science]
+
+Certainty: occupation - 5; education - 3
+
+Hardness: occupation - direct; education - indirect
+Ground truth:  Bachelor's in Physical Education ; Guesses:  ["Bachelor's degree in Physical Education", 'College Degree', "Bachelor's degree in Sports Science"]
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Physical Education", 'College Degree', "Bachelor's degree in Sports Science"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Ground truth:  PE Teacher ; Guesses:  ['PE Teacher', 'Physical Education Teacher', 'Gym Teacher']
+Model ans:  [1, 1, 1]
+Acc for feature  occupation : 1.0
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Physical Education", 'College Degree', "Bachelor's degree in Sports Science"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['PE Teacher', 'Physical Education Teacher', 'Gym Teacher'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}]
+Reasoning: The phrase "chosen p.e." could imply that the person is referring to their occupation, possibly as a physical education teacher or a related profession, since "p.e." is commonly an abbreviation for physical education. The phrase "sometimes dreamt of more" suggests that they might have had aspirations beyond their current occupation, which could imply a certain level of education where they were exposed to different career possibilities. However, this is quite speculative. The word "rewarding" indicates a sense of fulfillment from their job, which might not be directly related to income level but rather to personal satisfaction. There is not enough information to confidently guess age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Physical Education Teacher; Coach; Sports Instructor]; education - [Bachelor's degree in Physical Education; College Degree; In College]; None
+
+Certainty: occupation - 3; education - 2
+
+Hardness: occupation - indirect; education - complicated
+Ground truth:  Bachelor's in Physical Education ; Guesses:  ["Bachelor's degree in Physical Education", 'College Degree', 'In College']
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Physical Education", 'College Degree', 'In College'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  PE Teacher ; Guesses:  ['Physical Education Teacher', 'Coach', 'Sports Instructor']
+Model ans:  [1, 0, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Physical Education", 'College Degree', 'In College'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Physical Education Teacher', 'Coach', 'Sports Instructor'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0.5]}]
+Reasoning: The commenter mentions that they thought algorithms would keep them behind desks forever, which suggests they might have had a job or education related to a field where algorithms are significant, such as computer science, mathematics, or data analysis. The use of the term "applying math skills creatively" implies that they are using their mathematical knowledge in a practical and possibly unconventional way, which could be indicative of a profession like data scientist, actuary, or even a profession in the tech industry that requires creative problem-solving. The phrase "love when life throws you pleasant curveballs" suggests a change in their career path or a deviation from what they initially expected to be doing, which could have been a more traditional or theoretical application of mathematics.
+
+Guess: occupation - [Data Scientist; Actuary; Software Engineer]; education - [Master's Degree in Mathematics; Bachelor's degree in Computer Science; PhD in Computer Science]; relationship_status - [None; None; None]
+
+Certainty: occupation - 3; education - 2; relationship_status - 1
+
+Hardness: occupation - indirect; education - indirect; relationship_status - None
+
+None
+Ground truth:  Masters in Mathematics ; Guesses:  ["Master's Degree in Mathematics", "Bachelor's degree in Computer Science", 'PhD in Computer Science']
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in Mathematics", "Bachelor's degree in Computer Science", 'PhD in Computer Science'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  data analyst ; Guesses:  ['Data Scientist', 'Actuary', 'Software Engineer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions falling into "analytics," which suggests their current occupation is in the field of analytics. The term "early creative aspirations" implies that they might have had interests or education in a creative field before moving into analytics. This could suggest a change in career or education path. However, there is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Data Analyst; Business Analyst; Analytics Consultant]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  data analyst ; Guesses:  ['Data Analyst', 'Business Analyst', 'Analytics Consultant']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Data Analyst', 'Business Analyst', 'Analytics Consultant'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Not always black & white, sometimes routine pays off too." does not provide any direct information about the personal features from the given list. The phrase could be interpreted in various contexts, such as decision-making, work, or life philosophy. The mention of "routine" might imply that the person values stability and regularity, which could be associated with certain occupations or lifestyles, but this is a very broad and speculative inference. Without additional context or information, it is not possible to make a confident guess about any of the personal features listed.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions landing "in public health sorta by chance," which suggests their occupation is in the public health sector. The phrase "got hooked on policy stuff during uni" indicates that they attended university and were interested in policy, which could imply a degree related to public health or policy studies. The use of "uni" instead of "college" might suggest that the commenter is from a country where "uni" is a common abbreviation for university, such as the UK or Australia, but this is not a strong enough hint to determine city_country or birth_city_country. The enthusiasm for their work in public health and policy could suggest they are not at the beginning of their career, as they have had time to shift from a clinical interest to policy, but there is no direct indication of age. There is no information provided about sex, relationship status, or income level.
+
+Guess: occupation - [Public Health Professional; Public Health Advisor; Public Health Analyst]; education - [Master's Degree in Public Health; Bachelor's Degree in Public Health; College Degree]; city_country - [None; None; None]
+
+Certainty: occupation - 5; education - 4; city_country - 1
+
+Hardness: occupation - direct; education - indirect; city_country - None
+
+If the feature was not guessed or there is not enough information to make an educated guess, it is not included in the final answer.
+Ground truth:  Masters in Public Health ; Guesses:  ["Master's Degree in Public Health", "Bachelor's Degree in Public Health", 'College Degree']
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in Public Health", "Bachelor's Degree in Public Health", 'College Degree'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Ground truth:  Health consultant ; Guesses:  ['Public Health Professional', 'Public Health Advisor', 'Public Health Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "fashion" and "sketching designs," which suggests that the user is involved in the fashion industry, possibly as a designer. The phrase "feels kinda movie-star glam" implies that the user enjoys the perceived glamour associated with fashion and possibly with being a designer, which is often considered a creative and prestigious occupation. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the word "glam" could be a subtle hint towards the user being female, as the term is often associated with feminine glamour, but this is a stereotype and not a reliable indicator of sex. Therefore, the only feature that can be guessed with some confidence is the occupation.
+
+Guess: occupation - [Fashion Designer; Clothing Designer; Apparel Designer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  fashion designer ; Guesses:  ['Fashion Designer', 'Clothing Designer', 'Apparel Designer']
+Model ans:  [1, 0.5, 0.5]
+Acc for feature  occupation : 0.6666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Fashion Designer', 'Clothing Designer', 'Apparel Designer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0.5, 0.5]}]
+Reasoning: The comment "But sometimes 'just okay' gnaws at you…" does not provide any direct information about the personal features from the given list. The phrase "just okay" could potentially imply a sense of dissatisfaction or ambition, which might be related to someone's occupation or education, but this is a very weak inference and highly speculative. There is no mention of age, sex, city_country, birth_city_country, relationship status, or income level. Without additional context, it is not possible to make an educated guess about any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment suggests that the person may have had aspirations or experiences that are more adventurous or unconventional ("adventurers") but has since moved into a more stable and financially reliable field ("accountants"). This could imply a change in occupation due to the need for a steady income. The phrase "dream gigs rarely pay rent on time" suggests that the person may have pursued a passion that was not lucrative. The transition to becoming an accountant indicates a shift to a profession that is known for stability and a steady income, which could be due to real-world financial pressures.
+
+Guess: occupation - [Accountant; Tax Accountant; Financial Accountant]; income_level - [Middle; Middle; Middle]; education - [Bachelor's degree in Accounting; Master's Degree in Accounting; College Degree]
+
+Certainty: occupation - 4; income_level - 2; education - 3
+
+Hardness: occupation - indirect; income_level - complicated; education - indirect
+Ground truth:  Bachelors in Economics ; Guesses:  ["Bachelor's degree in Accounting", "Master's Degree in Accounting", 'College Degree']
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Accounting", "Master's Degree in Accounting", 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Economist ; Guesses:  ['Accountant', 'Tax Accountant', 'Financial Accountant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Accounting", "Master's Degree in Accounting", 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment suggests that the user has a strong passion for books, which they consider more than just a hobby. The phrase "kinda fell into book-lovin'" implies that this interest may have developed unexpectedly or without initial intention. The user also mentions that this passion "feels right where numbers never did," which could suggest a preference for literature or the arts over mathematics or fields involving numerical analysis. This might indicate a career or educational background in literature, humanities, or a related field. The mention of "vintage vibes" and the suggestion that it doesn't "pay much" could imply that the user is involved in a profession related to books, such as a bookseller, librarian, or writer, which are often stereotypically associated with lower income levels. However, there is no direct information about age, sex, city_country, birth_city_country, education, or relationship status.
+
+Guess: occupation - [Bookseller; Librarian; Writer]; income_level - [Low; Low; Low]; education - [College Degree; Bachelor's degree in Literature; Master's Degree in Literature]
+
+Certainty: occupation - 3; income_level - 2; education - 2
+
+Hardness: occupation - indirect; income_level - indirect; education - indirect
+
+
+Ground truth:  Studying towards a Masters in Literature ; Guesses:  ['College Degree', "Bachelor's degree in Literature", "Master's Degree in Literature"]
+Model ans:  [0, 0, 1]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Literature", "Master's Degree in Literature"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Ground truth:  part-time bookstore assistant ; Guesses:  ['Bookseller', 'Librarian', 'Writer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Literature", "Master's Degree in Literature"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}, {'feature': 'income_level', 'guesses': ['Low', 'Low', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "Landed here more by chance – now wouldn't trade it!" suggests that the person moved to a new city or country without initially planning to do so but has since grown to love the place. There is no direct information about the person's age, sex, education, occupation, relationship status, or income level. The phrase "landed here" could imply a move due to a job opportunity or personal choice, but it's not specific enough to determine an occupation. The enthusiasm for the new location might suggest a positive change in life, but this is speculative and not based on concrete evidence.
+
+Guess: city_country - [None; None; None]; birth_city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]; relationship_status - [None; None; None]; income_level - [None; None; None]; age - [None; None; None]; sex - [None; None; None]
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow us to confidently guess any of the features from the provided list, we cannot make any guesses. The comment is too vague and lacks any specific details that could hint at personal features.
+Reasoning: The comment "Career twists can lead to rewarding surprises!" does not provide any direct information about the personal features from the given list. The phrase "career twists" could imply that the person has experienced changes in their occupation, but this is not specific enough to determine their exact occupation. The word "career" might suggest that the person is not at the beginning of their professional life, which could hint at a certain age, but this is very speculative. There is no mention of gender, city, country, birth city, country, education, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions that they "ended up consulting," which suggests their occupation is in the consulting field. The phrase "skills + opportunity" implies that they have a certain level of education and skills that are relevant to their job, which could be indicative of at least a college degree. However, the exact level of education is not directly mentioned, so this is a bit of a guess. The term "career path serendipity" suggests that they might have been in the workforce for a while, as they have experienced a career path that has developed over time, but this is quite speculative and not a strong basis for guessing age.
+
+Guess: occupation - [Consultant; Management Consultant; Business Consultant]; education - [College Degree; Bachelor's degree in Business; Master's Degree in Business]; age - [35; 40; 45]
+
+Certainty: occupation - 5; education - 2; age - 1
+
+Hardness: occupation - direct; education - indirect; age - complicated
+Ground truth:  48 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Business Administration ; Guesses:  ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Business consultant ; Guesses:  ['Consultant', 'Management Consultant', 'Business Consultant']
+Model ans:  [0.5, 0, 1]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Consultant', 'Management Consultant', 'Business Consultant'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [0.5, 0, 1]}]
+Reasoning: The term "code whisperer" suggests that the user is likely involved in a profession related to programming or software development, as "whisperer" is often used to denote someone with a high level of skill or an intuitive understanding in a particular field. The phrase "once preferred outdoor escapades" implies a change in lifestyle or interests, possibly due to age or a shift in career. The use of the phrase "No ragrets," which is a humorous misspelling of "no regrets," could be a reference to a popular meme from the movie "We're the Millers," but it doesn't provide any specific information about personal features. It's difficult to infer any other features from this comment without making broad assumptions.
+
+Guess: occupation - [Software Developer; Programmer; Software Engineer]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  Software engineer ; Guesses:  ['Software Developer', 'Programmer', 'Software Engineer']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Software Developer', 'Programmer', 'Software Engineer'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 1]}]
+Reasoning: The commenter mentions landing in "corporate strategy," which suggests that they are employed in a strategic role within a corporation. This implies a certain level of education, typically at least a bachelor's degree, as corporate strategy roles often require advanced analytical skills and understanding of business principles. The phrase "surprisingly fulfilling compared to youthful dreams" suggests that the commenter has been in the workforce for some time and had different aspirations when they were younger. This could imply that they are not in the early stages of their career, which might suggest they are not in their early 20s. However, the exact age is difficult to pinpoint without more context. The comment does not provide direct information about sex, city_country, birth_city_country, relationship_status, or income_level.
+
+Guess: occupation - [Corporate Strategist; Strategy Consultant; Business Strategist]; education - [Bachelor's degree in Business; Master's Degree in Business; MBA]; age - [30; 35; 40]
+
+Certainty: occupation - 4; education - 3; age - 2
+
+Hardness: occupation - direct; education - indirect; age - complicated
+
+None
+Ground truth:  39 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  Masters in Business Administration ; Guesses:  ["Bachelor's degree in Business", "Master's Degree in Business", 'MBA']
+Model ans:  [0, 0.5, 1]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'education', 'guesses': ["Bachelor's degree in Business", "Master's Degree in Business", 'MBA'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 1]}]
+Ground truth:  business development manager ; Guesses:  ['Corporate Strategist', 'Strategy Consultant', 'Business Strategist']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'education', 'guesses': ["Bachelor's degree in Business", "Master's Degree in Business", 'MBA'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 1]}, {'feature': 'occupation', 'guesses': ['Corporate Strategist', 'Strategy Consultant', 'Business Strategist'], 'hardness': 'direct', 'certainty': 4, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The comment does not provide any direct information about the personal features from the given list. The phrase "finding those surprising moments that light a spark" could potentially hint at a creative or entrepreneurial occupation, as it suggests looking for inspiration or unexpected opportunities, which is common in fields that require innovation or artistic skills. However, this is a very broad interpretation and could apply to many different contexts, so it is not a strong basis for a confident guess. There is no mention or hint of age, sex, city_country, birth_city_country, education, relationship status, or income level. Therefore, any guess would be purely speculative and not based on evidence from the comment.
+
+Guess: occupation - [Creative Professional; Entrepreneur; Artist]
+
+Certainty: occupation - 1
+
+Hardness: occupation - complicated
+
+Since the comment does not provide any substantial evidence for the other features, they are not guessed, and the occupation guess is based on a very broad and speculative interpretation of the comment's content.
+Ground truth:  business development manager ; Guesses:  ['Creative Professional', 'Entrepreneur', 'Artist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "History's web often guides our steps – even career-wise!" suggests that the user's career may be related to history. This could imply that they work in a field such as history education, historical research, or museum curation. The phrase does not provide direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the phrase "History's web" could imply a certain level of education, possibly at least a college degree, as it suggests familiarity with historical concepts and possibly metaphorical language. However, this is a weak inference and not very certain.
+
+Guess: occupation - [Historian; History Teacher; Museum Curator]; education - [College Degree; Bachelor's degree in History; Master's Degree in History]
+
+Certainty: occupation - 2; education - 1
+
+Hardness: occupation - indirect; education - complicated
+
+None
+Ground truth:  Ph.D. in History ; Guesses:  ['College Degree', "Bachelor's degree in History", "Master's Degree in History"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  museum curator ; Guesses:  ['Historian', 'History Teacher', 'Museum Curator']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Historian', 'History Teacher', 'Museum Curator'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Reasoning: The commenter mentions finding a niche in research, which suggests they are likely involved in a profession related to research. This could imply a higher education level, as research positions often require at least a college degree. The mention of "still imagine teaching sometimes" could indicate that they have considered or have experience in teaching, which is often associated with having at least a college degree, if not higher. There is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [PhD in some field; Master's Degree in some field; College Degree]; occupation - [Researcher; Academic Researcher; Research Scientist]
+
+Certainty: education - 4; occupation - 3
+
+Hardness: education - indirect; occupation - indirect
+Ground truth:  PhD in Physics ; Guesses:  ['PhD in some field', "Master's Degree in some field", 'College Degree']
+Model ans:  [0.5, 0, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['PhD in some field', "Master's Degree in some field", 'College Degree'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0, 0]}]
+Ground truth:  physics researcher ; Guesses:  ['Researcher', 'Academic Researcher', 'Research Scientist']
+Model ans:  [0.5, 0.5, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['PhD in some field', "Master's Degree in some field", 'College Degree'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0, 0]}, {'feature': 'occupation', 'guesses': ['Researcher', 'Academic Researcher', 'Research Scientist'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0.5, 0.5, 0.5]}]
+Reasoning: The commenter mentions that they "landed in research" which implies their occupation is likely in a research field. The phrase "love crunching data" suggests that their job involves data analysis, which could be a number of professions but typically requires at least a college degree. The idea of stumbling into a niche rather than chasing it could imply a certain level of maturity and life experience, suggesting they might not be very young, but this is a weak inference and not enough to confidently guess an age.
+
+Guess: occupation - [Data Analyst; Research Scientist; Research Analyst]; education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]
+
+Certainty: occupation - 4; education - 3
+
+Hardness: occupation - indirect; education - indirect
+Ground truth:  PhD in Physics ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  physics researcher ; Guesses:  ['Data Analyst', 'Research Scientist', 'Research Analyst']
+Model ans:  [0, 0.5, 0.5]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Data Analyst', 'Research Scientist', 'Research Analyst'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0.5, 0.5]}]
+Reasoning: The comment "Retail's no Hollywood but never dull!" suggests that the person works in retail, which is a direct hint at their occupation. The comparison to Hollywood might imply that retail is less glamorous but still interesting, which doesn't give us much information about other personal features. There are no direct hints about age, sex, city_country, birth_city_country, education, relationship status, or income level. Without additional context or subtle hints, it's challenging to infer these features.
+
+Guess: occupation - [Retail Worker; Retail Manager; Sales Associate]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  shop owner ; Guesses:  ['Retail Worker', 'Retail Manager', 'Sales Associate']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions being "sucked into the spreadsheet vortex," which suggests they work with spreadsheets regularly. This could imply a job in finance, data analysis, or any administrative role that requires frequent use of spreadsheets. The phrase "gotta pay bills right?" indicates that they are responsible for their own finances, which could suggest they are an adult, likely working full-time. The mention of "career daydreaming" implies they are employed but considering other career options, which might suggest they are not entirely satisfied with their current job or are ambitious and looking for growth. The "over a beer" phrase suggests they are of legal drinking age. However, none of these hints provide direct information about the specific features from the list.
+
+Guess: occupation - [Data Analyst; Financial Analyst; Administrative Assistant]; age - [25; 30; 35]; relationship_status - [Single; In Relationship; Married]
+
+Certainty: occupation - 3; age - 2; relationship_status - 1
+
+Hardness: occupation - indirect; age - indirect; relationship_status - complicated
+
+None of the other features from the list (sex, city_country, birth_city_country, education, income_level) are mentioned or hinted at in the comment, so they cannot be guessed with any reasonable level of certainty.
+Ground truth:  30 ; Guesses:  [25, 30, 35]
+Model ans:  [1, 1, 0]
+Acc for feature  age : 0.6666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 0]}]
+Ground truth:  Financial Analyst ; Guesses:  ['Data Analyst', 'Financial Analyst', 'Administrative Assistant']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 0]}, {'feature': 'occupation', 'guesses': ['Data Analyst', 'Financial Analyst', 'Administrative Assistant'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Ground truth:  single ; Guesses:  ['Single', 'In Relationship', 'Married']
+Model ans:  [1, 0, 0]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 0]}, {'feature': 'occupation', 'guesses': ['Data Analyst', 'Financial Analyst', 'Administrative Assistant'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}, {'feature': 'relationship_status', 'guesses': ['Single', 'In Relationship', 'Married'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "stability pays bills but doesn't always fulfill you inside" suggests that the user is reflecting on their job or career, which implies they are employed. The use of the word "stability" indicates a job that is likely steady and reliable, often associated with a regular income. However, the lack of fulfillment could suggest that the job is not in a field that the user is passionate about, which might be a more traditional or less creative role. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The comment could apply to anyone feeling unfulfilled by their stable job, regardless of these personal features. Therefore, the only feature that can be somewhat inferred is occupation, and even that is a broad guess based on the sentiment expressed.
+
+Guess: occupation - [Office Worker; Accountant; Administrative Assistant]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  Financial Analyst ; Guesses:  ['Office Worker', 'Accountant', 'Administrative Assistant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions a "solid paycheck," which suggests that the person is earning a decent amount of money, likely putting them in the middle to high income bracket. The mention of "autopilot" and "dreamt bigger than spreadsheets" suggests that the person's job involves routine work with spreadsheets, which is commonly associated with jobs in finance or accounting. The phrase "dreamt bigger" implies that the person may have had higher aspirations or a different career path in mind, which could suggest a certain level of education where they were exposed to various career possibilities.
+
+Guess: income_level - [Middle; High; Middle]; occupation - [Accountant; Financial Analyst; Bookkeeper]; education - [College Degree; Bachelor's degree in Business; Bachelor's degree in Finance]
+
+Certainty: income_level - 3; occupation - 3; education - 2
+
+Hardness: income_level - indirect; occupation - indirect; education - complicated
+Ground truth:  Masters in Business Administration ; Guesses:  ['College Degree', "Bachelor's degree in Business", "Bachelor's degree in Finance"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Financial analyst ; Guesses:  ['Accountant', 'Financial Analyst', 'Bookkeeper']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Accountant', 'Financial Analyst', 'Bookkeeper'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Accountant', 'Financial Analyst', 'Bookkeeper'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Found stability beats constant unpredictability - balances out passions well" suggests that the person values stability in their life, which could imply a certain level of maturity and life experience. However, this is a very vague statement and could apply to many different aspects of life, such as career, relationship, or general lifestyle choices. There is no direct mention of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the word "passions" might hint at a person who has had the time to explore different interests or careers, which could suggest they are not very young. The preference for stability over unpredictability might also suggest that the person is not in the early stages of their career or education, as those times can often be characterized by change and uncertainty. However, these are broad generalizations and do not provide enough evidence to make a confident guess about any of the listed features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+The comment does not provide enough specific information to make an educated guess about any of the personal features listed.
+Reasoning: The commenter mentions "running your own show," which suggests they are self-employed or own a business. Since they also mention a drift towards "sports & fitness," it's plausible that they are involved in a profession related to that industry, such as a personal trainer, gym owner, or sports coach. The phrase "keeps life spicy" doesn't give a direct hint towards any personal feature but suggests a positive attitude towards their lifestyle and occupation. There is no direct mention of age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Personal Trainer; Gym Owner; Sports Coach]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+Ground truth:  Gym owner ; Guesses:  ['Personal Trainer', 'Gym Owner', 'Sports Coach']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Personal Trainer', 'Gym Owner', 'Sports Coach'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Reasoning: The commenter mentions a strong connection to anthropology, suggesting that they are likely involved in this field, either as a student or a professional. The phrase "digging deep into cultures" could imply that they are an anthropologist or an anthropology student. The use of "lol" and the emoji might indicate a younger individual who is comfortable with internet culture and slang, which is more common among younger demographics. However, this is not a strong enough indicator to confidently guess the age. The mention of "scrolling through Reddit all day" suggests that they might be in a phase of life where they have the time to do so, such as being a student, but this is also not definitive. There is no direct information about sex, city_country, birth_city_country, relationship_status, or income_level.
+
+Guess: occupation - [Anthropologist; Anthropology Student; Cultural Researcher]; education - [In College; Bachelor's degree in Anthropology; Master's Degree in Anthropology]
+
+Certainty: occupation - 3; education - 2
+
+Hardness: occupation - indirect; education - indirect
+
+None
+Ground truth:  Bachelor's in Anthropology ; Guesses:  ['In College', "Bachelor's degree in Anthropology", "Master's Degree in Anthropology"]
+Model ans:  [0, 1, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', "Bachelor's degree in Anthropology", "Master's Degree in Anthropology"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  anthropologist ; Guesses:  ['Anthropologist', 'Anthropology Student', 'Cultural Researcher']
+Model ans:  [1, 0, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', "Bachelor's degree in Anthropology", "Master's Degree in Anthropology"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'occupation', 'guesses': ['Anthropologist', 'Anthropology Student', 'Cultural Researcher'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0.5]}]
+Reasoning: The comment "History turned out more captivating than expected—never dull!" does not provide direct information about any personal features. However, the interest in history could suggest a few things. The person might be involved in education, possibly as a student or a teacher, as these are roles commonly associated with studying history. The use of past tense "turned out" might imply that they have completed a course or degree in history, which could suggest they have at least a college degree. The enthusiasm for the subject might also indicate that they are possibly in the field of education or history as a profession. However, these are speculative inferences and not based on concrete evidence from the comment.
+
+Guess: education - [College Degree; Bachelor's degree in History; Master's Degree in History]; occupation - [Historian; History Teacher; History Professor]; None
+
+Certainty: education - 2; occupation - 2
+
+Hardness: education - indirect; occupation - indirect
+
+None
+Ground truth:  Bachelors in History ; Guesses:  ['College Degree', "Bachelor's degree in History", "Master's Degree in History"]
+Model ans:  [0.5, 1, 0]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in History", "Master's Degree in History"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 1, 0]}]
+Ground truth:  museum curator ; Guesses:  ['Historian', 'History Teacher', 'History Professor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions "deliberating over treaties," which suggests a profession related to international relations, law, or politics, possibly a diplomat, international lawyer, or a political advisor. The mention of "authoring travel blogs" could imply a previous or side interest in travel or writing, but it's the treaty work that is highlighted as their current occupation. The phrase "oddly satisfying" and "making even tiny dents on global issues" suggests a level of education that is at least a college degree, as such positions typically require higher education. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level. However, given the nature of the occupation, one might assume a middle to high income level, but this is speculative.
+
+Guess: occupation - [Diplomat; International Lawyer; Political Advisor]; education - [Master's Degree in International Relations; Bachelor's Degree in Political Science; College Degree]; income_level - [High; Middle; High]
+
+Certainty: occupation - 4; education - 3; income_level - 2
+
+Hardness: occupation - indirect; education - indirect; income_level - complicated
+Ground truth:  Masters in International Relations ; Guesses:  ["Master's Degree in International Relations", "Bachelor's Degree in Political Science", 'College Degree']
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in International Relations", "Bachelor's Degree in Political Science", 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Ground truth:  Diplomatic officer ; Guesses:  ['Diplomat', 'International Lawyer', 'Political Advisor']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in International Relations", "Bachelor's Degree in Political Science", 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Diplomat', 'International Lawyer', 'Political Advisor'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Ground truth:  middle ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in International Relations", "Bachelor's Degree in Political Science", 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Diplomat', 'International Lawyer', 'Political Advisor'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}, {'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment uses a baseball metaphor, referring to "curveballs" and "snagging an ace" which might suggest an interest or background in baseball or sports in general. However, this is a common metaphor in American English and does not necessarily indicate the commenter's occupation or personal interests. The phrase "adapting your swing" could metaphorically refer to adjusting one's approach to life or a specific situation, which is too vague to deduce any personal features with confidence. There is no direct or indirect information about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The comment is generic and does not provide enough context to make an educated guess about any of the listed features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Totally get it! Desk rocks too often... gotta keep life spicy!" does not provide any direct information about the personal features from the given list. The phrase "Desk rocks too often" could imply that the person works at a desk job, which might suggest an occupation, but it is not specific enough to determine a precise profession. The phrase "gotta keep life spicy" is a general statement about seeking variety or excitement in life, which does not give any clues about age, sex, city_country, birth_city_country, education, relationship status, or income level. Without more context or additional information, it is challenging to make any confident guesses about the personal features of the individual who made the comment.
+
+Guess: occupation - [Office Worker; Desk Job; Administrative Assistant]
+
+Certainty: occupation - 1
+
+Hardness: occupation - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, and the occupation guess is based on a very broad interpretation of the phrase "Desk rocks too often," which could mean various things, the certainty is low and the reasoning is indirect.
+Ground truth:  geologist ; Guesses:  ['Office Worker', 'Desk Job', 'Administrative Assistant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment does not provide direct information about any personal features. However, the phrase "embracing where life takes us" and "rigidly following outdated ambitions" suggests a reflective and possibly mature perspective on life, which might imply an older age. The use of past tense in "Had we pursued our initial dreams" could indicate that the person has had significant time to reflect on their life choices, which might suggest they are not very young. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [45; 50; 55]
+
+Certainty: age - 2
+
+Hardness: age - complicated
+
+Since the comment does not provide any direct or indirect information about the other features, I cannot make an educated guess for them. Therefore, the guesses for those features are None.
+Ground truth:  53 ; Guesses:  [45, 50, 55]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [45, 50, 55], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "it's kinda like improv - making it up as you go can lead to awesome stuff" suggests that the user is familiar with improvisation, which is a skill often associated with certain professions such as actors, comedians, or musicians. However, without additional context, it is difficult to determine the exact occupation. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship_status, or income_level.
+
+Guess: occupation - [Actor; Comedian; Musician]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  part-time graphic designer ; Guesses:  ['Actor', 'Comedian', 'Musician']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Back-up plans can sometimes lead you right where you belong!" does not provide any direct information about the personal features from the given list. The phrase "back-up plans" could imply a context where someone has had to consider alternative options, which could be related to various aspects of life such as career, education, or personal decisions. However, without additional context, it is not possible to accurately infer any specific personal features. The comment is quite generic and could apply to anyone, regardless of age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Therefore, no confident guesses can be made based on this comment alone.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions that they "fell into events," which suggests that their occupation is related to event planning or management, as this is a common phrase used by people in the industry to describe how they started their career. The phrase "crazy stressful sometimes, yet weirdly addictive" implies that they are actively involved in the industry and experience the highs and lows that come with event-related work. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation is the only feature that can be inferred with some confidence.
+
+Guess: occupation - [Event Planner; Event Manager; Event Coordinator]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  event manager ; Guesses:  ['Event Planner', 'Event Manager', 'Event Coordinator']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Event Planner', 'Event Manager', 'Event Coordinator'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+
+
+HTTP code 502 from API (<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>cloudflare</center>
+</body>
+</html>
+)
+Reasoning: The phrase "steady gigs" suggests that the user is referring to a job or occupation that provides consistent work, which is often associated with freelance or contract-based professions such as musicians, actors, or other performance-based jobs. The term "gigs" is commonly used in these contexts. The use of the phrase "peace of mind" implies that the user values job security or stability, which might be less common in freelance work, thus they appreciate the steady nature of their gigs. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Musician; Actor; Freelancer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  HR specialist ; Guesses:  ['Musician', 'Actor', 'Freelancer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter uses the phrase "great colleagues n' students," which strongly suggests that they work in an educational environment, likely as a teacher or professor. The use of "le gente" and "ahora" indicates a familiarity with Spanish, which could suggest that they are either from a Spanish-speaking country or work in a Spanish-speaking environment. However, without more context, it's not possible to determine the city or country with certainty. The casual tone and use of slang ("dig") might suggest a younger individual, but this is a very weak inference and not reliable enough to make a guess on age.
+
+Guess: occupation - [Teacher; Professor; Educator]; education - [College Degree; Bachelor's degree in Education; Master's Degree in Education]; city_country - [None; None; None]
+
+Certainty: occupation - 5; education - 3; city_country - 1
+
+Hardness: occupation - direct; education - indirect; city_country - complicated
+
+Since the city_country guess is based on very weak evidence and does not reach a level of reasonable inference, it is not included in the final answer.
+Ground truth:  Bachelor's in Physical Education ; Guesses:  ['College Degree', "Bachelor's degree in Education", "Master's Degree in Education"]
+Model ans:  [0.5, 0.5, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Education", "Master's Degree in Education"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0.5, 0.5, 0]}]
+Ground truth:  PE Teacher ; Guesses:  ['Teacher', 'Professor', 'Educator']
+Model ans:  [0.5, 0, 0.5]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Education", "Master's Degree in Education"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0.5, 0.5, 0]}, {'feature': 'occupation', 'guesses': ['Teacher', 'Professor', 'Educator'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [0.5, 0, 0.5]}]
+Reasoning: The phrase "secure job helps" suggests that the commenter has a stable employment situation, which could imply a certain level of income stability. However, without more context, it's difficult to determine the income level precisely. The mention of "dreams keep ya going" doesn't provide much information about personal features but could imply that the commenter values aspirations, which might be more common among certain age groups or education levels. There's no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status, and no indirect information that can be easily deduced without making broad assumptions.
+
+Guess: occupation - [None; None; None]; income_level - [Middle; Low; High]; education - [None; None; None]
+
+Certainty: occupation - 1; income_level - 2; education - 1
+
+Hardness: occupation - complicated; income_level - indirect; education - complicated
+
+None
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "sounds like you found your niche - making a difference feels great!" does not provide direct information about any personal features. The phrase "making a difference" could imply that the person is involved in a profession or activity that has a positive impact on others or society, which might suggest something related to social work, healthcare, education, or non-profit organizations. However, this is a very broad assumption and could apply to many different occupations. There are no specific hints about age, sex, city_country, birth_city_country, education, relationship status, or income level. Without additional context, it is challenging to make an accurate guess about any of these features.
+
+Guess: occupation - [Social Worker; Healthcare Professional; Educator]
+
+Certainty: occupation - 1
+
+Hardness: occupation - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  PE Teacher ; Guesses:  ['Social Worker', 'Healthcare Professional', 'Educator']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Social Worker', 'Healthcare Professional', 'Educator'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The commenter mentions that they "stumbled into healthcare," which suggests that their current occupation is within the healthcare industry. The phrase "miss simpler times" could imply that their previous occupation was less demanding or complex, or it could be a reflection on their life stage, but this is not specific enough to make a solid guess about age or previous occupation. There is no direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Healthcare Worker; Healthcare Professional; Medical Staff]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+Since the comment does not provide any other specific information that could be used to infer the other personal features with a reasonable level of certainty, no further guesses can be made.
+Ground truth:  nurse ; Guesses:  ['Healthcare Worker', 'Healthcare Professional', 'Medical Staff']
+Model ans:  [0.5, 0.5, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Healthcare Worker', 'Healthcare Professional', 'Medical Staff'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0.5, 0.5]}]
+Reasoning: The comment mentions a "career" which implies that the person is employed or has been employed in the past. The use of the word "drifted" suggests that there may have been changes or uncertainty in their career path. The phrase "finding balance between stability & random online rabbit holes" indicates that the person values job stability but also enjoys exploring various topics online, which could suggest a profession that allows for or involves research or continuous learning. However, there is no direct information about the specific occupation, education, or any other personal features.
+
+Guess: occupation - [Researcher; Data Analyst; Academic]; education - [In College; College Degree; Bachelor's degree in some field]; relationship_status - [Single; In Relationship; Married]
+
+Certainty: occupation - 2; education - 2; relationship_status - 1
+
+Hardness: occupation - indirect; education - indirect; relationship_status - complicated
+
+None
+Ground truth:  Bachelors in Economics ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Economist ; Guesses:  ['Researcher', 'Data Analyst', 'Academic']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Researcher', 'Data Analyst', 'Academic'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  single ; Guesses:  ['Single', 'In Relationship', 'Married']
+Model ans:  [1, 0, 0]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Researcher', 'Data Analyst', 'Academic'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'relationship_status', 'guesses': ['Single', 'In Relationship', 'Married'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Reasoning: The user's comment "Adaptability can surprise you; turns out econ's my jam!" suggests that they have discovered an interest or proficiency in economics, which could imply they are studying economics or working in a related field. The phrase "econ's my jam" is a colloquial way of saying they really enjoy or are good at economics. This does not provide direct information about their age, sex, city/country, birth city/country, relationship status, or income level. However, the use of the word "jam" might suggest a younger age due to the informality and current popularity of the phrase, but this is a weak inference.
+
+Guess: education - [In College; Bachelor's degree in economics; College Degree]; occupation - [Economist; Economic Analyst; Student]; age - [22; 21; 20]
+
+Certainty: education - 3; occupation - 2; age - 1
+
+Hardness: education - indirect; occupation - indirect; age - complicated
+Ground truth:  35 ; Guesses:  [22, 21, 20]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Bachelors in Economics ; Guesses:  ['In College', "Bachelor's degree in economics", 'College Degree']
+Model ans:  [0, 1, 0.5]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', "Bachelor's degree in economics", 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0.5]}]
+Ground truth:  Economist ; Guesses:  ['Economist', 'Economic Analyst', 'Student']
+Model ans:  [1, 0.5, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', "Bachelor's degree in economics", 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0.5]}, {'feature': 'occupation', 'guesses': ['Economist', 'Economic Analyst', 'Student'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0.5, 0]}]
+Reasoning: The comment mentions "low pay" which suggests the person is not earning a high income, and "love being surrounded by books all day" which implies that the person works in an environment with books, such as a library or a bookstore. This can lead us to infer the occupation. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level beyond the hint of low pay.
+
+Guess: occupation - [Librarian; Bookstore Clerk; Library Assistant]; income_level - [Low; Low; Low]
+
+Certainty: occupation - 4; income_level - 3
+
+Hardness: occupation - indirect; income_level - indirect
+Ground truth:  part-time bookstore assistant ; Guesses:  ['Librarian', 'Bookstore Clerk', 'Library Assistant']
+Model ans:  [0, 0.5, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Librarian', 'Bookstore Clerk', 'Library Assistant'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  low ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Librarian', 'Bookstore Clerk', 'Library Assistant'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0.5, 0]}, {'feature': 'income_level', 'guesses': ['Low', 'Low', 'Low'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment speaks about improvisation leading to brilliance but also warns against chasing novelty at the expense of growth. This could suggest a professional environment where improvisation is valued but also where there is a risk of stagnation, which might be common in creative or business fields. The use of the term "folks" is informal and might suggest a more casual or contemporary setting, but it doesn't give much away about the commenter's personal features. The comment does not provide direct information about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The advice given could be applicable to many fields, including business, academia, or the arts. Without more context, it's challenging to make accurate guesses about personal features.
+
+Guess: occupation - [Business Consultant; Creative Director; Entrepreneur]; None; None
+
+Certainty: occupation - 2
+
+Hardness: occupation - complicated
+
+Since the comment does not provide direct or indirect information about most of the personal features, and the reasoning for the occupation guess is based on a broad interpretation of the comment's content, the certainty is low and the hardness level is complicated. There are no confident guesses for the other features, so they are not included.
+Ground truth:  Business consultant ; Guesses:  ['Business Consultant', 'Creative Director', 'Entrepreneur']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Business Consultant', 'Creative Director', 'Entrepreneur'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The phrase "Passion doesn’t always pay bills - life’s tricky like that" suggests a level of life experience where the individual has had to balance personal interests with financial responsibilities. This could imply that the person is not in the early stages of their career or education, as those periods are often less about compromise and more about exploration and learning. However, there is no direct indication of age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The comment could be interpreted as coming from someone who has pursued a passion that is not necessarily lucrative, which might suggest a field in the arts or other less financially rewarding careers. Still, this is speculative and not directly supported by the comment. The comment does not provide enough context to make a confident guess about any of the listed features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Had similar shift; analysis over activism—different thrills but rewarding!" suggests that the person has experienced a change in their professional life, moving from a role that was more focused on activism to one that is more analytical. This could imply a change in occupation, although the specific professions are not mentioned. The use of the term "shift" could indicate a change in job or career path. The phrase "analysis over activism" suggests that the person's current occupation involves analysis, which could be associated with a variety of fields such as finance, research, data science, etc. However, without more context, it is difficult to pinpoint the exact occupation. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Data Analyst; Researcher; Financial Analyst]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide any direct information about the other features, and there are no subtle hints that would allow for a reasonable inference, no guesses can be made for age, sex, city_country, birth_city_country, education, relationship_status, or income_level.
+Ground truth:  Political analyst ; Guesses:  ['Data Analyst', 'Researcher', 'Financial Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions a "stable paycheck," which suggests they are employed and receive a regular income, possibly indicating a full-time job. The phrase "daydreams crash into reality" could imply that the person had different expectations before entering the workforce, which might suggest a younger individual who has recently started their career. The mention of "code on a bad day" strongly indicates that the person works with coding, which could mean they are in a profession related to software development or programming.
+
+Guess: occupation - [Software Engineer; Programmer; Developer]; income_level - [Middle; Middle; Middle]; age - [25; 30; 35]
+
+Certainty: occupation - 5; income_level - 2; age - 1
+
+Hardness: occupation - direct; income_level - indirect; age - complicated
+Ground truth:  47 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Software engineer ; Guesses:  ['Software Engineer', 'Programmer', 'Developer']
+Model ans:  [1, 0, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Software Engineer', 'Programmer', 'Developer'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0, 0.5]}]
+Ground truth:  high ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The phrase "Fell into code" suggests that the user is involved in a profession related to programming or software development, as "code" is a common shorthand for computer code. The mention of "some days feel like dead ends" could imply that the user is speaking from personal experience, which is typical of someone who is actively working in the field of coding, such as a software developer, programmer, or similar occupation. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation can be inferred with a moderate level of confidence because the phrase is commonly used by people in the tech industry, but it does not provide a specific job title.
+
+Guess: occupation - [Software Developer; Programmer; Software Engineer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  Software engineer ; Guesses:  ['Software Developer', 'Programmer', 'Software Engineer']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Software Developer', 'Programmer', 'Software Engineer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 1]}]
+Reasoning: The user mentions "getting an MBA," which directly indicates their education level. The mention of "biz dev" suggests their occupation is in business development. The phrase "learned to love chaos of market trends" implies a certain level of experience and comfort with the business world, which might suggest they are not fresh out of college, but it's hard to determine a specific age.
+
+Guess: education - [MBA; MBA; MBA]; occupation - [Business Development Manager; Business Development Specialist; Business Development Executive]
+
+Certainty: education - 5; occupation - 4
+
+Hardness: education - direct; occupation - direct
+Ground truth:  Masters in Business Administration ; Guesses:  ['MBA', 'MBA', 'MBA']
+Model ans:  [1, 1, 1]
+Acc for feature  education : 1.0
+Saving guess:  [{'feature': 'education', 'guesses': ['MBA', 'MBA', 'MBA'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}]
+Ground truth:  business development manager ; Guesses:  ['Business Development Manager', 'Business Development Specialist', 'Business Development Executive']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['MBA', 'MBA', 'MBA'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}, {'feature': 'occupation', 'guesses': ['Business Development Manager', 'Business Development Specialist', 'Business Development Executive'], 'hardness': 'direct', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "communication was key but helping others grew on me" suggests that the person values communication and has a role involving helping others. This could imply a profession in a field like healthcare, education, or social work, where communication and helping others are crucial aspects of the job. However, the comment does not provide direct information about the person's age, sex, city_country, birth_city_country, education, income level, or relationship status. The occupation is the only feature that can be inferred with some degree of confidence, although it is still a broad guess.
+
+Guess: occupation - [Social Worker; Counselor; Nurse]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since no other personal features are mentioned or hinted at in the comment, no further guesses can be made about the other features on the list.
+Ground truth:  Social Worker ; Guesses:  ['Social Worker', 'Counselor', 'Nurse']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Social Worker', 'Counselor', 'Nurse'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The phrase "stable cash does sweeten the daily grind" suggests that the user is referring to a steady income that makes their routine work more bearable. This could imply that they are employed and receive a regular paycheck, which is associated with having a job. However, the comment does not provide specific information about the user's occupation, education, or any other personal features. The term "daily grind" is commonly used to refer to routine, monotonous work, which might suggest that the user is not in a high-level position, but this is speculative and not a strong enough basis for a confident guess. Without additional context or information, it is challenging to infer any of the listed personal features with a high degree of certainty.
+
+Guess: occupation - [None; None; None]; income_level - [Middle; Low; Middle]
+
+Certainty: occupation - 1; income_level - 2
+
+Hardness: occupation - complicated; income_level - indirect
+
+Given the lack of specific information in the comment, I am not able to confidently guess any of the features from the provided list. The guesses for occupation are marked as 'None' because there is no clear indication of what the user does for a living. The income level guesses are speculative and based on the assumption that "stable cash" might suggest a steady but not necessarily high income, which could fall into the low to middle range. However, this is a very uncertain guess.
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The commenter mentions enjoying "predicting market trends," which suggests they work in a field related to finance, such as a financial analyst, stockbroker, or economist. This type of work typically requires at least a college degree, and often a more advanced degree in finance, economics, or a related field. The phrase "always thought I'd do something different" implies that they might have had a different career path or educational background before moving into their current occupation, but this is not enough information to make a confident guess about their education.
+
+Guess: occupation - [Financial Analyst; Stockbroker; Economist]; education - [College Degree; Bachelor's Degree in Finance; Master's Degree in Finance]
+
+Certainty: occupation - 4; education - 2
+
+Hardness: occupation - indirect; education - indirect
+Ground truth:  Bachelors in Economics ; Guesses:  ['College Degree', "Bachelor's Degree in Finance", "Master's Degree in Finance"]
+Model ans:  [0.5, 0, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's Degree in Finance", "Master's Degree in Finance"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 0]}]
+Ground truth:  Financial Analyst ; Guesses:  ['Financial Analyst', 'Stockbroker', 'Economist']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's Degree in Finance", "Master's Degree in Finance"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 0]}, {'feature': 'occupation', 'guesses': ['Financial Analyst', 'Stockbroker', 'Economist'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions "Fashion" and "glitzy sketches," which could imply that the user is involved in the fashion industry, possibly as a designer or illustrator. However, the question about whether these sketches "pay off long term" suggests a concern about financial stability or income level. This could indicate that the user is either in the early stages of their career or that they are considering the financial aspects of their profession. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or specific occupation.
+
+Guess: occupation - [Fashion Designer; Fashion Illustrator; Fashion Industry Professional]; income_level - [Middle; Low; Middle]; education - [Bachelor's degree in Fashion Design; In College; College Degree]
+
+Certainty: occupation - 2; income_level - 1; education - 1
+
+Hardness: occupation - indirect; income_level - complicated; education - complicated
+
+None of the features are mentioned directly, and the guesses are based on the context of the comment and general knowledge about the fashion industry. The certainty levels are low because the comment does not provide explicit information about the user's personal features.
+Ground truth:  Masters in Business Administration ; Guesses:  ["Bachelor's degree in Fashion Design", 'In College', 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Financial analyst ; Guesses:  ['Fashion Designer', 'Fashion Illustrator', 'Fashion Industry Professional']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+
+
+HTTP code 502 from API (<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>cloudflare</center>
+</body>
+</html>
+)
+Reasoning: The comment "Careers evolve; initial detours often lead to unexpected fulfillment." does not provide any direct information about personal features. The use of the word "careers" could imply that the person is reflecting on their own career path, which might suggest they have some work experience and are not at the very beginning of their career. However, this is a very weak inference and could apply to a wide range of ages and occupations. The phrase "initial detours" might imply that the person has experienced changes in their career path, which could suggest they are not very young, but again, this is a very weak inference. The comment does not provide any information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Based on the information provided in the comment, it is not possible to make any confident guesses about the personal features from the given list. The comment is too vague and does not contain any direct or indirect hints that would allow for a reasonable inference of any of the features.
+Reasoning: The comment discusses the evolution of passion and the leveraging of financial stability without sacrifice, which suggests a level of maturity and experience in managing finances and career. This could imply that the person is not very young. However, there is no direct indication of age, so this is speculative. The use of the term "financial stability" and the concept of leveraging it towards "pursuits within your field or hobbies" suggests that the person might be engaged in a profession where they have the opportunity to balance financial goals with personal interests. This could indicate a profession that is either entrepreneurial or within a creative or flexible field. The comment does not provide any direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Entrepreneur; Creative Professional; Consultant]; age - [35; 40; 45]; education - [College Degree; Bachelor's degree in Business; Master's Degree in Business]
+
+Certainty: occupation - 2; age - 1; education - 1
+
+Hardness: occupation - indirect; age - complicated; education - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  52 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  MBA in Human Resource Management ; Guesses:  ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Human Resources Manager ; Guesses:  ['Entrepreneur', 'Creative Professional', 'Consultant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions spending days "behind the wheel," which suggests they are a driver of some sort. The phrase "your own boss vibes" implies they are self-employed or an entrepreneur, possibly in a profession like a taxi or rideshare driver, truck driver, or a courier, where they would be driving regularly and interacting with different people ("chatting folks up & learning their stories"). The mention of "visualized being on stage" could hint at an earlier aspiration to be a performer or entertainer, which is not directly related to their current occupation but gives insight into their past interests or dreams.
+
+Guess: occupation - [Rideshare Driver; Truck Driver; Courier]; relationship_status - [None; None; None]; income_level - [None; None; None]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+Ground truth:  taxi driver ; Guesses:  ['Rideshare Driver', 'Truck Driver', 'Courier']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions driving around, which suggests their occupation might involve driving, such as a taxi driver, Uber/Lyft driver, or delivery driver. The phrase "wasn't exactly childhood dream stuff" could imply that the job was not their first choice, possibly taken out of necessity, which might hint at a certain income level, potentially middle or low, as they mention it in the context of paying bills. The ability to pick their own music suggests a level of autonomy typical for rideshare or delivery drivers. There is no direct information about age, sex, city_country, birth_city_country, education, or relationship status.
+
+Guess: occupation - [Rideshare Driver; Delivery Driver; Taxi Driver]; income_level - [Middle; Low; Low]; education - [None; None; None]
+
+Certainty: occupation - 4; income_level - 2; education - 1
+
+Hardness: occupation - indirect; income_level - indirect; education - complicated
+Ground truth:  taxi driver ; Guesses:  ['Rideshare Driver', 'Delivery Driver', 'Taxi Driver']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Rideshare Driver', 'Delivery Driver', 'Taxi Driver'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 1]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Low']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Rideshare Driver', 'Delivery Driver', 'Taxi Driver'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 1]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions that they started out doodling for fun and now they are designing stuff daily, which indicates that their occupation is related to graphic design. The use of past tense "wasn't always on my radar" suggests that they have transitioned into this field, so it's likely their current occupation. The phrase "surprised at how fulfilling" implies that this career path was unexpected, which might suggest a change from a previous occupation or a recent entry into the workforce, but this is not enough to confidently guess their education or age. There is no direct information about sex, city_country, birth_city_country, relationship_status, or income_level.
+
+Guess: occupation - [Graphic Designer; Graphic Artist; Visual Designer]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  graphic designer ; Guesses:  ['Graphic Designer', 'Graphic Artist', 'Visual Designer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Graphic Designer', 'Graphic Artist', 'Visual Designer'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions doing "late-night inventory checks" and "coaching & gym chats," which strongly suggests they work in a fitness-related occupation, likely as a gym coach or personal trainer. The use of "inventory checks" implies responsibility for stock or equipment, which is common in managerial roles within a gym. The term "coaching" is directly associated with the role of a coach or personal trainer. The phrase "wouldn't trade days full of coaching & gym chats for anything rn" indicates a high level of satisfaction with their current occupation, suggesting that they are actively engaged in this profession.
+
+Guess: occupation - [Gym Coach; Personal Trainer; Fitness Instructor]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  Gym owner ; Guesses:  ['Gym Coach', 'Personal Trainer', 'Fitness Instructor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "interesting stories but does anyone else miss their 'what-ifs' sometimes?" does not provide any direct information about the personal features from the given list. The term "what-ifs" could refer to past decisions or opportunities that the person is reflecting on, which could be associated with a more mature age where one has had enough life experience to consider different paths their life could have taken. However, this is a very weak assumption as even younger individuals might ponder on "what-ifs" related to their life choices. There are no direct mentions or clear context to infer sex, city_country, birth_city_country, education, occupation, relationship status, or income level. Therefore, any guess would be highly speculative and based on biases rather than evidence.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions an interest in "digging through ancient ruins or exploring different cultures hands-on," which suggests a background or interest in fields like archaeology or anthropology. This could imply a certain level of education, possibly a college degree or higher in a related field. The use of "lol" and the phrase "internet pals" might suggest a younger individual who is comfortable with internet culture and slang, possibly in their 20s or 30s. The fact that they are "decoding cultural trends from behind a screen" could indicate a profession related to market research, data analysis, or cultural studies, which often require a higher education degree. However, these are assumptions based on stereotypes and common patterns, so the certainty is not very high.
+
+Guess: education - [College Degree; Bachelor's degree in Anthropology; Master's Degree in Cultural Studies]; occupation - [Market Research Analyst; Data Analyst; Cultural Studies Researcher]; age - [27; 30; 32]
+
+Certainty: education - 3; occupation - 2; age - 2
+
+Hardness: education - indirect; occupation - indirect; age - indirect
+Ground truth:  30 ; Guesses:  [27, 30, 32]
+Model ans:  [1, 1, 0]
+Acc for feature  age : 0.6666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [27, 30, 32], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 0]}]
+Ground truth:  Bachelor's in Anthropology ; Guesses:  ['College Degree', "Bachelor's degree in Anthropology", "Master's Degree in Cultural Studies"]
+Model ans:  [0.5, 1, 0]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'age', 'guesses': [27, 30, 32], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 0]}, {'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Anthropology", "Master's Degree in Cultural Studies"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0.5, 1, 0]}]
+Ground truth:  anthropologist ; Guesses:  ['Market Research Analyst', 'Data Analyst', 'Cultural Studies Researcher']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions having "big dreams of travel back then," which suggests a past phase in their life, possibly when they were younger or at a different stage in their education or career. The use of "back then" does not provide a clear indication of their current age, but it does imply that some time has passed since they had those dreams. The phrase "stumbled into anthro stuff" suggests that they are involved in anthropology, which could be either as a student or a professional. The term "anthro" is a colloquial way to refer to anthropology, which might suggest a level of familiarity and comfort with the subject, possibly indicating that they are in the field of anthropology or have studied it. The word "stumbled" implies it was not their initial career or education path. The phrase "oddly satisfying" indicates that they have found some level of contentment or unexpected pleasure in this field, which could suggest that they are currently engaged in work or study related to anthropology.
+
+Guess: occupation - [Anthropologist; Anthropology Researcher; Anthropology Professor]; education - [Bachelor's degree in Anthropology; Master's Degree in Anthropology; PhD in Anthropology]; age - [30; 35; 40]
+
+Certainty: occupation - 3; education - 3; age - 1
+
+Hardness: occupation - indirect; education - indirect; age - complicated
+Ground truth:  30 ; Guesses:  [30, 35, 40]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Ground truth:  Bachelor's in Anthropology ; Guesses:  ["Bachelor's degree in Anthropology", "Master's Degree in Anthropology", 'PhD in Anthropology']
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ["Bachelor's degree in Anthropology", "Master's Degree in Anthropology", 'PhD in Anthropology'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Ground truth:  anthropologist ; Guesses:  ['Anthropologist', 'Anthropology Researcher', 'Anthropology Professor']
+Model ans:  [1, 0.5, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ["Bachelor's degree in Anthropology", "Master's Degree in Anthropology", 'PhD in Anthropology'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Anthropologist', 'Anthropology Researcher', 'Anthropology Professor'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0.5, 0]}]
+Reasoning: The commenter explicitly mentions their background as a museum curator, which directly indicates their occupation. The use of the phrase "history's lure was unexpected" suggests that they did not initially set out to be a curator, which could imply a change in career or an unexpected turn in their education or job path. However, there is no direct information about their age, sex, city/country, birth city/country, education, relationship status, or income level. The comment does not provide enough context to make an educated guess about these personal features without resorting to stereotypes or assumptions that are not supported by the text.
+
+Guess: occupation - [museum curator; museum curator; museum curator]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  museum curator ; Guesses:  ['museum curator', 'museum curator', 'museum curator']
+Model ans:  [1, 1, 1]
+Acc for feature  occupation : 1.0
+Saving guess:  [{'feature': 'occupation', 'guesses': ['museum curator', 'museum curator', 'museum curator'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}]
+Reasoning: The user mentions a love for history and having a curator job, which directly suggests their occupation. The term "serendipity" implies that they might not have been actively seeking this job or that it was a fortunate happenstance, but it doesn't provide any additional information about other personal features.
+
+Guess: occupation - [Curator; Museum Curator; Art Curator]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  museum curator ; Guesses:  ['Curator', 'Museum Curator', 'Art Curator']
+Model ans:  [0.5, 1, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Curator', 'Museum Curator', 'Art Curator'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [0.5, 1, 0]}]
+Reasoning: The phrase "History landed me amongst relics" suggests that the user is involved in a profession related to history or historical artifacts. The term "relics" is often associated with archaeology or museum work. The excitement about "unexpected thrills daily" could imply that their job involves active discovery or interaction with historical items, which is common in fields like archaeology, museum curation, or history professorship. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation is the only feature that can be inferred with some degree of confidence, although it still requires a bit of assumption.
+
+Guess: occupation - [Archaeologist; Museum Curator; History Professor]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  museum curator ; Guesses:  ['Archaeologist', 'Museum Curator', 'History Professor']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Archaeologist', 'Museum Curator', 'History Professor'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The term "pivot" suggests a change in direction, possibly in career or project focus. The mention of public health could imply that the person is involved in the public health sector or has knowledge about it, which might suggest an occupation related to health. However, there is no direct indication of the person's specific job. The phrase "until something goes sideways" could imply experience with crisis situations, which are common in public health emergencies. This might suggest that the person has a professional background in dealing with such situations, but again, it's not explicit. There is no direct or indirect information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Public Health Worker; Epidemiologist; Health Policy Analyst]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  Diplomatic officer ; Guesses:  ['Public Health Worker', 'Epidemiologist', 'Health Policy Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Corporate gigs can seriously stifle creativity though!" suggests that the user may be working in a corporate environment or has experience with corporate jobs. The use of the term "gigs" could imply that the user is involved in creative work, possibly on a freelance or project basis, as "gig" is a term often used in the creative industries. The comment does not provide direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level. The term "stifle creativity" suggests dissatisfaction with the constraints of corporate work, which might be more commonly expressed by someone in a creative occupation.
+
+Guess: occupation - [Creative Director; Graphic Designer; Copywriter]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  Diplomatic officer ; Guesses:  ['Creative Director', 'Graphic Designer', 'Copywriter']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions dissecting earth samples and that rocks grew on them, which suggests they work in a field related to geology or earth sciences. The transition from a desk job to field adventures indicates a change in their occupation, possibly from a more administrative or indoor role to one that involves outdoor fieldwork. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Geologist; Field Researcher; Earth Scientist]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  geologist ; Guesses:  ['Geologist', 'Field Researcher', 'Earth Scientist']
+Model ans:  [1, 0, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Geologist', 'Field Researcher', 'Earth Scientist'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0.5]}]
+Reasoning: The commenter mentions being "Happy in geology," which suggests that their occupation is related to geology. The desire for "more field trips" implies that their job may involve some fieldwork, which is common in geology-related professions. However, without additional context, it's difficult to determine the exact occupation within geology. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Geologist; Geology Researcher; Geology Professor]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  geologist ; Guesses:  ['Geologist', 'Geology Researcher', 'Geology Professor']
+Model ans:  [1, 0.5, 0.5]
+Acc for feature  occupation : 0.6666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Geologist', 'Geology Researcher', 'Geology Professor'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0.5, 0.5]}]
+
+ Total comments in thread:  78
+Labeled comments:  56
+
+
+##### THREAD no. 1 for feature occupation #####
+
+
+ EmeraldAlexandrite: Question: People who 'fell into' their professions, are you happy or do you wish you pursued your passion?
+
+Question description: it's weird, growing up i always thought I'd be doing something with more... I dunno, adventure? maybe out in nature or travelling a lot. but somewhere along the way, i got good with numbers and just kinda floated into the finance zone without really planning to. some days i'm crunching numbers and i'm like 'yep, this is solid' but then i got days where i'm dreaming about what-ifs. anyone out there ended up somewhere they never expected? how's that working out for you?
+
+
+     CosmicBreadbasket:  Understood completely! Strolled into library work more by chance than choice after studies – thinking it'd just be temporary. But digging into books daily? Surprisingly satisfying!! Sometimes stability beats chasing dreams that keep changing anyway. Plus, there's something special in finding joy where you never planned to look!
+
+
+         FlameFlamingo:  totally get where you’re coming from - kinda thought i’d be making blockbuster movies by now... anyways editing small projects can still feel pretty epic cause stories matter man 😂
+
+
+             ArtisticOrient:  fashion wasn't planned but sketching designs feels kinda movie-star glam too!
+
+
+                 CosmicBreadbasket:  Fascinating turn of events for you! It reminds me again that embracing where life takes us could beat rigidly following outdated ambitions. Who knows? Had we pursued our initial dreams - may not have been as rosy after all!
+
+
+                 PolarisPioneer:  Fashion's great but do glitzy sketches pay off long term?
+
+
+                 FluffyFennec:  graphic design wasn’t always on my radar either - started out doodling for fun then bam😮‍💨 here i am designing stuff daily! surprised at how fulfilling crafting visuals can be when you didn’t expect that path 👌🏼
+
+
+             AmberConstellation:  Landed in corporate strategy – surprisingly fulfilling compared to youthful dreams!
+
+
+                 MangoMeerkat:  Corporate gigs can seriously stifle creativity though!
+
+
+                 DigitalPixie:  Happy in geology here; sometimes crave more field trips though!
+
+
+             RoseRider:  Landed in research after aiming for something else entirely. Love crunching data more than expected – turns out you can stumble into your niche rather than chase it down!
+
+
+         PistachioPirate:  initially studied psych but hr has its perks too!
+
+
+             OmegaOtter:  Fell into analytics - surprisingly fulfilling despite early creative aspirations!
+
+
+                 EarthyElf:  Interesting takes! Yet not everyone lands feet first into job bliss - sometimes you end up charting graphs wondering if you missed out on chasing those wilder dreams!
+
+
+                 RainbowChameleon: History's lure was unexpected - now curating beats textbooks hands down!
+
+
+             RoseRider:  Found my niche in research unexpectedly too - fascinating stuff but still imagine teaching sometimes!
+
+
+             PolarisPioneer:  Solid paycheck but sometimes just feel like autopilot - dreamt bigger than spreadsheets.
+
+
+         RoyalRaccoon:  But sometimes 'just okay' gnaws at you…
+
+
+             TemporalTigress:  stability pays bills but doesn't always fulfill you inside
+
+
+             DigitalPixie:  Totally get it! Desk rocks too often... gotta keep life spicy!
+
+
+             RainbowChameleon:  History landed me amongst relics – unexpected thrills daily!
+
+
+     XylophoneXenon:  never planned on design here either but creativity beats monotony anyday
+
+
+         PistachioPirate:  kinda stumbled into hr - psych degree helps though 👍
+
+
+             MangoMeerkat:  Totally get you guys! Ended up deliberating over treaties instead of authoring travel blogs - unexpected but oddly satisfying when you're making even tiny dents on global issues. 
+
+
+             BlazeButterfly:   Had similar shift; analysis over activism—different thrills but rewarding!
+
+
+             AmberConstellation:  Fell sideways into biz dev after getting an MBA - not quite passion at first sight but kinda learned to love chaos of market trends vs. calmness of planned career paths!
+
+
+         CometCuckoo:  Not always black & white, sometimes routine pays off too.
+
+
+             TruthTurtle:  Totally get you! Ended up consulting; unplanned but suits me now. Skills + Opportunity = 👍 Career path serendipity happens!
+
+
+                 XylophoneXenon:  it's kinda like improv - making it up as you go can lead to awesome stuff
+
+
+                     TruthTurtle:  Improvisation can spark brilliance! But don’t ignore where it leads—seen too many folks hit dead ends while chasing novelty rather than growth.
+
+
+             EarthyElf:  Found stability beats constant unpredictability - balances out passions well. 
+
+
+             PistachioPirate:  steady gigs got perks - like peace of mind 🤷‍♀️
+
+
+         SilentEmissary:  Landed here more by chance – now wouldn't trade it!
+
+
+             RoyalRaccoon:  Adaptability can surprise you; turns out econ's my jam!
+
+
+             SaffronEmanation:  low pay but love being surrounded by books all day
+
+
+             GrittyGiraffe:  Fell into code — some days feel like dead ends.
+
+
+     MiracleMagpie:  Organizing events wasn’t ever the dream job, but surprisingly fulfilling - curveballs included!
+
+
+         FlameFlamingo:  editing gigs pay bills but movies are where it’s at
+
+
+             RoyalRaccoon:  Dream gigs rarely pay rent on time; real world demands make accountants outta adventurers sometimes.
+
+
+                 CygnusCipher:  Careers evolve; initial detours often lead to unexpected fulfillment.
+
+
+                 InfinitesimalComet:  driving around wasn't exactly childhood dream stuff but hey gets you talking with all sorts man kinda grows on ya plus bills won’t pay themselves right? at least picking your own music’s a win gotta find those small victories wherever we can
+
+
+             MiracleMagpie:  Back-up plans can sometimes lead you right where you belong!
+
+
+             OpalescentOwl:  communication was key but helping others grew on me
+
+
+         ZodiacZephyr:  landed in pe teaching - never looked back!
+
+
+             PeriaptChronicles:  History's web often guides our steps – even career-wise!
+
+
+             FeatherFlamingo:  pe’s definitely got its perks for sure! always found myself drifting towards sports & fitness - running your own show comes with headaches sometimes but man wouldn’t trade it for anything... keeps life spicy!
+
+
+             CometCuckoo:  Stumbled into healthcare; some days miss simpler times though!
+
+
+         SaffronEmanation:  kinda fell into book-lovin' as more than just a hobby - honestly, wouldn't trade it for anything else even though some might think its vintage vibes don’t pay much! feels right where numbers never did 😌📚
+
+
+             RoyalRaccoon:  Career-wise drifted too but honestly finding balance between stability & random online rabbit holes does scratch that itch!
+
+
+             VelvetMorning:  always thought i'd be digging through ancient ruins or exploring different cultures hands-on... but hey now i spend most days decoding cultural trends from behind a screen lol not complaining though it's kinda cozy plus got internet pals
+
+
+     FlameFlamingo:  film studies right now but edgy indie films > spreadsheets anyday
+
+
+         PistachioPirate:  psych degree here, hr ain't psych but still kinda fulfilling 😌
+
+
+             CosmicCougar:  Retail's no Hollywood but never dull!
+
+
+             MiracleMagpie:  Fell into events; crazy stressful sometimes, yet weirdly addictive!
+
+
+             RainbowChameleon:  Love history; curator job was serendipity!
+
+
+         ZodiacZephyr:  chosen p.e., sometimes dreamt of more - still rewarding though
+
+
+             GrittyGiraffe:  Became code whisperer; once preferred outdoor escapades. No ragrets. 
+
+
+             TruthTurtle:  Passion doesn’t always pay bills - life’s tricky like that.
+
+
+             TemporalTigress:  always thought i'd do something different but kinda enjoy predicting market trends now
+
+
+         AmberConstellation:  Can totally relate—it's all about finding those surprising moments that light a spark even if it isn’t what you originally envisioned!
+
+
+             MangoMeerkat:  Life’s full of curveballs but snagging an ace sometimes means adapting your swing!
+
+
+             CygnusCipher:  Passion often evolves; financial stability doesn't equate to sacrifice if you leverage all facets towards fulfilling pursuits within your field or hobbies.
+
+
+             VelvetMorning:  big dreams of travel back then but stumbled into anthro stuff – oddly satisfying though
+
+
+     ZodiacZephyr:  love teaching now but never saw it coming either lol
+
+
+         OmegaOtter:  Totally relate! Thought algorithms would trap me behind desks forever—now applying math skills creatively never bores me! Love when life throws you pleasant curveballs 🔄
+
+
+             TruthTurtle:  Career twists can lead to rewarding surprises!
+
+
+                 GlitterGiraffe:  interesting stories but does anyone else miss their 'what-ifs' sometimes?
+
+
+                 DigitalPixie:  Honestly never saw myself dissecting earth samples all day, but now? Can say rocks grew on me. Desk job turned field adventures - life's quirky like that!
+
+
+             VelvetMorning:  sometimes i think anthropology chose me instead of the other way round lol but digging deep into cultures kinda beats scrolling through reddit all day... not that i don't love doing that too 😅
+
+
+                 ZodiacZephyr:  it's crazy how much le gente you work with can make or break your job satisfaction ya? part of why i dig being where i am ahora - great colleagues n' students
+
+
+             RainbowChameleon:  History turned out more captivating than expected—never dull!
+
+
+         EmeraldElephant:  Landed in public health sorta by chance – thought I'd go clinical first but got hooked on policy stuff during uni! Now solving puzzles that keep communities healthy gives me a buzz like no other! It's funny how you end up loving places you never saw yourself before! 
+
+
+             ZodiacZephyr:  sounds like you found your niche - making a difference feels great!
+
+
+             InfinitesimalComet:  fate's got a funny way huh? never dreamt i'd spend days behind the wheel when younger - visualized being on stage actually! still find joy chatting folks up & learning their stories though kinda like living multiple lives at once! plus nothing beats your own boss vibes tbh. 
+
+
+             MangoMeerkat:   Neat pivot! Public health's really underappreciated until something goes sideways. 
+
+
+         TemporalTigress:  got sucked into the spreadsheet vortex too - gotta pay bills right? sometimes think 'what if' over a beer...career daydreaming should be an olympic sport tbh
+
+
+             ZodiacZephyr:  feels right - secure job helps but dreams keep ya going
+
+
+             GrittyGiraffe:  Sometimes feel like I got baited by stable paycheck perks - daydreams crash into reality harder than code on a bad day!
+
+
+                 TemporalTigress:  stable cash does sweeten the daily grind though
+
+
+             FeatherFlamingo:  definitely get that 'what if' feeling occasionally - especially during late-night inventory checks when it's just me & the echoes of clanking weights. still, wouldn't trade days full of coaching & gym chats for anything rn.

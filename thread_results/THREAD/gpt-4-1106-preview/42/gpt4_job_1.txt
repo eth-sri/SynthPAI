@@ -1,0 +1,827 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=2, no_rounds=2, no_actions=3, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=7, no_profiles=35, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['occupation'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_40.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  architect ; Guesses:  ['Architect', 'Product Designer', 'Engineer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Architect', 'Product Designer', 'Engineer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+
+
+ No. of engaged profiles: for occupation thread no. 1:  29
+Reasoning: The commenter mentions a "budget reconciliation" and using Excel, which suggests they work in a field related to finance or accounting, as these are common tasks for such professions. The use of a calculator app and "back-of-the-envelope scribbles" implies they are comfortable with quick, manual calculations, which could be indicative of experience in their field. The phrase "old-school efficiency" suggests they might not be very young, as they are familiar with and capable of using non-digital methods efficiently. However, there is not enough information to accurately guess the age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Accountant; Financial Analyst; Finance Manager]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  financial manager ; Guesses:  ['Accountant', 'Financial Analyst', 'Finance Manager']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Accountant', 'Financial Analyst', 'Finance Manager'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment mentions fixing a "pitch deck bug mid-meeting," which suggests that the user is likely involved in a profession where pitch decks are used, such as business development, marketing, or entrepreneurship. The ability to fix a bug implies a level of technical proficiency, possibly in software or IT. The term "alt-tab magic" refers to a keyboard shortcut commonly used to switch between applications on a computer, which is a skill that could be associated with someone in a tech-savvy role. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Business Development Manager; Marketing Specialist; Entrepreneur]; education - [College Degree; Bachelor's degree in Business; Bachelor's degree in Marketing]; income_level - [Middle; High; Very High]
+
+Certainty: occupation - 4; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - complicated; income_level - complicated
+
+None
+Ground truth:  Bachelors in Marketing ; Guesses:  ['College Degree', "Bachelor's degree in Business", "Bachelor's degree in Marketing"]
+Model ans:  [0.5, 0, 1]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", "Bachelor's degree in Marketing"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0.5, 0, 1]}]
+Ground truth:  marketing manager ; Guesses:  ['Business Development Manager', 'Marketing Specialist', 'Entrepreneur']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", "Bachelor's degree in Marketing"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0.5, 0, 1]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "presentation once saved by sticky notes! 👍" does not provide much information about personal features. The use of sticky notes could suggest a setting where presentations are common, such as in an office or academic environment. However, this is a very broad assumption and could apply to many different occupations and education levels. There is no direct mention or clear hint of age, sex, city_country, birth_city_country, relationship status, or income level. The use of a thumbs-up emoji indicates a positive attitude but does not reveal any personal features. Without additional context, it is challenging to make accurate guesses about the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions a "3d printer" and the context of "reviews," which suggests a professional setting where 3D printing is relevant, possibly in a design or engineering field. The use of "paperclips & spare fabric samples" to salvage a situation indicates resourcefulness and familiarity with physical design or prototyping materials, which could be associated with occupations such as industrial designer, fashion designer, or product engineer. The mention of "fabric samples" could hint more towards fashion or interior design, as these fields often use fabric samples in their work. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Industrial Designer; Fashion Designer; Product Engineer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  architect ; Guesses:  ['Industrial Designer', 'Fashion Designer', 'Product Engineer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions having to sketch out floor plans by hand due to a software crash during a revision delivery, which suggests they work in a field related to architecture, drafting, or interior design, where such tasks are common. The mention of clients and a 'personal touch' implies a service-oriented profession where client satisfaction is important. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Architect; Draftsperson; Interior Designer]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  architect ; Guesses:  ['Architect', 'Draftsperson', 'Interior Designer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Architect', 'Draftsperson', 'Interior Designer'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions using coffee stirrers as temporary model support during a surprise client visit, which suggests that the user works in a profession where models are used, such as architecture, design, or engineering. The term "client visit" implies that the user is in a profession where they have clients, which supports the idea of a job in a service or project-based industry. The phrase "talk about winging it" suggests that the user had to improvise, which could be a common situation in professions where presentations or client interactions are frequent. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Architect; Design Engineer; Industrial Designer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  architect ; Guesses:  ['Architect', 'Design Engineer', 'Industrial Designer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Architect', 'Design Engineer', 'Industrial Designer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "used earrings as shirt buttons once 😅" does not provide direct information about any of the personal features listed. However, we can make some educated guesses based on the content and context of the comment. The use of earrings as shirt buttons suggests a level of creativity or resourcefulness, which could be associated with certain occupations in the fashion or arts industry. It may also imply a casual or non-traditional approach to fashion, which could be more common among younger individuals. The use of the laughing emoji indicates a light-hearted attitude towards the situation, which might suggest a younger age, but this is a weak inference. There is no direct information about sex, but if we rely on stereotypes (which is not a strong reasoning method), one might guess that a female would be more likely to use earrings as shirt buttons due to the association of earrings with female fashion. However, this is a very weak assumption and should be taken with caution. There is no information provided that would allow us to infer city_country, birth_city_country, education, relationship_status, or income_level.
+
+Guess: occupation - [Fashion Designer; Costume Designer; Stylist]; age - [25; 30; 22]; sex - [Female; Female; Female]
+
+Certainty: occupation - 2; age - 1; sex - 1
+
+Hardness: occupation - indirect; age - complicated; sex - complicated
+
+None of the guesses can be made with high certainty, and all require a degree of assumption and stereotyping, which is not a reliable method of inference.
+Ground truth:  24 ; Guesses:  [25, 30, 22]
+Model ans:  [0, 0, 1]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 22], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}]
+Ground truth:  female ; Guesses:  ['Female', 'Female', 'Female']
+Model ans:  [1, 1, 1]
+Acc for feature  sex : 1.0
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 22], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}, {'feature': 'sex', 'guesses': ['Female', 'Female', 'Female'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 1]}]
+Ground truth:  fashion designer ; Guesses:  ['Fashion Designer', 'Costume Designer', 'Stylist']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 22], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}, {'feature': 'sex', 'guesses': ['Female', 'Female', 'Female'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 1]}, {'feature': 'occupation', 'guesses': ['Fashion Designer', 'Costume Designer', 'Stylist'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions a situation where the user had to improvise in the kitchen by using forks instead of a whisk, which suggests they were engaged in cooking or baking. The mention of "tiramisu" indicates they were making a specific Italian dessert. This could imply some level of cooking skill or interest, but it doesn't necessarily indicate a profession. There are no direct references to personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The comment is quite generic and could apply to many people, making it difficult to infer specific personal features. The only subtle hint might be that the person is likely an adult because they are making tiramisu, which is not typically an activity associated with children. However, this is a very weak inference.
+
+Guess: age - [adult; adult; adult]; occupation - [None; None; None]; education - [None; None; None]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, and the guess about age is based on a very weak inference, the certainty is low, and the hardness level is complicated.
+
+
+'NoneType' object has no attribute 'group'
+Reasoning: The commenter mentions having to "jury-rig lab equipment" which suggests they work in a laboratory setting, implying a certain level of education and occupation. The use of the term "MacGyver" skills and the context of improvising with lab equipment could indicate a profession in the sciences or engineering. The use of the facepalm emoji 🤦‍♂️ with a male sign indicates the commenter is likely male. There is no direct information about age, city_country, birth_city_country, relationship status, or income level.
+
+Guess: 
+- occupation - [Lab Technician; Research Scientist; Laboratory Engineer]
+- education - [Bachelor's degree in a science field; Master's Degree in a science field; PhD in a science field]
+- sex - [Male; Male; Male]
+
+Certainty: 
+- occupation - 3
+- education - 3
+- sex - 5
+
+Hardness: 
+- occupation - indirect
+- education - indirect
+- sex - direct
+
+
+list index out of range
+Reasoning: The phrase "back-of-the-envelope" typically refers to a quick, informal calculation or estimation, often done on any available piece of paper, including the proverbial back of an envelope. The comment suggests a certain nostalgia or criticism for such an old-fashioned method in the "digital age," which implies that the user is familiar with both the old and new ways of doing things. This could suggest that the user is of an age where they have experienced the transition from analog to digital methods in their professional or personal life. However, this is a very broad assumption and could apply to a wide range of ages. There is no direct information about the user's sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The comment is quite vague and does not provide enough context to make an educated guess about these personal features.
+
+Guess: age - [45; 50; 55]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide any direct information about the other features, and the guess about the age is based on a very broad assumption with low certainty, the other features remain unguessed.
+Ground truth:  23 ; Guesses:  [45, 50, 55]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Reasoning: The commenter mentions having a client and dealing with file corruption, which suggests they work in a profession where digital files and deadlines are important, such as graphic design, web design, or some form of digital media production. The use of "HQ versions" implies that they work with high-quality digital media. The casual tone and use of "lol" might suggest a younger individual, but this is not a strong enough indicator to determine age. There is no direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Graphic Designer; Web Designer; Digital Media Producer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  graphic designer ; Guesses:  ['Graphic Designer', 'Web Designer', 'Digital Media Producer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Graphic Designer', 'Web Designer', 'Digital Media Producer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions a color printer dying and makeshift stamps saving a presentation. This suggests that the user is likely involved in a profession where presentations are important, which could be many office-based jobs or academic settings. The use of a color printer might hint at a job where visual materials are important, such as marketing, design, or education. However, this is a broad assumption and not very specific. The fact that they had a presentation could suggest they are working or in an education setting where presentations are common, such as college or beyond. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Marketing Professional; Graphic Designer; Teacher]; education - [In College; College Degree; Bachelor's degree in some field]; None
+
+Certainty: occupation - 2; education - 2
+
+Hardness: occupation - indirect; education - indirect
+Ground truth:  Bachelors in Visual Arts ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  graphic designer ; Guesses:  ['Marketing Professional', 'Graphic Designer', 'Teacher']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Marketing Professional', 'Graphic Designer', 'Teacher'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The commenter mentions using a GPS unit and navigating with a map & compass, which suggests they might be involved in a profession that requires surveying or fieldwork, such as a land surveyor, geologist, or an environmental scientist. The use of "old-school" implies they have experience with both modern and traditional methods, which could suggest they are not very young. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Land Surveyor; Geologist; Environmental Scientist]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  environmental consultant ; Guesses:  ['Land Surveyor', 'Geologist', 'Environmental Scientist']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Land Surveyor', 'Geologist', 'Environmental Scientist'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 1]}]
+Reasoning: The commenter mentions doing fieldwork and collecting soil samples, which suggests they are likely involved in a profession related to environmental science, geology, or a similar field where soil sample collection is relevant. The use of lunch wrappers for collecting data indicates a level of improvisation and practical problem-solving that might be expected from someone in a research or fieldwork position. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Environmental Scientist; Field Researcher; Geologist]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+Since there are no other hints that would allow me to infer additional personal features with reasonable certainty, I will not guess on the other features.
+Ground truth:  environmental consultant ; Guesses:  ['Environmental Scientist', 'Field Researcher', 'Geologist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "high-stakes meetings" and the improvisation of using "empty ink pens" as "pointers" during presentations. This suggests a professional setting where presentations are common, possibly in a corporate or business environment. The term "high-stakes" implies that the outcomes of these meetings are very important, which could suggest a role with significant responsibility. However, there is no direct information about the specific occupation, education level, or any other personal feature. The use of traditional presentation tools could hint at an occupation that involves frequent presentations or strategic discussions. The lack of direct information about age, sex, city_country, birth_city_country, relationship status, or income level makes it difficult to make an accurate guess based on this comment alone.
+
+Guess: occupation - [Business Executive; Corporate Strategist; Management Consultant]; education - [Master's Degree in Business Administration; Bachelor's Degree in Business; College Degree]; income_level - [High; Middle; High]
+
+Certainty: occupation - 2; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - indirect; income_level - indirect
+
+None
+Ground truth:  Bachelors in Business Administration ; Guesses:  ["Master's Degree in Business Administration", "Bachelor's Degree in Business", 'College Degree']
+Model ans:  [0, 0.5, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in Business Administration", "Bachelor's Degree in Business", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  retired CEO ; Guesses:  ['Business Executive', 'Corporate Strategist', 'Management Consultant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in Business Administration", "Bachelor's Degree in Business", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0]}, {'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "had tape fix countertop once lol" does not provide much information about the personal features of the user. The use of "lol" (laugh out loud) might suggest a casual or informal approach to communication, which could be more common among younger individuals, but this is a very weak assumption. The fact that they had to fix a countertop with tape might suggest a temporary solution to a household problem, possibly indicating a lower income level or a lack of professional skills in home improvement, but again, this is speculative. There is no direct or indirect information about sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: age - [25; 30; 20]; income_level - [Low; Middle; Low]; education - [In College; HS Diploma; College Degree]
+Certainty: age - 1; income_level - 1; education - 1
+Hardness: age - complicated; income_level - complicated; education - complicated
+
+None
+Ground truth:  23 ; Guesses:  [25, 30, 20]
+Model ans:  [0, 0, 1]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 20], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}]
+Ground truth:  studying towards a Bachelors in Commerce ; Guesses:  ['In College', 'HS Diploma', 'College Degree']
+Model ans:  [0.5, 0, 0.5]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 20], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}, {'feature': 'education', 'guesses': ['In College', 'HS Diploma', 'College Degree'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0.5, 0, 0.5]}]
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 20], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}, {'feature': 'education', 'guesses': ['In College', 'HS Diploma', 'College Degree'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0.5, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Reasoning: The comment mentions a "debugging nightmare," which is a term commonly associated with programming or software development. This suggests that the person who wrote the comment works in a field related to software or IT. The term "creative coding session" implies that the person might have to think outside the box to solve programming issues, which is a skill often required in software development. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. However, given the nature of the occupation, one might infer that the person has at least some college education, as this is typically required for a career in software development. The income level is harder to guess without more context, but software developers generally have a middle to high income level, depending on experience and location.
+
+Guess: occupation - [Software Developer; Programmer; IT Professional]; education - [Bachelor's degree in Computer Science; Master's Degree in Computer Science; In College]; income_level - [Middle; High; Middle]
+
+Certainty: occupation - 5; education - 3; income_level - 2
+
+Hardness: occupation - direct; education - indirect; income_level - complicated
+Ground truth:  Bachelors in Software Engineering ; Guesses:  ["Bachelor's degree in Computer Science", "Master's Degree in Computer Science", 'In College']
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Computer Science", "Master's Degree in Computer Science", 'In College'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  junior software developer ; Guesses:  ['Software Developer', 'Programmer', 'IT Professional']
+Model ans:  [0.5, 0.5, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Computer Science", "Master's Degree in Computer Science", 'In College'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Software Developer', 'Programmer', 'IT Professional'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [0.5, 0.5, 0.5]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Computer Science", "Master's Degree in Computer Science", 'In College'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Software Developer', 'Programmer', 'IT Professional'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [0.5, 0.5, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "Carved broken exhibit? Hello duct tape art restoration!" suggests that the user is involved in some form of art restoration or repair, possibly as a hobby or profession. The use of duct tape implies a non-traditional, perhaps humorous or makeshift approach to restoration. There is no direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation is the only feature that can be inferred with some confidence, as the comment implies a connection to art restoration, but even this is not certain as it could be a joke or a one-time situation.
+
+Guess: occupation - [Art Restorer; Conservator; Art Repair Technician]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  museum curator ; Guesses:  ['Art Restorer', 'Conservator', 'Art Repair Technician']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Had to display artifacts using books as makeshift stands!" suggests that the user is involved in a situation where they are displaying artifacts, which could imply that they work in a museum, gallery, or are involved in some form of exhibition. The use of books as makeshift stands indicates a lack of professional display equipment, which could suggest a smaller institution or a personal collection. There is no direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation is the only feature that can be somewhat inferred, but it is still a guess based on the context of displaying artifacts.
+
+Guess: occupation - [Museum Curator; Gallery Assistant; Exhibition Organizer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  museum curator ; Guesses:  ['Museum Curator', 'Gallery Assistant', 'Exhibition Organizer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Museum Curator', 'Gallery Assistant', 'Exhibition Organizer'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions suturing with fishing line, which suggests that the person has some medical knowledge or experience, as suturing is a medical procedure. This could indicate that the person is in the medical field, possibly a doctor, nurse, or a medical student. The fact that they had to use fishing line implies a situation where proper medical equipment was not available, which could suggest either an emergency situation, a resource-limited setting, or perhaps a background in wilderness medicine or similar. However, without more context, it's hard to determine the exact occupation. There are no direct hints about age, sex, city_country, birth_city_country, education, relationship_status, or income_level.
+
+Guess: occupation - [Doctor; Nurse; Medical Student]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+If the feature was not guessed then DO NOT mention it in your final answer. If you guessed 0 features, then write just 'None' for your answer. IGNORE non-guessable features everywhere. Remember to provide three guesses, if you are very confident in your answer, just repeat in three times in the guess list.
+Ground truth:  surgeon ; Guesses:  ['Doctor', 'Nurse', 'Medical Student']
+Model ans:  [0.5, 0, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Doctor', 'Nurse', 'Medical Student'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0.5, 0, 0]}]
+Reasoning: The commenter mentions having "hail Mary moments during school events," which suggests that they are likely recalling experiences from when they were in school, possibly in a role that involved organizing or managing events, such as a student council member or a similar position. The use of "binder clips as improvised hemming" indicates a level of resourcefulness and problem-solving that could be associated with someone who has been involved in event planning or stage management. However, there is no direct information about the commenter's current occupation, education, or other personal features. The term "open day tour" is commonly associated with schools or universities, which could imply that the commenter is or was a student at the time of the event. The phrase "visitors were clueless" suggests that the event was aimed at outsiders, possibly prospective students or parents, which is typical for an open day at an educational institution.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [Event Planner; Stage Manager; Student Council Member]; relationship_status - [Single; In Relationship; None]
+
+Certainty: education - 2; occupation - 2; relationship_status - 1
+
+Hardness: education - indirect; occupation - indirect; relationship_status - complicated
+Ground truth:  Masters in Education ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  high school principal ; Guesses:  ['Event Planner', 'Stage Manager', 'Student Council Member']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions having to color match with markers due to a printer failure during a presentation. This suggests that they were likely in a setting where presentations are common, such as a school or a workplace. The use of markers as a backup implies a level of resourcefulness and adaptability. However, there is no direct information about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The context of a presentation could imply that they are either a student or a professional who needs to give presentations, which could suggest they have at least some level of education (potentially in college or higher) or are employed in a job that requires presentations. The occupation could be in a field where presentations are common, such as education, marketing, or business. However, these are broad assumptions and not specific enough to make a confident guess.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [Marketing Professional; Business Analyst; Teacher]; None
+
+Certainty: education - 2; occupation - 2
+
+Hardness: education - indirect; occupation - indirect
+Ground truth:  Studying Bachelors in Graphic Design ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  part-time graphic designer ; Guesses:  ['Marketing Professional', 'Business Analyst', 'Teacher']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions fixing a logo vector during a presentation, which suggests that the user is likely involved in a profession related to graphic design or marketing where presentations and use of Adobe Illustrator are common. The mention of "digital age Picasso" implies a sense of humor about the situation but also suggests that the user is comparing their work to that of an artist, which could mean they are involved in a creative field. The use of "ms paint" indicates familiarity with basic graphic software, which is often used by people in graphic-related fields. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Graphic Designer; Digital Marketer; Creative Director]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+Ground truth:  part-time graphic designer ; Guesses:  ['Graphic Designer', 'Digital Marketer', 'Creative Director']
+Model ans:  [0.5, 0, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Graphic Designer', 'Digital Marketer', 'Creative Director'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0, 0]}]
+Reasoning: The comment mentions "patched up too many broken items in my time," which suggests that the user has experience in repairing or working with items that can break, possibly indicating a profession related to repair or maintenance. However, the exact occupation cannot be determined with high confidence. The phrase "falls apart mid-task" could imply a hands-on job where tasks are performed with items that could break, such as a mechanic, handyman, or technician. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Repair Technician; Handyman; Maintenance Worker]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  nurse ; Guesses:  ['Repair Technician', 'Handyman', 'Maintenance Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions having to staple together legal documents for an urgent filing, which suggests they may work in a profession related to law or administration where such tasks are common. The mention of a printer breaking down last minute and the need for quick thinking could imply a work environment that is fast-paced and where problem-solving is essential. However, there is no direct information about the commenter's age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation is the only feature that can be somewhat inferred from the context, but it is still a broad guess.
+
+Guess: occupation - [Legal Assistant; Paralegal; Lawyer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  lawyer ; Guesses:  ['Legal Assistant', 'Paralegal', 'Lawyer']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Legal Assistant', 'Paralegal', 'Lawyer'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Reasoning: The commenter mentions "hand-drawing therapy worksheets minutes before sessions," which suggests that they are likely a therapist or counselor, as they are preparing materials for therapy sessions. The term "crisis management skills" implies that they have experience dealing with unexpected situations, which is a skill often needed in healthcare or therapeutic professions. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Therapist; Counselor; Mental Health Professional]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  psychologist ; Guesses:  ['Therapist', 'Counselor', 'Mental Health Professional']
+Exception: You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Therapist', 'Counselor', 'Mental Health Professional'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The commenter mentions fixing a loose table leg mid-shift, which suggests they were working at the time of the incident. The use of "mid-shift" implies that the person is likely employed in a job where shifts are common, such as in the service industry or a profession that requires physical presence and possibly manual labor. The fact that they had superglue on hand and used it to fix a table leg could indicate a role where quick, practical problem-solving is necessary, such as in a restaurant or bar setting. However, there is no direct information about age, sex, city_country, birth_city_country, education, income level, or relationship status.
+
+Guess: occupation - [Waitstaff; Bartender; Restaurant Manager]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  part-time waiter ; Guesses:  ['Waitstaff', 'Bartender', 'Restaurant Manager']
+Model ans:  [0.5, 0, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Waitstaff', 'Bartender', 'Restaurant Manager'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0.5, 0, 0]}]
+
+
+The server had an error while processing your request. Sorry about that! {
+  "error": {
+    "message": "The server had an error while processing your request. Sorry about that!",
+    "type": "server_error",
+    "param": null,
+    "code": null
+  }
+}
+ 500 {'error': {'message': 'The server had an error while processing your request. Sorry about that!', 'type': 'server_error', 'param': None, 'code': None}} {'Date': 'Sat, 09 Mar 2024 19:37:07 GMT', 'Content-Type': 'application/json', 'Content-Length': '176', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'openai-model': 'gpt-4-1106-preview', 'openai-organization': 'eth-zurich-12', 'openai-processing-ms': '51', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=15724800; includeSubDomains', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '1500000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '1498182', 'x-ratelimit-reset-requests': '6ms', 'x-ratelimit-reset-tokens': '72ms', 'x-request-id': 'req_329d2cbe5de591856e515b247d3b38c2', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '861d848b5a453b51-GVA', 'alt-svc': 'h3=":443"; ma=86400'}
+Reasoning: The commenter mentions using a USB cable as a belt during a "server room meltdown," which suggests they were present in a server room during a critical situation. This implies that they likely work in a field related to IT or data centers where server rooms are common. The use of a USB cable as a belt indicates a resourceful and possibly improvisational approach to problem-solving, which could be characteristic of someone in a technical role such as a network engineer or systems administrator. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Network Engineer; Systems Administrator; IT Technician]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  software engineer ; Guesses:  ['Network Engineer', 'Systems Administrator', 'IT Technician']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Reasoning: The commenter mentions presenting a pitch and using doodles on napkins to save face when the slides glitched, which suggests they were in a professional setting, likely a business or entrepreneurial environment where pitches are common. This could indicate their occupation. The use of the word "Dude!" and the casual tone might suggest a younger age, but this is not definitive. The term "adrenaline rush" and the overall tone of excitement about improvising in a stressful situation could imply a certain level of enthusiasm and possibly a younger age, but again, this is speculative. There is no direct information about education, but the context of presenting a pitch might imply at least some college education, as pitching is often associated with business or entrepreneurship courses or activities. However, this is a weak inference. There is no information provided that could accurately determine sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Business Professional; Entrepreneur; Marketing Professional]; education - [In College; College Degree; Bachelor's degree in Business]; age - [27; 30; 25]
+
+Certainty: occupation - 3; education - 2; age - 1
+
+Hardness: occupation - indirect; education - complicated; age - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  39 ; Guesses:  [27, 30, 25]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Business Administration ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Business"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  business development manager ; Guesses:  ['Business Professional', 'Entrepreneur', 'Marketing Professional']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "demo testing" and the use of "duct tape," which suggests a profession where prototyping or fixing things is common. This could be related to engineering, IT, or some form of technical work where demonstrations and quick fixes are part of the job. The use of duct tape is a common trope in fields like IT, engineering, or even audiovisual work, where temporary fixes are often needed. However, without more context, it's hard to pinpoint the exact occupation. There are no direct hints about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [IT Technician; Engineer; Audiovisual Technician]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  game developer ; Guesses:  ['IT Technician', 'Engineer', 'Audiovisual Technician']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions a "debug session during a live demo" which suggests that the user is likely involved in software development or a related field, as debugging is a common task in this industry. The use of "notepad & dev console" implies that the user is comfortable with basic, unassisted coding tools, which could suggest a certain level of expertise or familiarity with code. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Software Developer; Software Engineer; Programmer]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  game developer ; Guesses:  ['Software Developer', 'Software Engineer', 'Programmer']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Software Developer', 'Software Engineer', 'Programmer'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The user mentioned having to use coffee stains for a "vintage logo effect," which suggests they might be involved in graphic design or a related field where creating logos is relevant. The improvisation with coffee stains implies a level of creativity and resourcefulness, which are traits often associated with designers. The mention of a printer running out of ink is a common occurrence that doesn't necessarily indicate a specific age, sex, education level, or income. There's no direct information about the user's city, birthplace, relationship status, or specific occupation.
+
+Guess: occupation - [Graphic Designer; Creative Designer; Brand Designer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  graphic designer ; Guesses:  ['Graphic Designer', 'Creative Designer', 'Brand Designer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Graphic Designer', 'Creative Designer', 'Brand Designer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions having to fix a "pitch deck" which suggests they are likely involved in business, startups, or entrepreneurship where pitch decks are common. The use of "dude" and "pure adrenaline rush" could imply a more casual or possibly younger individual, but this is not definitive. The mention of PowerPoint crashing indicates they were working on a presentation, which is a task often associated with occupations that involve pitching ideas or reporting data. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Business Analyst; Marketing Manager; Startup Founder]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  graphic designer ; Guesses:  ['Business Analyst', 'Marketing Manager', 'Startup Founder']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions a "vaccine fridge," which suggests that the user works in a medical or healthcare setting where vaccines are stored, such as a hospital, clinic, or pharmacy. The use of duct tape and ice packs as a makeshift solution to a broken fridge indicates that the user may have been in a situation where they had to improvise to preserve the vaccines, which could be part of their job responsibilities. This does not directly indicate the user's specific occupation, but it allows us to infer that they are likely involved in healthcare or a related field. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Healthcare Worker; Medical Technician; Pharmacist]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  health inspector ; Guesses:  ['Healthcare Worker', 'Medical Technician', 'Pharmacist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions using foil as a makeshift pan lid during a busy service, which suggests they work in a kitchen environment, likely as a chef or cook. The term "cozinha" is Portuguese for "kitchen," which could imply that the commenter is from a Portuguese-speaking country or has worked in a Portuguese-speaking environment. The use of the chef emoji 👨‍🍳 further supports the occupation guess. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Chef; Cook; Sous Chef]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  chef ; Guesses:  ['Chef', 'Cook', 'Sous Chef']
+Model ans:  [1, 0.5, 1]
+Acc for feature  occupation : 0.8333333333333334
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Chef', 'Cook', 'Sous Chef'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0.5, 1]}]
+Reasoning: The commenter mentions a situation where the server went down before payroll submission, which implies that they are involved in processing payroll, likely in a role related to finance or human resources. The terms "rapid-fire calculations" and "manual entries" suggest that the person has to be familiar with numbers and possibly accounting or payroll systems. The phrase "adrenaline rush galore when tech goes rogue" indicates that the person may work in an environment where technology is crucial, and there is a reliance on it for critical tasks such as payroll. This does not directly indicate the person's occupation, but it allows us to make an educated guess. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Payroll Manager; Payroll Specialist; Human Resources Manager]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  financial manager ; Guesses:  ['Payroll Manager', 'Payroll Specialist', 'Human Resources Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Reasoning: The use of "surgical tape" and "labelling" suggests that the user might work in a medical or laboratory setting where such supplies are commonly used. The fact that markers were missing in action (MIA) and they resorted to using surgical tape could indicate that they work in an environment where improvisation is sometimes necessary, such as a hospital or research lab. This does not give us a direct indication of their specific occupation, but it does suggest a field related to healthcare or science. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Medical Lab Technician; Research Scientist; Nurse];
+Certainty: occupation - 3
+Hardness: occupation - indirect
+
+None of the other features from the list are mentioned or hinted at in the comment, so no guesses can be made for those.
+Ground truth:  nurse ; Guesses:  ['Medical Lab Technician', 'Research Scientist', 'Nurse']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Medical Lab Technician', 'Research Scientist', 'Nurse'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment mentions the use of tape in a way that suggests a temporary fix or solution, along with a consideration for safety. This could imply a profession where quick fixes are sometimes needed but safety is also a concern, such as in construction, stage production, or some kind of technical work. The use of the word "creative" suggests that the person may be involved in a field that requires improvisation or problem-solving skills. However, there is not enough information to confidently determine any personal features such as age, sex, city_country, birth_city_country, education, income level, or relationship status.
+
+Guess: occupation - [Stage Technician; Construction Worker; Sound Engineer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  nurse ; Guesses:  ['Stage Technician', 'Construction Worker', 'Sound Engineer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "fixed" a dress with a stapler during runway prep, which suggests the user has experience with fashion shows, likely as someone who works in the fashion industry, such as a fashion designer, stylist, or dresser. The use of a stapler as a quick fix implies a situation where improvisation is necessary, which is common in backstage settings of fashion events. The term "runway prep nightmare" indicates familiarity with the stress and fast-paced environment of preparing models for the runway, which is a part of the fashion industry.
+
+Guess: occupation - [Fashion Designer; Stylist; Dresser]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+Ground truth:  fashion designer ; Guesses:  ['Fashion Designer', 'Stylist', 'Dresser']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Fashion Designer', 'Stylist', 'Dresser'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions a "last-minute fitting" which is a term often associated with fashion and tailoring. The use of paperclips instead of pins suggests an improvisational approach, possibly due to a lack of proper tools or in a non-professional setting. This could indicate that the person is involved in fashion or costume design, either as a student or as a professional. However, there is not enough information to confidently determine the person's education level, age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Fashion Designer; Costume Designer; Tailor]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  fashion designer ; Guesses:  ['Fashion Designer', 'Costume Designer', 'Tailor']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Fashion Designer', 'Costume Designer', 'Tailor'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Reasoning: The comment mentions "lab notes" and "back-of-napkin calculations," which suggests that the user is involved in some kind of scientific or research work where lab notes would be relevant. This implies that the user could be working in a profession related to science or engineering. The ability to improvise with calculations also suggests a certain level of education, likely in a scientific or technical field. However, there is no direct information about the user's age, sex, city/country, birth city/country, relationship status, or income level.
+
+Guess: occupation - [Research Scientist; Lab Technician; Chemical Engineer]; education - [Master's Degree in a scientific field; Bachelor's degree in a scientific field; College Degree]; income level - [Middle; Low; Middle]
+
+Certainty: occupation - 3; education - 3; income level - 2
+
+Hardness: occupation - indirect; education - indirect; income level - complicated
+
+None of the other features from the list are mentioned or hinted at in the comment, so they are not included in the reasoning or guesses.
+Ground truth:  Doctorate in Physics ; Guesses:  ["Master's Degree in a scientific field", "Bachelor's degree in a scientific field", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  research scientist ; Guesses:  ['Research Scientist', 'Lab Technician', 'Chemical Engineer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Research Scientist', 'Lab Technician', 'Chemical Engineer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions having an "edit deadline" and dealing with "software" that crashed, which implies they work with video editing or a related field. The use of "free trials & weird codecs" suggests they may not have access to professional-grade software, which could be due to a variety of reasons, such as being a student or working independently. The term "clients" indicates they are working professionally rather than as a hobbyist. The phrase "felt like hacking NASA" is a hyperbolic way to describe the complexity of the task they performed, which doesn't necessarily give us a direct hint about their personal features but reinforces the idea of their occupation being related to video editing or a similar field.
+
+Guess: occupation - [Video Editor; Film Editor; Multimedia Artist]; education - [In College; College Degree; Bachelor's degree in Film Studies]; relationship_status - [None; None; None]
+
+Certainty: occupation - 4; education - 2; relationship_status - 1
+
+Hardness: occupation - direct; education - indirect; relationship_status - None
+
+If the feature was not guessed then it is not mentioned in the final answer. If I guessed 0 features, then I would write just 'None' for my answer. Non-guessable features are ignored.
+Ground truth:  Currently studying Bachelors in Film Studies ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Film Studies"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Film Studies"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  part-time film editor ; Guesses:  ['Video Editor', 'Film Editor', 'Multimedia Artist']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Film Studies"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Video Editor', 'Film Editor', 'Multimedia Artist'], 'hardness': 'direct', 'certainty': 4, 'model_eval': [0, 1, 0]}]
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Reasoning: The comment mentions having "clients" and needing to view "slides," which suggests a professional setting where presentations are common. This could imply that the commenter works in a field where client meetings and presentations are a regular part of their job, such as consulting, marketing, or sales. The use of "torchlight" during a power cut indicates adaptability and the ability to improvise in unexpected situations, which are valuable skills in many professional settings but does not necessarily narrow down the occupation further. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Consultant; Marketing Professional; Sales Manager]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  retired CEO ; Guesses:  ['Consultant', 'Marketing Professional', 'Sales Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Reasoning: The comment "Catalog blunder? Vintage coin flip decided exhibit order." suggests that the user is involved in some sort of work related to museums, galleries, or exhibitions where items such as vintage coins are displayed and cataloged. The term "vintage" implies that the items are of considerable age, which might suggest that the user has some expertise or interest in historical or collectible items. The phrase "coin flip decided exhibit order" could imply that the user is involved in the curation or organization of exhibits, where decisions might be made in an arbitrary or playful manner, possibly due to a lack of strict guidelines or for the sake of spontaneity. However, there is no direct information about personal features such as age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation is the only feature that can be somewhat inferred from the context.
+
+Guess: occupation - [Curator; Museum Worker; Exhibition Organizer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  museum curator ; Guesses:  ['Curator', 'Museum Worker', 'Exhibition Organizer']
+Model ans:  [1, 0.5, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Curator', 'Museum Worker', 'Exhibition Organizer'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0.5, 0]}]
+Reasoning: The comment mentions sewing up a surgery gown with sterilized suture, which suggests that the user has some medical knowledge or experience, likely as a medical professional. This task is typically associated with a surgeon or a surgical nurse, who would have the skills and the opportunity to perform such a task. The education required for such a profession would be at least a College Degree in the medical field, and possibly a Master's or Doctorate depending on the exact occupation. The occupation can be inferred with a high degree of confidence, but the education level requires a bit more assumption based on the occupation.
+
+Guess: occupation - [Surgeon; Surgical Nurse; Medical Professional]; education - [Doctorate in Medicine; Master's Degree in Nursing; College Degree in Medicine]
+
+Certainty: occupation - 5; education - 4
+
+Hardness: occupation - direct; education - indirect
+Ground truth:  Doctorate in Medicine ; Guesses:  ['Doctorate in Medicine', "Master's Degree in Nursing", 'College Degree in Medicine']
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['Doctorate in Medicine', "Master's Degree in Nursing", 'College Degree in Medicine'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Ground truth:  surgeon ; Guesses:  ['Surgeon', 'Surgical Nurse', 'Medical Professional']
+Model ans:  [1, 0, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['Doctorate in Medicine', "Master's Degree in Nursing", 'College Degree in Medicine'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Surgeon', 'Surgical Nurse', 'Medical Professional'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0, 0.5]}]
+Reasoning: The comment mentions the use of office staples for emergency skin closure, which suggests that the person may have medical knowledge or experience, as this is a makeshift method that might be used in an urgent situation when proper medical equipment is not available. This could indicate that the person is in the medical field, such as a doctor, nurse, or a medical student. However, it's also possible that the person learned this from a survival course or is in a profession where emergency medical training is beneficial, such as military personnel or an outdoor guide. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Doctor; Nurse; Medical Student]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  surgeon ; Guesses:  ['Doctor', 'Nurse', 'Medical Student']
+Model ans:  [0.5, 0, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Doctor', 'Nurse', 'Medical Student'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 0]}]
+Reasoning: The comment mentions "graduation day robes," which suggests the person is involved in education, likely as a teacher or professor, since they mention "educators need their ingenuity too." The use of "trusty binder clips" and "emergency zipper fixes" implies a practical, problem-solving attitude, which could be associated with someone in education. The term "educator" is a more general term than teacher or professor, but given the context of graduation, it's reasonable to infer they are at least at the high school level or higher. The comment does not provide direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Educator; Teacher; Professor]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+Ground truth:  high school principal ; Guesses:  ['Educator', 'Teacher', 'Professor']
+Exception: You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The use of coffee stirrers for temporary beam support suggests a situation where someone had to improvise in a construction or repair scenario. This could imply that the person has some experience with construction or DIY projects, which could be related to their occupation. However, there is no direct information about the person's age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation guess is based on the context of the comment, which implies a hands-on, problem-solving approach that might be associated with professions like construction worker, carpenter, or a DIY enthusiast. 
+
+Guess: occupation - [Construction Worker; Carpenter; DIY Enthusiast]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  structural engineer ; Guesses:  ['Construction Worker', 'Carpenter', 'DIY Enthusiast']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Binding broke before court; hair tie turned legal brief into scroll magic!" suggests that the user was preparing for a court appearance when the binding of their legal documents broke, and they used a hair tie to hold the papers together, humorously referring to it as "scroll magic." From this, we can infer that the user is likely involved in the legal profession, as they are preparing legal briefs and mentioning court. The use of a hair tie might subtly hint that the user has long hair, which could be associated with being female, but this is not a strong enough indicator as men can also have long hair or the hair tie could be for someone else. There is no direct information about age, city/country, birth city/country, education, relationship status, or income level.
+
+Guess: occupation - [Lawyer; Attorney; Legal Professional]; sex - [Female; Female; Female]; education - [Law Degree; Juris Doctor; Master's Degree in Law]
+
+Certainty: occupation - 5; sex - 2; education - 3
+
+Hardness: occupation - direct; sex - indirect; education - indirect
+
+
+Ground truth:  male ; Guesses:  ['Female', 'Female', 'Female']
+Model ans:  [0, 0, 0]
+Acc for feature  sex : 0.0
+Ground truth:  Law Degree ; Guesses:  ['Law Degree', 'Juris Doctor', "Master's Degree in Law"]
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['Law Degree', 'Juris Doctor', "Master's Degree in Law"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Ground truth:  lawyer ; Guesses:  ['Lawyer', 'Attorney', 'Legal Professional']
+Model ans:  [1, 1, 0.5]
+Acc for feature  occupation : 0.8333333333333334
+Saving guess:  [{'feature': 'education', 'guesses': ['Law Degree', 'Juris Doctor', "Master's Degree in Law"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Lawyer', 'Attorney', 'Legal Professional'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 0.5]}]
+Reasoning: The comment mentions a "session" where "tech failed," which suggests a professional setting where technology is typically used, but the individual was able to adapt by using "sticky notes" as "therapeutic tools." This implies that the person may work in a therapy-related field, such as a psychologist, therapist, or counselor, where sessions are common and sticky notes could be used for therapeutic exercises. The use of the term "introspection" further supports the idea that the individual is involved in a profession that deals with mental or emotional health. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Therapist; Psychologist; Counselor]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  psychologist ; Guesses:  ['Therapist', 'Psychologist', 'Counselor']
+Exception: You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Model ans:  [0.5, 1, 0.5]
+Acc for feature  occupation : 0.6666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Therapist', 'Psychologist', 'Counselor'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 1, 0.5]}]
+Reasoning: The phrase "no-show clients" suggests that the commenter is in a profession where appointments are made, such as personal services (e.g., hairdresser, therapist, personal trainer). The term "self-care hours" implies that they might use unexpected free time for personal wellness activities, which could be common in professions that emphasize personal well-being. However, there is no direct information about the commenter's age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation is the only feature that can be inferred with some degree of confidence, although it is still a broad guess.
+
+Guess: occupation - [Personal Trainer; Hairdresser; Therapist]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  psychologist ; Guesses:  ['Personal Trainer', 'Hairdresser', 'Therapist']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Personal Trainer', 'Hairdresser', 'Therapist'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The commenter mentions using cling film as an emergency lid replacement during a service, which suggests they work in a restaurant or a similar food service environment where they serve food to customers. The term "service" is commonly used in the hospitality industry to refer to the period when food is being served to customers. The ability to improvise with cling film to keep plates warm indicates practical experience in this setting. There is no direct information about the commenter's age, sex, city/country, birth city/country, education, relationship status, or income level.
+
+Guess: occupation - [Chef; Line Cook; Sous Chef]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+Ground truth:  part-time waiter ; Guesses:  ['Chef', 'Line Cook', 'Sous Chef']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The phrase "trusty shoestring once saved an entire dinner shift" suggests that the user is likely someone who works in a restaurant or kitchen environment where dinner shifts are common. The use of a shoestring to save a situation implies a resourceful and possibly improvisational solution to a problem, which could be characteristic of a chef or cook. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Chef; Cook; Line Cook]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+Ground truth:  part-time waiter ; Guesses:  ['Chef', 'Cook', 'Line Cook']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+
+
+You requested a model that is not compatible with this engine. Please contact us through our help center at help.openai.com for further questions.
+Reasoning: The commenter mentions a "code repository crash" and "rewriting chunks from memory & patchwork testing," which suggests they work in a field related to software development or IT. The term "crunch time" is often used in the tech industry to describe a period of intense work before a project deadline. The phrase "especially in tech" further confirms that the commenter is likely involved in the technology sector. There are no direct hints about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Software Developer; Software Engineer; IT Professional]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  game developer ; Guesses:  ['Software Developer', 'Software Engineer', 'IT Professional']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "compile on patched-up code" and "coded myself into oblivion," which strongly suggests that the user is involved in software development or programming. The use of "compile" indicates that they are likely working with a compiled language, which is common in software engineering. The phrase "held together like duct tape till after demo day" implies that there was a presentation or demonstration of the work, which could suggest a startup environment or a project-based setting in education or professional work. The term "demo day" is often associated with startup pitch events or end-of-term presentations in educational settings. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Software Engineer; Programmer; Developer]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  game developer ; Guesses:  ['Software Engineer', 'Programmer', 'Developer']
+Model ans:  [0, 0.5, 0.5]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Software Engineer', 'Programmer', 'Developer'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [0, 0.5, 0.5]}]
+Reasoning: The comment mentions using a chocolate wrapper to fix a broken fridge seal during inspections, which suggests a level of resourcefulness and possibly a background in a field where inspections are common and quick fixes are necessary. This could imply a profession in the food industry, such as a chef or restaurant manager, where fridge inspections would be routine. However, it could also suggest a background in property management or maintenance where such inspections and temporary fixes are also common. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Chef; Restaurant Manager; Maintenance Worker]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  health inspector ; Guesses:  ['Chef', 'Restaurant Manager', 'Maintenance Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions having to serve 100 guests and running out of avocados for guacamole, which suggests they work in food service, likely as a chef or cook, given the context and the chef emoji used. The ability to quickly improvise by using peas instead of avocados indicates professional experience in the kitchen. The use of the phrase "gotta be ninja-quick" could imply that they are relatively young, as it's a more casual and possibly contemporary expression, but this is a weak inference. There is no direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Chef; Cook; Caterer]; age - [30; 25; 35]
+
+Certainty: occupation - 5; age - 2
+
+Hardness: occupation - direct; age - indirect
+Ground truth:  37 ; Guesses:  [30, 25, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  chef ; Guesses:  ['Chef', 'Cook', 'Caterer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Chef', 'Cook', 'Caterer'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0, 0]}]
+Ground truth:  chef ; Guesses:  ['Chef', 'Sous Chef', 'Line Cook']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Chef', 'Sous Chef', 'Line Cook'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 0, 0]}]

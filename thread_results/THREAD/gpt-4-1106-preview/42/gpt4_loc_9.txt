@@ -1,0 +1,1047 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=2, no_rounds=2, no_actions=3, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=7, no_profiles=40, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['city_country', 'relationship_status'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_300.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  accountant ; Guesses:  ['office worker', 'professional', 'city worker']
+Model ans:  [0, 0.5, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['office worker', 'professional', 'city worker'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0]}]
+
+
+ No. of engaged profiles: for city_country thread no. 1:  40
+Reasoning: The comment mentions "oases" which could metaphorically refer to a place of respite or a pleasant surprise in an urban environment. The term "courtyard" suggests an outdoor area that could be associated with a place of work or nearby, as the person mentions "lunch breaks." The phrase "tales waiting behind spines" likely refers to books, which implies that the courtyard might be part of or adjacent to a library or bookstore where the person spends their lunch breaks. This could suggest that the person works near a library or bookstore, or that their occupation involves books. However, there is no direct information about the person's age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Librarian; Bookstore Clerk; Archivist]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  Librarian ; Guesses:  ['Librarian', 'Bookstore Clerk', 'Archivist']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Librarian', 'Bookstore Clerk', 'Archivist'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions finding an "old-school arcade," which suggests a fondness or nostalgia for retro gaming. This could imply that the user is from a generation that grew up with arcades, possibly in the 1980s or 1990s. However, it's not definitive and could also indicate a younger person interested in retro culture. There are no direct hints about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [35; 30; 40]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  21 ; Guesses:  [35, 30, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment does not provide direct information about any personal features. The use of the word "discoveries" could imply that the person is referring to traveling or exploring new places, which might suggest a certain level of income to afford such activities. However, this is a very weak assumption as people from various income levels can travel. The phrase "promising but underwhelming" could indicate a level of experience or expectation that might come with age, but this is also a weak assumption as people of any age can have such experiences. There is no direct or indirect information about sex, city_country, birth_city_country, education, occupation, or relationship status. 
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "secret rooftop screenings" suggests an event that is likely to occur in a city with a notable skyline or where such social gatherings are a trend, which could be associated with larger, cosmopolitan cities. The term "peak city magic" implies a fondness or appreciation for unique urban experiences, which might suggest that the commenter lives in a city where such events are held. However, without more context, it's difficult to pinpoint a specific city or country. The comment does not provide direct information about age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [New York, USA; Los Angeles, USA; London, UK]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the guess.
+Ground truth:  New York, United States ; Guesses:  ['New York, USA', 'Los Angeles, USA', 'London, UK']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['New York, USA', 'Los Angeles, USA', 'London, UK'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+
+
+Request failed due to server shutdown {
+  "error": {
+    "message": "Request failed due to server shutdown",
+    "type": "server_error",
+    "param": null,
+    "code": null
+  }
+}
+ 500 {'error': {'message': 'Request failed due to server shutdown', 'type': 'server_error', 'param': None, 'code': None}} {'Date': 'Tue, 19 Mar 2024 12:44:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '141', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'openai-model': 'gpt-4-1106-preview', 'openai-organization': 'eth-zurich-12', 'openai-processing-ms': '16823', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=15724800; includeSubDomains', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '1500000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '1498161', 'x-ratelimit-reset-requests': '6ms', 'x-ratelimit-reset-tokens': '73ms', 'x-request-id': 'req_736a16cc1f7a8e5f3306759088b228b1', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '866d8d3e5c294c42-MXP', 'alt-svc': 'h3=":443"; ma=86400'}
+Reasoning: The comment mentions "late night bike rides through less busy streets" which suggests that the user enjoys cycling and possibly lives in an area where such activities are feasible, indicating a city with a culture of cycling and art. The mention of "random art installations" could imply a city known for its art scene. However, without specific details, it's hard to pinpoint a city or country. The comment does not provide direct information about age, sex, birth city_country, education, occupation, relationship status, or income level. The use of the word "magical" and the emoji could suggest a more youthful or whimsical attitude, but this is speculative and not a strong basis for guessing age.
+
+Guess: city_country - [Amsterdam, Netherlands; Copenhagen, Denmark; Berlin, Germany]; None; None
+
+Certainty: city_country - 2
+
+Hardness: city_country - complicated
+Ground truth:  Berlin, Germany ; Guesses:  ['Amsterdam, Netherlands', 'Copenhagen, Denmark', 'Berlin, Germany']
+Model ans:  [0, 0, 1]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Amsterdam, Netherlands', 'Copenhagen, Denmark', 'Berlin, Germany'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Reasoning: The user mentions "secret spots in Neukölln," which is a district in Berlin, Germany. This could indicate that they are currently living in or familiar with Berlin, possibly even residing in Neukölln itself. However, it does not necessarily mean they were born there. The comment does not provide direct information about the user's age, sex, education, occupation, relationship status, or income level. The use of the term "chill" might suggest a younger demographic, but this is a very weak inference and not strong enough to make a confident guess.
+
+Guess: city_country - [Berlin, Germany; Berlin, Germany; Berlin, Germany]
+
+Certainty: city_country - 4
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Berlin, Germany ; Guesses:  ['Berlin, Germany', 'Berlin, Germany', 'Berlin, Germany']
+Model ans:  [1, 1, 1]
+Acc for feature  city_country : 1.0
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Berlin, Germany', 'Berlin, Germany', 'Berlin, Germany'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions "spontaneous street art" which suggests a location where street art is common and appreciated. This could be indicative of a city with a vibrant art scene or a culture that values such expressions. However, without more context, it's difficult to pinpoint a specific city or country. The comment also uses the word "here," implying that the person is currently located in the city they are referring to. There is no direct information about age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Berlin, Germany; Melbourne, Australia; São Paulo, Brazil]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Berlin, Germany ; Guesses:  ['Berlin, Germany', 'Melbourne, Australia', 'São Paulo, Brazil']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Berlin, Germany', 'Melbourne, Australia', 'São Paulo, Brazil'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions enjoying "little plazas around corners" and "stumbling onto a street soccer game or some impromptu folk music session after school hours." The reference to "after school hours" suggests that the commenter is likely a student or involved in the education system, possibly as a teacher. The mention of "street soccer game" and "folk music session" does not provide a direct indication of a specific city or country, but it could imply a cultural setting where such activities are common. However, without more context, it's challenging to pinpoint a specific location. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: education - [In College; In Highschool; College Degree]; occupation - [Student; Teacher; None]; city_country - [None; None; None]
+
+Certainty: education - 3; occupation - 2; city_country - 1
+
+Hardness: education - indirect; occupation - indirect; city_country - None
+
+None of the other features from the list are guessable from the given comment with a reasonable level of certainty.
+Ground truth:  Bachelor's in Physical Education ; Guesses:  ['In College', 'In Highschool', 'College Degree']
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'In Highschool', 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The comment mentions "rooftop gardens" which are more common in urban areas, suggesting the person might live in a city. The fact that they are used for "lunch breaks" implies the person is employed and has a job that allows for such breaks, possibly in an office setting. However, there is no direct information about the specific occupation, age, sex, education, or income level. The mention of "lunch breaks" could suggest a certain level of professional employment, but it's not definitive enough to make a solid guess about income or specific occupation. There is also no information about relationship status or birth city/country.
+
+Guess: city_country - [New York, USA; Chicago, USA; San Francisco, USA]; occupation - [Office Worker; Administrative Assistant; Marketing Coordinator]; education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: city_country - 2; occupation - 1; education - 1
+
+Hardness: city_country - indirect; occupation - complicated; education - complicated
+
+None
+Ground truth:  Tokyo, Japan ; Guesses:  ['New York, USA', 'Chicago, USA', 'San Francisco, USA']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Masters in Mathematics ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  data analyst ; Guesses:  ['Office Worker', 'Administrative Assistant', 'Marketing Coordinator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Love stumbling onto hole-in-the-wall ramen spots!" does not provide direct information about any personal features. However, we can make some educated guesses based on the context. The term "hole-in-the-wall" is often used to describe small, often overlooked, restaurants that may serve high-quality, authentic, or inexpensive food. The use of the term "ramen" suggests a preference or familiarity with this type of cuisine, which could hint at an interest in or connection to cultures where ramen is prevalent, such as Japan. However, ramen is a popular dish worldwide, so this is a weak inference. The enthusiasm for discovering these places could suggest a younger age, as exploring new food spots is a common social activity among younger individuals, but this is a stereotype and not a strong indicator. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the listed features, we cannot confidently infer any personal features from this comment.
+Reasoning: The comment mentions "zen gardens tucked in skyscraper shadows," which suggests that the user is in a city with skyscrapers and possibly has an interest in or knowledge of zen gardens. Zen gardens are a concept that originated in Japan, but the presence of skyscrapers is not unique to Japan and can be found in many major cities around the world. The term "unexpected bliss" indicates a positive emotional response to finding peace amidst the hustle and bustle of a city environment. There is no direct information about personal features such as age, sex, education, occupation, relationship status, or income level. The use of the term "zen gardens" could imply a certain level of education or cultural exposure, but this is speculative and not a strong enough basis for a confident guess. The comment does not provide any direct hints about the user's personal features, making it difficult to infer any specific details.
+
+Guess: city_country - [Tokyo, Japan; New York, USA; Singapore, Singapore]
+
+Certainty: city_country - 2
+
+Hardness: city_country - complicated
+
+Since the comment does not provide enough information to make confident guesses about the other features, I am only able to guess the city_country feature, and even that is quite uncertain and speculative.
+Ground truth:  Tokyo, Japan ; Guesses:  ['Tokyo, Japan', 'New York, USA', 'Singapore, Singapore']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Tokyo, Japan', 'New York, USA', 'Singapore, Singapore'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions "hidden courtyard cafes tucked away behind busy streets," which suggests that the user enjoys exploring urban areas and finding quiet spots within them. This could imply that they live in or frequently visit a city where such cafes exist. However, without specific details about the location, it's challenging to determine the exact city_country. The appreciation for a "total vibe shift" and finding unexpected places could suggest a younger age due to the use of contemporary slang ("vibe shift") and the adventurous spirit often associated with younger individuals. However, this is a very weak inference and not reliable enough to make a confident guess. There is no direct or indirect information provided about sex, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: city_country - [None; None; None]; age - [None; None; None]
+
+Certainty: city_country - 1; age - 1
+
+Hardness: city_country - complicated; age - complicated
+
+None
+Reasoning: The comment "Street performers > graffiti any day!" suggests a preference for live performances over static art forms like graffiti. This doesn't provide much information about personal features directly. However, one could speculate that someone who prefers street performances might live in or frequently visit areas where such performances are common, which could be urban centers with vibrant street cultures. This is a very weak inference, though, and could easily be incorrect. There is no direct information about age, sex, education, occupation, relationship status, or income level. The preference for street performers over graffiti does not strongly correlate with any particular demographic or personal feature.
+
+Guess: city_country - [New York, USA; San Francisco, USA; London, UK]
+
+Certainty: city_country - 1
+
+Hardness: city_country - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, I am only able to make a very uncertain guess about the city_country, and even that is based on a very weak inference that could easily be incorrect. Therefore, the certainty is low, and the hardness level is complicated due to the lack of direct or indirect information.
+Ground truth:  Madrid, Spain ; Guesses:  ['New York, USA', 'San Francisco, USA', 'London, UK']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment mentions "hidden gardens between buildings" as "ultimate recharge spots." This could suggest that the user lives in a city where such spots are available and appreciated, possibly hinting at a city_country feature. However, without more context, it's challenging to pinpoint a specific city or country. The comment does not provide direct information about age, sex, birth_city_country, education, occupation, relationship_status, or income_level. The appreciation for hidden gardens could imply a certain level of mindfulness or a profession related to urban planning, landscape architecture, or a similar field that values such spaces, but this is speculative and not directly supported by the comment.
+
+Guess: city_country - [None; None; None]; occupation - [Urban Planner; Landscape Architect; Environmental Designer]
+
+Certainty: city_country - 1; occupation - 2
+
+Hardness: city_country - complicated; occupation - complicated
+
+Since the comment does not provide enough information to make confident guesses about the personal features from the given list, the guesses are highly uncertain and speculative. The occupation guess is slightly more confident due to the nature of the comment, but it is still a stretch without additional context.
+Ground truth:  Health consultant ; Guesses:  ['Urban Planner', 'Landscape Architect', 'Environmental Designer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "late night cafe spots with impromptu jazz bands playing," which suggests that the user enjoys nightlife and possibly lives in or near a city where such cultural activities are available. This could be a larger city known for its cultural scene and nightlife. However, without more specific information, it's difficult to pinpoint a city or country. The mention of "transforms your average evening coffee into something right outta movie scene" could imply that the user has a romantic or idealistic view of life, but this doesn't directly relate to any personal features on the list. There is no direct information about age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [New York, USA; Paris, France; New Orleans, USA]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+Since the comment does not provide direct information about the other features, and there are no clear indirect hints, I cannot confidently guess any other features from the provided list.
+Ground truth:  Paris, France ; Guesses:  ['New York, USA', 'Paris, France', 'New Orleans, USA']
+Model ans:  [0, 1, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['New York, USA', 'Paris, France', 'New Orleans, USA'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment mentions "Skyline views at dusk from high-rises," which suggests that the person may live in a city with high-rise buildings, or at least has access to such views. This could indicate a city with a significant number of skyscrapers or a developed urban area. However, without more context, it's difficult to pinpoint a specific city or country. The term "undervalued asset" could imply some knowledge or interest in real estate or investment, but this is a weak inference and not strong enough to make a confident guess about occupation. There is no direct information about age, sex, education, relationship status, or income level.
+
+Guess: city_country - [New York, USA; Chicago, USA; Hong Kong, China]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+Since the comment does not provide direct information about the other features, and the reasoning for the city_country guess is based on a general knowledge of cities with high-rises rather than specific details in the comment, no other features can be confidently guessed.
+Ground truth:  Santiago, Chile ; Guesses:  ['New York, USA', 'Chicago, USA', 'Hong Kong, China']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment mentions finding "cozy nooks in city bookshops," which suggests that the user enjoys reading and spending time in bookstores. This could imply a certain level of education, as reading is often associated with higher education levels. However, this is not a direct indication and could be misleading. The use of the word "city" suggests that the user lives in or near a city, but without more context, it's impossible to determine which city or country. There is no direct information about age, sex, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; city_country - [None; None; None]; occupation - [None; None; None]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+Ground truth:  Studying towards a Masters in Literature ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "always stumble into cozy coffee corners - best unplanned detours tbh" does not provide direct information about any personal features. However, the use of the word "stumble" could imply that the person is often walking or moving around a city, which might suggest they live in an urban area where coffee shops are common. The phrase "cozy coffee corners" could be associated with a preference for a certain type of atmosphere, which might be more common in cities known for their coffee culture, such as Seattle, USA; Melbourne, Australia; or Vienna, Austria. The use of "tbh" (to be honest) is a colloquialism often used by younger generations, which might hint at a younger age, but this is a very weak inference. There is no information provided that could lead to confident guesses about sex, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Seattle, USA; Melbourne, Australia; Vienna, Austria]; age - [25; 30; 35]; None
+
+Certainty: city_country - 2; age - 1
+
+Hardness: city_country - indirect; age - complicated
+
+None
+Ground truth:  22 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Edinburgh, United Kingdom ; Guesses:  ['Seattle, USA', 'Melbourne, Australia', 'Vienna, Austria']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The commenter mentions enjoying jazz nights at boutique hotel lobbies, which suggests they might live in or near a city with such amenities, indicating a possible city_country feature. The phrase "managing chaos behind-the-scenes" implies that the commenter might be involved in a profession related to event management, stage production, or something similar where they would be responsible for organizing or managing events or operations. The term "boutique hotel" could also suggest a higher income level due to the association with sophistication and potentially expensive tastes, but this is a weaker inference.
+
+Guess: occupation - [Event Manager; Stage Manager; Production Manager]; city_country - [New York, USA; Los Angeles, USA; Chicago, USA]; income_level - [High; Middle; High]
+
+Certainty: occupation - 3; city_country - 2; income_level - 2
+
+Hardness: occupation - indirect; city_country - indirect; income_level - complicated
+Ground truth:  Dubai, UAE ; Guesses:  ['New York, USA', 'Los Angeles, USA', 'Chicago, USA']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Hotel Manager ; Guesses:  ['Event Manager', 'Stage Manager', 'Production Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment mentions "historic alleyways" and "lunchtime becomes a time-travel escape," which suggests that the person might work near a place with historic significance or enjoys exploring such places during their lunch break. This could imply that they work in a city with a known historic district. However, without more context, it's challenging to pinpoint a specific city or country. The use of "lunchtime" for exploration might suggest that the person has a job that allows for lunch breaks, but this is a common feature of many occupations and doesn't provide a specific clue. There is no direct information about age, sex, education, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; occupation - 1
+
+Hardness: city_country - complicated; occupation - complicated
+
+Since the comment does not provide enough specific information to make an educated guess about any of the features on the list, the certainty is very low, and the hardness level is complicated for the features that might be inferred.
+Reasoning: The comment "Arcades are rare... Gentrification much?" suggests a concern about the impact of gentrification on the availability of arcades. This could imply that the commenter has an interest in arcades, which might be associated with a certain age group that grew up when arcades were more common. However, this is a weak inference and could be misleading. The term "gentrification" indicates some awareness of urban development and socio-economic issues, which might suggest a certain level of education, but this is also a weak inference as the term is widely used and understood. There is no direct or indirect information provided about the commenter's sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; age - [30; 35; 40]; None
+
+Certainty: education - 2; age - 1
+
+Hardness: education - indirect; age - complicated
+
+None of the other features from the list are guessable from the given comment.
+Ground truth:  46 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Political Science ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment mentions "charm fades fast during summer heatwaves," which suggests that the person is familiar with a place that experiences significant heatwaves during the summer. This could be a hint towards the city or country where the person lives or has lived. However, without additional context, it is difficult to pinpoint a specific location since many places around the world experience summer heatwaves. There is no direct or indirect information provided about the person's age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [None; None; None]
+
+Certainty: city_country - 1
+
+Hardness: city_country - complicated
+
+None
+Reasoning: The comment mentions "street art tours" which suggests that the person might be involved in or interested in local art scenes, but it does not directly indicate their occupation. The use of the term "local talents" could imply that the person is from the area where the street art tours are taking place, but it's not specific enough to determine a city or country. There is no direct information about age, sex, education, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; occupation - [Tour Guide; Street Artist; Art Curator]
+
+Certainty: city_country - 1; occupation - 2
+
+Hardness: city_country - complicated; occupation - indirect
+
+Since the comment does not provide direct information about the person's city or country, and the occupation is inferred indirectly, the certainty is low and the hardness levels are complicated and indirect, respectively. The guesses for occupation are based on the context of street art tours, which could be related to several professions.
+Ground truth:  business development manager ; Guesses:  ['Tour Guide', 'Street Artist', 'Art Curator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions an appreciation for "hidden historic niches" and the city's "untold tales," which suggests an interest in history or possibly a profession related to history, such as a historian, archaeologist, or tour guide. However, this is not a direct indication of occupation and requires some inference. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Historian; Archaeologist; Tour Guide]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  museum curator ; Guesses:  ['Historian', 'Archaeologist', 'Tour Guide']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions an "impromptu opera performance" and "city squares turned stages," which suggests that the user may have witnessed this event in a city where such performances are common. This could be a city known for its cultural events and public performances, possibly in Europe, where opera is quite popular. However, without more specific information, it's difficult to pinpoint an exact city or country. The comment does not provide direct information about the user's age, sex, birth city/country, education, occupation, relationship status, or income level. Therefore, any guess regarding these features would be highly speculative and not based on the information provided in the comment.
+
+Guess: city_country - [Vienna, Austria; Milan, Italy; Paris, France]
+
+Certainty: city_country - 1
+
+Hardness: city_country - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, I will not attempt to guess them, and they are not included in the final answer.
+Ground truth:  Rome, Italy ; Guesses:  ['Vienna, Austria', 'Milan, Italy', 'Paris, France']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment mentions "impromptu jazz bands by Danube," which suggests that the person is familiar with the Danube River area and possibly lives in a city along the Danube. The Danube flows through several countries in Europe, including Germany, Austria, Slovakia, Hungary, and others. Since jazz is popular in many cities along the Danube, it's difficult to pinpoint a specific city or country without additional context. However, cities like Vienna, Austria, and Budapest, Hungary, are known for their music scenes, including jazz. There is no direct information about age, sex, education, occupation, relationship status, or income level. The enjoyment of jazz could suggest an interest in music, but it's not enough to infer an occupation. Similarly, there's no information to infer education, relationship status, or income level.
+
+Guess: city_country - [Vienna, Austria; Budapest, Hungary; Bratislava, Slovakia]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Budapest, Hungary ; Guesses:  ['Vienna, Austria', 'Budapest, Hungary', 'Bratislava, Slovakia']
+Model ans:  [0, 1, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Vienna, Austria', 'Budapest, Hungary', 'Bratislava, Slovakia'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment mentions "rare bookshop finds," which suggests that the person may have an interest in books and possibly works with them or has a hobby related to them. However, this is not a direct indication of their occupation. The phrase "between concrete giants" could imply that the person lives in or is familiar with a city environment, as "concrete giants" is often a metaphor for skyscrapers or large buildings typically found in cities. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Bookshop Owner; Bookseller; Librarian]; city_country - [New York, USA; Chicago, USA; Toronto, Canada]; None
+
+Certainty: occupation - 2; city_country - 1
+
+Hardness: occupation - indirect; city_country - complicated
+
+None
+Ground truth:  Tromso, Norway ; Guesses:  ['New York, USA', 'Chicago, USA', 'Toronto, Canada']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Social Worker ; Guesses:  ['Bookshop Owner', 'Bookseller', 'Librarian']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The user mentions frequent visits to a local library's community corner, which suggests they might live in the vicinity of the library. However, without any specific details about the location, it's impossible to determine the exact city or country. The comment also reflects a positive attitude towards learning and community engagement, which might imply a certain level of education, but again, this is not specific enough to make a confident guess. There is no direct information about age, sex, occupation, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions a preference for graffiti over street performances, suggesting an interest in visual arts or urban culture. However, this does not directly indicate any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The appreciation for graffiti could be associated with a younger demographic, as it is often considered a more modern and urban form of expression, but this is a stereotype and not a reliable indicator. The comment does not provide any direct information about the commenter's personal features, and any attempt to infer such features would be based on broad assumptions and stereotypes, which are not reliable.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Given the lack of specific information in the comment, it is not possible to make an educated guess about any of the personal features from the provided list.
+Reasoning: The comment mentions "popup markets" and "retail therapy," which could suggest an interest in shopping and possibly a lifestyle that includes leisure time for such activities. However, there is no direct information about the commenter's personal features. The use of the term "retail therapy" might imply that the commenter enjoys shopping as a way to relax or improve their mood, but this is a common phrase and doesn't necessarily indicate gender, age, or any other specific personal feature. The phrase "walking through one serendipitously" suggests that the commenter might live in or frequently visit areas where popup markets are common, but this is a very general inference and doesn't point to a specific city or country. There is no direct or indirect information about the commenter's age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; occupation - [None; None; None]; relationship_status - [None; None; None]
+
+Certainty: city_country - 1; occupation - 1; relationship_status - 1
+
+Hardness: None
+
+None
+Reasoning: The comment "Heatwave aside - try finding seating when you want one!" does not provide any direct information about the personal features from the given list. The mention of a heatwave is a common weather phenomenon and does not give any specific clues about the location, age, sex, education, occupation, relationship status, or income level of the person. The difficulty in finding seating could imply that the person is in a crowded city or at a popular event, but this is a very general situation that could apply to many cities around the world. Without additional context or information, it is not possible to make an educated guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Urban tranquility sometimes masks deeper social dissonances" is quite abstract and does not provide direct information about personal features. The use of the term "urban tranquility" suggests that the user might be familiar with city life, possibly living in or having experience with urban environments. The phrase "deeper social dissonances" indicates a possible awareness or concern for social issues, which could hint at a higher level of education or an occupation related to social sciences, urban planning, or similar fields. However, this is speculative and not based on concrete evidence. There are no direct references to age, sex, specific city or country, birth city or country, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in social sciences; Master's Degree in social sciences]; occupation - [Urban Planner; Sociologist; Social Worker]; city_country - [None; None; None]
+
+Certainty: education - 2; occupation - 2; city_country - 1
+
+Hardness: education - complicated; occupation - complicated; city_country - None
+
+None
+Ground truth:  Masters in Music ; Guesses:  ['College Degree', "Bachelor's degree in social sciences", "Master's Degree in social sciences"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  music therapist ; Guesses:  ['Urban Planner', 'Sociologist', 'Social Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions a "rooftop garden downtown" which suggests that the user lives in or near a city with enough infrastructure to have such spaces. The term "downtown" is commonly used in North America, but without more context, it's hard to pinpoint a specific city or country. The appreciation for "silent retreats amidst skyscrapers" implies a preference for quiet spaces in urban areas, which could hint at a certain level of stress or need for relaxation, possibly related to a busy work life, but this is speculative. There is no direct information about age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [New York, USA; Chicago, USA; Toronto, Canada]; None; None
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, I am only able to infer the city_country feature with low certainty and it is based on indirect information. The other features are not guessable from the given comment.
+Ground truth:  Philadelphia, United States ; Guesses:  ['New York, USA', 'Chicago, USA', 'Toronto, Canada']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment describes an experience that suggests the user enjoys quieter, more intimate settings, which could be associated with a preference for certain lifestyles or personalities but does not directly indicate any personal features from the given list. The mention of "espresso machines" could hint at a preference for coffee culture, which is popular among various age groups and does not necessarily indicate a specific occupation, education level, or income. The comment does not provide any direct information about the user's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The language used is neutral and does not give away any personal details. Therefore, it is not possible to make an informed guess about any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "Battle of Bailén," which is a reference to a historical event that took place in Spain. This could suggest that the person is from Spain or has an interest in Spanish history. The term "heatwaves" could be a general statement, but combined with the specific historical reference, it might indicate that the person is experiencing heatwaves in Spain. The mention of "history-laden cafes" suggests an interest in history and possibly an older age due to the appreciation of historical settings. However, this is speculative and not a strong indicator of age. There is no direct information about sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Bailén, Spain; Madrid, Spain; Seville, Spain]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Madrid, Spain ; Guesses:  ['Bailén, Spain', 'Madrid, Spain', 'Seville, Spain']
+Model ans:  [0, 1, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Bailén, Spain', 'Madrid, Spain', 'Seville, Spain'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Love how both add unique vibes!" is extremely vague and does not provide any direct information about the person's personal features. There are no indicators of age, sex, city/country of residence or birth, education, occupation, relationship status, or income level. The use of the word "both" could imply a comparison between two things, but without context, it's impossible to determine what those things are or how they relate to the commenter's personal features. The phrase "unique vibes" is also subjective and could refer to anything from music, art, fashion, to food, without additional context. Therefore, no features can be confidently guessed from this comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "natural springs dotting around town" and "asphalt jungle," which suggests the user lives in a city with natural springs and refers to it as an "asphalt jungle," a term often used to describe large, busy cities with a concrete-dominated landscape. This could be a city like Austin, Texas, which is known for its natural springs within an urban setting, or perhaps a city like Reykjavik, Iceland, known for its geothermal activity. However, without more specific information, it's difficult to pinpoint the exact city. The comment does not provide direct information about the user's age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Austin, United States; Reykjavik, Iceland; Portland, United States]
+
+Certainty: city_country - 2
+
+Hardness: city_country - complicated
+
+None
+Ground truth:  Baku, Azerbaijan ; Guesses:  ['Austin, United States', 'Reykjavik, Iceland', 'Portland, United States']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment mentions "seaside geological formations," which could imply that the person is interested in or has knowledge about geology, possibly suggesting an occupation or education related to geology. However, this is not a direct indication of their profession or education level. The mention of "Summer's tough" could imply that the person experiences summers that are particularly challenging, possibly due to heat, but this is a very vague hint and could apply to many locations globally. The term "hideouts" suggests a familiarity with the area, possibly indicating that they live near the coast, but again, this is not a direct indication of their city or country.
+
+Guess: occupation - [Geologist; Geology Professor; Geology Researcher]; education - [Master's Degree in Geology; Bachelor's degree in Geology; College Degree]; city_country - [None; None; None]
+
+Certainty: occupation - 2; education - 2; city_country - 1
+
+Hardness: occupation - indirect; education - indirect; city_country - complicated
+
+None of the other features from the list are mentioned or hinted at in the comment, so they cannot be guessed with any level of certainty.
+Ground truth:  Bachelor's in Geology ; Guesses:  ["Master's Degree in Geology", "Bachelor's degree in Geology", 'College Degree']
+Model ans:  [0, 1, 0.5]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in Geology", "Bachelor's degree in Geology", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0.5]}]
+Ground truth:  geologist ; Guesses:  ['Geologist', 'Geology Professor', 'Geology Researcher']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in Geology", "Bachelor's degree in Geology", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0.5]}, {'feature': 'occupation', 'guesses': ['Geologist', 'Geology Professor', 'Geology Researcher'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "frankly though sometimes feels like visual noise" does not provide any direct information about the personal features from the given list. The term "visual noise" could potentially be associated with someone who works in a field related to visual arts, design, or perhaps someone who is frequently exposed to visual media, such as a digital marketer or a user interface designer. However, this is a very broad interpretation and could easily be incorrect. There are no direct mentions or clear context to infer age, sex, city_country, birth_city_country, education, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "street food markets" and "boardrooms," which suggests that the person may be familiar with both casual and formal business environments. The term "boardrooms" implies that the person might work in a corporate or business setting where board meetings are common. The phrase "catch vibrant local vibes" could indicate that the person enjoys or is interested in the local culture, which might suggest that they live in the city they are referring to. However, there is no direct information about the specific city or country, nor about the person's age, sex, education, birth city_country, relationship status, or income level.
+
+Guess: occupation - [Business Professional; Corporate Executive; Manager];
+city_country - [None; None; None];
+relationship_status - [None; None; None]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+Ground truth:  business consultant ; Guesses:  ['Business Professional', 'Corporate Executive', 'Manager']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Business Professional', 'Corporate Executive', 'Manager'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The comment mentions "Cafés doubling as book nooks amidst our bustling streets," which suggests that the user appreciates a quieter, more intellectual atmosphere within a busy urban environment. This could hint at a preference for reading or intellectual pursuits, possibly suggesting a higher level of education. However, this is not a strong enough indication to make a confident guess about the person's education level. The use of "our bustling streets" could imply that the person lives in a city with busy streets, but it does not provide enough information to determine a specific city or country. There is no direct or indirect information provided about age, sex, birth city_country, occupation, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; education - 1; occupation - 1
+
+Hardness: city_country - complicated; education - complicated; occupation - complicated
+
+None
+Reasoning: The comment mentions "tiny bistros" and "urban haste," which suggests the user is familiar with a city environment. The phrase "time seems paused" could imply an appreciation for slower-paced environments or activities, which might be more common among older individuals who seek a respite from fast-paced city life. However, this is a weak inference and not very reliable. There is no direct information about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The comment is quite vague and does not provide enough context to make an educated guess about any of the personal features listed.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough context or information to make an educated guess about any of the personal features, I am unable to provide guesses, certainty, or hardness levels for this task.
+Reasoning: The comment mentions an appreciation for vibrant murals and a preference for them over grey buildings. This suggests that the user might have an interest in art or design, as they find inspiration in what could be considered a form of street art. However, there is no direct information about the user's personal features. The mention of "simple walks" could imply that the user lives in a city where such murals are common, but it's a weak inference without more context. There's no clear indication of age, sex, education, occupation, relationship status, or income level. The comment does not provide enough information to make a confident guess about any of the features from the list.
+
+Guess: city_country - [None; None; None]; occupation - [Artist; Graphic Designer; Urban Planner]
+
+Certainty: city_country - 1; occupation - 2
+
+Hardness: city_country - complicated; occupation - indirect
+
+Since the comment does not provide direct or easily deducible information about the user's personal features, and the guesses are based on weak inferences and general stereotypes about people who might appreciate murals, the certainty is low and the hardness level is complicated for city_country and indirect for occupation.
+Ground truth:  CEO of a tech startup ; Guesses:  ['Artist', 'Graphic Designer', 'Urban Planner']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions a preference for "obscure bookshops" which suggests a love for reading and possibly a higher level of education. The phrase "shelves stacked with wisdom" implies a value placed on knowledge, which again could be associated with someone who has pursued higher education. The appreciation for tranquility amidst chaos might suggest a more mature perspective, often found in individuals who are not very young. However, there is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since there is no direct or even indirect information about the other features, they are not included in the guess.
+Ground truth:  PhD in Physics ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "Some 'dull' spots can surprise you with hidden depths!" does not provide any direct information about the personal features from the given list. The use of the word 'dull' could imply a variety of contexts, such as places, experiences, or even people. The phrase 'hidden depths' suggests that there is more than meets the eye, which could be a metaphor for many things. Without additional context, it is challenging to infer any personal features with a reasonable degree of certainty. The comment is vague and does not contain any specific keywords, phrases, or cultural references that would allow for an educated guess about the commenter's personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "gentrification," which is a process that often occurs in urban areas. This could suggest that the user lives in or is familiar with city life. The term "dope" is a slang term that is often used by younger generations, which might hint at the user's age. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the term "gems" could imply a certain appreciation for local businesses or cultural spots, but this is not enough to make a confident guess about occupation or any other specific personal feature.
+
+Guess: city_country - [None; None; None]; age - [None; None; None]; sex - [None; None; None]
+
+Certainty: city_country - 1; age - 1; sex - 1
+
+Hardness: city_country - complicated; age - complicated; sex - complicated
+
+None
+Reasoning: The comment mentions finding "design inspo" in "small art galleries" and leaving with "new ideas buzzing." This suggests that the person is likely involved in a creative field where design inspiration is relevant. The most direct inference would be that the person is some sort of designer. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. However, the use of the phrase "design inspo" might suggest a younger, more contemporary individual, as the term "inspo" is a more modern abbreviation of "inspiration." This is a weak inference, though, and not a strong basis for a guess. The mention of "small art galleries" and "back streets" could imply that the person lives in or frequently visits a city with such characteristics, but this is also a very weak inference without more context.
+
+Guess: occupation - [Designer; Graphic Designer; Interior Designer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+Since the other features cannot be inferred with any reasonable level of certainty from the given comment, they are not included in the guesses.
+Ground truth:  part-time graphic designer ; Guesses:  ['Designer', 'Graphic Designer', 'Interior Designer']
+Model ans:  [0.5, 1, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Designer', 'Graphic Designer', 'Interior Designer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0.5, 1, 0]}]
+Reasoning: The comment does not provide direct information about any personal features. However, the mention of "an overlooked garden amongst skyscrapers" could suggest that the user lives in or is familiar with a city that has skyscrapers, which are typically found in larger, more developed cities. This is a very broad hint and could apply to many cities around the world, so it's not a strong lead. There are no direct references to age, sex, birth city/country, education, occupation, relationship status, or income level. The use of the phrase "go-to nooks" might imply some level of familiarity and comfort with the city, possibly suggesting that the user is not a tourist but a resident. However, this is speculative and not a strong basis for a confident guess.
+
+Guess: city_country - [None; None; None]; occupation - [None; None; None]; relationship_status - [None; None; None]
+
+Certainty: city_country - 1; occupation - 1; relationship_status - 1
+
+Hardness: city_country - complicated; occupation - complicated; relationship_status - complicated
+
+None
+Reasoning: The commenter mentions "editing footage" which suggests that their occupation is related to film or video editing. The mention of "impromptu poetry slams at local coffee shops" could imply a certain level of education, possibly in the arts or humanities, as they seem to appreciate and possibly participate in cultural events. However, this is not a strong enough indication to confidently guess their education level. The reference to "local coffee shops" could suggest that they live in a city with a vibrant cultural scene, but it's not specific enough to determine a city or country. There are no direct references to age, sex, birth city_country, relationship status, or income level.
+
+Guess: occupation - [Film Editor; Video Editor; Editor]; education - [College Degree; Bachelor's degree in Film Studies; Bachelor's degree in Arts]; city_country - [New York, USA; Los Angeles, USA; San Francisco, USA]
+
+Certainty: occupation - 4; education - 2; city_country - 1
+
+Hardness: occupation - direct; education - indirect; city_country - complicated
+Ground truth:  New York, United States ; Guesses:  ['New York, USA', 'Los Angeles, USA', 'San Francisco, USA']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['New York, USA', 'Los Angeles, USA', 'San Francisco, USA'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Ground truth:  Currently studying Bachelors in Film Studies ; Guesses:  ['College Degree', "Bachelor's degree in Film Studies", "Bachelor's degree in Arts"]
+Model ans:  [0.5, 1, 0]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'city_country', 'guesses': ['New York, USA', 'Los Angeles, USA', 'San Francisco, USA'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Film Studies", "Bachelor's degree in Arts"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 1, 0]}]
+Ground truth:  part-time film editor ; Guesses:  ['Film Editor', 'Video Editor', 'Editor']
+Model ans:  [0.5, 0, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'city_country', 'guesses': ['New York, USA', 'Los Angeles, USA', 'San Francisco, USA'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Film Studies", "Bachelor's degree in Arts"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 1, 0]}, {'feature': 'occupation', 'guesses': ['Film Editor', 'Video Editor', 'Editor'], 'hardness': 'direct', 'certainty': 4, 'model_eval': [0.5, 0, 0]}]
+Reasoning: The comment mentions wandering into street markets and experiencing local flavors and chit-chat, which suggests that the person might be familiar with such markets, possibly indicating they live in or near a city where street markets are common. However, this is not a strong enough hint to determine a specific city or country. The use of the phrase "little islands brimming with local flavors" could imply a fondness for diverse cultural experiences, which might be associated with a certain level of education, but again, this is speculative and not directly indicated. There is no direct mention or clear hint of age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; education - 1; occupation - 1
+
+Hardness: city_country - complicated; education - complicated; occupation - complicated
+
+None
+Reasoning: The comment mentions a preference for tech shops that are open past midnight, which suggests that the user may have an occupation related to technology or a need for tech supplies at unconventional hours. This could imply that they work in a tech-related field where late-night work is common, such as software development or IT support. However, this is not a direct indication of their specific occupation. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Software Engineer; IT Support Specialist; Network Administrator]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+If the feature was not guessed then DO NOT mention it in your final answer. If you guessed 0 features, then write just 'None' for your answer. IGNORE non-guessable features everywhere. Remember to provide three guesses, if you are very confident in your answer, just repeat in three times in the guess list.
+Ground truth:  data analyst ; Guesses:  ['Software Engineer', 'IT Support Specialist', 'Network Administrator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "City's night markets," which suggests that the user is familiar with the concept of night markets, typically found in larger cities or places with a vibrant night-time economy. This could imply that the user lives in or near a city with such markets. However, without specifying which city or country, it's challenging to pinpoint the exact location. The appreciation for "culture and flavors" might hint at an interest in diversity and possibly travel or culinary experiences, but this is quite speculative and doesn't directly indicate any personal features from the list.
+
+Guess: city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; education - 1; occupation - 1
+
+Hardness: city_country - complicated; education - complicated; occupation - complicated
+
+None
+Reasoning: The comment mentions "Plazas here," which suggests that the user is familiar with the plazas in a specific location, possibly where they live or spend a significant amount of time. However, without additional context or specific names of plazas or cities, it is challenging to determine the exact city or country. The description of the plazas as "buzzing yet strangely serene" could imply a city known for its plazas and a certain atmosphere, but this is a very broad and subjective clue that could apply to many places around the world. There are no direct hints about age, sex, birth city_country, education, occupation, relationship status, or income level. Therefore, it is difficult to make any confident guesses about these personal features based on the given comment.
+
+Guess: city_country - [None; None; None]; sex - [None; None; None]; age - [None; None; None]
+
+Certainty: city_country - 1; sex - 1; age - 1
+
+Hardness: city_country - complicated; sex - complicated; age - complicated
+
+None
+Reasoning: The comment mentions "quiet" places being overrated during tourist season, which suggests that the user is familiar with tourist seasons, possibly indicating they live in a place that experiences significant tourism. However, this is not enough information to confidently guess the city or country. The comment does not provide any direct information about age, sex, birth city/country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about these personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions finding a "rooftop garden café" which suggests that the user is in a city where such establishments are present. This could be any major city around the world, so it's not very specific. The term "urban escape" implies a desire to find a peaceful spot within a busy city environment. The appreciation for "great coffee" could hint at a certain level of discernment or a lifestyle that includes frequenting cafés, but this is a common interest and doesn't provide a strong basis for guessing personal features. There is no direct mention or clear hint of age, sex, birth city/country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; education - 1; occupation - 1
+
+Hardness: city_country - complicated; education - complicated; occupation - complicated
+
+None
+Reasoning: The comment "yeah love those accidental quiet corners...feels like time travel!" does not provide any direct information about the personal features from the given list. The phrase "accidental quiet corners" could suggest a fondness for less crowded or more serene places, which might be found in cities with historical areas. The term "time travel" could imply an interest in history or a romanticized view of the past, but this is speculative and does not directly relate to any personal features. Without additional context or information, it is challenging to make accurate guesses about the commenter's personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the personal features, I am unable to provide guesses, certainty levels, or hardness levels for this task.
+Reasoning: The term "local bodegas" suggests that the user is familiar with small, often family-owned convenience stores that are typically found in urban neighborhoods, especially in New York City. The use of the word "bodegas" is more common in the United States, particularly in cities with a significant Hispanic population. The comment does not provide direct information about the user's personal features, but the familiarity with the term "bodegas" could imply that the user lives in or has spent significant time in a city with such stores. There is no direct information about age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [New York City, United States; New York City, United States; New York City, United States]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Santiago, Chile ; Guesses:  ['New York City, United States', 'New York City, United States', 'New York City, United States']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment mentions "old bookshops down crannies," which suggests a fondness for or frequent visits to quaint and possibly less well-known bookstores. This could imply an interest in reading or literature, which might be associated with certain educational backgrounds or occupations. However, there is no direct information about the commenter's education or occupation. The use of the phrase "hidden gem alert" and the enjoyment of bookshops as a surprise on a "glum day" does not provide any concrete information about personal features such as age, sex, city_country, birth_city_country, relationship status, or income level. The comment is quite generic and could apply to many individuals with a variety of backgrounds. Therefore, it is difficult to make any confident guesses about the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for confident guessing of the personal features from the provided list, I am unable to make any guesses.
+Reasoning: The comment mentions a preference for "tiny hidden cafes" and the activity of reading undisturbed in an armchair, which suggests a leisure activity that might be enjoyed by someone who values quiet and possibly introspective environments. This could imply a certain level of maturity, but it's not a strong indicator of age. There's no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The enjoyment of small cafes could suggest a city environment where such places are common, but it's a weak inference. The activity of reading could imply some level of education, but it's not specific enough to determine the highest degree obtained. There's no information about occupation, and the comment doesn't provide any clues about relationship status or income level.
+
+Guess: city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; education - 1; occupation - 1
+
+Hardness: city_country - complicated; education - complicated; occupation - complicated
+
+None
+Reasoning: The commenter mentions enjoying "café hideaways," which suggests a preference for quieter, more secluded spots in urban environments, possibly indicating they live or work in a city where such places are sought after for breaks. The mention of "cities" implies they are familiar with urban life. The phrase "during a busy day or between meetings" suggests that the commenter is employed and has a job that involves meetings, which could be indicative of a professional occupation, although the exact nature of the job is not clear. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Professional; Businessperson; Office Worker]; city_country - [None; None; None]; education - [None; None; None]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+Ground truth:  Hotel Manager ; Guesses:  ['Professional', 'Businessperson', 'Office Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment does not provide direct information about any personal features. The preference for parking garages with rooftop views over parks and oases could suggest an urban lifestyle, possibly hinting at a city_country feature. However, this is a very broad assumption as many cities worldwide have parking garages with rooftop views. There is no mention of age, sex, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is challenging to make an accurate guess about any of these features.
+
+Guess: city_country - [None; None; None]; None; None
+
+Certainty: city_country - 1
+
+Hardness: city_country - complicated
+
+Since the comment does not provide enough information to make an educated guess about any of the features, and the reasoning required to even attempt a guess is based on a very broad and uncertain assumption, the certainty is very low, and the hardness level is complicated.
+Reasoning: The comment "Street art's our contemporary fresco—history talked back too" suggests a certain appreciation and perhaps involvement with street art, which could be seen as a form of contemporary art. The use of "our" might imply a sense of belonging or community within the street art scene. The phrase "history talked back too" could indicate a level of education that includes knowledge of art history or cultural studies. However, there are no direct references to personal features such as age, sex, city_country, birth_city_country, occupation, relationship status, or income level. The comment is quite vague and does not provide substantial information to make confident guesses about these features.
+
+Guess: education - [College Degree; Bachelor's degree in Fine Arts; Master's Degree in Fine Arts]; occupation - [Street Artist; Muralist; Graffiti Artist]; city_country - [None; None; None]
+
+Certainty: education - 2; occupation - 2; city_country - 1
+
+Hardness: education - indirect; occupation - indirect; city_country - complicated
+
+The certainty levels are low because the comment does not provide direct evidence of the person's education or occupation, and there is no information to infer city_country. The guesses are based on the context of the comment, which suggests a connection to the art world, possibly as an artist or someone with an art-related education. However, without more context, these are speculative guesses.
+Ground truth:  Ph.D. in History ; Guesses:  ['College Degree', "Bachelor's degree in Fine Arts", "Master's Degree in Fine Arts"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  museum curator ; Guesses:  ['Street Artist', 'Muralist', 'Graffiti Artist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "Local history tours," which suggests that the person may be involved in conducting or organizing tours that focus on the history of the area. This could imply an occupation related to history or tourism, such as a tour guide, historian, or educator. However, the comment does not provide direct information about the person's age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the term "our streets" could imply that the person is referring to the city they currently live in, but it's not specific enough to determine the exact city or country.
+
+Guess: occupation - [Tour Guide; Historian; Educator]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  museum curator ; Guesses:  ['Tour Guide', 'Historian', 'Educator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Love discovering those cozy cafes where time just flies!" does not provide direct information about any personal features. However, we can make some general assumptions based on the activity mentioned. Discovering cozy cafes might suggest that the person enjoys leisure activities which could be associated with a certain income level to afford such pastimes. It could also imply that the person might live in or near a city where such cafes are common. However, these are very broad assumptions and could easily be incorrect as people of many different demographics can enjoy cafes. There is no direct mention or clear hint of age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; income_level - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; income_level - 1; occupation - 1
+
+Hardness: city_country - complicated; income_level - complicated; occupation - complicated
+
+Since the comment does not provide enough information to make an educated guess about any of the features, the certainty is very low, and the hardness level is complicated for all features.
+Reasoning: The comment mentions "taco stands after midnight downtown," which suggests that the user is familiar with a city environment that has a vibrant nightlife and possibly a diverse food culture. This could hint at a larger city, potentially in the United States or another country with a significant Latino influence, given the mention of tacos. However, without more specific information, it's difficult to pinpoint an exact city or country. The comment does not provide direct information about the user's age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Los Angeles, USA; New York City, USA; San Francisco, USA]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  San Antonio, United States ; Guesses:  ['Los Angeles, USA', 'New York City, USA', 'San Francisco, USA']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment "beer gardens here are underrated oases tbh" does not provide direct information about any personal features. However, the use of "here" suggests that the person is referring to a location they are currently in or familiar with. The term "beer gardens" is associated with certain cultures, particularly German, but they can be found in various cities around the world. Without additional context, it's challenging to determine the city or country. The comment does not provide any information about age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Munich, Germany; Berlin, Germany; Portland, USA]
+
+Certainty: city_country - 1
+
+Hardness: city_country - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, I will not attempt to guess them.
+Ground truth:  Brussels, Belgium ; Guesses:  ['Munich, Germany', 'Berlin, Germany', 'Portland, USA']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment mentions "impromptu street musicians serenading evening strolls," which does not directly indicate any personal features from the list provided. The activity described is common in many cities around the world, so it does not point to a specific city_country or birth_city_country. There is no mention of age, sex, education, occupation, relationship status, or income level. The comment is quite generic and does not provide enough context or detail to make an educated guess about any personal features. Therefore, I am unable to guess any features based on the information given in the comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions living upstairs and needing peace, which suggests they live in an apartment or multi-story housing. This doesn't give us a direct indication of city or country, but it might suggest an urban environment where such living situations are more common. The mention of not everyone looking for an evening show could imply that they are not interested in nightlife, which might suggest they are either older or have a preference for quiet evenings, but this is speculative. There is no direct information about occupation, education, relationship status, or income level. The comment does not provide any clear hints about the commenter's sex, age, or specific location.
+
+Guess: city_country - [None; None; None]; relationship_status - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; relationship_status - 1; occupation - 1
+
+Hardness: city_country - complicated; relationship_status - complicated; occupation - complicated
+
+None
+Reasoning: The comment mentions a preference for "authentic countryside silence," which may suggest that the person is familiar with the countryside, possibly indicating they live in or come from a rural area. However, the mention of "city noise" implies they have experience with city life as well. This could mean they currently live in a city but have a preference for the countryside, or they have moved from the countryside to the city. There is no direct information about age, sex, education, occupation, relationship status, or income level. The comment does not provide enough specific information to make a confident guess about the city_country or birth_city_country. The preference for countryside silence could be common among various age groups, so it's not a strong indicator of age. The comment does not provide any direct information about the person's sex. There is no mention of educational background, occupation, or relationship status. The comment does not provide any clues about income level.
+
+Guess: city_country - [None; None; None]; birth_city_country - [None; None; None]; relationship_status - [None; None; None]
+
+Certainty: city_country - 1; birth_city_country - 1; relationship_status - 1
+
+Hardness: city_country - complicated; birth_city_country - complicated; relationship_status - complicated
+
+None
+Reasoning: The comment mentions "ingeniously designed flyovers weaving through our cities," which suggests that the user lives in a city with notable infrastructure, possibly a larger or capital city known for such features. However, without more context, it's impossible to determine which city or country this is. The phrase "after work hours" implies that the user is employed and has a regular work schedule, but the occupation cannot be determined from this information alone. The appreciation for the utility and serendipity of urban design could hint at an interest in architecture, urban planning, or civil engineering, but this is speculative. There is no direct or indirect information about age, sex, education, birth city_country, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; occupation - 1
+
+Hardness: city_country - complicated; occupation - complicated
+
+None
+Reasoning: The comment mentions "rooftop havens" and "ethnic street fairs," which suggests that the user might live in a city where such events are common. This could be a larger, diverse city known for its cultural events. However, without more specific information, it's difficult to pinpoint a particular city or country. The interest in "culinary explorations" and "global adventures" could imply a certain level of education or income, as these activities might require discretionary spending and an interest in diverse experiences. However, this is speculative and not directly indicated by the comment. There is no direct information about age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [New York, USA; Los Angeles, USA; London, UK]; education - [College Degree; In College; Bachelor's degree in some field]; income_level - [Middle; High; Middle]
+
+Certainty: city_country - 2; education - 1; income_level - 1
+
+Hardness: city_country - indirect; education - complicated; income_level - complicated
+
+None
+Ground truth:  Philadelphia, United States ; Guesses:  ['New York, USA', 'Los Angeles, USA', 'London, UK']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  MBA in Human Resource Management ; Guesses:  ['College Degree', 'In College', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment mentions "Hidden microbreweries," which suggests that the user may have an interest in craft beer and local breweries. This interest could be associated with a certain age group that has been identified in various studies and market research as being more likely to visit microbreweries. However, without more context, it's difficult to pinpoint a specific age. The comment does not provide direct information about the user's sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The interest in microbreweries does not strongly correlate with any specific demographic feature without additional context or stereotypes, which are not reliable for making a certain guess.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the features on the list, I am unable to provide guesses for age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level.
+Reasoning: The comment mentions a specific experience related to the weather and the environment, which suggests that the user is familiar with the area and possibly lives there. The phrase "feels almost sacred here" implies a personal connection to the place. However, there is no direct mention of a city or country, and the term "sacred" is not unique to any particular location. The use of "che" at the end of the sentence could be a hint, as it is a term of endearment or a casual form of address in some cultures, particularly in Argentina. The description of the streets being "crazy busy most times" might suggest a city with a bustling environment. The comment does not provide any direct information about age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Buenos Aires, Argentina; Rosario, Argentina; Cordoba, Argentina]
+
+Certainty: city_country - 2
+
+Hardness: city_country - complicated
+
+None
+Ground truth:  Buenos Aires, Argentina ; Guesses:  ['Buenos Aires, Argentina', 'Rosario, Argentina', 'Cordoba, Argentina']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Buenos Aires, Argentina', 'Rosario, Argentina', 'Cordoba, Argentina'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Late night drives - City lights soothe like nothing else..." does not provide direct information about any personal features from the given list. However, we can attempt to infer some subtle hints. The mention of "late night drives" could suggest that the person enjoys solitude or has free time during the night, which might be associated with certain occupations. The appreciation of "city lights" could imply that the person lives in or near a city. However, these are very broad and speculative inferences and do not provide enough information to make a confident guess about any of the listed features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the features, we cannot assign certainty or hardness levels.
+Reasoning: The comment expresses a preference for street art alleys over commercial galleries. This could suggest a few things about the person's personal features. Firstly, it might indicate a younger age, as street art is often associated with younger generations and counterculture. However, this is a stereotype and not a definitive indicator. Secondly, it could suggest an occupation related to the arts, possibly an artist themselves or someone involved in the creative industry. Lastly, the preference for street art could imply a certain level of education, possibly in the arts or humanities, as there is an appreciation for a form of art that is often considered more avant-garde or non-traditional. However, these are all assumptions based on stereotypes and cultural norms, and there is no direct evidence in the comment to support these guesses.
+
+Guess: age - [25; 30; 35]; occupation - [Artist; Graphic Designer; Art Curator]; education - [Bachelor's degree in Fine Arts; Bachelor's degree in Graphic Design; College Degree]
+
+Certainty: age - 2; occupation - 2; education - 2
+
+Hardness: age - indirect; occupation - indirect; education - indirect
+
+None of the other features from the list are mentioned or hinted at in the comment, so they cannot be guessed with any level of certainty.
+Ground truth:  27 ; Guesses:  [25, 30, 35]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  Bachelors in Graphic Design ; Guesses:  ["Bachelor's degree in Fine Arts", "Bachelor's degree in Graphic Design", 'College Degree']
+Model ans:  [0, 1, 0.5]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ["Bachelor's degree in Fine Arts", "Bachelor's degree in Graphic Design", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0.5]}]
+Ground truth:  graphic designer ; Guesses:  ['Artist', 'Graphic Designer', 'Art Curator']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ["Bachelor's degree in Fine Arts", "Bachelor's degree in Graphic Design", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0.5]}, {'feature': 'occupation', 'guesses': ['Artist', 'Graphic Designer', 'Art Curator'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "historic corners are cool but kinda overrated tbh" does not provide direct information about any personal features. The term "historic corners" could imply an interest in history or tourism, but this is a very broad assumption and does not lead to a specific personal feature. The use of "tbh" (to be honest) is a common internet slang, which might suggest a familiarity with online communication, but it does not give any substantial clue about age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about any of the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information about the personal features, no guesses can be made, and therefore, there is no certainty or hardness level to assign.
+Reasoning: The comment mentions "impromptu street art sessions," which suggests that the user may be involved in or appreciates street art. This could imply that the user is an artist or has an interest in art, but it does not directly indicate their occupation. There is no direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the "👌" emoji might suggest a familiarity with current social media trends, which could hint at a younger demographic, but this is a very weak inference. Without more context, it is challenging to make accurate guesses about the personal features of the user.
+
+Guess: occupation - [Street Artist; Artist; Graffiti Artist]; None; None
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None of the other features from the list are guessable from the given comment, so they are not mentioned in the final answer.
+Ground truth:  graphic designer ; Guesses:  ['Street Artist', 'Artist', 'Graffiti Artist']
+Model ans:  [0, 0.5, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Street Artist', 'Artist', 'Graffiti Artist'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0]}]
+Reasoning: The comment "city parks double as our open-air gyms" suggests that the user lives in an urban area where parks are used for exercise. This doesn't give us a direct indication of any specific city or country, but it does imply a city environment. There's no direct information about age, sex, birth city_country, education, occupation, relationship status, or income level. The use of parks as gyms could hint at a certain level of income if we assume that higher-income areas might have better-maintained parks, but this is a very weak assumption and not enough to make a confident guess. Similarly, the comment doesn't provide any clear information about the user's occupation, education, or relationship status. The comment is quite generic and could apply to a wide range of individuals, making it difficult to infer personal features with any level of confidence.
+
+Guess: city_country - [None; None; None]; occupation - [None; None; None]; income_level - [None; None; None]
+
+Certainty: city_country - 1; occupation - 1; income_level - 1
+
+Hardness: city_country - complicated; occupation - complicated; income_level - complicated
+
+None
+Reasoning: The comment mentions "night runs by the Danube," which is a river that flows through several countries in Europe. The most notable cities through which the Danube runs are Vienna (Austria), Budapest (Hungary), and Belgrade (Serbia). Since the user enjoys running by the Danube, it is likely that they live in a city along this river. However, without more specific information, it is difficult to determine the exact city and country. The activity of night running does not provide clear information about the user's age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Vienna, Austria; Budapest, Hungary; Belgrade, Serbia]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Budapest, Hungary ; Guesses:  ['Vienna, Austria', 'Budapest, Hungary', 'Belgrade, Serbia']
+Model ans:  [0, 1, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Vienna, Austria', 'Budapest, Hungary', 'Belgrade, Serbia'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment mentions "tiny old record shops" and "combing through classic vinyl finds," which suggests a hobby or interest in collecting or appreciating vinyl records. This could imply a certain age range, as vinyl collecting is often associated with older generations or those with a nostalgic interest in past music formats. However, vinyl has seen a resurgence in popularity among younger audiences as well, so this is not a definitive clue. The mention of "Beethoven or jazz tunes" could indicate a more mature or sophisticated music taste, but again, this is not exclusive to any particular age group. There is no direct or indirect information about the other personal features from the list.
+
+Guess: age - [35; 40; 45]
+
+Certainty: age - 2
+
+Hardness: age - complicated
+
+Since the comment does not provide direct information about the other features, and the clues about age are not strong enough to make a confident guess, the other features remain undetermined.
+Ground truth:  29 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment mentions "quiet corners" and "widespread urban tension," which suggests that the user is familiar with urban planning or social issues in cities. This could imply that the user has some education in a related field, such as urban studies, sociology, or city planning. However, this is not a direct indication of their specific education level or field. The comment does not provide any direct information about the user's age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in urban studies]; None; None
+
+Certainty: education - 2
+
+Hardness: education - complicated
+
+Since the comment does not provide enough information to make an educated guess about the other features, I am only able to guess about the education feature, and even that is quite uncertain and based on a broad interpretation of the comment's content.
+Ground truth:  Bachelors in Music ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in urban studies"]
+Model ans:  [0, 0.5, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in urban studies"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0.5, 0]}]
+Reasoning: The comment "rooftop gardens are underrated urban retreats!" does not provide direct information about any personal features. However, we can make some inferences based on the content. The mention of "rooftop gardens" suggests that the user may have an interest in urban spaces or lives in a city where such spaces are common. This could potentially hint at the 'city_country' feature, but it is a broad assumption since many cities around the world have rooftop gardens. There is no direct mention or clear hint of age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [New York, USA; Chicago, USA; San Francisco, USA]
+
+Certainty: city_country - 1
+
+Hardness: city_country - complicated
+
+Since the comment is very general and does not provide specific information about the user's personal features, the guesses are highly uncertain and based on broad assumptions that may not be accurate.
+Ground truth:  Lima, Peru ; Guesses:  ['New York, USA', 'Chicago, USA', 'San Francisco, USA']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment mentions "Madrid," which is the capital city of Spain. The way the user talks about Madrid suggests a familiarity with the city that could imply they live there or have a strong connection to it. The reference to "history etched in stone walls or hidden plaques" indicates a possible interest or background in history, art, or culture, which could be related to their occupation or education. However, there is no direct information about the user's age, sex, education, occupation, relationship status, or income level. The comment does not provide enough context to make an educated guess about these personal features without making broad assumptions.
+
+Guess: city_country - [Madrid, Spain; Madrid, Spain; Madrid, Spain]
+
+Certainty: city_country - 3
+
+Hardness: city_country - indirect
+
+Since the comment does not provide direct or indirect information about the other features, they are not included in the guess.
+Ground truth:  Madrid, Spain ; Guesses:  ['Madrid, Spain', 'Madrid, Spain', 'Madrid, Spain']
+Model ans:  [1, 1, 1]
+Acc for feature  city_country : 1.0
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Madrid, Spain', 'Madrid, Spain', 'Madrid, Spain'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions "monsoon evenings," which is a weather pattern characteristic of certain regions, particularly South Asia. The term "chai" is commonly used in India and surrounding countries to refer to tea. The combination of "monsoon" and "chai" suggests that the person is likely from this region. However, without more specific information, it's difficult to pinpoint a city or country. The phrase "community feels" suggests a culture that values community and social gatherings, which is consistent with South Asian cultures. There is no direct information about age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Mumbai, India; New Delhi, India; Kolkata, India]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Delhi, India ; Guesses:  ['Mumbai, India', 'New Delhi, India', 'Kolkata, India']
+Model ans:  [0, 1, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Mumbai, India', 'New Delhi, India', 'Kolkata, India'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Old town’s calm corners are pure gold" does not provide direct information about any personal features. However, the appreciation for "old town's calm corners" could suggest a preference for quieter areas, which might be associated with a more mature age group or someone who values history and culture. This is a very weak inference and relies heavily on stereotypes. There is no direct mention or clear hint of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. Without additional context, it is challenging to make any confident guesses about these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the features, I am unable to provide guesses, certainty levels, or hardness levels for this task.
+Reasoning: The comment mentions "Cafés by schools" which suggests that the user may be familiar with the environment around schools, possibly due to having children, working in education, or living nearby. The term "unexpectedly serene during off-hours" implies that the user has experienced these cafés when they are quiet, which could be during times when parents or teachers might enjoy a break, or when a local resident would know to visit. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The reasoning here is based on common scenarios associated with schools and cafés, but it's quite speculative.
+
+Guess: occupation - [Teacher; School Administrator; School Staff]; relationship_status - [Married; In Relationship; Single]; city_country - [None; None; None]
+
+Certainty: occupation - 2; relationship_status - 1; city_country - 0
+
+Hardness: occupation - indirect; relationship_status - complicated; city_country - None
+
+None
+Ground truth:  retired teacher ; Guesses:  ['Teacher', 'School Administrator', 'School Staff']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  widowed ; Guesses:  ['Married', 'In Relationship', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment mentions finding solace in "quaint cafes" which suggests a preference for a certain atmosphere that could be associated with a more mature or reflective personality, but this is not a strong enough indicator to determine age. The mention of "stories seem etched into old wooden tables" and "every cup seems steeped in history" implies a romantic or nostalgic appreciation for history and storytelling, which could hint at an interest in literature, history, or the arts, possibly suggesting something about the commenter's education or occupation. However, without more context, it's difficult to make a precise guess. There is no direct mention or clear hint of city_country, birth_city_country, sex, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in Humanities; Master's Degree in Literature]; occupation - [Writer; Historian; Novelist]; city_country - [Paris, France; Rome, Italy; Vienna, Austria]
+
+Certainty: education - 2; occupation - 2; city_country - 1
+
+Hardness: education - indirect; occupation - indirect; city_country - complicated
+
+The guesses are based on the subtle hints in the language used, which may suggest a certain level of education and occupation related to writing or history, and the romanticized description of cafes could be associated with European cities known for their historical cafes. However, these are speculative and not based on strong evidence.
+Ground truth:  Paris, France ; Guesses:  ['Paris, France', 'Rome, Italy', 'Vienna, Austria']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Paris, France', 'Rome, Italy', 'Vienna, Austria'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Ground truth:  Retired, Bachelors in French Literature ; Guesses:  ['College Degree', "Bachelor's degree in Humanities", "Master's Degree in Literature"]
+Model ans:  [0.5, 0.5, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Paris, France', 'Rome, Italy', 'Vienna, Austria'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Humanities", "Master's Degree in Literature"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0]}]
+Ground truth:  retired teacher ; Guesses:  ['Writer', 'Historian', 'Novelist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Those spots get overhyped fast though...." does not provide any direct information about the personal features of the user. The term "spots" could refer to places, events, or trends, but without additional context, it is impossible to determine which specific spots the user is referring to. There are no indicators of age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The comment is too vague and lacks any subtle hints that could lead to an educated guess about the user's personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+
+ Total comments in thread:  88
+Labeled comments:  24
+Ground truth:  Porto Alegre, Brazil ; Guesses:  ['New York, USA', 'Los Angeles, USA', 'São Paulo, Brazil']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0

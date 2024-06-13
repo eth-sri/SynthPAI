@@ -1,0 +1,23 @@
+output_dir: "results/evaluate"
+seed: 10
+task: "EVAL"
+dryrun: False
+save_prompts: True
+timeout: 0.0
+store: True
+task_config: 
+    path: "data/thread/predicted/Llama-2-13b/llama2-13b-chathf_predicted_reparsed.jsonl"
+    outpath: "data/thread/eval/Llama-2-13b/llama2-13b-chathf_revised_human_evaluated.jsonl"
+    profile_filter:
+      hardness: 1
+      certainty: 3
+    human_label_type: "revised" # "revised" or "original"
+    eval: True
+    decider: "model"
+    label_type: "human" # "gt"/"human"
+gen_model:
+  name: "gpt-4"
+  provider: "openai"
+  args: {
+    temperature: 0.1
+  }

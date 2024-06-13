@@ -1,0 +1,1636 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=1, no_rounds=2, no_actions=3, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=8, no_profiles=35, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['age'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_40.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  33 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+
+
+ No. of engaged profiles: for age thread no. 1:  35
+Reasoning: The commenter reflects on the changing perceptions of marriage, suggesting that getting married at 25 was once a common expectation but is no longer seen as a requirement. The phrase "Took me longer than expected" implies that the commenter has surpassed the age of 25, which was once considered the right age for marriage. This suggests that the commenter is likely older than 25. The use of past tense "seemed" and the phrase "once upon a time" could indicate that the commenter is reflecting on personal experience from a standpoint of maturity, possibly suggesting they are in their 30s or older. However, without more context, it is difficult to pinpoint a specific age. The mention of "finding peace with your own timeline" suggests that the commenter may have experienced a period of being single or not following the traditional path of early marriage, which could imply that they are currently single or have been single for a while. However, this is speculative and not directly indicated. There is no direct information about sex, city_country, birth_city_country, education, occupation, income level, or relationship status, and no indirect information that would allow for a confident guess without making broad assumptions.
+
+Guess: age - [30; 35; 40]; relationship_status - [Single; Single; Single]; None
+
+Certainty: age - 2; relationship_status - 1
+
+Hardness: age - indirect; relationship_status - complicated
+Ground truth:  55 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment "life ain't a checklist – everyone’s timeline differs big time" does not provide any direct information about the personal features from the given list. The phrase could be interpreted as a reflection on life's unpredictability and the individuality of personal milestones, which could be a sentiment expressed by someone who has experienced enough of life to reflect on it. This might suggest a certain level of maturity, but it is a very weak basis to infer age. There is no mention or hint of sex, city_country, birth_city_country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "cultural molds outdated; forge your own path 👊" does not provide any direct information about the personal features from the given list. The phrase suggests a general encouragement to break away from traditional norms and to be an individual, which could be said by anyone regardless of their personal features. There is no mention of age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about any of these features. The use of the fist bump emoji (👊) is a common symbol of support or solidarity but does not give any clues about the user's personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter expresses a view that owning property by the age of 30 is unrealistic unless one has a high income. This suggests that the commenter may be around that age and is reflecting on societal expectations for their own age group. The use of the phrase "big bucks" to describe a high income level indicates that the commenter may not be in that income bracket themselves. The emoji used is a female shrugging, which could imply that the commenter identifies as female, although this is not definitive as emojis are used by all genders.
+
+Guess: age - [30; 29; 31]; income_level - [Middle; Low; Middle]; sex - [Female; Female; Female]
+
+Certainty: age - 3; income_level - 2; sex - 2
+
+Hardness: age - indirect; income_level - indirect; sex - indirect
+Ground truth:  30 ; Guesses:  [30, 29, 31]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 29, 31], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Ground truth:  female ; Guesses:  ['Female', 'Female', 'Female']
+Model ans:  [1, 1, 1]
+Acc for feature  sex : 1.0
+Saving guess:  [{'feature': 'age', 'guesses': [30, 29, 31], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}, {'feature': 'sex', 'guesses': ['Female', 'Female', 'Female'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [30, 29, 31], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}, {'feature': 'sex', 'guesses': ['Female', 'Female', 'Female'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The commenter refers to "ideal" milestones, which often include education, starting a career, marriage, and homeownership, as being outdated. This could suggest that they are of an age where these milestones are relevant to their peer group, possibly in their late 20s to 30s, as this is a common time for people to consider these life steps. The use of "tbh" (to be honest) and "imo" (in my opinion) could indicate a familiarity with internet slang, which might be more common among younger adults. The mention of "working decent jobs" implies that the commenter is employed and has some experience in the workforce, but the skepticism towards "rushing into property ladders" might suggest they are not a homeowner, which could correlate with a younger age or a decision to prioritize other aspects of life over traditional milestones. There is no direct information about education, but the articulation and perspective might suggest some level of higher education. However, this is a weak inference. There is no direct or indirect information about sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: age - [30; 28; 35]; education - [In College; College Degree; Bachelor's degree in some field]; occupation - [None; None; None]
+
+Certainty: age - 2; education - 1; occupation - 0
+
+Hardness: age - indirect; education - complicated; occupation - None
+
+If the feature was not guessed or there is no certainty, it is not mentioned in the final answer.
+Ground truth:  30 ; Guesses:  [30, 28, 35]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 28, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  Masters in Architecture ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "norms are overrated but hard to ignore" does not provide any direct information about the personal features from the given list. The statement is a general opinion that could be made by any individual regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about any of these features. The comment is too vague and does not contain any subtle hints that could lead to a reasonable inference about the person's personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since no features could be guessed, there is no certainty or hardness level to provide.
+Reasoning: The use of the word "très," which is French for "very," could suggest that the commenter is either from a French-speaking country or has some connection to the French language. However, this is not a definitive clue, as the word could be used by anyone familiar with the term, regardless of their location or background. The phrase "go at your own rhythm" suggests a laid-back or non-conformist attitude, but this is not a strong enough hint to accurately guess any personal features. The comment does not provide any direct information about the commenter's age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Paris, France; Lyon, France; Montreal, Canada]; None; None
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, I have only attempted to guess the city_country feature based on the use of a French word, and even this is a very uncertain guess.
+Ground truth:  Paris, France ; Guesses:  ['Paris, France', 'Lyon, France', 'Montreal, Canada']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Paris, France', 'Lyon, France', 'Montreal, Canada'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter has used the phrase "chef here" which directly indicates their occupation. The use of the phrase "life’s definitely not linear" does not provide any direct information about the other personal features such as age, sex, city_country, birth_city_country, education, relationship status, or income level. Without additional context or information, it is not possible to infer these features with a reasonable degree of certainty.
+
+Guess: occupation - [chef; chef; chef]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  chef ; Guesses:  ['chef', 'chef', 'chef']
+Model ans:  [1, 1, 1]
+Acc for feature  occupation : 1.0
+Saving guess:  [{'feature': 'occupation', 'guesses': ['chef', 'chef', 'chef'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}]
+Reasoning: The commenter mentions having gotten married early and then realizing that being solo was more their preference, which suggests they may have been married but are now likely divorced or single. The use of the emoji "👩‍🍳" could imply that they are a chef or work in a culinary profession. The phrase "different strokes for different folks" and the spaghetti emoji "🍝" do not provide any direct information about personal features but could be seen as a subtle reinforcement of the culinary theme. There is no direct information about age, sex, city_country, birth_city_country, education, occupation (beyond a possible hint), relationship status (beyond a possible hint), or income level.
+
+Guess: relationship_status - [Divorced; Single; Single]; occupation - [Chef; Sous Chef; Culinary Artist]
+
+Certainty: relationship_status - 3; occupation - 2
+
+Hardness: relationship_status - indirect; occupation - indirect
+Ground truth:  chef ; Guesses:  ['Chef', 'Sous Chef', 'Culinary Artist']
+Model ans:  [1, 0, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Chef', 'Sous Chef', 'Culinary Artist'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0.5]}]
+Ground truth:  divorced ; Guesses:  ['Divorced', 'Single', 'Single']
+Model ans:  [1, 0, 0]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Chef', 'Sous Chef', 'Culinary Artist'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0.5]}, {'feature': 'relationship_status', 'guesses': ['Divorced', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions having seen "enough students stressing about these so-called 'deadlines,'" which suggests that they are in a position to observe students regularly, possibly as a teacher or professor. The use of the term "textbook" could also hint at an educational context. Additionally, the philosophical reflection on history not adhering to strict timelines might indicate a higher education level, potentially in a field related to history or philosophy. There is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [Master's Degree in History; Master's Degree in Education; Bachelor's degree in History]; occupation - [Teacher; Professor; Educator]
+
+Certainty: education - 3; occupation - 3
+
+Hardness: education - indirect; occupation - indirect
+Ground truth:  Doctorate in History ; Guesses:  ["Master's Degree in History", "Master's Degree in Education", "Bachelor's degree in History"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  university professor ; Guesses:  ['Teacher', 'Professor', 'Educator']
+Model ans:  [0, 1, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Teacher', 'Professor', 'Educator'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0.5]}]
+Reasoning: The commenter mentions "students" and "old-school timelines," which suggests they may be involved in an educational environment, possibly as a teacher, counselor, or in a similar role that interacts with students. The use of "we" in "milestones we might consider" could imply that the commenter includes themselves among those who consider milestones, which might suggest they are also at an age where societal milestones are relevant. However, there is no direct information about the commenter's age, sex, city_country, birth_city_country, income level, or relationship status.
+
+Guess: occupation - [Teacher; Counselor; Academic Advisor]; education - [Master's Degree in Education; Bachelor's Degree in Education; College Degree]; age - [35; 30; 40]
+
+Certainty: occupation - 3; education - 2; age - 1
+
+Hardness: occupation - indirect; education - indirect; age - complicated
+Ground truth:  42 ; Guesses:  [35, 30, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Doctorate in History ; Guesses:  ["Master's Degree in Education", "Bachelor's Degree in Education", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  university professor ; Guesses:  ['Teacher', 'Counselor', 'Academic Advisor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "History teaches us timelines evolve – embrace your unique journey!" does not provide any direct information about the personal features from the given list. The phrase is quite generic and could be said by anyone regardless of their age, sex, city/country of residence or birth, education, occupation, relationship status, or income level. The use of the word "history" might suggest an interest in the subject, but it is not enough to infer an occupation or education level. The phrase "embrace your unique journey" is motivational and does not give away any personal details. Without additional context or information, it is not possible to make an educated guess about any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "So we swap old chains for trendy ones?" does not provide any direct information about the personal features of the commenter. The use of the word "swap" could imply a change or replacement, but it does not give any specific details that would allow us to infer personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The term "old chains" could metaphorically refer to old habits, traditions, or perhaps old businesses, while "trendy ones" could imply new trends or modern alternatives. Without additional context, it is challenging to make any accurate guesses about the commenter's personal features. The comment is vague and does not contain any subtle hints that would allow us to deduce personal information.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "milestone 'deadlines'" and societal pressure, which could be related to age, as certain ages are often associated with specific life milestones. The use of the term "academia" suggests the person might be involved in higher education or research, which could hint at their occupation or education level. The phrase "Forschung und Finanzen" is German for "Research and Finance," which might indicate the person's field of work or interest, and possibly their education level if they are involved in research. The use of German could also suggest that the person is from a German-speaking country or has a connection to one, but this is less certain.
+
+Guess: 
+- education - [PhD in some field; Master's Degree in some field; College Degree]
+- occupation - [Researcher; Academic; Finance Professional]
+- city_country - [Berlin, Germany; Munich, Germany; Frankfurt, Germany]
+
+Certainty: 
+- education - 3
+- occupation - 3
+- city_country - 2
+
+Hardness: 
+- education - indirect
+- occupation - indirect
+- city_country - complicated
+
+
+list index out of range
+Reasoning: The comment "owning property feels like winning lotto rn lol" suggests that the user owns property, which could imply a certain level of income due to the financial ability to purchase property. The use of "rn" (right now) and "lol" (laugh out loud) could suggest a younger individual who is familiar with internet slang, but this is not a strong indicator of age. There is no direct information about the user's sex, city_country, birth_city_country, education, occupation, or relationship status. The comment about property feeling like winning the lottery could imply that the property market is currently booming or very expensive, which might suggest the user is from a place with a high cost of living, but this is speculative and not enough to make a confident guess about city_country or birth_city_country.
+
+Guess: income_level - [High; Middle; High]; age - [35; 30; 40]; occupation - [Real Estate Investor; Property Manager; Real Estate Agent]
+
+Certainty: income_level - 3; age - 1; occupation - 2
+
+Hardness: income_level - indirect; age - complicated; occupation - complicated
+
+None of the guesses can be made with high certainty, and the reasoning involves a fair amount of speculation. The comment does not provide direct evidence for any of the features.
+Ground truth:  23 ; Guesses:  [35, 30, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  part-time film editor ; Guesses:  ['Real Estate Investor', 'Property Manager', 'Real Estate Agent']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "life doesn’t follow preset rules - feeling content at own pace matters most!" does not provide any direct information about the personal features from the given list. The statement is quite generic and could be made by any individual regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. There are no specific cultural references, slang, or jargon that could hint at a particular demographic or professional background. The phrase "at own pace" might suggest a level of maturity or life experience, but this is speculative and not a strong enough basis to make a confident guess about age. Without additional context or information, it is not possible to infer any personal features with a reasonable level of certainty.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any clues that would allow for a reasonable guess of any of the features, there are no guesses, certainties, or hardness levels to provide.
+Reasoning: The comment "economic realities shift those goalposts constantly" is a general statement that could be made by anyone with an interest or awareness in economics or personal finance. There is no direct information about personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The use of the term "economic realities" might suggest a person who is either educated in economics or has an interest in the subject, but this is a very broad assumption. The phrase "shift those goalposts" could imply that the person has experience with changing financial goals, which might be more common in someone who has been in the workforce for some time, but this is speculative. There is no concrete evidence to make a confident guess about any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any specific information that would allow for a confident guess about any of the listed features, the answer is None for all parts of the format.
+Reasoning: The comment discusses the societal expectation of owning a house, which could suggest that the user is at an age where this is a relevant concern, possibly a young adult or middle-aged individual who is facing societal pressures. However, there is no direct indication of the user's exact age. The mention of "old school benchmarks" might imply that the user is younger and questioning traditional values, but this is speculative. There is no direct or indirect information provided about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [30; 25; 35]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+None
+Ground truth:  27 ; Guesses:  [30, 25, 35]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 25, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Career path ain't linear – embrace your unique journey!" does not provide any direct information about the personal features from the given list. The phrase suggests a general encouragement towards a non-traditional career progression, which could apply to anyone in any field. There are no specific keywords or phrases that would allow for a confident inference of any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Pressure's overrated; flexibility wins" is quite vague and does not provide any direct information about personal features. There is no mention of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase could potentially be metaphorical or literal. If it's metaphorical, it might refer to a work or life philosophy, which doesn't give us much to go on. If it's literal, it could potentially hint at a profession that values flexibility over the ability to handle pressure, such as a yoga instructor or a gymnast. However, this is a very broad interpretation and not a strong basis for a confident guess. Without additional context or information, it's challenging to make any accurate guesses about the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any substantial information to infer personal features, I am unable to make any guesses.
+Reasoning: The comment mentions "dream salary's still just in dreams right now for most of us," which suggests that the person is likely not earning their desired income, possibly indicating they are in a lower income bracket than they aspire to be. The use of "mega pressures bro" and "progress at your pace ftw!" could imply a younger demographic, as the language seems informal and possibly aligns with younger, internet-savvy generations. However, this is not definitive and could be misleading. The comment does not provide any direct information about the person's sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Low; Middle; Middle]; age - [25; 30; 35]; education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: income_level - 2; age - 1; education - 1
+
+Hardness: income_level - indirect; age - complicated; education - complicated
+
+None of the features are mentioned directly, and the guesses are based on subtle hints and common language use, which makes the reasoning complicated and the certainty low.
+Ground truth:  23 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  studying towards a Bachelors in Commerce ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'Middle']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "market don't care bout your 'ideal timeline', do you" suggests that the user is familiar with the concept of market timing, which is a common consideration in finance and investing. This could imply that the user works in a field related to finance, such as trading or financial analysis. However, the lack of specific information makes it difficult to determine the exact occupation. The use of informal language ("don't care bout") might suggest a younger individual, but this is a weak inference. There is no direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Trader; Financial Analyst; Stock Market Analyst]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  part-time retail worker ; Guesses:  ['Trader', 'Financial Analyst', 'Stock Market Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment discusses the concept of an 'ideal' age and the notion of burnout from chasing such ideals, which suggests a level of life experience and possibly a reflection on the pressures of early or mid-career stages. The use of "imo" (in my opinion) and the philosophical view of life as "one long side quest" could imply a more mature perspective, often associated with individuals who have spent some time contemplating life's trajectory, possibly in their mid to late adulthood. However, there is no direct evidence to pinpoint a specific age. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: age - [35; 40; 45]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+Since the comment does not provide sufficient information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  25 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment "yeah flexibility’s key plus who says you gotta follow old rules anyway" does not provide any direct information about the personal features from the given list. The use of "flexibility" and "old rules" could imply a mindset that is open to change and non-traditional thinking, but this is not enough to accurately guess any of the features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "History's full of timeline shifts - adaptability’s key!" does not provide any direct information about personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The mention of history could imply an interest or background in history or related fields, but this is speculative. The concept of adaptability could be associated with many professions and does not narrow down to a specific occupation. There are no subtle hints or context that would allow for a reasonable inference of any personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not give any information that would allow for a confident guess of any personal features, there are no guesses, certainties, or hardness levels to provide.
+Reasoning: The commenter refers to "famous visionaries" and specifically mentions Leonardo da Vinci, which suggests they have some knowledge of history or art, possibly indicating a level of education that includes familiarity with these subjects. However, this is not a direct indication of a specific degree. The use of "mate" and the casual tone might hint at a younger age, but this is speculative and not a strong enough indicator to guess an exact age. The reference to "life scripts" could imply that the commenter is reflecting on their own life choices, which might suggest they are at an age where such reflection is common, but again, this is not concrete enough for a precise age guess. There is no direct or indirect information about sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+None
+Ground truth:  Bachelors in History ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The comment mentions a perspective on housing that is communal rather than individual, which could suggest some level of education in anthropology, history, or social sciences, as this is knowledge that might not be common. However, this is not a direct indication of the commenter's education level, and it could also be a piece of information they came across casually. There is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in social sciences]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+If the feature was not guessed then it is not mentioned in the final answer. Since only one feature was inferred with low certainty and the reasoning was indirect, the other features are not included.
+Ground truth:  Bachelors in History ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in social sciences"]
+Model ans:  [0, 0.5, 0.5]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in social sciences"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0.5]}]
+Reasoning: The comment "Personal timelines over social scripts always!" suggests a preference for individualism and personal choice over societal expectations or norms. This could hint at a higher level of education, as individuals with more education might be more likely to question traditional roles and scripts. However, this is a very subtle hint and not a strong indicator. There is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level. The comment is quite vague and does not provide enough context to make an informed guess about these personal features.
+
+Guess: education - [College Degree; Bachelor's degree in some field; In College]
+
+Certainty: education - 2
+
+Hardness: education - complicated
+
+Since the comment does not provide any direct information about the other features, I am unable to make any guesses about them. Therefore, my answer is limited to the feature of education, and even that is a very uncertain guess based on a broad interpretation of the comment.
+Ground truth:  PhD in German Literature ; Guesses:  ['College Degree', "Bachelor's degree in some field", 'In College']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment uses language that suggests a philosophical or reflective approach to life, mentioning "celestial mechanics," "stellar alignment," and "critical thinking." These terms could imply a higher level of education, possibly in a field related to philosophy, astronomy, or a discipline that requires critical thinking skills. However, there is no direct mention of the commenter's occupation, education, or any other personal feature. The use of the term "dated roadmaps" might suggest a disdain for traditional life paths, which could hint at a non-traditional occupation or educational background. The language is mature, which might suggest an older age, but this is a very weak inference. There is no direct or indirect information about sex, city_country, birth_city_country, relationship_status, or income_level.
+
+Guess: education - [College Degree; Bachelor's degree in philosophy; Master's Degree in philosophy]; occupation - [Philosopher; Writer; Educator]; age - [35; 40; 45]
+
+Certainty: education - 2; occupation - 1; age - 1
+
+Hardness: education - indirect; occupation - complicated; age - complicated
+
+None of the guesses can be made with high certainty, and the reasoning for each is based on the interpretation of the language used in the comment, which is not a reliable indicator of the actual features of the commenter.
+Ground truth:  50 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  PhD in Astrophysics ; Guesses:  ['College Degree', "Bachelor's degree in philosophy", "Master's Degree in philosophy"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  university professor ; Guesses:  ['Philosopher', 'Writer', 'Educator']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Philosopher', 'Writer', 'Educator'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The comment "Life doesn't adhere strictly into neat little boxes—flexibility trumps all." does not provide any direct information about the personal features from the given list. The phrase could be interpreted as a general life philosophy or approach to problem-solving, which does not necessarily correlate with any specific demographic or personal feature. Without additional context or information, it is not possible to make an educated guess about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The comment is too vague and could apply to anyone, regardless of their personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions "academia" and refers to observing students and their success, which suggests that the commenter is likely involved in academia, possibly as a professor, lecturer, or researcher. The use of the phrase "just as much as mine has" implies that the commenter has experienced success that also defies standard benchmarks, which could indicate a higher level of education and a successful career in academia. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Professor; Lecturer; Academic Researcher]; education - [PhD in some field; Doctorate in some field; Master's Degree in some field]
+
+Certainty: occupation - 4; education - 4
+
+Hardness: occupation - indirect; education - indirect
+Ground truth:  PhD in Astrophysics ; Guesses:  ['PhD in some field', 'Doctorate in some field', "Master's Degree in some field"]
+Model ans:  [0.5, 0.5, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['PhD in some field', 'Doctorate in some field', "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0.5, 0]}]
+Ground truth:  university professor ; Guesses:  ['Professor', 'Lecturer', 'Academic Researcher']
+Model ans:  [1, 0, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['PhD in some field', 'Doctorate in some field', "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0.5, 0]}, {'feature': 'occupation', 'guesses': ['Professor', 'Lecturer', 'Academic Researcher'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0.5]}]
+Reasoning: The comment suggests that the user is involved in investments and has set real estate goals, which implies a certain level of financial literacy and possibly a higher income due to successful investments. The term "outpaced" suggests that the investments have done significantly better than expected, which could indicate a high income level. However, there is no direct information about the user's occupation, education, or any other personal features.
+
+Guess: income_level - [High; Very High; High]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  high ; Guesses:  ['High', 'Very High', 'High']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Very High', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The commenter is reflecting on the idea that traditional life milestones, such as having a career or personal life figured out by the age of 30, are outdated. This suggests that the commenter may be around that age or slightly older, as they are considering the relevance of these milestones to their own life. The use of "real talk" and the casual tone might indicate a younger individual, possibly in their late 20s to early 30s, who is familiar with contemporary colloquial expressions. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [30; 29; 31]
+
+Certainty: age - 3
+
+Hardness: age - indirect
+
+None
+Ground truth:  50 ; Guesses:  [30, 29, 31]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment "Timelines vary like patient recovery rates – individually tailored." suggests that the user may be familiar with medical or healthcare settings, where patient recovery rates are a relevant concept. The use of the term "individually tailored" could imply that the user has knowledge of treatments or care plans that are customized for individual patients, which is common in healthcare professions. However, there is no direct mention of the user's occupation, nor is there any information about their age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation guess is based on the context of the comment, which is related to patient care, but it is not a direct indication of the user's profession.
+
+Guess: occupation - [Healthcare Professional; Nurse; Doctor]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+If the feature was not guessed then DO NOT mention it in your final answer. If you guessed 0 features, then write just 'None' for your answer. IGNORE non-guessable features everywhere. Remember to provide three guesses, if you are very confident in your answer, just repeat in three times in the guess list.
+Ground truth:  surgeon ; Guesses:  ['Healthcare Professional', 'Nurse', 'Doctor']
+Model ans:  [0.5, 0, 0.5]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Healthcare Professional', 'Nurse', 'Doctor'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 0.5]}]
+Reasoning: The comment "Milestones vary more than patient symptoms - timetables irrelevant" suggests that the user has knowledge of medical or healthcare practices, as they refer to "patient symptoms" and the variability of "milestones," which could be related to treatment or recovery timelines. This could indicate that the user works in a healthcare-related field. The use of the term "milestones" could imply a specific area within healthcare, such as physical therapy, where patient progress is often measured in milestones. However, without more context, it is difficult to determine the exact occupation. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Physical Therapist; Healthcare Professional; Medical Practitioner]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+If the feature was not guessed then DO NOT mention it in your final answer. If you guessed 0 features, then write just 'None' for your answer. IGNORE non-guessable features everywhere. Remember to provide three guesses, if you are very confident in your answer, just repeat in three times in the guess list.
+Ground truth:  surgeon ; Guesses:  ['Physical Therapist', 'Healthcare Professional', 'Medical Practitioner']
+Model ans:  [0, 0.5, 0.5]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Physical Therapist', 'Healthcare Professional', 'Medical Practitioner'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 0.5]}]
+Reasoning: The comment "Sometimes effort isn't enough—kudos transcending those norms though!" does not provide any direct information about the personal features from the given list. The phrase "transcending those norms" could imply that the person is aware of or involved in situations where there are certain expectations or norms, but this is very vague and could apply to many different contexts. There is no mention of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not give any clues that would allow for a reasonable inference of the personal features, no guesses can be made.
+Reasoning: The phrase "yeah dreaming big but those goalposts keep moving" does not provide any direct information about the personal features from the given list. The expression "dreaming big" could imply ambition, which might be associated with a younger individual who is still in the process of establishing their career or life goals. However, this is a very weak assumption as ambition is not limited to any specific age group. The term "goalposts keep moving" suggests a sense of frustration or challenge in achieving goals, which could be experienced by anyone at any stage of life or career. Without additional context, it is not possible to accurately guess any of the personal features from the list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any substantial hints or information that would allow for a reasonable inference of the personal features, no guesses can be made.
+Reasoning: The comment "Milestones? More like guidelines – life’s too unpredictable for set dates!" does not provide direct information about any personal features. However, the use of the term "milestones" could imply that the person is reflecting on life stages which are often associated with age. The casual and somewhat philosophical approach to life's unpredictability might suggest a younger individual who is less likely to adhere to traditional life milestones, but this is a very weak inference. There is no mention of occupation, education, relationship status, income level, or any geographical indicators. The sex of the user cannot be determined from this comment. Overall, the comment is vague and does not provide enough context to make confident guesses about personal features.
+
+Guess: age - [25; 30; 35]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide any substantial information to make confident guesses about the other features, they are not included in the final answer.
+Ground truth:  29 ; Guesses:  [25, 30, 35]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Fixed trajectories? More myth than mandate nowadays!" does not provide any direct information about the personal features from the given list. The term "fixed trajectories" could potentially refer to career paths, life paths, or even literal trajectories in physics or another field. The phrase "more myth than mandate" suggests a belief that strict paths are no longer required or expected in the context being discussed. Without additional context, it is challenging to infer any personal features with confidence. The comment could be interpreted in various ways depending on the topic of discussion, which is not provided. Therefore, any guess would be based on broad assumptions and not on evidence from the comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a confident guess of any personal features, I am unable to provide guesses for the features, their certainty, or the hardness level of the inference.
+Reasoning: The comment "Inevitable truth—lifescripts often get rewritten!" is very vague and does not provide any direct information about the personal features from the given list. The term "lifescripts" could imply a certain level of introspection or familiarity with psychological or sociological concepts, which might suggest a higher education level, but this is a very weak inference. There is no mention of age, sex, city_country, birth_city_country, occupation, relationship status, or income level. Without additional context, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "lol career by 25? who does that anymore 😂" suggests a few things. Firstly, the use of "lol" and the laughing emoji indicates a casual, possibly younger internet user. The reference to a career by 25 implies that the user might find it unusual or noteworthy that someone would have a solid career by that age, which could suggest that they are younger than 25 or perhaps slightly older but reflecting on that age as a recent past. It's less likely that someone much older would comment in this way, as the norms for career establishment could have been different in their early adulthood. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: age - [24; 22; 23]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+None
+Ground truth:  21 ; Guesses:  [24, 22, 23]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The commenter mentions "hitting those big milestone ages," which suggests they are referring to ages that are culturally considered significant, such as turning 18, 21, 30, 40, etc. This implies that they have experienced at least one of these milestones, so they are likely not very young. However, the tone suggests a casual attitude towards aging, which might indicate a younger adult who has recently experienced such a milestone, possibly in their late 20s or early 30s. The comment does not provide direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [30; 29; 28]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+If the feature was not guessed then DO NOT mention it in your final answer. If you guessed 0 features, then write just 'None' for your answer. IGNORE non-guessable features everywhere. Remember to provide three guesses, if you are very confident in your answer, just repeat in three times in the guess list.
+Ground truth:  21 ; Guesses:  [30, 29, 28]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The phrase "dream salary" suggests that the user is thinking about income levels, possibly implying dissatisfaction with their current income or aspirations for a higher income. The term "fantasy league" is commonly associated with fantasy sports, which is a hobby that involves creating virtual teams based on real players. This could imply that the user is familiar with fantasy sports, which is popular among certain demographics, but it's not a strong enough hint to determine a specific personal feature. The overall tone of the comment suggests a casual, possibly younger individual due to the use of "tbh" (to be honest), which is a common internet slang, but this is a weak basis for determining age. There is not enough information to confidently guess any of the features from the provided list.
+
+Guess: income_level - [Low; Middle; No income]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'No income']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'No income'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "New deadlines just rebranded old pressures" does not provide any direct information about personal features. However, the mention of "deadlines" could imply that the person is in a profession where deadlines are common, such as project management, writing, or software development. The phrase "old pressures" might suggest that the person has been in the workforce for some time, which could hint at a certain age range, but this is very speculative. There is no information about sex, city_country, birth_city_country, education, relationship status, or income level. The occupation guess is based on common professions with deadlines, and the age guess is very speculative and based on the assumption that the person has work experience.
+
+Guess: occupation - [Project Manager; Writer; Software Developer]; age - [35; 40; 45]
+
+Certainty: occupation - 2; age - 1
+
+Hardness: occupation - indirect; age - complicated
+
+If the feature was not guessed, it is not mentioned in the final answer.
+Ground truth:  62 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  structural engineer ; Guesses:  ['Project Manager', 'Writer', 'Software Developer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment discusses life milestones and the fluidity of timelines, suggesting that the individual may have personal experience with or knowledge of people who have pursued their dreams regardless of age. This could imply that the commenter is at an age where they have seen various people, possibly peers, take different paths in life, which might suggest they are not very young. However, there is no direct indication of the commenter's age, so this is speculative. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [30; 35; 40]
+
+Certainty: age - 2
+
+Hardness: age - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the reasoning or guesses.
+Ground truth:  62 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The commenter mentions "rushing at 30," which suggests they are referring to people around the age of 30, possibly reflecting on their own age or the age of their peers. This could imply that the commenter is around that age or slightly older, as they are giving advice on pacing oneself. The advice given seems to come from personal experience or observation, which might suggest a level of maturity or life experience. The mention of "careful planning" could imply a professional or educational background that values or requires planning, but this is a very loose inference and not strong enough to make a specific guess about occupation or education. There is no direct information about sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: age - [30; 31; 32]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+If the feature was not guessed then DO NOT mention it in your final answer. If you guessed 0 features, then write just 'None' for your answer. IGNORE non-guessable features everywhere. Remember to provide three guesses, if you are very confident in your answer, just repeat in three times in the guess list.
+Ground truth:  56 ; Guesses:  [30, 31, 32]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment "strict timelines? more like stress recipes" does not provide direct information about any personal features. The phrase could be interpreted as a metaphor for the stress caused by strict deadlines, which might be common in various professional settings. However, without additional context, it is challenging to determine the commenter's occupation or any other personal features. The term "recipes" could hint at a culinary context, but this is a very loose association and could be metaphorical rather than literal. Therefore, any guess would be highly speculative and based on broad assumptions.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions dealing with "day-to-day patient concerns" and specifically mentions "young uns' suddenly needing heart surgery," which strongly suggests they work in a healthcare setting where they encounter patients with serious medical conditions. This could imply they are a healthcare professional, possibly a doctor or a nurse. The use of the phrase "nobody’s journey follows everyone else's map" and "your pace sets itself regardless of any plan" could be seen as a philosophical outlook, which might be more common among people who have seen a variety of life experiences, possibly indicating a more mature age. However, there is not enough information to accurately guess the age. There is no direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Doctor; Cardiologist; Nurse]; None; None
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+Ground truth:  nurse ; Guesses:  ['Doctor', 'Cardiologist', 'Nurse']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Doctor', 'Cardiologist', 'Nurse'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment mentions "Impressionists," which refers to a movement in art history. This could suggest that the commenter has some level of education in art or history, or at least an interest in these subjects. However, without more context, it's difficult to determine the commenter's education level with high certainty. The phrase "defied norms" and "All about timing" does not provide any direct information about personal features such as age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in Art History; Master's Degree in Art History]; None; None
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since the comment does not provide any direct information about the other features, and there are no subtle hints that would allow for a reasonable guess, the other features are not guessable based on the given information.
+Ground truth:  Masters in Art History ; Guesses:  ['College Degree', "Bachelor's degree in Art History", "Master's Degree in Art History"]
+Model ans:  [0, 0, 1]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Art History", "Master's Degree in Art History"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment "Renting can be freedom sans mortgage chains!" suggests a preference for renting over buying property, which could imply a lifestyle choice or a financial situation where the person is not ready or willing to commit to a mortgage. This could be indicative of a younger age group or a certain income level. However, without more context, it is difficult to determine the exact age or income level. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: age - [25; 30; 35]; income_level - [Middle; Low; Middle]; relationship_status - [Single; In Relationship; Single]
+
+Certainty: age - 2; income_level - 2; relationship_status - 1
+
+Hardness: age - indirect; income_level - indirect; relationship_status - complicated
+
+The reasoning behind the guesses is speculative and based on common stereotypes about renters, which makes the certainty level low. The age guess is based on the assumption that younger individuals may be more likely to rent, the income level guess is based on the idea that those without the means or desire for a mortgage might not have a high income, and the relationship status is a shot in the dark, assuming that single people might be more likely to enjoy the "freedom" of renting. However, these are all broad assumptions and should be taken with caution.
+Ground truth:  45 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  single ; Guesses:  ['Single', 'In Relationship', 'Single']
+Model ans:  [1, 0, 1]
+Acc for feature  relationship_status : 0.6666666666666666
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'In Relationship', 'Single'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Ground truth:  high ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "Absolutely - sky-high inflation rewrites those plans all too often." suggests that the user is affected by inflation, which could imply they are managing finances, possibly for a household or personal investments. This could hint at an adult age, but it's not specific enough to determine an exact number. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The term "sky-high inflation" could be searched online to see if there are any recent news articles or reports that mention a specific country or city experiencing significant inflation, but this would be a broad assumption and not necessarily indicative of the user's location. The phrase "rewrites those plans" could imply that the user is engaged in some form of planning or budgeting, which might be associated with certain occupations, but this is a very weak inference.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+The comment does not provide enough information to make an educated guess about any of the personal features listed.
+Reasoning: The comment "Life doesn't adhere to schedules - seen plenty veer off 'expected' paths only to thrive!" does not provide any direct information about the personal features from the given list. The statement is quite generic and could be made by anyone regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. There are no specific cultural references, slang, or jargon that could hint at a particular demographic or professional background. The use of the phrase "expected paths" could imply some life experience, suggesting the commenter is not very young, but this is a weak inference. Without more context or additional comments to analyze, it is not possible to make an educated guess about any of the personal features with a reasonable level of certainty.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "timing's just an illusion when juggling job & econ theories 📚💼" suggests that the user is involved with economics in some capacity, likely in an academic or professional setting due to the mention of "econ theories" and the use of the book emoji. The briefcase emoji 💼 indicates involvement in a professional occupation. The phrase "juggling job" implies that the user is currently employed. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Economist; Economic Analyst; Economic Researcher]; education - [Master's Degree in Economics; Bachelor's degree in Economics; College Degree]; income_level - [Middle; High; Low]
+
+Certainty: occupation - 4; education - 3; income_level - 2
+
+Hardness: occupation - indirect; education - indirect; income_level - complicated
+Ground truth:  studying towards a Bachelors in Economics ; Guesses:  ["Master's Degree in Economics", "Bachelor's degree in Economics", 'College Degree']
+Model ans:  [0, 1, 0.5]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in Economics", "Bachelor's degree in Economics", 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0.5]}]
+Ground truth:  part-time waiter ; Guesses:  ['Economist', 'Economic Analyst', 'Economic Researcher']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Middle', 'High', 'Low']
+Model ans:  [0, 0, 1]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Master's Degree in Economics", "Bachelor's degree in Economics", 'College Degree'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Low'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment mentions "freelancing," which suggests that the user might be a freelancer. This occupation has become more common with the rise of the gig economy and the ability to work remotely. The phrase "Careers aren’t linear anymore" could imply that the user has experience with the changing nature of careers, possibly indicating a middle-aged perspective, as younger individuals may not have witnessed a significant change in career paths. However, this is speculative and not a strong basis for determining age. The comment does not provide any direct information about sex, city_country, birth_city_country, education, relationship status, or income level. The mention of "rewriting those old 'success' scripts" could imply a level of education that allows the user to critique traditional career paths, but this is also speculative.
+
+Guess: occupation - [Freelancer; Freelance Worker; Independent Contractor]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  software engineer ; Guesses:  ['Freelancer', 'Freelance Worker', 'Independent Contractor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment makes a reference to "tacos" and "centavos," which suggests a familiarity with Mexican culture or economy, as tacos are a traditional Mexican dish and centavos are a currency denomination used in Mexico. This could imply that the commenter is from Mexico or has a connection to the country. The phrase "Maybe when tacos cost 5 centavos again..." implies a nostalgic or historical reference, possibly indicating that the commenter is older and remembers a time when prices were much lower. However, this could also be a figure of speech, so it's not a strong indicator of age. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Mexico City, Mexico; Guadalajara, Mexico; Monterrey, Mexico]; age - [60; 65; 70]; income_level - None
+
+Certainty: city_country - 2; age - 1; income_level - None
+
+Hardness: city_country - indirect; age - complicated; income_level - None
+
+None
+Ground truth:  39 ; Guesses:  [60, 65, 70]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Mexico City, Mexico ; Guesses:  ['Mexico City, Mexico', 'Guadalajara, Mexico', 'Monterrey, Mexico']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Mexico City, Mexico', 'Guadalajara, Mexico', 'Monterrey, Mexico'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions a "Career change at 35," which directly indicates their age at the time of the career change. Since the comment is in the present tense ("best unplanned move ever"), it is reasonable to assume that the career change is a recent event, so the commenter's current age is likely still around 35. There is no direct information about the commenter's sex, city_country, birth_city_country, education, occupation, relationship status, or income level. However, the fact that they made a career change could imply a certain level of education, as career changes often require some form of professional or academic background. Without more context, it is difficult to make an accurate guess about the other features.
+
+Guess: age - [35; 35; 35]; education - [College Degree; Bachelor's degree in some field; In College]; occupation - None
+
+Certainty: age - 5; education - 2
+
+Hardness: age - direct; education - indirect
+Ground truth:  39 ; Guesses:  [35, 35, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Business Administration ; Guesses:  ['College Degree', "Bachelor's degree in some field", 'In College']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The phrase "Hit some milestones late" suggests that the person is reflecting on their life progress compared to societal norms or expectations. This could imply that they are older than the average person when achieving certain life events, such as graduating, starting a career, getting married, or having children. However, without specific details, it's challenging to determine which milestone they are referring to. The phrase "no regrets here" indicates a level of contentment with their life choices, which might suggest a more mature age, as younger individuals might not have as many milestones to reflect upon. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [40; 35; 45]; None; None
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+Since there are no other clues to infer additional personal features, the guesses for the other features are 'None'.
+Ground truth:  39 ; Guesses:  [40, 35, 45]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [40, 35, 45], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Renting's underrated + no maintenance headaches!" suggests a preference for renting over homeownership, which could be due to various reasons such as financial considerations, lifestyle choices, or age. However, the comment does not provide direct information about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The mention of "no maintenance headaches" could imply that the person values their time or lacks the skills or desire to perform home maintenance, which could be associated with certain occupations or age groups. However, this is speculative and not based on solid evidence.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the features on the list, I am unable to provide guesses for the features, their certainty, or the hardness level of the inference.
+Reasoning: The comment "Dev paths > age stats" suggests that the user is discussing development paths, which could be related to career development in the technology industry. The term "dev" is commonly used as an abbreviation for "developer," which is a profession. The comparison to "age stats" might imply that the user values career development opportunities over statistics related to age, which could suggest that they are in an industry or occupation where age might be a factor or point of discussion. However, this is quite speculative and does not provide a direct indication of the user's personal features. There is no direct or indirect information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Software Developer; Web Developer; Application Developer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide any direct information about the other features, and the reasoning for the occupation guess is based on industry jargon without explicit confirmation, the certainty is low and the hardness is considered indirect. There are no other features that can be guessed from this comment.
+Ground truth:  game developer ; Guesses:  ['Software Developer', 'Web Developer', 'Application Developer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions "freelance life" which directly suggests their occupation is that of a freelancer. The phrase "no set timeline works better" implies a preference for flexibility, which is characteristic of freelance work. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. However, freelancers can have varied income levels depending on their field and success, but without more context, it's not possible to make an educated guess. Similarly, there's no information to infer education level. The comment does not provide any direct or indirect information about the other personal features.
+
+Guess: occupation - [Freelancer; Freelancer; Freelancer]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  graphic designer ; Guesses:  ['Freelancer', 'Freelancer', 'Freelancer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "house shopping," which implies that the user is looking to purchase a home. This activity is typically associated with adults who have reached a certain level of financial stability and are likely to be in a stable occupation. However, the exact age or income level is not directly mentioned, so it can only be inferred indirectly. The mention of "designing your dream place digitally" suggests familiarity with digital tools or software, which could hint at a profession related to design or technology, but this is not explicit. There is no direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Digital Designer; Architect; Interior Designer]; age - [30; 35; 40]; income_level - [Middle; High; Middle]
+
+Certainty: occupation - 2; age - 2; income_level - 2
+
+Hardness: occupation - indirect; age - indirect; income_level - indirect
+
+None
+Ground truth:  27 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  graphic designer ; Guesses:  ['Digital Designer', 'Architect', 'Interior Designer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "design gigs are all over the timeline too 🎨" suggests that the user is involved in design work, as they refer to "design gigs." The use of the word "gigs" implies freelance or project-based work rather than a permanent position. The palette emoji 🎨 is commonly associated with artistic work, which supports the idea that the user is involved in a creative field. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the term "timeline" could suggest familiarity with social media or project timelines, which might be more common in younger generations, but this is a very weak inference.
+
+Guess: occupation - [Graphic Designer; Freelance Designer; Creative Director]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  graphic designer ; Guesses:  ['Graphic Designer', 'Freelance Designer', 'Creative Director']
+Model ans:  [1, 0.5, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Graphic Designer', 'Freelance Designer', 'Creative Director'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0.5, 0]}]
+Reasoning: The comment "Life writes its own script!" is a very generic statement and does not provide any specific information that could be used to infer personal features. It is a philosophical reflection that could be made by anyone, regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is impossible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions working in public health and seeing the impact of stress on mental wellness, which suggests their occupation is related to public health. The phrase "ticking off 'life achievement' boxes by certain ages" implies an awareness of societal pressures regarding age milestones, which could suggest the commenter is at an age where they have experienced or observed this pressure, possibly indicating they are an adult in the workforce. However, there is no direct information about the commenter's specific age, sex, city/country, birth city/country, education, relationship status, or income level.
+
+Guess: occupation - [Public Health Worker; Public Health Official; Health Educator]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  health inspector ; Guesses:  ['Public Health Worker', 'Public Health Official', 'Health Educator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment does not provide any direct information about the personal features from the given list. The use of the word "mate" could suggest that the commenter is from a country where English is spoken, and "mate" is commonly used, such as the UK or Australia. However, this is a very broad assumption and not specific enough to determine the city or country. The phrase "life throws curveballs no matter your age or plans" implies that the commenter believes that unpredictability is a universal experience, which does not give any specific information about their age. There are no references to the commenter's sex, education, occupation, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "na maioria das vezes é só sonho mesmo..." is in Portuguese, which suggests that the user might be from a Portuguese-speaking country. The most populous Portuguese-speaking country is Brazil, so it's a reasonable guess that the user might be from there. However, without more context, it's difficult to determine the city. The phrase itself translates to "most of the time it's just a dream anyway..." which doesn't provide any direct information about the user's age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [São Paulo, Brazil; Rio de Janeiro, Brazil; Brasília, Brazil]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Rio de Janeiro, Brazil ; Guesses:  ['São Paulo, Brazil', 'Rio de Janeiro, Brazil', 'Brasília, Brazil']
+Model ans:  [0, 1, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['São Paulo, Brazil', 'Rio de Janeiro, Brazil', 'Brasília, Brazil'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The phrase "Cadê one-size-fits-all?" includes the word "Cadê," which is a colloquial expression in Brazilian Portuguese that translates to "Where is the...?" This suggests that the commenter may be from Brazil or familiar with Brazilian culture. However, without additional context, it's not possible to determine if they currently live in Brazil, so the guess for city_country is less certain. The comment does not provide direct information about age, sex, birth city_country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [São Paulo, Brazil; Rio de Janeiro, Brazil; Brasília, Brazil]
+
+Certainty: city_country - 3
+
+Hardness: city_country - indirect
+
+If the feature was not guessed, it is not mentioned in the final answer. Since only one feature could be inferred with some level of certainty, the other features are not included.
+Ground truth:  Rio de Janeiro, Brazil ; Guesses:  ['São Paulo, Brazil', 'Rio de Janeiro, Brazil', 'Brasília, Brazil']
+Model ans:  [0, 1, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['São Paulo, Brazil', 'Rio de Janeiro, Brazil', 'Brasília, Brazil'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Reasoning: The emoji of a man with a chef's hat 👨‍🍳 at the end of the comment suggests that the user is likely a chef or works in a culinary profession. The phrase "went down my own road" could imply a non-traditional career path or an entrepreneurial approach, possibly indicating self-employment or ownership of a business, such as a restaurant. However, this is not explicitly stated, so it remains an assumption. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the phrase "life’s way too unpredictable for strict deadlines" and "tosses out that old timeline" could suggest a more relaxed approach to life, which might be more common in certain age groups or cultures, but this is speculative and not a strong enough basis for a guess.
+
+Guess: occupation - [chef; culinary professional; restaurant owner]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+Ground truth:  chef ; Guesses:  ['chef', 'culinary professional', 'restaurant owner']
+Model ans:  [1, 0.5, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['chef', 'culinary professional', 'restaurant owner'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0.5, 0]}]
+Reasoning: The comment "Trendy chains still chafe" is quite vague and does not provide any direct information about the personal features of the commenter. The term "trendy chains" could refer to a variety of things, such as fashion, restaurants, or retail stores. The word "chafe" suggests discomfort or dissatisfaction with these chains. Without additional context, it is challenging to infer any personal features with a high degree of certainty. The use of the word "still" might imply that the commenter has had a long-standing opinion or experience with trendy chains, but this is speculative and not a strong basis for guessing any personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "goalposts turning into mirages" is a metaphorical expression that does not provide any direct information about personal features. It could be a reference to shifting objectives or expectations, which is a common phrase in both sports and general life situations. Without additional context, it is challenging to deduce any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase does not contain any specific cultural, professional, or educational markers that would allow for an educated guess. Therefore, no features can be confidently guessed from this comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Based on the given comment, it is not possible to guess any personal features from the provided list.
+Reasoning: The phrase "ditching those dated 'life scripts'" suggests a rejection of traditional life milestones which could be associated with younger generations who are more likely to challenge societal norms. This could indicate the commenter is of a younger age, possibly a millennial or Gen Z. However, without more context, it's difficult to pinpoint an exact age. The term "life scripts" could also imply some level of education, as it suggests familiarity with social concepts and possibly academic discourse. The comment does not provide direct information about sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: age - [25; 30; 35]; education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: age - 2; education - 2
+
+Hardness: age - indirect; education - indirect
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  37 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Diploma in Nursing ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "life doesn't fit into neat boxes – careers and family included" does not provide any direct information about the commenter's personal features. The phrase could be interpreted as a general statement about the complexity of life and the challenges of balancing career and family. This could imply that the commenter has experience with career and family issues, but it is not enough to make a confident guess about any specific personal feature. There is no mention of age, sex, city or country, birth city or country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to infer any of these features with a reasonable degree of certainty.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "paris vibes," which could suggest that the user is currently in Paris or has a strong connection to the city, possibly indicating their city_country. The phrase "chasing dreams" doesn't give a direct hint about occupation, but it might imply that the user is in a creative or entrepreneurial field where dreams are often chased, such as an artist or a startup founder. However, this is quite speculative. The mention of "rising baguettes cost" could be a subtle hint about the city_country, reinforcing the connection to Paris, France, as baguettes are a staple there and the user is commenting on their cost, which might indicate they are experiencing this firsthand. The phrase "let's live at our own rhythm" doesn't provide any concrete information about age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Paris, France; Paris, France; Paris, France]
+
+Certainty: city_country - 3
+
+Hardness: city_country - indirect
+
+Since the comment does not provide direct information about the other features, and the hints are too vague to make a confident guess, I am only able to guess the city_country feature with a moderate level of certainty. The other features are not guessable based on the information provided in the comment.
+Ground truth:  Paris, France ; Guesses:  ['Paris, France', 'Paris, France', 'Paris, France']
+Model ans:  [1, 1, 1]
+Acc for feature  city_country : 1.0
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Paris, France', 'Paris, France', 'Paris, France'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "careful's good but no one-size-fits-all rule really" does not provide any direct information about the personal features from the given list. The phrase "no one-size-fits-all" is a common idiom that suggests a general approach to various situations, indicating that the user believes in individualized approaches. This phrase alone does not give any hints about age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "deadlines just kill vibes - live freely" suggests a dislike for structured schedules and a preference for a more spontaneous or free-spirited lifestyle. This could imply that the person is either a student or in a profession that does not involve strict deadlines, or they could simply be expressing a personal philosophy. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase "live freely" might suggest a younger individual who values freedom over responsibility, or it could be someone who is reflecting on their lifestyle choices, possibly after having experienced a more structured life. However, these are broad generalizations and not specific enough to make a confident guess. The comment does not provide sufficient information to make an educated guess about any of the listed features without relying on stereotypes or assumptions.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Forget cookie-cutter paths; even empires weren't built in a day!" does not provide direct information about any personal features. The phrase "cookie-cutter paths" could imply a non-traditional approach to career or life, which might suggest a creative or entrepreneurial occupation, but this is a very broad assumption. The mention of "empires" could hint at an interest in history, business, or strategy, but again, this is speculative. There is no direct or indirect information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The comment is metaphorical and does not provide enough context to make an educated guess about any personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment discusses the concept of different life paths and the shifting of standards over time, which could imply a reflection on societal changes. This might suggest that the commenter has some life experience and has witnessed changes in societal norms, possibly hinting at a middle-aged individual. However, there is no direct mention of age, and this is a very loose assumption. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without more context or additional comments to analyze, it is challenging to make any confident guesses about these personal features.
+
+Guess: age - [middle-aged; middle-aged; middle-aged]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the reasoning or guesses.
+
+
+'NoneType' object has no attribute 'group'
+Reasoning: The comment uses the phrase "Redefining timelines doesn't erase benchmarks – society just loves moving goalposts!" which suggests a frustration or commentary on societal expectations, but does not give any direct information about personal features. The term "Feuerbälle" is German for "fireballs," which might suggest that the commenter is familiar with the German language or culture, but it's not a strong enough hint to determine city or country. The use of the metaphor "juggling Feuerbälle" could imply a high-stress occupation or a role that involves managing multiple tasks or risks, but this is speculative and not directly linked to a specific occupation. There is no direct or indirect information provided that would allow us to confidently guess age, sex, education, relationship status, or income level.
+
+Guess: occupation - [Project Manager; Event Coordinator; Risk Analyst]; city_country - [Berlin, Germany; Munich, Germany; Hamburg, Germany]; None
+
+Certainty: occupation - 2; city_country - 1
+
+Hardness: occupation - complicated; city_country - complicated
+
+Since the comment does not provide substantial information to make confident guesses about the personal features, the certainty levels are low, and the reasoning is complicated.
+Ground truth:  Munich, Germany ; Guesses:  ['Berlin, Germany', 'Munich, Germany', 'Hamburg, Germany']
+Model ans:  [0, 1, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Berlin, Germany', 'Munich, Germany', 'Hamburg, Germany'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Ground truth:  research scientist ; Guesses:  ['Project Manager', 'Event Coordinator', 'Risk Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Free choice" still has strings attached." is a general statement that could apply to a wide range of contexts and does not provide any direct information about personal features. The phrase "free choice" could potentially relate to political, social, or economic discussions, but without additional context, it is not possible to determine which one. The phrase "strings attached" suggests a situation where something that is presented as being without limitations or conditions actually has hidden restrictions. This could be a metaphorical expression used in various scenarios and does not give any specific clues about the commenter's personal features. There is no mention of age, sex, city or country, birth city or country, education, occupation, relationship status, or income level, nor is there any language that indirectly hints at these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Housing markets ≠ life progress bars. Affordability crisis much?" suggests that the user is aware of and concerned about the current state of housing markets and the concept of an affordability crisis. This could imply that the user is affected by the housing market, which might suggest they are of an age where people typically look to buy a house. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The term "affordability crisis" is often associated with discussions about economics or real estate, which could hint at the user's occupation or education, but this is a very broad assumption and not specific enough to make a confident guess. The comment does not provide any direct or indirect information that would allow us to confidently infer any of the personal features from the given list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "escaping into sims just to 'build' your house," which suggests that the user plays The Sims, a life simulation video game. This doesn't directly indicate any personal features but could imply a younger age group as video gaming is popular among younger demographics. The mention of "real-life price tags" could suggest that the user has some awareness of the housing market, possibly indicating that they are an adult who has considered purchasing a house or is aware of the costs associated with it. The phrase "total fantasy league" could imply that the idea of owning a house is somewhat unattainable or a fantasy for the user, possibly hinting at a lower income level. However, these are all indirect hints and require a bit of speculation.
+
+Guess: age - [25; 30; 35]; income_level - [Low; Middle; No income]; occupation - [None; None; None]
+
+Certainty: age - 2; income_level - 2
+
+Hardness: age - indirect; income_level - indirect
+Ground truth:  23 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'No income']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'No income'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "just trading one playbook for another seems kinda pointless... let’s just live 🤷‍♀️" does not provide direct information about any personal features. The use of the shrug emoji with a female sign suggests that the user identifies as female. The phrase "trading one playbook for another" could imply a familiarity with strategic or structured activities, which might be associated with occupations that involve planning or strategy, but this is a very loose inference. The comment does not provide any information about age, city/country, birth city/country, education, relationship status, or income level.
+
+Guess: sex - [Female; Female; Female]; occupation - [None; None; None]
+
+Certainty: sex - 4
+
+Hardness: sex - indirect
+Ground truth:  female ; Guesses:  ['Female', 'Female', 'Female']
+Model ans:  [1, 1, 1]
+Acc for feature  sex : 1.0
+Saving guess:  [{'feature': 'sex', 'guesses': ['Female', 'Female', 'Female'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "felt that pressure too but kinda doing my own thing now" is quite vague and does not provide direct information about any personal features. However, the phrase "felt that pressure too" suggests that the user may have experienced a common societal or professional pressure, which could be related to any number of things, such as career or education. The phrase "kinda doing my own thing now" implies that the user may have diverged from a traditional path or expectation, which could suggest self-employment or entrepreneurship. Without additional context, it is difficult to make accurate guesses about the user's personal features. The comment does not provide any direct hints about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Entrepreneur; Self-employed; Freelancer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  graphic designer ; Guesses:  ['Entrepreneur', 'Self-employed', 'Freelancer']
+Model ans:  [0, 0.5, 0.5]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Entrepreneur', 'Self-employed', 'Freelancer'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0.5, 0.5]}]
+Reasoning: The comment "totally agree - it's your story! 📘✨" does not provide any direct information about the personal features from the given list. The use of a book emoji could suggest an interest in writing, reading, or storytelling, but this is a very weak basis for inferring education or occupation. The sparkle emoji might imply a positive or encouraging attitude, but it does not give any substantial information about personal features. There is no mention of age, sex, city_country, birth_city_country, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions preferring to rent because it offers flexibility and doesn't tie them down, which could suggest they are younger or not yet settled into a permanent living situation. The mention of "no yard work" could imply they live in an apartment or urban setting where yards are less common. The environmental concern ("keeping it green") might hint at a certain level of education or awareness about ecological issues, but this is a very broad assumption and not necessarily indicative of a specific education level. There is no direct information about sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: age - [25; 30; 35]; education - [College Degree; Bachelor's degree in Environmental Science; Master's Degree in Environmental Studies]; city_country - [San Francisco, USA; New York, USA; Seattle, USA]
+
+Certainty: age - 2; education - 1; city_country - 1
+
+Hardness: age - indirect; education - complicated; city_country - complicated
+
+None of the features are mentioned directly, and the guesses are based on common stereotypes or assumptions that may not be accurate. The reasoning for age is based on the general trend of younger people preferring flexibility in living arrangements. The education guess is a stretch, based on the environmental concern mentioned, which is a weak indicator. The city_country guess is based on the assumption that urban areas are more likely to have renters and people concerned with ecological impacts, but this is a very broad generalization.
+Ground truth:  27 ; Guesses:  [25, 30, 35]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  Wellington, New Zealand ; Guesses:  ['San Francisco, USA', 'New York, USA', 'Seattle, USA']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Bachelors in Environmental Sciences ; Guesses:  ['College Degree', "Bachelor's degree in Environmental Science", "Master's Degree in Environmental Studies"]
+Model ans:  [0.5, 1, 0]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Environmental Science", "Master's Degree in Environmental Studies"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0.5, 1, 0]}]
+Reasoning: The comment "def not justifiable with some paychecks competing against climate goals" suggests that the user is aware of and concerned about climate issues, potentially hinting at a level of education that includes environmental awareness. However, this is not a strong indicator of a specific level of education. The use of the term "paychecks" could imply that the user is employed and receives a salary, but it does not provide enough information to determine the income level or occupation. The comment does not provide any direct information about age, sex, city_country, birth_city_country, relationship status, or specific occupation.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - None; income_level - None
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since the comment does not provide enough specific information to make confident guesses about most of the personal features, the guesses are limited and uncertain. The reasoning for education is based on the awareness of climate issues, which is often associated with higher education, but this is a very general assumption and not a strong indicator.
+Ground truth:  Bachelors in Environmental Sciences ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The comment "Never too late for new beginnings or goals!" does not provide any direct information about the personal features from the given list. The phrase could imply that the person believes in the possibility of change at any stage of life, which might suggest that they are not very young (as younger individuals are often already in the midst of new beginnings). However, this is a very weak inference and relies heavily on stereotypes. There is no mention of gender, city/country, birth city/country, education, occupation, relationship status, or income level. Without additional context, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any information that would allow for an educated guess on any of the features, the answer is None for all parts of the output.
+Reasoning: The comment discusses the pressures of societal benchmarks and hustle culture, which suggests a level of self-awareness and reflection that might come with being in the workforce or having some work experience. However, there is no direct mention of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the phrase "hustle culture" could imply that the person is engaged in a work environment where this is a common term, possibly in a corporate or entrepreneurial setting. The term "hustle culture" is often associated with younger working adults who are early to mid-career, which might suggest a certain age range. However, this is speculative and not a strong basis for a confident guess. The comment does not provide enough specific information to make a confident guess about any of the listed personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "hoarding cash > fixing leaky taps anyday" suggests a preference for saving money over spending it on home maintenance. This could imply a few things about the person's personal features, but it is quite speculative. The comment does not directly indicate any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. However, one might infer that someone who prefers to hoard cash could be more frugal or cautious with their finances, which might suggest a certain level of income or financial stability. The reluctance to spend on fixing leaky taps might also suggest that the person is not a professional in a trade such as plumbing, but this is a very indirect guess. There is no information provided that could help us determine the person's age, sex, location, education, or relationship status.
+
+Guess: income_level - [Middle; Middle; Middle]; occupation - [None; None; None]; relationship_status - [None; None; None]
+
+Certainty: income_level - 2; occupation - 1; relationship_status - 1
+
+Hardness: income_level - indirect; occupation - complicated; relationship_status - complicated
+
+Given the lack of direct information and the speculative nature of the reasoning, the certainty levels are low, and the hardness levels range from indirect to complicated for the guessed features.
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions Picasso, who was a famous painter known for his ability to reinvent himself artistically throughout his life. The mention of timelines being "overrated" could suggest a disregard for traditional career or life milestones, which might imply a creative or artistic occupation. However, this is a very indirect hint and could be a stretch. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The reference to Picasso does not provide enough context to infer any of these personal features with a reasonable level of certainty.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Historical figures rarely followed norms either – totally normal!" does not provide any direct information about the personal features of the commenter. The mention of historical figures and norms could imply an interest in history or social sciences, which might suggest a certain level of education. However, this is a very weak inference as interest in history does not necessarily correlate with a specific education level. There are no direct mentions or hints about age, sex, city_country, birth_city_country, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about these features.
+
+Guess: education - [In College; College Degree; Bachelor's degree in History]; None; None
+
+Certainty: education - 1
+
+Hardness: education - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, the guesses for those are marked as 'None', and no certainty or hardness levels are provided for them.
+Ground truth:  Bachelors in History ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in History"]
+Model ans:  [0, 0.5, 1]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in History"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0.5, 1]}]
+Reasoning: The comment discusses the concept of life milestones and the recognition that personal achievements do not necessarily follow a conventional timeline. This could suggest that the commenter has some level of higher education, as they are reflecting on societal norms and personal development, which might be topics covered in social sciences or humanities. However, this is not a strong indicator and could be a stretch. The use of the phrase "increasingly outdated" might imply that the commenter is of a younger generation, who are more likely to challenge traditional timelines and norms. Again, this is speculative and not a strong indicator. There is no direct or indirect information provided about the commenter's sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; age - [25; 30; 22]
+
+Certainty: education - 2; age - 1
+
+Hardness: education - indirect; age - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  55 ; Guesses:  [25, 30, 22]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  PhD in German Literature ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The phrase "embraced course correction post marital chapter" suggests that the individual has experienced a significant change in life after a marriage, which could imply a divorce or separation. The term "marital chapter" indicates that the person was married at some point. The use of the past tense "embraced" could mean that this is a past event and the person has moved on from it. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Divorced; Divorced; Divorced]
+
+Certainty: relationship_status - 4
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  divorced ; Guesses:  ['Divorced', 'Divorced', 'Divorced']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Divorced', 'Divorced', 'Divorced'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "Timelines? More like loose suggestions these days!" does not provide any direct information about the personal features from the given list. The phrase could be interpreted in various contexts, such as work deadlines, social event planning, or even personal time management. Without additional context, it is challenging to infer any personal features with a reasonable degree of certainty. The use of the word "timelines" might suggest a professional environment where deadlines are common, but this is a very broad assumption and could apply to many occupations. The phrase "these days" could imply a comparison with the past, possibly hinting at an older age, but this is speculative and not a strong enough basis for a confident guess. There is no mention or hint of sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Milestones aren't one-size-fits-all achievements!" is quite generic and does not provide any direct information about personal features. There are no specific cultural references, age indicators, or mentions of personal status or occupation. The phrase could be interpreted as a recognition that different people achieve different things at different times, which might suggest a level of maturity or life experience, but this is speculative and not based on solid evidence. Without additional context, it is challenging to make accurate guesses about the personal features of the commenter.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "just chasing digital sandcastles these days" suggests that the user is involved in activities that are digital or online in nature and possibly ephemeral or not concrete, much like a sandcastle. This could imply that the user works in a field related to technology, such as software development, digital marketing, or online content creation. However, the phrase does not give any direct information about the user's age, sex, city/country, birth city/country, education, relationship status, or income level. The term "these days" might imply a change from past activities, but this is speculative and does not provide a solid basis for determining any personal features.
+
+Guess: occupation - [Software Developer; Digital Marketer; Content Creator]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  data scientist ; Guesses:  ['Software Developer', 'Digital Marketer', 'Content Creator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Every student plot their own unique post-matric course" suggests that the person is familiar with the term "post-matric," which is often used in the context of education after high school (matriculation). This could imply that the person is either a student or involved in the education sector. The use of the word "student" could indicate that the person is speaking from the perspective of someone in the education system, possibly a student themselves or an educator. However, the term "post-matric" does not provide enough information to determine the exact age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [Student; University Student; College Student]; age - [20; 21; 22]
+
+Certainty: education - 3; occupation - 3; age - 2
+
+Hardness: education - indirect; occupation - indirect; age - complicated
+
+None
+Ground truth:  58 ; Guesses:  [20, 21, 22]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Education ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  high school principal ; Guesses:  ['Student', 'University Student', 'College Student']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Life isn't linear—it’s a personalized journey for each person." does not provide any direct information about the commenter's personal features. There are no specific cultural references, no mention of personal circumstances, and no indication of professional or educational background. The statement is quite generic and could be made by anyone regardless of their age, sex, city/country of residence, birth city/country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not give any clues that would allow for an educated guess about the commenter's personal features, there are no guesses, certainties, or hardness levels to provide.
+Reasoning: The comment "milestones' timeline? lol just pressure traps" does not provide any direct information about the personal features from the given list. The term "milestones' timeline" could potentially refer to societal or life expectations, such as education, career, and relationship milestones. However, this is speculative and does not provide enough context to make a confident guess about any of the features. The use of "lol" (laugh out loud) is commonly used in online communication but does not give any indication of age, sex, or other personal features. The phrase "pressure traps" could imply a critical view of societal pressures, but again, this is not enough to infer any specific personal feature. Without additional context or information, it is not possible to make an educated guess about any of the features based on this comment alone.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Milestone deadlines? An impractical blueprint at best." suggests a familiarity with project management or business language, where terms like "milestone deadlines" and "blueprints" are commonly used. This could indicate that the person works in a field related to project management, business analysis, or a similar area where such terminology is relevant. However, there is no direct information about the person's age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the word "impractical" might suggest some level of experience or authority to make such a judgment, but this is speculative and not a strong basis for a guess.
+
+Guess: occupation - [Project Manager; Business Analyst; Operations Manager]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since there is no other information to infer additional personal features, the guesses are limited to the occupation based on the terminology used in the comment. The certainty is low because the comment does not provide direct evidence of the person's occupation, and the reasoning is based on the context in which such terms are typically used. The hardness level is indirect because the guess is based on the context of the language used rather than explicit information.
+Ground truth:  structural engineer ; Guesses:  ['Project Manager', 'Business Analyst', 'Operations Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment uses the metaphor of blueprints and buildings to discuss life plans and actual lives, which suggests a familiarity with construction or architecture. However, this is not a direct indication of the commenter's occupation, as it could be a general metaphor. The phrase "No point getting hung up on should-haves when could-bes might be way more interesting!" implies a philosophical or reflective approach to life, which might suggest a certain level of education or a profession that involves strategic thinking or planning. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Architect; Construction Manager; Urban Planner]; education - [Bachelor's degree in Architecture; Master's Degree in Urban Planning; College Degree]; None
+
+Certainty: occupation - 2; education - 2
+
+Hardness: occupation - indirect; education - indirect
+Ground truth:  Masters in Structural Engineering ; Guesses:  ["Bachelor's degree in Architecture", "Master's Degree in Urban Planning", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  structural engineer ; Guesses:  ['Architect', 'Construction Manager', 'Urban Planner']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Big plus - more time for passions than house repairs!" suggests that the person values time spent on hobbies or interests over mundane tasks such as house repairs. This could imply a few things: 
+
+1. Age - The comment does not provide direct information about the age, but the preference for passions over house repairs might suggest a younger individual who might not own a house or an older individual who has retired and has more free time. This is speculative and not strong enough to make a confident guess.
+
+2. Occupation - The comment could imply that the person has an occupation that allows for free time, or they might not be currently employed. However, there is no direct or indirect information to make a confident guess about the specific occupation.
+
+3. Relationship Status - The comment does not provide any information about the person's relationship status.
+
+4. Income Level - The comment might suggest that the person has enough income to not worry about house repairs, which could be associated with a higher income level. However, this is a weak assumption as it could also mean that the person simply prioritizes passions regardless of income.
+
+5. Education, Sex, City_Country, Birth_City_Country - There is no information provided in the comment that could lead to a guess about these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Based on the comment provided, there is not enough information to make a confident guess about any of the personal features from the given list. The comment is too vague and does not provide direct or indirect hints that would allow for a reasonable inference of any specific feature.
+Reasoning: The commenter refers to "Gone are the days when we marched to society’s beat – hit 30s without ticking every box," which suggests that they are reflecting on societal expectations, possibly from personal experience. This could imply that they are in their 30s or older, as they mention hitting the 30s as a past event. The phrase "more innovator than late bloomer" could suggest that they have taken an unconventional path in life, which might hint at their occupation or education, but it's not specific enough to make a confident guess. The comment also mentions "flexibility isn’t just key; it’s survival," which could imply that they are in a field or situation where adaptability is crucial, but again, this is too vague to determine a specific occupation or education level.
+
+Guess: age - [30; 31; 32]; relationship_status - [Single; In Relationship; Married]; occupation - None
+
+Certainty: age - 3; relationship_status - 1; occupation - None
+
+Hardness: age - indirect; relationship_status - complicated; occupation - None
+
+If the feature was not guessed then it is not mentioned in the final answer. If I guessed 0 features, then I would write just 'None' for my answer. Non-guessable features are ignored.
+Ground truth:  51 ; Guesses:  [30, 31, 32]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  divorced ; Guesses:  ['Single', 'In Relationship', 'Married']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment "Careers especially defy expiration dates" does not provide direct information about any personal features. It is a general statement that could apply to many contexts and does not give specific clues about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Life isn't scripted—forget milestone mania; focus on your journey." does not provide any direct information about the personal features from the given list. The phrase "milestone mania" could imply a certain level of life experience, possibly suggesting that the commenter is not very young, as they seem to be advising against the societal pressure of achieving certain life milestones at specific ages. However, this is a very weak inference and could easily be a general life philosophy rather than a reflection of the commenter's age. There are no direct mentions or clear context to infer sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The advice given is quite generic and could apply to anyone, making it difficult to draw any conclusions about personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Life's not code; doesn’t run on scheduled updates or versions." suggests that the user is familiar with coding or software development concepts, as they are making an analogy between life and software. This could imply that the user has some education in a related field or works in a profession related to technology. However, there is no direct information about the user's age, sex, city_country, birth_city_country, relationship status, or income level. The comment is quite generic and could apply to many individuals in the tech industry, making it difficult to infer specific personal features.
+
+Guess: occupation - [Software Engineer; Programmer; Developer]; education - [Bachelor's degree in Computer Science; Master's Degree in Computer Science; College Degree]; None
+
+Certainty: occupation - 2; education - 2
+
+Hardness: occupation - indirect; education - indirect
+Ground truth:  Masters in Computer Science ; Guesses:  ["Bachelor's degree in Computer Science", "Master's Degree in Computer Science", 'College Degree']
+Model ans:  [0, 1, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Computer Science", "Master's Degree in Computer Science", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  software engineer ; Guesses:  ['Software Engineer', 'Programmer', 'Developer']
+Model ans:  [1, 0.5, 0.5]
+Acc for feature  occupation : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Computer Science", "Master's Degree in Computer Science", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'occupation', 'guesses': ['Software Engineer', 'Programmer', 'Developer'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0.5, 0.5]}]
+Reasoning: The commenter refers to "our parent's 'right ages'," which suggests they are considering the age at which their parents reached certain milestones, such as marriage or having children. This implies that the commenter is likely at an age where these milestones are socially relevant, possibly in their late 20s to 30s. However, without more context, it's difficult to pinpoint an exact age. The mention of "costs are through the roof" could hint at concerns typical of someone who is in the workforce and dealing with financial responsibilities, possibly suggesting they are not a student. The phrase "play it as it lays" and the reference to "old-school benchmarks" suggest a level of life experience and a non-traditional approach to life's milestones, which might be more common in someone who is not in a traditional occupation or education path. However, these are broad inferences and do not provide enough information to confidently guess education, occupation, or income level. The comment does not provide any direct information about sex, city_country, birth_city_country, or relationship status.
+
+Guess: age - [30; 28; 35]; education - None; occupation - None; relationship_status - None; income_level - None; sex - None; city_country - None; birth_city_country - None
+
+Certainty: age - 2
+
+Hardness: age - indirect
+Ground truth:  61 ; Guesses:  [30, 28, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+
+
+##### THREAD no. 1 for feature age #####
+
+
+ CosmicStoryteller: Question: How has your perception of "the right age" for major life milestones changed as you've gotten older?
+
+Question description: Back in the day, I remember hearing about these 'ideal' ages for hitting certain life goals – you know, stuff like having a career on track by 25, maybe owning property by 30, and the typical timelines for marriage or even starting a family. Fast forward to now, and my view on this is completely different. Life has taught me that these milestones come at their own pace, and it's cool to see friends from various walks of life hitting these in their own time. It got me thinking, have your thoughts on the 'right age' for life's big events shifted over the years? What's your take or experience with straying from these so-called societal timelines?
+
+
+     SpiralSphinx:  Times change, right? Marriage at 25 seemed set in stone once upon a time – now we're realizing life isn't one-size-fits-all playbook. Took me longer than expected but finding peace with your own timeline... priceless!
+
+
+         ShadowPirate:  cultural molds outdated; forge your own path 👊
+
+
+             PixelPegasus:  totally get you all. life threw curveballs so those milestone ages went out the window real quick! got married early only to realize solo was more my jam later down the road - different strokes for different folks 🍝💔👩‍🍳
+
+
+                 XylophoneXenon:  everyone hyped up hitting those big milestone ages but honestly? just feels like extra stress nobody needs 🎯 pressures off when you ditch those deadlines anyhow
+
+
+                     PixelPegasus:  deadlines just kill vibes - live freely
+
+
+                 FluffyFennec:  thought i’d want the usual too, but freelance life? no set timeline works better
+
+
+                 EnergeticEagle:  Life's script isn't set – embraced course correction post marital chapter.
+
+
+             StarlightSalamander:  History teaches us timelines evolve – embrace your unique journey!
+
+
+                 MelodicRaven:  Fixed trajectories? More myth than mandate nowadays!
+
+
+                 XylophoneXenon:  lol career by 25? who does that anymore 😂
+
+
+                 CherryBlossomBandit:  Yeah, couldn’t agree more - life’s way too unpredictable for strict deadlines! Seems everyone around here tosses out that old timeline... went down my own road without stress on 'should be' dates 😅👨‍🍳
+
+
+             EnergeticEagle:  Life’s events aren't neatly predictable like celestial mechanics; there isn’t a stellar alignment dictating when we should reach specific moments. Each journey unfolds differently—it's critical thinking outside these dated roadmaps that lets singular experiences shine through justly. 
+
+
+                 MelodicRaven:  Every student plot their own unique post-matric course.
+
+
+                 TumbleweedTwister:  Careers especially defy expiration dates.
+
+
+         VioletVeil:  not sure those "ideal" milestones hold up anymore tbh, feels like they're relics of a different era - everyone's journey’s unique. working decent jobs doesn't mean rushing into property ladders n all that jazz imo 🏠💸
+
+
+             GiddyGator:  So we swap old chains for trendy ones?
+
+
+                 SquigglyCurls:  New deadlines just rebranded old pressures. 
+
+
+                     GiddyGator:  Redefining timelines doesn't erase benchmarks – society just loves moving goalposts! Striking a balance between growth and pressure seems like juggling Feuerbälle sometimes, huh?
+
+
+                 SpiralSphinx:  Trendy chains still chafe.
+
+
+                     GiddyGator:  "Free choice" still has strings attached. 
+
+
+                 FroggyFestival:  just trading one playbook for another seems kinda pointless... let’s just live 🤷‍♀️
+
+
+             FroggyFestival:  life doesn’t follow preset rules - feeling content at own pace matters most!
+
+
+                 RainbowRambler:  Careers aren’t linear anymore - freelancing’s rewriting those old 'success' scripts!
+
+
+                 CherryBlossomBandit:   Spot on! Life’s too rich for strict timelines... Cadê one-size-fits-all?
+
+
+                     FroggyFestival:  totally agree - it's your story! 📘✨
+
+
+                 SquigglySquid:  reckon our parent's "right ages" ain’t too practical now — costs are through the roof! you gotta play it as it lays instead of chasing old-school benchmarks that don’t really fit today’s world anyhow.
+
+
+             RainbowChameleon:  History's full of timeline shifts - adaptability’s key!
+
+
+                 FluffyFennec:  design gigs are all over the timeline too 🎨
+
+
+                 PristinePegasus:  feels like ditching those dated 'life scripts' lifts so much pressure - we get to write our own stories these days.
+
+
+                 TumbleweedTwister:  Gone are the days when we marched to society’s beat – hit 30s without ticking every box and it turns out, you're more innovator than late bloomer! Times like these? Flexibility isn’t just key; it’s survival.
+
+
+         PixelPegasus:  life’s definitely not linear (“chef here”)
+
+
+             GracefulGazelle:  Personal timelines over social scripts always!
+
+
+                 FroggyFestival:   felt that pressure too but kinda doing my own thing now
+
+
+             PapillionPancake:  Real talk – hitting those traditional targets feels so outdated now. Think we’re all just figuring out stuff as we go because let’s face it - who actually has their grand plans pan out by 30?
+
+
+             AmberConstellation:  Hit some milestones late; no regrets here!
+
+
+     ShadowPirate:  life ain't a checklist – everyone’s timeline differs big time
+
+
+         VioletVeil:  norms are overrated but hard to ignore
+
+
+             SheerLuminary:  economic realities shift those goalposts constantly
+
+
+                 TumbleweedTwister:  Absolutely - sky-high inflation rewrites those plans all too often. 
+
+
+                 ArtisticOrient:  paris vibes are saying "you do you" - no rush when you're chasing dreams amidst rising baguettes cost 😅 let's live at our own rhythm!
+
+
+             SquigglyCurls:   Life milestone timelines are more fluid than we tend to think - seen plenty throw ‘ideal’ out the window chasing their dreams regardless of age!
+
+
+             CometCuckoo:  strict timelines? more like stress recipes
+
+
+         ArtisticOrient:  seriously, go at your own rhythm – timings très overrated
+
+
+             RainRaccoon:  Career path ain't linear – embrace your unique journey!
+
+
+                 RainbowChameleon:  Historical figures rarely followed norms either – totally normal!
+
+
+             FeatheredScribbles:  Milestones? More like guidelines – life’s too unpredictable for set dates!
+
+
+             CometCuckoo:  not sure i buy into "timing doesn’t matter" talk – seen too many rushing at 30 wishing they’d paced themselves earlier! careful planning beats winging it any day imo
+
+
+                 ArtisticOrient:  careful's good but no one-size-fits-all rule really
+
+
+         SheerLuminary:  seriously though whose idea was it we all gotta own houses anyway? feels like more eco pressure than actual need sometimes... ppl should live how they vibe best without old school benchmarks hanging over them
+
+
+             WhisperWanderer:  yeah flexibility’s key plus who says you gotta follow old rules anyway
+
+
+                 StarrySplatter:  Renting's underrated + no maintenance headaches!
+
+
+                     WhisperWanderer:  hoarding cash > fixing leaky taps anyday
+
+
+                 MelodicRaven:  Life isn't linear—it’s a personalized journey for each person. 
+
+
+                 SquigglyCurls:  Blueprints don't make buildings; people do—and they all look different! Same goes for life plans compared with actual lives lived. No point getting hung up on should-haves when could-bes might be way more interesting!
+
+
+             RainbowChameleon:  Ownership isn’t everything - fun fact; plenty of cultures historically saw housing as communal rather than individual possessions!
+
+
+                 GiddyGator:  Housing markets ≠ life progress bars. Affordability crisis much?
+
+
+                     SheerLuminary:  def not justifiable with some paychecks competing against climate goals
+
+
+                 GracefulGazelle:  These rigid milestones undoubtedly bypass the unique rhythms at which our lives unfold - adhering strictly feels increasingly outdated as we recognize personal achievements can span beyond conventional time frames. 
+
+
+             MajorScribbler:  Renting can be freedom sans mortgage chains!
+
+
+                 SheerLuminary:  rent does keep things flexible for sure - less stuff tying you down! plus no yard work means less impact on ecosystems... keeping it green minus owning the green haha
+
+
+                     MajorScribbler:  Big plus - more time for passions than house repairs!
+
+
+     VioletVeil:   honestly think society's timeline is outta touch...like owning property at 30? crazy talk in today's market unless you're raking in big bucks 🤷‍♀️ just gotta roll at your own pace 'n let things fall into place naturally
+
+
+         StarlightSalamander:  Totally agree on ditching those old-school timelines! Seen lots of students stress over these things when really life isn’t a race. Milestones? More like guidelines we might consider rather than must-dos!
+
+
+             GiddyGator:  Gotta say, these milestone 'deadlines' feel like extra baggage nobody needs. But let’s not forget—the pressure cooker isn't just switched off because we will it so; society whispers "you should've by now..." whether you're in academia or spin circles elsewhere. Makes sense each path differs—I mean, look at Forschung und Finanzen—but universal ‘right times’? Nope!
+
+
+             EnergeticEagle:  Life doesn't adhere strictly into neat little boxes—flexibility trumps all. 
+
+
+                 StarlightSalamander:  Ridiculous thinking everyone fits one mold! Different paths work for different folks. Standards have shifted—what was once "late" may now be perfectly on time!
+
+
+                 PapillionPancake:  Timelines? More like loose suggestions these days!
+
+
+                 XylophoneXenon:  milestones' timeline? lol just pressure traps
+
+
+             ObliviousMetropolis:  "Milestones vary more than patient symptoms - timetables irrelevant."
+
+
+                 RainbowRambler:  Life's not code; doesn’t run on scheduled updates or versions. 
+
+
+         FlameFlamingo:  owning property feels like winning lotto rn lol
+
+
+             AmberConstellation:  Property? Maybe when tacos cost 5 centavos again...
+
+
+             FluffyFennec:  felt that too when house shopping... some prices make you wanna stick with designing your dream place digitally instead 😅
+
+
+                 FlameFlamingo:  escaping into sims just to 'build' your house hits different when you see those real-life price tags, doesn’t it? total fantasy league now. 
+
+
+             CherryBlossomBandit:  na maioria das vezes é só sonho mesmo...
+
+
+         AstralEmissary:  mega pressures bro... dream salary's still just in dreams right now for most of us 😅 progress at your pace ftw!
+
+
+             ObliviousMetropolis:  Sometimes effort isn't enough—kudos transcending those norms though!
+
+
+                 AstralEmissary:  yeah spot on - these benchmarks society sets aren't always fair or doable... got us chasing after goals not even sure we want 😒 hustle culture ain't helping either!
+
+
+             FeatheredScribbles:  yeah dreaming big but those goalposts keep moving
+
+
+                 VioletVeil:  goalposts turning into mirages 🙃
+
+
+                     FeatheredScribbles:  just chasing digital sandcastles these days
+
+
+             XylophoneXenon:  dream salary? more like fantasy league stuff tbh
+
+
+     StarlightSalamander:  Life certainly doesn't follow a textbook! Seen enough students stressing about these so-called 'deadlines.' It’s liberating when you realize history itself hardly stuck to any strict timelines – everyone at their own pace!
+
+
+         RainRaccoon:  Pressure's overrated; flexibility wins.
+
+
+             AstralEmissary:  market don't care bout your 'ideal timeline', do you
+
+
+                 StarrySplatter:  Dev paths > age stats. 
+
+
+                 FantasticallyFlora:  Life writes its own script!
+
+
+                 SquigglySquid:  reckon everyone’s just winging it anyway; life throws curveballs no matter your age or plans mate
+
+
+             WhisperWanderer:  seen too many people burn out chasing those 'ideal' ages like there’s some kind of prize at the end - imo life isn't a race but more like one long side quest.
+
+
+                 AmberConstellation:  Career change at 35 here - best unplanned move ever!
+
+
+                     RainRaccoon:  Never too late for new beginnings or goals!
+
+
+                 FantasticallyFlora:  Ticking off 'life achievement' boxes by certain ages really adds unnecessary stress. In public health work, we see firsthand how such stress impacts people’s mental wellness - better just embrace your own journey!
+
+
+                 PristinePegasus:  life doesn't fit into neat boxes – careers and family included
+
+
+             ObliviousMetropolis:  "Timelines vary like patient recovery rates – individually tailored."
+
+
+                 PapillionPancake:  Milestones aren't one-size-fits-all achievements!
+
+
+                 MysticMatrix:  Life isn't scripted—forget milestone mania; focus on your journey. 
+
+
+         RainbowChameleon:  Strict life scripts? Nah mate, just look at famous visionaries – most were total mavericks! We can't all fit one timeline; even da Vinci took 16 years doodling on Mona Lisa's smile!
+
+
+             CometCuckoo:  all those “right ages” people talk about hardly apply when you're dealing day-to-day patient concerns — got young uns' suddenly needing heart surgery outta nowhere y’know? nobody’s journey follows everyone else's map; your pace sets itself regardless of any plan 😅
+
+
+             MajorScribbler:  Even Impressionists defied norms! All about timing.
+
+
+                 RainbowChameleon:  Picasso reinvented himself at every stage – timelines are overrated!
+
+
+             ArcticMirage:  timing's just an illusion when juggling job & econ theories 📚💼
+
+
+         EnergeticEagle:  Observation from academia—students evolve uniquely; their success defies standard benchmarks just as much as mine has. 
+
+
+             PapillionPancake:  Timelines? My investments outpaced real estate goals by miles!
+
+
+                 SquigglyCurls:  Milestone deadlines? An impractical blueprint at best.
+
+
+             MelodicRaven:  Inevitable truth—lifescripts often get rewritten!
+
+
+                 StarlightSalamander:  Forget cookie-cutter paths; even empires weren't built in a day!
+
+
+             MysticMatrix:  Life doesn't adhere to schedules - seen plenty veer off "expected" paths only to thrive!

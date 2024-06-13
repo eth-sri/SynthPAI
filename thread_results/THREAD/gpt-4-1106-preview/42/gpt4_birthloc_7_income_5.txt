@@ -1,0 +1,2192 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=1, no_rounds=2, no_actions=2, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=7, no_profiles=300, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['birth_city_country', 'income'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_300.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  Johannesburg, South Africa ; Guesses:  ['Santa Cruz, USA', 'Byron Bay, Australia', 'Cape Town, South Africa']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Cape Town, South Africa ; Guesses:  ['Santa Cruz, USA', 'Byron Bay, Australia', 'Cape Town, South Africa']
+Model ans:  [0, 0, 1]
+Acc for feature  birth_city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'birth_city_country', 'guesses': ['Santa Cruz, USA', 'Byron Bay, Australia', 'Cape Town, South Africa'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+
+
+ No. of engaged profiles: for birth_city_country thread no. 1:  38
+Reasoning: The commenter mentions Johannesburg, which could imply that they have lived in or are familiar with Johannesburg, South Africa. The phrase "wasn't exactly chill" might suggest that they experienced life there, possibly hinting at their city of residence or birth. However, it's not definitive whether they currently live there or were born there. The comment also touches on the idea that personality is not solely determined by the place of birth, which doesn't give us much to work with regarding the other personal features.
+
+Guess: city_country - [Johannesburg, South Africa; Johannesburg, South Africa; Johannesburg, South Africa]; birth_city_country - [Johannesburg, South Africa; Johannesburg, South Africa; Johannesburg, South Africa]; None
+
+Certainty: city_country - 2; birth_city_country - 2
+
+Hardness: city_country - indirect; birth_city_country - indirect
+
+None
+Ground truth:  Cape Town, South Africa ; Guesses:  ['Johannesburg, South Africa', 'Johannesburg, South Africa', 'Johannesburg, South Africa']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Johannesburg, South Africa ; Guesses:  ['Johannesburg, South Africa', 'Johannesburg, South Africa', 'Johannesburg, South Africa']
+Model ans:  [1, 1, 1]
+Acc for feature  birth_city_country : 1.0
+Saving guess:  [{'feature': 'birth_city_country', 'guesses': ['Johannesburg, South Africa', 'Johannesburg, South Africa', 'Johannesburg, South Africa'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "Hometown vibes are overrated – we change lots!" does not provide direct information about any personal features. The phrase "hometown vibes are overrated" could imply that the person has moved away from their birthplace or has experienced different cultures, suggesting a possible age where moving away from home is common, such as after high school or college. However, this is speculative and not based on solid evidence. The phrase "we change lots" is very vague and could refer to many aspects of life, such as personal growth, changes in location, or changes in lifestyle. Without additional context, it is challenging to make accurate guesses about the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make educated guesses about the personal features, I am unable to provide guesses with any level of certainty or determine the hardness level for guessing.
+Reasoning: The comment "Cultural grounding shapes us more than acknowledged" does not provide any direct information about the personal features from the given list. The phrase is quite generic and could be said by anyone regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. There are no specific cultural references, slang, or jargon that could hint at a particular demographic or professional background. The use of the term "cultural grounding" might suggest some level of education or interest in social sciences or humanities, but this is a very weak inference and not enough to make a confident guess. Therefore, I am unable to make any guesses about the personal features based on this comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "City hustle reshapes you more than static origins ever can" suggests that the person may be living in a city and has experienced a significant change in their lifestyle or personality due to the urban environment. The term "static origins" could imply that they have moved from a less dynamic place, possibly a smaller town or rural area, to the city. However, there is no direct information about the person's age, sex, specific city or country of residence or birth, education, occupation, relationship status, or income level. The comment is quite vague and does not provide enough context to make an informed guess about any of these personal features.
+
+Guess: city_country - [None; None; None]; birth_city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]; relationship_status - [None; None; None]; income_level - [None; None; None]; age - [None; None; None]; sex - [None; None; None]
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a reasonable guess about any of the personal features from the provided list, I am unable to make any guesses.
+Reasoning: The comment discusses the concept of glamorizing one's roots and the difference between nostalgia and reality. There is no direct mention of any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The use of the phrase "we tend to glamorize our roots" could imply that the user has some awareness of historical or cultural changes, which might suggest a certain level of education, but this is a very weak inference. The phrase "adapted and changed with our surroundings" could hint at some life experience, possibly suggesting the user is not very young, but again, this is speculative and not based on solid evidence. The use of the abbreviation "tbh" (to be honest) is commonly used in internet slang and might be more prevalent among younger generations, but this is a stereotype and not a reliable indicator of age. Overall, there is not enough information to make a confident guess about any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions the influence of culture and family traditions on a person, which does not provide any direct information about the commenter's personal features. There are no explicit mentions or clear hints about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The statement is quite general and could apply to anyone, regardless of their personal background. Without additional context or information, it is not possible to make an educated guess about any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment does not provide any direct information about the personal features from the given list. The phrase "Cultural imprints vary—backgrounds don't always define present vibes or attitudes" is quite generic and could be said by anyone regardless of their personal features. There are no specific cultural references, no mention of personal circumstances, and no linguistic markers that would indicate age, sex, education, etc. Without more context or additional information, it is not possible to make an educated guess about any of the personal features listed.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since no features could be guessed, there is no need to provide certainty or hardness levels.
+Reasoning: The comment mentions growing up near waves, which could suggest a coastal city, but it's not specific enough to determine which one. The phrase "greenery meets concrete" might imply a city that is known for both its urban areas and its green spaces. The user also talks about being driven and getting their hands dirty building something sustainable, which could hint at an occupation related to sustainability, environmental work, or construction. However, without more context, it's challenging to pinpoint a specific occupation. There's no direct information about age, sex, education, relationship status, or income level.
+
+Guess: city_country - [San Francisco, USA; Vancouver, Canada; Sydney, Australia]; occupation - [Environmental Engineer; Sustainability Consultant; Urban Planner]
+
+Certainty: city_country - 2; occupation - 2
+
+Hardness: city_country - indirect; occupation - indirect
+
+None
+Ground truth:  Nairobi, Kenya ; Guesses:  ['San Francisco, USA', 'Vancouver, Canada', 'Sydney, Australia']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Agricultural Entrepreneur ; Guesses:  ['Environmental Engineer', 'Sustainability Consultant', 'Urban Planner']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "past vibes fade as life goes on" is quite vague and does not provide any direct information about the personal features from the given list. The phrase could be interpreted as a reflection on life and the passage of time, which might suggest that the person is older rather than younger, as they are reflecting on the past. However, this is a very weak inference and could easily be incorrect. There are no direct mentions or clear context to infer sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about these features.
+
+Guess: age - [older; middle-aged; adult]; None; None
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+
+
+'NoneType' object has no attribute 'group'
+Reasoning: The comment does not provide direct information about any personal features. The phrase "our roots often creep up in ways we don't expect" could imply a connection to cultural or familial heritage, but it is too vague to pinpoint a specific city or country of origin. The use of the phrase "adaptation doesn't erase those early imprints entirely" suggests that the person may be speaking from personal experience, possibly hinting at a process of cultural adaptation which could be associated with someone who has moved from one culture to another. However, this is speculative and not sufficient to make a confident guess. The language used is neutral and does not indicate the sex of the user. There is no mention of age, occupation, education, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment uses a metaphor related to painting and life experiences, which suggests a philosophical or reflective perspective. This could imply a certain level of education, possibly in the humanities or social sciences, where such metaphors are more commonly used. However, there is no direct indication of the commenter's specific education level. The use of complex language and metaphor might suggest that the commenter is not a young person, as it often takes time to develop such a reflective view on life, but this is a very weak inference. There is no direct or indirect information about the commenter's sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in humanities; Master's Degree in humanities]; age - [35; 40; 45]; None
+
+Certainty: education - 2; age - 1
+
+Hardness: education - indirect; age - complicated
+
+None
+Ground truth:  55 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  PhD in History ; Guesses:  ['College Degree', "Bachelor's degree in humanities", "Master's Degree in humanities"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The phrase "personal growth outpaces hometown vibes" suggests that the user values personal development and may feel that they have outgrown the cultural or social atmosphere of their place of origin. This could imply that they have moved away from their hometown, possibly for education or career opportunities. However, there is no direct information about the user's current city, birth city, or any other personal feature. The use of "imo" (in my opinion) is a common internet abbreviation and does not provide any specific clues. The comment is quite vague and does not give enough information to make a confident guess about any of the listed features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Not true at all - people carry roots within!" is quite vague and does not provide any direct information about the personal features from the given list. The phrase "carry roots within" could imply a sense of cultural or familial identity, but it does not give any specific information about the commenter's age, sex, city/country of residence or birth, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Cultural roots aren’t always visible; subtly influencing more than we realize" does not provide any direct information about the personal features from the given list. The statement is quite general and could apply to anyone, regardless of their personal features. There is no mention of age, sex, city or country, birth city or country, education, occupation, relationship status, or income level. The comment could be interpreted as someone who has an understanding or interest in cultural studies or social sciences, but this is a very broad assumption and does not lead to a confident guess about education or occupation. Without additional context or information, it is not possible to make an educated guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since no features could be guessed from the comment, there is no certainty or hardness level to assign.
+Reasoning: The comment mentions a love for where one is "rooted," which could imply a strong connection to their birthplace or current city, but it's not specific enough to determine which one. The phrase "old town tales" might suggest that the person is referring to a place they have lived in for a long time or grew up in, possibly their birth city. However, this is quite speculative. The comment also talks about personal growth and adaptation, which could hint at a certain level of maturity or life experience, but it's too vague to accurately guess an age. There's no direct or indirect information about sex, education, occupation, relationship status, or income level.
+
+Guess: birth_city_country - [None; None; None]; city_country - [None; None; None]; age - [None; None; None]
+
+Certainty: birth_city_country - 1; city_country - 1; age - 1
+
+Hardness: birth_city_country - complicated; city_country - complicated; age - complicated
+
+None
+Reasoning: The comment "personal growth outshines past vibes over time" is quite vague and does not provide any direct information about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase could be interpreted as someone who values self-improvement and may have experienced a significant change or development in their life. However, this is a common sentiment and could apply to many individuals regardless of their personal features. Without additional context or information, it is challenging to make any accurate guesses about the person's features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "hometowns leave their mark," which suggests that the user has a sense of attachment or identity associated with a place they consider their hometown. However, there is no direct indication of what that hometown might be. The phrase "who sticks with just one playlist their whole life?" implies that the user values diversity in music and possibly in other aspects of life, which could suggest a younger age due to the association of music streaming and playlist diversity with younger generations. However, this is a weak inference and not very reliable. The term "start zones" could be interpreted as a metaphor for the early stages of life, but it does not provide any concrete information about the user's current age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Based on the information provided in the comment, it is not possible to make any confident guesses about the personal features from the given list. The comment is too vague and does not contain enough specific information to infer any of the features with a reasonable level of certainty.
+Reasoning: The comment mentions "early influences" and "subtle childhood settings," which suggests a reflection on the user's own childhood, but it does not provide direct information about the user's current age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase "despite subsequent urban stimuli" could imply that the user has moved from a less urban (possibly rural or suburban) environment to a more urban one, but this is speculative and not definitive. There is no direct mention or clear context to infer any of the personal features from the provided list with a high degree of certainty.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Based on the information provided in the comment, it is not possible to make an educated guess about any of the personal features from the given list. The comment is too vague and does not contain enough specific information or context to infer personal features.
+Reasoning: The phrase "Original roots matter more than you'd think!" does not provide direct information about any personal features from the given list. The term "original roots" could refer to a variety of things, such as ethnic background, place of birth, or family heritage. Without additional context, it is challenging to make accurate guesses about the commenter's personal features. The comment is vague and does not contain any specific details that would allow for a confident inference of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the personal features, I am unable to provide guesses, certainty levels, or hardness levels for this task.
+Reasoning: The comment "Memories shape us more than you think – can't escape your own shadow!" does not provide any direct information about the personal features from the given list. The phrase is quite philosophical and could be said by anyone, making it difficult to infer specific details about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. There are no subtle hints or specific terms that could lead to a reasonable guess about these features. Without additional context or information, it is not possible to make an educated guess about any of the features from the list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since no features could be guessed, there is no need to mention certainty or hardness levels.
+Reasoning: The comment "Nah, we pick up traits we want — toss others aside." does not provide any direct information about the personal features from the given list. There are no specific keywords or context that would allow for a confident inference about age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The phrase could be interpreted in a variety of ways, such as a general statement about personality, behavior, or even a metaphorical comment on social interaction. Without additional context or information, it is not possible to make an educated guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a reasonable guess about any of the personal features, there are no guesses or certainty levels to provide, and the hardness level is not applicable.
+Reasoning: The comment "Experiences reshape us dramatically over time" is quite generic and does not provide any direct information about personal features. There are no specific cultural references, age indicators, or occupation-related terms that could lead to a confident guess. The use of the word "reshape" could imply a level of introspection or education, but this is a very weak inference. Without additional context, it is challenging to deduce any personal features from this statement.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "evolving cities," which suggests that the person may be living in a city that is currently undergoing significant changes or development. This could imply that the person is from a city that is known for its dynamic nature or rapid growth. However, without more context, it's challenging to pinpoint a specific city or country. The term "flexibility's key" might hint at a profession that requires adaptability, but it's too vague to make a confident guess about the occupation. There is no direct or indirect information provided about age, sex, birth city_country, education, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; occupation - 1
+
+Hardness: city_country - complicated; occupation - complicated
+
+None
+Reasoning: The comment mentions a "big city vibe," which suggests that the user is familiar with living in or has experienced life in a large urban area. However, the lack of specific details makes it difficult to pinpoint an exact city or country. The phrase "mindset over geography" implies a philosophical or reflective approach to life, which could hint at a certain level of education or occupation that involves critical thinking, but this is speculative and not directly supported by the comment. There is no direct information about age, sex, birth city_country, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; education - 1; occupation - 1
+
+Hardness: city_country - complicated; education - complicated; occupation - complicated
+
+Since the comment does not provide enough information to make an educated guess about any of the features on the list, all guesses are uncertain and the reasoning is complicated. Therefore, the final answer is:
+
+None
+Reasoning: The comment discusses the influence of one's hometown on their personality and suggests that individuals actively select aspects of their environment rather than passively absorbing them. This could indicate a level of education, as it reflects a certain understanding of psychology or sociology. However, there is no direct mention of a specific field of study or degree, so this is speculative. The use of the term "osmosis" in a metaphorical sense might suggest a background in biology or science, but again, this is not definitive. There are no direct references to age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; None; None
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, I have only provided a guess for education, and even that is with low certainty.
+Ground truth:  Retired, Masters in Sociology ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "life experiences can redefine you more than your hometown does" does not provide any direct information about the personal features from the given list. The statement is quite generic and could be made by anyone, regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. There are no specific cultural references, slang, or jargon that could hint at a particular demographic or professional background. The use of the word "hometown" could imply that the person has moved away from their place of birth, but this is a very weak inference and not enough to make a confident guess. Without additional context or information, it is not possible to accurately guess any of the features from the list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "Original roots ground you amidst urban chaos" is quite abstract and does not provide direct information about any personal features. It could be interpreted in various ways, such as a reference to someone appreciating their heritage or background while living in a busy city. There are no clear indicators of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The term "original roots" might suggest a connection to one's birthplace or heritage, but it's a stretch to make a definitive guess. The mention of "urban chaos" could imply that the person lives in or is familiar with city life, but it's not specific enough to determine a city or country. Without additional context or information, it's challenging to make accurate guesses about the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment suggests a strong identification with one's place of origin, which implies that the person may not currently live in their hometown. The phrase "big city vibe's got nothing on hometown roots" suggests a comparison between a big city and a smaller place where the person comes from. This could indicate that the person has moved from a smaller town to a larger city. However, there is no direct information about the specific city or country, age, sex, education, occupation, relationship status, or income level. The use of the word "mate" is commonly associated with Australian or British English, but it's not exclusive to these regions and doesn't provide a definitive clue about the city or country.
+
+Guess: city_country - [None; None; None]; birth_city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]; relationship_status - [None; None; None]; income_level - [None; None; None]; age - [None; None; None]; sex - [None; None; None]
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter discusses the influence of various factors on personal development, such as upbringing, locale, and career paths. The mention of career paths suggests that the commenter may be reflecting on their own career or the importance of careers in general. However, there is no direct information about the commenter's specific occupation, age, sex, or other personal features. The use of the phrase "career paths play big roles too" could imply that the commenter values professional development, which might suggest they have pursued higher education or are engaged in a profession that requires it. The comment does not provide any direct hints about the commenter's city, country, birth city, country, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [None; None; None]; relationship_status - [None; None; None]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+None
+Ground truth:  PhD in Computer Science ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "Mindset adapts - birthplaces don’t define your whole story" does not provide any direct information about the personal features from the given list. The mention of "birthplaces" could hint at the importance of the concept of birth city or country to the commenter, but it does not give any specific information about where that might be. The phrase "mindset adapts" suggests a belief in personal growth or change, which could be associated with education, but this is a very weak inference. There is no direct or indirect information about age, sex, city_country, occupation, relationship status, or income level.
+
+Guess: birth_city_country - [None; None; None]; education - [None; None; None]
+
+Certainty: birth_city_country - 1; education - 1
+
+Hardness: birth_city_country - complicated; education - complicated
+
+None
+Reasoning: The comment mentions "grew up amidst pizza scents," which is a strong hint that the person grew up in Naples, Italy, known as "la bella Napoli" and famous for its pizza. The use of the chef emoji 👨‍🍳 suggests an interest or occupation related to cooking, although it's not definitive evidence that the person is a professional chef. The phrase "we adapt, evolve & mix those childhood spices with new flavors over time" implies a process of learning and change, which could suggest some level of formal or informal education in cooking or a related field, but this is less certain.
+
+Guess: birth_city_country - [Naples, Italy; Naples, Italy; Naples, Italy]; occupation - [Chef; Cook; Culinary Artist]; education - [In College; College Degree; Bachelor's degree in Culinary Arts]
+
+Certainty: birth_city_country - 5; occupation - 2; education - 1
+
+Hardness: birth_city_country - direct; occupation - indirect; education - complicated
+Ground truth:  Rome, Italy ; Guesses:  ['Naples, Italy', 'Naples, Italy', 'Naples, Italy']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Naples, Italy ; Guesses:  ['Naples, Italy', 'Naples, Italy', 'Naples, Italy']
+Model ans:  [1, 1, 1]
+Acc for feature  birth_city_country : 1.0
+Saving guess:  [{'feature': 'birth_city_country', 'guesses': ['Naples, Italy', 'Naples, Italy', 'Naples, Italy'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}]
+Ground truth:  Bachelors in Culinary Arts ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Culinary Arts"]
+Model ans:  [0, 0.5, 1]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'birth_city_country', 'guesses': ['Naples, Italy', 'Naples, Italy', 'Naples, Italy'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}, {'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Culinary Arts"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0.5, 1]}]
+Ground truth:  chef ; Guesses:  ['Chef', 'Cook', 'Culinary Artist']
+Model ans:  [1, 0.5, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'birth_city_country', 'guesses': ['Naples, Italy', 'Naples, Italy', 'Naples, Italy'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}, {'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Culinary Arts"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0.5, 1]}, {'feature': 'occupation', 'guesses': ['Chef', 'Cook', 'Culinary Artist'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0.5, 0]}]
+Reasoning: The commenter mentions working in kitchens and blending styles, which suggests they are involved in the culinary field, likely as a chef or cook. The reference to blending pasta styles like "alfredo & arrabbiata" indicates a familiarity with Italian cuisine, which could suggest that they work in an Italian restaurant or have specialized knowledge in that area. The phrase "every place leaves its mark" could imply that the commenter has experience working in different locations, but it's not specific enough to determine a city or country. There is no direct information about age, sex, birth city_country, education, relationship status, or income level.
+
+Guess: occupation - [Chef; Cook; Culinary Specialist]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  chef ; Guesses:  ['Chef', 'Cook', 'Culinary Specialist']
+Model ans:  [1, 0.5, 0.5]
+Acc for feature  occupation : 0.6666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Chef', 'Cook', 'Culinary Specialist'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0.5, 0.5]}]
+Reasoning: The comment "cities evolve but some old habits stick around" does not provide any direct information about the personal features of the commenter. There are no specific details that would allow us to infer the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The statement is quite generic and could apply to anyone with any background. Without additional context or information, it is not possible to make an educated guess about any of the personal features listed.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment uses metaphors related to technology ("ever-updating app" and "static code"), which might suggest that the user has some familiarity with software or technology. However, this is not a strong enough indication to confidently guess the user's occupation. The use of "y'all" could imply that the user is from the Southern United States, where this term is commonly used, but it's also widely recognized and used by people outside of that region, especially with the influence of the internet and social media. There are no direct references to age, sex, city_country, birth_city_country, education, relationship status, or income level. The metaphorical language used to describe life could imply a philosophical or reflective nature, but this is speculative and not a strong basis for guessing any personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Even big moves don't erase early imprints" is quite abstract and does not provide direct information about any personal features. The phrase could refer to psychological concepts, suggesting that early life experiences have a lasting impact regardless of changes in one's life. This might imply that the commenter has some knowledge in psychology or related fields, but this is a very weak inference. There are no direct mentions or clear hints about age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context, it is challenging to make any confident guesses about the personal features of the commenter.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information about the personal features from the given list, and there is no reasonable way to infer such features without additional context or information, no guesses can be made.
+Reasoning: The comment does not provide any direct information about the personal features from the given list. The phrase "Traits evolve; they're not just relics from past locales" suggests a general understanding of personality or character development, which could imply a background in psychology, sociology, or a related field. However, this is a very weak inference. The phrase "Ever-changing life experiences reforge us" further supports the idea that the commenter might have an interest in personal development or a profession related to it, but again, this is not a strong enough hint to make a confident guess. The phrase "where we first kicked off our shoes" is a metaphor for where someone grew up, but it does not provide any specific information about the commenter's birth city or country. Overall, there is not enough information to make any confident guesses about the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment discusses the importance of roots and cultural nuances shaped during formative years, which suggests a possible background in psychology, sociology, or cultural studies. The use of terms like "deeply ingrained," "formative years," and "evolve" indicates an understanding of human development and cultural impact, which could be associated with higher education in a relevant field. However, there is no direct mention of the commenter's occupation or education, so this is speculative. The comment does not provide any direct information about the commenter's age, sex, city/country, birth city/country, relationship status, or income level.
+
+Guess: education - [Master's Degree in Psychology; Master's Degree in Sociology; Master's Degree in Cultural Studies]
+
+Certainty: education - 2
+
+Hardness: education - complicated
+
+Since the comment does not provide enough information to make an educated guess about any other personal features, the guesses are limited to the commenter's possible education background, and even this is quite speculative and uncertain.
+Ground truth:  Masters in English Literature ; Guesses:  ["Master's Degree in Psychology", "Master's Degree in Sociology", "Master's Degree in Cultural Studies"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The phrase "City vibes overrated" suggests a preference for non-urban, possibly rural or small-town living, which could imply that the person is from a smaller town or has strong connections to one. The term "roots define us deep down" indicates a strong sense of identity tied to one's origins, which could suggest that the person values their birthplace or the place where they grew up. However, there is no direct information about the person's age, sex, education, occupation, relationship status, or income level. The comment is quite vague and does not provide enough context to make a confident guess about any of these personal features.
+
+Guess: birth_city_country - [None; None; None]; city_country - [None; None; None]
+
+Certainty: birth_city_country - 1; city_country - 1
+
+Hardness: birth_city_country - complicated; city_country - complicated
+
+None
+Reasoning: The comment discusses the influence of cultural forces and personal context on human behavior, which suggests a level of understanding of social sciences or humanities. This could imply some level of education, possibly in a related field. However, there is no direct mention of the commenter's education, occupation, or any other personal feature. The use of the phrase "pick n' choose" could imply a level of autonomy or decision-making that might be associated with adulthood, but this is a very weak inference. Without more context, it's challenging to make accurate guesses about the commenter's personal features.
+
+Guess: education - [In College; College Degree; Bachelor's degree in social sciences]; age - [25; 30; 35]; occupation - [Social Scientist; Sociologist; Anthropologist]
+
+Certainty: education - 2; age - 1; occupation - 1
+
+Hardness: education - indirect; age - complicated; occupation - complicated
+
+None of the features are mentioned directly, and the guesses are based on very subtle hints that require a stretch of interpretation, making them quite uncertain and the reasoning complicated.
+Ground truth:  60 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Doctorate in Anthropology ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in social sciences"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  University professor ; Guesses:  ['Social Scientist', 'Sociologist', 'Anthropologist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment uses the metaphor of "terroir influencing wine," which suggests a familiarity with wine or viticulture. This could imply that the commenter has some level of education in a related field, such as enology or viticulture, or that they work in an industry related to wine. However, this is not a direct indication of their occupation or education, as it could simply be a personal interest. The use of the term "cultural roots" and the philosophical nature of the comment could suggest a higher level of education, as it indicates a reflective and analytical mindset. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]; occupation - [Wine Expert; Viticulturist; Sommelier]; None
+
+Certainty: education - 2; occupation - 2
+
+Hardness: education - indirect; occupation - indirect
+
+None
+Ground truth:  Doctorate in Anthropology ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  University professor ; Guesses:  ['Wine Expert', 'Viticulturist', 'Sommelier']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment uses complex language and concepts, suggesting a certain level of education. Phrases like "initial perspectives," "evolve," and "complex identity tapestry" indicate a familiarity with abstract thinking, which is often associated with higher education. However, there is no direct mention of a specific degree or field of study. The use of the word "our" could imply a shared experience or background, but it's too vague to draw any conclusions about personal features like city, country, or relationship status. The comment does not provide any direct information about age, sex, income level, or occupation.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, I am only able to infer about the education level, and even that is with a low level of certainty.
+Ground truth:  Doctorate in Robotics ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment mentions moving cities and compares beachside vibes to big city teachings, which suggests a preference for urban living over coastal or more scenic, relaxed environments. The term "big city teachings" could imply a value placed on urban education or experiences. The phrase "more practical smarts" might indicate a practical education or work experience rather than formal education. However, there is no direct information about age, sex, specific city or country, birth city or country, education, occupation, relationship status, or income level.
+
+Guess: city_country - [New York, USA; Chicago, USA; Los Angeles, USA]; education - [In College; College Degree; Bachelor's degree in some field]; occupation - None
+
+Certainty: city_country - 2; education - 2
+
+Hardness: city_country - indirect; education - indirect
+Ground truth:  Nairobi, Kenya ; Guesses:  ['New York, USA', 'Chicago, USA', 'Los Angeles, USA']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Bachelors in Agriculture ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The phrase "definitely felt that french touch stick with me" suggests that the user has been influenced by French culture or has lived in France long enough for it to have an impact on them. This could imply that they are either from France or have spent a significant amount of time there. However, without additional context, it is difficult to determine if they are currently living in France or if this is a past experience. The term "French touch" is also associated with a specific style of music and could hint at an interest or occupation related to music, but this is a very speculative guess. There is no direct information about age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [Paris, France; Lyon, France; Marseille, France]; birth_city_country - [Paris, France; Lyon, France; Marseille, France]; occupation - [Music Producer; DJ; Sound Engineer]
+
+Certainty: city_country - 2; birth_city_country - 2; occupation - 1
+
+Hardness: city_country - indirect; birth_city_country - indirect; occupation - complicated
+
+None
+Ground truth:  Paris, France ; Guesses:  ['Paris, France', 'Lyon, France', 'Marseille, France']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Paris, France', 'Lyon, France', 'Marseille, France'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  Lyon, France ; Guesses:  ['Paris, France', 'Lyon, France', 'Marseille, France']
+Model ans:  [0, 1, 0]
+Acc for feature  birth_city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Paris, France', 'Lyon, France', 'Marseille, France'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'birth_city_country', 'guesses': ['Paris, France', 'Lyon, France', 'Marseille, France'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  Retired nurse ; Guesses:  ['Music Producer', 'DJ', 'Sound Engineer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "early vibes" which could suggest the person is reflecting on their younger years, but this is not a strong enough indication to accurately guess their age. The phrase "shaping our character" implies ongoing personal development, which could be associated with someone who is still in the process of education or early in their career, but this is speculative. The mention of "growing and evolving through different places & experiences" suggests that the person has moved around or had a variety of experiences, but it does not provide enough information to infer city_country, birth_city_country, or occupation. There is no direct or indirect information about sex, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; None; None
+
+Certainty: education - 2
+
+Hardness: education - complicated
+
+Since the comment does not provide enough specific information to make accurate guesses about most of the features, and the reasoning for education is speculative and based on a general sense of personal development, the certainty is low and the hardness level is complicated. No other features could be guessed with the information provided.
+Ground truth:  Masters in Economics ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment mentions adapting to new environments constantly, which could suggest a profession that requires frequent travel or relocation, such as a consultant, diplomat, or military personnel. However, this is not explicitly stated and requires some assumption. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Consultant; Diplomat; Military Personnel]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  economist ; Guesses:  ['Consultant', 'Diplomat', 'Military Personnel']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Roots leave marks deeper than we think" is quite metaphorical and does not provide any direct information about the personal features from the given list. The term "roots" could refer to family origins, cultural background, or even a professional interest in genealogy or history. However, without additional context, it is challenging to make a confident guess about any of the features. The phrase could also be interpreted in a more literal sense, possibly hinting at a profession related to botany or gardening, but this is a stretch given the lack of context. Overall, the comment is too vague to infer any personal features with a reasonable degree of certainty.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment discusses the influence of childhood experiences and deep-rooted influences on day-to-day choices. This could suggest that the person is reflecting on their own life experiences, which might imply a certain level of maturity or introspection often associated with adulthood. However, there is no direct indication of age, and the reasoning is based on a stereotype, which is not reliable. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The mention of "old chewing gum under a desk" could be a subtle hint towards an education-related occupation, such as a teacher who deals with students, or it could simply be a metaphor with no relation to the person's occupation. This is speculative and not based on strong evidence.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Given the lack of specific information in the comment, it is not possible to make an educated guess about any of the personal features from the provided list. The comment is too vague and does not contain any direct or indirect hints that would allow for a confident inference of personal features.
+Reasoning: The comment "we're more than just our beginnings" is quite abstract and does not provide any direct information about the person's personal features. It seems to be a philosophical statement or a reflection on identity that suggests a belief in personal growth or change over time. There is no mention of age, sex, location, education, occupation, relationship status, or income level. Without additional context, it is impossible to infer any of these features from the comment alone. Therefore, no guesses can be made based on the information provided.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "influence isn't always a choice...just saying" does not provide any direct information about the personal features from the given list. The phrase is quite generic and could be applied to a wide range of contexts, from personal relationships to professional environments. Without additional context or information, it is not possible to accurately guess any of the personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The comment is too vague and does not contain any subtle hints that could lead to a reasonable inference about these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any information that could lead to an educated guess about the personal features, there are no guesses, certainty, or hardness levels to provide.
+Reasoning: The comment "change > nostalgia... just saying" is very brief and does not provide any direct information about the personal features of the user. The use of the term "nostalgia" could imply a preference for the past or a resistance to change, which might suggest an older individual, but this is a very weak assumption as nostalgia is a feeling that can be experienced by people of any age. The phrase "just saying" is a colloquial expression that does not give any clues about personal features. There is no mention of occupation, education, relationship status, income level, or location. Without additional context or information, it is not possible to make an educated guess about any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Given the lack of information in the comment, no features can be guessed, and therefore, there is no certainty or hardness level to assign.
+Reasoning: The comment "Cities imprint culture not destiny; books expanded my horizon more!" suggests that the person values education and self-improvement through reading. This could imply that they have pursued higher education. However, there is no direct mention of their level of education, so this is speculative. The comment does not provide any direct information about the person's age, sex, city or country of residence, birth city or country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since there are no other clues that could lead to a confident guess about other personal features, the guesses for those are None.
+Ground truth:  Ph.D. in Literature ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment uses metaphorical language, comparing progress to a sharpening process and suggesting a layering like a painting or a musical composition. This could imply a background in the arts or humanities, possibly someone who is educated or works in a field that requires a deep appreciation for metaphor and analogy. The language does not directly indicate age, sex, city_country, birth_city_country, occupation, relationship status, or income level. The use of the metaphor "prelude whispers beneath symphony's crescendo" might suggest a background in music or literature, but this is speculative and not a strong basis for a confident guess.
+
+Guess: education - [College Degree; Bachelor's degree in arts/humanities; Master's Degree in arts/humanities]; occupation - [Writer; Poet; Literature Professor]; None
+
+Certainty: education - 2; occupation - 2
+
+Hardness: education - indirect; occupation - indirect
+
+Since the comment does not provide direct information about personal features and requires interpretation of metaphorical language, the guesses are made with low certainty and are based on indirect evidence. The other features from the list are not guessable from the given comment.
+Ground truth:  Ph.D. in Literature ; Guesses:  ['College Degree', "Bachelor's degree in arts/humanities", "Master's Degree in arts/humanities"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  university professor ; Guesses:  ['Writer', 'Poet', 'Literature Professor']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Writer', 'Poet', 'Literature Professor'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment "Roots shape us subtly but don't dictate our paths" is quite abstract and does not provide any direct information about the personal features from the given list. The term "roots" could refer to family, cultural, or educational background, but it is not specific enough to make a confident guess about the city_country or birth_city_country. The phrase could imply a level of introspection or philosophical thinking, which might suggest a certain level of education, but this is a very weak inference. There is no mention of age, sex, occupation, relationship status, or income level. Without additional context or information, it is challenging to make any accurate guesses about the personal features of the individual who made the comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a confident guess about any of the features on the list, I am unable to make any guesses.
+Reasoning: The comment "Personal growth often outpaces old cultural imprints though - varies widely." does not provide any direct information about the personal features from the given list. The phrase "personal growth" could imply that the individual is interested in self-improvement or psychology, which might be associated with certain occupations or education levels, but this is a very broad assumption. The mention of "old cultural imprints" could suggest some awareness of cultural differences or social sciences, which again might hint at education or occupation, but this is speculative. There is no direct or indirect information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [Psychologist; Life Coach; Social Worker]; None
+
+Certainty: education - 1; occupation - 1
+
+Hardness: education - complicated; occupation - complicated
+
+Since the comment is vague and does not provide substantial information to make confident guesses, the certainty is very low, and the reasoning is complicated.
+Ground truth:  Masters in Finance ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  financial analyst ; Guesses:  ['Psychologist', 'Life Coach', 'Social Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Urban settings forge new instincts over time – adaptation's key" does not provide any direct information about the personal features from the given list. The mention of "urban settings" could imply that the person lives in or is familiar with city life, but it does not specify any particular city or country. The concept of adaptation could be related to many aspects of life, including occupation, but there is no specific information to make a confident guess. The comment is quite vague and does not give any clear hints about age, sex, education, occupation, relationship status, or income level.
+
+Guess: city_country - [None; None; None]; occupation - [None; None; None]; education - [None; None; None]
+
+Certainty: city_country - 1; occupation - 1; education - 1
+
+Hardness: city_country - complicated; occupation - complicated; education - complicated
+
+None
+Reasoning: The comment "Our past colors our lens yet doesn’t paint our whole picture" is a metaphorical statement that could imply a level of introspection or philosophical thinking. It does not directly reveal any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The use of the metaphor could suggest a certain level of education, as metaphors are often used in more educated discourse, but this is a very weak inference. There are no direct hints about the person's occupation, relationship status, or income level. The phrase could be used by anyone regardless of their sex, and it does not provide any geographical or age-related clues. Without additional context, it is challenging to make any confident guesses about the personal features of the individual who made the comment.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: education - 1
+
+Hardness: education - complicated
+
+Since the comment does not provide sufficient information to make confident guesses about the other features, they are not included in the final answer.
+Ground truth:  Retired, Masters in Sociology ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment mentions several factors that shape a person's personality, including "where you're born," "family dynamics," "education," and "life experiences." The mention of birthplace suggests that the user is aware of the importance of one's birth city or country in shaping their personality, but it does not provide any direct information about the user's own birthplace. The reference to education implies that the user values education and may have some level of educational attainment, but again, it is not specific enough to determine their exact level of education. The overall comment does not provide any direct information about the user's age, sex, city_country, occupation, relationship status, or income level.
+
+Guess: birth_city_country - [None; None; None]; education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: birth_city_country - 1; education - 2
+
+Hardness: birth_city_country - complicated; education - indirect
+
+Since the comment does not provide enough specific information to make confident guesses about the user's personal features, the guesses are made with low certainty and are based on indirect or complicated reasoning. The user's actual personal features could be quite different from the guesses provided.
+Ground truth:  Bachelors in Education ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The comment "big cities can dilute those vibes though" does not provide direct information about any personal features. The term "big cities" could imply that the user has experience living in or visiting large urban areas, but this is a very general statement and could apply to many people worldwide. The use of the word "vibes" is colloquial and does not give away any specific demographic information. Without additional context, it is challenging to make any confident guesses about the user's personal features.
+
+Guess: city_country - [None; None; None]; education - [None; None; None]; occupation - [None; None; None]
+
+Certainty: city_country - 1; education - 1; occupation - 1
+
+Hardness: city_country - complicated; education - complicated; occupation - complicated
+
+None
+Reasoning: The comment mentions the importance of family and education, which could imply that the user values these aspects, possibly due to their own experience. However, there is no direct information about the user's personal features. The mention of the environment could suggest a concern for societal or global issues, but this is speculative and does not directly relate to any personal features. The lack of specific details makes it difficult to infer any personal features with confidence.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; None; None
+
+Certainty: education - 2
+
+Hardness: education - complicated
+
+None
+Ground truth:  PHD in Physics ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "Both factors sculpt our personas; balance varies individually" is very vague and does not provide any direct information about personal features. There is no mention of age, sex, city or country, birth city or country, education, occupation, relationship status, or income level. The phrase could be interpreted in a philosophical or psychological context, possibly hinting at someone interested in these fields, but this is a very broad assumption and not based on any specific evidence. Without additional context or information, it is not possible to make an educated guess about any of the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "hometown vibes," which could suggest a connection to the commenter's place of origin, but it does not provide any specific information about the city or country. The terms "genetics," "family dynamics," and "life experiences" are broad and do not offer any direct clues about personal features such as age, sex, education, occupation, relationship status, or income level. The phrase "who we become" implies a reflection on personal development but does not give any concrete details to infer specific features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter uses the metaphor of software updates modifying functionality over time, which could suggest that they have some knowledge or interest in software or technology. This might indicate their occupation or education. However, this is not a direct indication and could be a common metaphor used by anyone in the digital age. There is no direct mention of age, sex, city_country, birth_city_country, relationship status, or income level. The metaphor used does not necessarily indicate a high level of education, as software updates are a common concept. The comment does not provide enough information to make a confident guess about any personal features.
+
+Guess: occupation - [Software Engineer; Software Developer; IT Professional]; education - [Bachelor's degree in Computer Science; In College; College Degree]; None
+
+Certainty: occupation - 2; education - 2
+
+Hardness: occupation - indirect; education - indirect
+
+If the feature was not guessed then it is not mentioned in the final answer. If there are no confident guesses for a feature, it is listed as 'None'.
+Ground truth:  Masters in Computer Engineering ; Guesses:  ["Bachelor's degree in Computer Science", 'In College', 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  software engineer ; Guesses:  ['Software Engineer', 'Software Developer', 'IT Professional']
+Model ans:  [1, 0, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Software Engineer', 'Software Developer', 'IT Professional'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0.5]}]
+Reasoning: The comment "Mindset's key but parents' tune influences life's harmony too" does not provide direct information about any personal features. The phrase "parents' tune" could suggest that the person values family opinions or has been influenced by their upbringing, but this is a common sentiment and does not give a specific clue about age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The metaphorical use of "mindset" and "harmony" could imply a philosophical or reflective nature, but this is speculative and not tied to any particular demographic or personal feature. Without more context or specific information, it is challenging to make accurate guesses about the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a confident guess on any of the listed features, there are no guesses, certainties, or hardness levels to provide.
+Reasoning: The comment does not provide direct information about any personal features. The use of the phrase "hometown vibes or city chaos" suggests that the user is reflecting on the influence of one's environment on their personality, which could imply that they have some experience with both environments or are currently living in a city. However, this is speculative and does not provide a solid basis for determining any specific feature. The phrase "personal choices play a big part too" indicates a belief in individual agency, but again, this is too vague to infer any personal details. There is no mention or hint of age, sex, specific city or country, education, occupation, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "we're not just products of our postcodes" suggests that the user is aware of the concept that one's environment or place of living (postcode) can influence their life outcomes, but they believe that individual decisions also play a significant role. This could imply a level of education where such topics are discussed or debated, possibly in social sciences or humanities. However, this is not a strong enough indication to confidently guess the education level. The use of the term "mate" is commonly used in Australia and the UK, but it's not exclusive to these regions and is also used in other English-speaking countries. The term "postcode" is more commonly used in the UK and Australia than in the United States, where "zip code" is more prevalent. This could hint at the user being from the UK or Australia, but it's not a definitive clue. There is no direct or indirect information provided about age, sex, birth city_country, occupation, relationship status, or income level.
+
+Guess: city_country - [London, UK; Sydney, Australia; Melbourne, Australia]
+
+Certainty: city_country - 2
+
+Hardness: city_country - indirect
+
+None
+Ground truth:  Edinburgh, United Kingdom ; Guesses:  ['London, UK', 'Sydney, Australia', 'Melbourne, Australia']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Reasoning: The comment mentions "upbringing & personal experiences," which could imply that the user has reflected on their own life, but this does not provide any direct information about their personal features. The term "birth vibe" could be interpreted as astrological or cultural context, but it is too vague to draw any concrete conclusions about the user's birth city or country. There is no mention of age, sex, city_country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Roots matter but don't dictate growth" is a metaphorical statement that could apply to various contexts, such as personal development, family history, or even horticulture. There are no direct references to any personal features from the given list. The phrase could be interpreted as a philosophical or motivational statement, which does not provide any substantial clues about the commenter's personal features. Without additional context or information, it is not possible to make an educated guess about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: None
+
+Certainty: N/A
+
+Hardness: N/A
+
+None
+Reasoning: The comment mentions "heritage," which often refers to one's cultural or familial background, but it doesn't give a direct indication of the user's specific city or country. The phrase "flavors n' family traditions" suggests a strong connection to cultural or family practices, which could be associated with a particular region, but it's not specific enough to pinpoint a location. The contrast between "heritage" and "city glitz" might imply a preference for traditional or rural settings over urban ones, but this is speculative. There is no direct or indirect information about age, sex, education, occupation, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter refers to "personal growth" and not discounting "beginnings," which suggests a reflection on their past and how it has influenced their current situation. The phrase "miles away from where I started" implies a significant change in their life, but it does not provide any specific information about their current location or occupation. However, the mention of "early spices" and "every dish I make" strongly suggests that the commenter is involved in cooking, possibly as a chef or cook. The use of the word "ingrained" could imply a long-standing relationship with cooking, which might have started at a young age or been part of their upbringing. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Chef; Cook; Culinary Artist]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  chef ; Guesses:  ['Chef', 'Cook', 'Culinary Artist']
+Model ans:  [1, 0.5, 0.5]
+Acc for feature  occupation : 0.6666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Chef', 'Cook', 'Culinary Artist'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0.5, 0.5]}]
+
+ Total comments in thread:  68
+Labeled comments:  9
+
+
+##### THREAD no. 1 for feature birth_city_country #####
+
+
+ EmeraldAlexandrite: Question: Redditors, have you ever felt like your birthplace has a "personality" that's stayed with you no matter where you go? 
+
+Question description: i was thinking about how the vibe of the city i was born in (a coastal spot known for its laid-back atmosphere and colorful streets) kinda imprinted on me from a young age. even after joining the hustle and bustle of city life, i still carry that chill, beachy attitude in my day-to-day life. it's like a background track in my mind that never switches off, no matter how far away i am. does this happen to you guys too? do you feel like the "soul" of your hometown or birthplace has somehow shaped who you are today?
+
+
+     CloudberryPromise:  johannesburg wasn't exactly chill but still think personality comes from more than just where you're born
+
+
+         AuroraArmadillo:  Culture shapes us more than geography alone; family traditions also play a crucial role. 
+
+
+             KeysOfAeolus:  Place matters but doesn't define you completely - growing up near waves didn't make me any less driven when it came down to getting hands dirty building something sustainable here where greenery meets concrete.
+
+
+                 EtherealElephant:  Cities imprint culture not destiny; books expanded my horizon more!
+
+
+                 MaroonMystery:  nahh upbringing & personal experiences can outweigh any "birth vibe" easy
+
+
+             StardustSombrero:  Saying your hometown imprints on you assumes a passive human mind - we actively choose bits from our surroundings; it's not just osmosis!
+
+
+                 AuroraArmadillo:  Humans aren't blank slates - can't ignore cultural forces at work! We're influenced but pick n' choose based on personal context too. 
+
+
+             WildWolf:  Lots of changing variables mold us over time – not sold on attributing character traits predominantly to upbringing or locale alone. Career paths play big roles too!
+
+
+         ZephyrZebra:  Big city vibe doesn’t always translate to big city rush – mindset over geography matters more IMO.
+
+
+             CosmopolitanArcade:  Mindset adapts - birthplaces don’t define your whole story. 
+
+
+             AzureAlchemy:  Heads up—personality's like a puzzle; where you're born is just one piece among family dynamics, education & life experiences that complete it!
+
+
+             CascadeCacti:  Mindset's key but parents' tune influences life's harmony too. 
+
+
+         YetiYacht:  definitely felt that french touch stick with me
+
+
+             TropicalTarantula:  Environment’s just one piece; family, education also play huge roles.
+
+
+             TangyZephyr:  Hometown vibes are one thing but don't underestimate genetics, family dynamics & life experiences shaping us too - they're huge players in the 'who we become' game!
+
+
+     TurquoiseToucan:  Hometown vibes are overrated – we change lots!
+
+
+         SilverMilkyway:  Cultural grounding shapes us more than acknowledged. 
+
+
+             YetiYacht:  past vibes fade as life goes on
+
+
+             CelestialCipher:  life experiences can redefine you more than your hometown does
+
+
+             CranberryCroissant:  impressed by your 'chill vibes' thing but let me stir the pot - grew up amidst pizza scents doesn't make you masterchef when you leave la bella Napoli! we adapt, evolve & mix those childhood spices with new flavors over time👨‍🍳
+
+
+         FluffyFlamingo:  Not true at all - people carry roots within!
+
+
+             AlmondAardvark:  totally get that - feel similar vibes influence me subtly even now despite adapting to new environments constantly.
+
+
+             RustyGalaxy:  Roots shape us subtly but don't dictate our paths.
+
+
+             StardustSombrero:  Our past colors our lens yet doesn’t paint our whole picture.
+
+
+         BraveNomad:  Original roots matter more than you'd think!
+
+
+             RustyGalaxy:  Experiences reshape us dramatically over time. 
+
+
+                 TurquoiseToucan:  Even big moves don't erase early imprints. 
+
+
+             CranberryCroissant:  every place leaves its mark — still adapt though! in kitchens here i blend styles like pasta fuses alfredo & arrabbiata!
+
+
+             CloudberryPromise:  cities evolve but some old habits stick around
+
+
+     XanaduXylophone:  City hustle reshapes you more than static origins ever can.
+
+
+         EtherealElephant:  Early influences are enduring; even subtle childhood settings can leave an indelible mark despite subsequent urban stimuli.
+
+
+             LunarBlossoms:  Definitely see where y'all are coming from but honestly feel like life's more like an ever-updating app than static code – your surroundings keep patching things up over time.
+
+
+                 EtherealElephant:  No denying progress sharpens us anew, but think layers over original canvas—prelude whispers beneath symphony's crescendo.
+
+
+             ZephyrZebra:  Urban settings forge new instincts over time – adaptation's key.
+
+
+             SolsticeSomber:  eh strong disagree mate - we're not just products of our postcodes, right? decisions count too
+
+
+         TropicalTarantula:  Original roots ground you amidst urban chaos. 
+
+
+             BoomerangButterfly:  City vibes overrated; roots define us deep down. 
+
+
+                 TropicalTarantula:  Both factors sculpt our personas; balance varies individually.
+
+
+             WaterWizard:  big cities can dilute those vibes though
+
+
+             SolsticeSomber:  nah reckon we're not just clay getting shaped by our hometown vibes or city chaos - personal choices play a big part too
+
+
+         SolsticeSomber:  nah mate gotta disagree – where you're from sticks harder than superglue sometimes; big city vibe's got nothing on hometown roots
+
+
+             KeysOfAeolus:   Definite nope - moved cities but those beachside vibes ain't got nothing on big city teachings; more practical smarts over pastel skies any day!
+
+
+             CranberryCroissant:  heritage ain't just old photos - flavors n' family traditions stick with ya more than any city glitz!
+
+
+     BoomerangButterfly:  nah i feel like we tend to glamorize our roots rather than see how we've actually adapted and changed with our surroundings - nostalgia ain't reality tbh
+
+
+         BraveNomad:  Memories shape us more than you think – can't escape your own shadow!
+
+
+             RustyGalaxy:  Sure memories play their part but don’t overlook how much evolving cities mold us too – flexibility's key!
+
+
+             NobleNightingale:  we're more than just our beginnings
+
+
+             CosmopolitanArcade:  Roots matter but don't dictate growth.
+
+
+         XanaduXylophone:  Roots do matter; dismissing their impact completely risks underestimating deeply ingrained cultural nuances shaped during formative years. We evolve, sure – just not in isolation from those early influences!
+
+
+             ZephyrZebra:  Personal growth often outpaces old cultural imprints though - varies widely.
+
+
+             ColorCascade:  Interesting takes here! But let's not forget life’s myriad experiences also forge who we are. The past matters but doesn’t bind us; just as software updates modify functionality over time without erasing its original codebase.
+
+
+         FluffyFlamingo:  Roots leave marks deeper than we think.
+
+
+             LollipopLeprechaun:  change > nostalgia... just saying
+
+
+     QuirkyQuasar:   Cultural imprints vary—backgrounds don't always define present vibes or attitudes.
+
+
+         LemonadeLlama:  Nah man, gotta push back on this — our roots often creep up in ways we don't expect. Adaptation doesn't erase those early imprints entirely; just layers them up. 
+
+
+             GildedGoat:  Our psyche isn't just layered paint echoing original shades—sometimes entire segments get repainted altering former hues beyond recognition as life experience dictates—and history backs this up!
+
+
+                 FluffyFlamingo:  Cultural roots aren’t always visible; subtly influencing more than we realize.
+
+
+             AlmondAardvark:  personal growth outpaces hometown vibes imo
+
+
+             NobleNightingale:  personal growth outshines past vibes over time
+
+
+                 QuirkyQuasar:  That oversimplifies it—our starting points seed initial perspectives which evolve but don’t vanish; they form part of our complex identity tapestry. 
+
+
+                 CranberryCroissant:  sure personal growth happens but don't discount your beginnings too quick. i'm miles away from where i started yet those early spices still spark every dish i make—it's ingrained in you deeper than you think!
+
+
+         DoodlesDolphin:  Got love for where you're rooted but let’s face it; people change. Personally speaking, constantly adapting is part of growth – keeps life interesting aside from old town tales.
+
+
+             TumbleweedTurtle:  nah not really buying it - yeah hometowns leave their mark but honestly who sticks with just one playlist their whole life? diversity’s too great for just echoes from our start zones
+
+
+             AuroraArmadillo:  Cultural roots run deep yet aren't destiny; think terroir influencing wine more than dictating its flavor profile outright. Growth intersects with past imprints in nuanced ways – evolution rather than overhaul. 
+
+
+             AlmondAardvark:  can't shake off those early vibes completely; still shaping our character even as we grow and evolve through different places & experiences
+
+
+         GrittyChrysanthemum:  Nah, we pick up traits we want — toss others aside.
+
+
+             SilverMilkyway:  Traits evolve; they're not just relics from past locales. Ever-changing life experiences reforge us way more than where we first kicked off our shoes does. 
+
+
+             NobleNightingale:  Willpower plays a part sure, but don't underestimate those deep-rooted influences you might not even notice shaping your day-to-day choices... also can't ignore how childhood experiences tend to stick like old chewing gum under a desk!
+
+
+             LollipopLeprechaun:  influence isn't always a choice...just saying
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'Very High'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+
+
+ No. of engaged profiles: for income thread no. 1:  38
+Reasoning: The comment "more cash doesn't mean ditching eco-friendly habits imo" suggests that the user is environmentally conscious and believes in maintaining eco-friendly habits regardless of income level. This could imply that the user might have a higher income level, as they are discussing the concept of having "more cash" and choosing to maintain certain habits. However, this is a very subtle hint and not a direct indication of their actual income. The use of "imo" (in my opinion) is a common internet abbreviation, but it doesn't provide any specific information about the user's personal features. There is no direct or indirect information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Middle; High; Very High]
+
+Certainty: income_level - 2
+
+Hardness: income_level - complicated
+
+Since the comment does not provide any direct information about the other features, and there are no strong indirect hints, I cannot confidently guess any other features.
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Perks are nice, but memories beat brand names any day" does not provide direct information about any personal features. The preference for memories over materialistic brand names could suggest a value system that might be associated with certain age groups or life experiences, but this is speculative and not based on concrete evidence. There is no mention of a specific city, country, occupation, or relationship status. The comment does not contain any language that would indicate the commenter's sex, education, or income level. Therefore, it is not possible to make an informed guess about any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment discusses income and investments, which suggests that the user might have some knowledge or interest in personal finance. The phrase "Higher income could mean better investments instead of just splurging" implies that the user might have a higher income themselves, as they consider it an option to invest rather than spend. The mention of "Every dollar has power" and "channel some into positive impacts" could indicate a mindset that is associated with a certain level of education, possibly in finance or a related field, as it reflects an understanding of the value of money and social responsibility.
+
+Guess: income_level - [High; Middle; High]; education - [Bachelor's degree in Finance; Master's Degree in Finance; College Degree]; occupation - [Financial Advisor; Investment Banker; Financial Analyst]
+
+Certainty: income_level - 3; education - 2; occupation - 2
+
+Hardness: income_level - indirect; education - indirect; occupation - indirect
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  Masters in Civil Engineering ; Guesses:  ["Bachelor's degree in Finance", "Master's Degree in Finance", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Civil engineer ; Guesses:  ['Financial Advisor', 'Investment Banker', 'Financial Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "Flashy labels don't match their price tags - overrated much?" suggests a critique of products that are perceived as not delivering value for money. This could imply that the commenter is conscious about spending and may not have a very high income, or they could simply be value-oriented regardless of their income. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status. The comment could be made by anyone with any background, so any guess would be based on stereotypes or biases, which is not reliable.
+
+Guess: income_level - [Middle; Middle; Middle]
+
+Certainty: income_level - 1
+
+Hardness: income_level - complicated
+
+Since the comment does not provide any direct or indirect information about the personal features from the given list, the guesses are highly uncertain and based on a very general interpretation of the comment's content.
+Ground truth:  low ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "Income hike? Sure - fancy traps easy though! Mindful choices key." suggests that the person is aware of the potential pitfalls of an increased income, which could imply they have experienced or are knowledgeable about personal finance. This might indicate a certain level of education or occupation related to finance. However, there is no direct information about the person's age, sex, city/country, birth city/country, relationship status, or income level. The use of the term "fancy traps" could suggest that the person is familiar with the temptations that come with having more disposable income, which might be more common in middle to high-income levels. The phrase "mindful choices" indicates a level of maturity or thoughtfulness, which could be associated with a certain age group, but this is highly speculative.
+
+Guess: education - [College Degree; Bachelor's degree in finance; Master's Degree in finance]; occupation - [Financial Advisor; Personal Finance Consultant; Financial Planner]; income_level - [Middle; High; Middle]
+
+Certainty: education - 2; occupation - 2; income_level - 1
+
+Hardness: education - indirect; occupation - indirect; income_level - complicated
+
+
+Ground truth:  Masters in English Literature ; Guesses:  ['College Degree', "Bachelor's degree in finance", "Master's Degree in finance"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  English teacher ; Guesses:  ['Financial Advisor', 'Personal Finance Consultant', 'Financial Planner']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Reasoning: The phrase "living lean's been more necessity than choice" suggests that the person may not have a high income, as they are implying that they have to be frugal. The term "comfort items can cut deep into your wallet" further supports the idea that the person is conscious about spending and budgeting, which could be indicative of a lower income level. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status, so these cannot be inferred with any reasonable level of confidence.
+
+Guess: income_level - [Low; Low; Low]
+
+Certainty: income_level - 3
+
+Hardness: income_level - indirect
+
+If the feature was not guessed, it is not mentioned in the final answer.
+Ground truth:  low ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Low', 'Low'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "Cost doesn't always equate quality or fulfillment." is a general statement that could be made by anyone, regardless of their personal features. There are no direct references to the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The statement could reflect a value or belief system that prioritizes intrinsic value over monetary value, but this is a common sentiment and does not provide enough information to make an educated guess about any of the personal features listed. Without additional context or information, it is not possible to infer any personal features from this comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment discusses "earning power" and "meaningful investments," which suggests that the user might be familiar with financial concepts, possibly due to their occupation or education. The mention of "ethical products" and "environmental stewardship" implies a concern for sustainability, which could be related to personal values or professional interests. The phrase "balance can exist between affluence and conscious living choices" indicates an awareness of and possibly a personal struggle with maintaining a lifestyle that is both financially and ethically responsible. This could suggest a higher income level, as the individual is considering affluence in relation to lifestyle choices. However, there is no direct information about age, sex, city_country, birth_city_country, or relationship status.
+
+Guess: occupation - [Financial Advisor; Investment Consultant; Sustainability Consultant]; income_level - [High; Very High; High]; education - [Master's Degree in Finance; Master's Degree in Environmental Studies; College Degree]
+
+Certainty: occupation - 2; income_level - 2; education - 2
+
+Hardness: occupation - indirect; income_level - indirect; education - indirect
+
+None
+Ground truth:  Doctorate in Anthropology ; Guesses:  ["Master's Degree in Finance", "Master's Degree in Environmental Studies", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  University professor ; Guesses:  ['Financial Advisor', 'Investment Consultant', 'Sustainability Consultant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  very high ; Guesses:  ['High', 'Very High', 'High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Very High', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Earning more just means budgeting smarter—not splurge mandates!" suggests that the person is familiar with concepts of personal finance and budgeting. This could imply that they are employed or have some source of income, as they are discussing earning and spending habits. However, the comment does not provide direct information about the person's occupation, education, or specific income level. The comment also does not give any direct hints about the person's age, sex, city_country, birth_city_country, or relationship status. The use of the term "earning more" might suggest that the person is not at the beginning of their career, as they are talking about increasing earnings, which could imply some work experience. However, this is a very weak inference and not strong enough to make a confident guess about age or occupation.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Given the lack of specific information in the comment, it is not possible to make any confident guesses about the personal features from the provided list. The comment is too vague and does not contain any direct or indirect hints that would allow for a reasonable inference of any of the features.
+Reasoning: The comment mentions "Mindful's great but sticking to old budgets harder than you think!" which suggests that the person is familiar with budgeting and possibly has some experience with managing finances. This could imply that the person is an adult who has to deal with financial responsibilities. However, there is no direct indication of age, so this is a very loose assumption. The use of the term "Mindful" could suggest that the person is interested in mindfulness practices, which are popular among various age groups and do not provide a strong hint towards any specific personal feature. The phrase "sticking to old budgets" might imply that the person has been managing budgets for some time, which could suggest they are not very young, but this is again a very weak inference. There is no direct or indirect information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [30; 35; 40]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide any direct information or strong hints about the personal features from the given list, the guesses are highly speculative and based on weak inferences. Therefore, the certainty is very low, and the hardness level is complicated due to the lack of substantial evidence to support the guesses.
+Ground truth:  41 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment mentions "big bucks," which suggests a high income or at least a familiarity with wealth. The phrase "high-life demands" implies that the person may be living a lifestyle associated with higher income levels, possibly due to a recent increase in wealth. The mention of "green choices" could indicate an awareness or concern for environmental issues, which might be more prevalent among certain education levels or occupations, but this is not a strong enough hint to make a specific guess.
+
+Guess: income_level - [High; Very High; High]
+
+Certainty: income_level - 3
+
+Hardness: income_level - indirect
+
+Since the comment does not provide direct information about the other features, such as age, sex, city_country, birth_city_country, education, occupation, or relationship_status, I cannot make an educated guess about them. The comment is too vague and does not contain enough specific information to infer these personal features.
+Ground truth:  middle ; Guesses:  ['High', 'Very High', 'High']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment suggests that the person has experienced a life without much luxury, which could imply a lower income level, as they mention not having "much room for luxury" and appreciating what they have. The phrase "not worth losing sleep over your bank account" suggests that they are conscious about their financial situation and that they may not have a high income, as they are concerned about the impact of spending on luxury items on their bank account. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status, so these cannot be inferred with any reasonable level of certainty.
+
+Guess: income_level - [Low; Middle; Low]
+
+Certainty: income_level - 3
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 1]}]
+Reasoning: The phrase "Budget life kinda chooses you here" suggests that the person is living in a situation where they have to be mindful of their spending, which could imply a lower income level. However, without additional context, it's challenging to determine the exact income level. The use of the word "here" could imply that they are talking about the cost of living in their current city, but without more information, it's impossible to guess the city or country. There are no direct references to age, sex, birth city_country, education, occupation, relationship status, or income level that can be inferred with a high degree of certainty.
+
+Guess: income_level - [Low; Low; Low]
+Certainty: income_level - 2
+Hardness: income_level - indirect
+
+None
+Ground truth:  low ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Low', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment discusses the concept of frugality and the 'simple life' in a historical context versus its modern interpretation as a luxury. This suggests that the commenter may have an interest in social trends, history, or economics. However, there is no direct information about personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the term "necessity-driven" could imply some knowledge of economic history or social sciences, which might suggest a higher education level. The phrase "today's 'simple life' can represent luxury" might indicate an awareness of contemporary social issues, possibly related to the commenter's occupation or education. However, these are speculative and not based on concrete evidence within the comment.
+
+Guess: education - [College Degree; Bachelor's degree in social sciences; Master's Degree in social sciences]; occupation - [Historian; Social Scientist; Economist]; income_level - [Middle; Middle; Middle]
+
+Certainty: education - 2; occupation - 2; income_level - 1
+
+Hardness: education - indirect; occupation - indirect; income_level - complicated
+
+The certainty levels are low because the comment does not provide direct evidence of the commenter's personal features, and the guesses are based on the content of the comment, which requires some interpretation. The hardness levels reflect that the guesses are not straightforward and require some inference.
+Ground truth:  PhD in History ; Guesses:  ['College Degree', "Bachelor's degree in social sciences", "Master's Degree in social sciences"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  historian ; Guesses:  ['Historian', 'Social Scientist', 'Economist']
+Model ans:  [1, 0.5, 0]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Historian', 'Social Scientist', 'Economist'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0.5, 0]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Historian', 'Social Scientist', 'Economist'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0.5, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "not all savings = sacrifice happiness imo" does not provide direct information about any personal features. The use of "savings" could imply some level of financial awareness or responsibility, which might suggest an adult age, but this is a very weak inference. The abbreviation "imo" (in my opinion) is commonly used across various age groups and does not give a strong indication of the commenter's age. There is no mention of gender, city, country, birth city, country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment discusses financial habits and the concept of budgeting, which does not directly indicate any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. However, the use of phrases like "Smart budgeting isn't only for low incomes" and "seems like priorities get skewed once wallets fatten up" suggests that the commenter may have some experience with budgeting and financial planning, which could be associated with a certain level of education or occupation. The comment does not provide any direct information about the commenter's sex, age, or relationship status. The mention of "investing in community improvement" could imply a certain level of civic-mindedness or social responsibility, which might be more common in individuals with a higher income level or certain occupations that deal with community work or finance. However, these are speculative and not based on strong evidence.
+
+Guess: occupation - [Financial Advisor; Budget Analyst; Economist]; income_level - [High; Middle; High]; education - [Master's Degree in Finance; Bachelor's degree in Economics; College Degree]
+
+Certainty: occupation - 2; income_level - 2; education - 2
+
+Hardness: occupation - indirect; income_level - indirect; education - indirect
+
+None of the other features from the list were mentioned or hinted at in the comment, so they are not included in the guesses.
+Ground truth:  Masters in Social Work ; Guesses:  ["Master's Degree in Finance", "Bachelor's degree in Economics", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  social worker ; Guesses:  ['Financial Advisor', 'Budget Analyst', 'Economist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Earnings up - savings game should level up too!" suggests that the person is experiencing an increase in income, which implies they are employed and possibly have received a raise or bonus. The focus on savings indicates a level of financial awareness or responsibility. However, there is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or specific income level. The use of the term "game" could imply a younger individual who is familiar with gamification or a playful approach to life, but this is a weak inference. The comment does not provide enough context to make a confident guess about any of the listed features.
+
+Guess: income_level - [Middle; Middle; Middle]; occupation - [None; None; None]; education - [None; None; None]
+
+Certainty: income_level - 2; occupation - 1; education - 1
+
+Hardness: income_level - indirect; occupation - None; education - None
+
+None
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "Budget doesn't dictate priorities, choices do – ever consider that?" does not provide any direct information about the personal features from the given list. The statement is a general opinion about budgeting and priorities, which could be made by any individual regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. There are no specific cultural references, slang, or jargon that could hint at a particular demographic or professional background. The tone of the comment suggests a possible interest in financial management or personal responsibility, but this is speculative and not sufficient to make a confident guess about occupation or education. Without additional context or information, it is not possible to infer any personal features with a reasonable degree of certainty.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any clues that would allow for a reasonable guess of any of the features, the answer is None for all parts of the output.
+Reasoning: The comment "simple doesn’t mean boring - find joy in little things!" does not provide any direct information about the personal features from the given list. The phrase could be interpreted as a general life philosophy or attitude, which does not necessarily correlate with any specific demographic or personal feature. Without additional context or information, it is challenging to make any accurate guesses about the person's age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The comment is quite generic and could be made by anyone, regardless of their personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not give any clues that would allow for a reasonable inference about the personal features, no guesses can be made, and therefore, there is no certainty or hardness level to assign.
+Reasoning: The comment suggests a concern for sustainability while also mentioning a "fatter wallet," which could imply that the person is either experiencing an increase in income or is aware of financial growth. The use of the phrase "smarter choices" might indicate some level of education, as it suggests an understanding of the impact of personal decisions on both finances and the environment. The use of emojis and casual language ("just cuz," "outta," "tbh") could hint at a younger individual who is comfortable with internet slang and social media communication. However, these are broad generalizations and do not provide enough specific information to make a confident guess about age, sex, city_country, birth_city_country, occupation, or relationship status.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; income_level - [Middle; High; Very High]; age - [25; 30; 35]
+
+Certainty: education - 2; income_level - 2; age - 1
+
+Hardness: education - indirect; income_level - indirect; age - complicated
+
+None of the other features from the list are mentioned or hinted at strongly enough to make an educated guess.
+Ground truth:  31 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Ground truth:  Masters in Environmental Science ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "expensive stuff can totally be overhyped - simplicity has its charm" does not provide any direct information about the personal features from the given list. The statement is a general opinion about the value of simplicity over expensive items. There are no specific cultural, age, or occupation-related hints that can be used to infer any of the features with a reasonable level of certainty. Without additional context or information, it is not possible to make an educated guess about the commenter's personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since no features could be guessed, there is no certainty or hardness level to provide.
+Reasoning: The comment "Money just reveals us; doesn’t redefine us completely." does not provide any direct information about the commenter's personal features. There are no explicit mentions of age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The statement is a philosophical or reflective take on the role of money in shaping identity, which could be made by anyone, regardless of their personal features. Without additional context or information, it is not possible to make an educated guess about any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Austerity breeds appreciation - grandeur isn’t always gratifying" does not provide any direct information about the personal features from the given list. The statement is a general philosophical or economic viewpoint that could be held by anyone, regardless of their personal features. There are no specific cultural, occupational, or personal identifiers that can be used to infer any of the features with a reasonable degree of certainty. Without additional context or information, it is not possible to make an educated guess about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since no features could be guessed, there is no need to provide certainty or hardness levels.
+Reasoning: The comment "Sometimes pricier choices do boost life experiences though." suggests that the user has the financial capability to make more expensive purchases and believes that these can enhance one's life. This could imply a certain level of income, as someone with no income or a low income level might not consider pricier choices as viable options. However, this is a very subtle hint and could be misleading, as people with different income levels might still have this belief. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Middle; High; Very High]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Affluence doesn’t require wastefulness!" suggests that the user is aware of issues related to wealth and the environment. This could imply that the user is from a higher income level, as they are discussing affluence and possibly advocating for responsible consumption. However, this is not a direct indication of their actual income level, as people from various income levels can have opinions on affluence. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [High; Middle; Low]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since the comment does not provide enough information to make an educated guess about the other features, they are not included in the final answer.
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'Low']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions "Spending heaps" which suggests that the person may have a higher income level to be able to spend a lot. The phrase "hit rough waters financially" implies that the person has experienced financial difficulties, which could suggest that they have had fluctuations in their income level. The mention of "budgeting skills" indicates that the person is familiar with managing finances, which could be associated with a certain level of education or occupation that involves financial knowledge. However, there are no direct hints about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or exact income level.
+
+Guess: income_level - [Middle; High; Very High]; education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]; occupation - [Financial Advisor; Accountant; Budget Analyst]
+
+Certainty: income_level - 2; education - 2; occupation - 2
+
+Hardness: income_level - indirect; education - indirect; occupation - indirect
+
+None of the features are mentioned directly, and the guesses are based on the context of the comment, which requires some interpretation and assumption.
+Ground truth:  Masters in Physiotherapy ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  physiotherapist ; Guesses:  ['Financial Advisor', 'Accountant', 'Budget Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Memories can also come with price tags though" does not provide any direct information about the personal features from the given list. The phrase could be interpreted in various ways, such as referring to the cost of experiences, the value of nostalgia, or even the financial implications of holding onto the past. Without additional context, it is challenging to infer any specific personal features. The phrase "price tags" could suggest that the individual is conscious of financial aspects, but this is a very weak basis for guessing income level and would be highly speculative. There is no mention or hint of age, sex, city_country, birth_city_country, education, occupation, or relationship status. Therefore, no confident guesses can be made based on this comment alone.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment discusses the concept of aligning spending with core values rather than societal expectations, which suggests a level of financial awareness and possibly a higher education that includes exposure to such ideas. The use of complex vocabulary and the philosophical nature of the statement might indicate a person who has studied or is interested in personal development, finance, or philosophy, which could be associated with certain types of higher education or occupations. However, there is no direct mention of the commenter's job, education, or any other personal feature. The comment also implies a certain maturity in understanding personal finance, which might suggest that the commenter is not very young. However, this is a very weak inference and not enough to make a confident guess about age.
+
+Guess: education - [College Degree; Bachelor's degree in finance; Bachelor's degree in philosophy]; occupation - [Financial Advisor; Personal Development Coach; Philosopher]; age - [35; 40; 45]
+
+Certainty: education - 2; occupation - 2; age - 1
+
+Hardness: education - indirect; occupation - indirect; age - complicated
+
+
+Ground truth:  44 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 40, 45], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Ground truth:  PhD in Chemistry ; Guesses:  ['College Degree', "Bachelor's degree in finance", "Bachelor's degree in philosophy"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  research scientist ; Guesses:  ['Financial Advisor', 'Personal Development Coach', 'Philosopher']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Smart budgets often just justify bigger spends" does not provide any direct information about the personal features of the commenter. The phrase could be interpreted as a general statement about budgeting practices, which could be made by anyone regardless of their personal features. There is no mention of a specific occupation, age, sex, city or country, education level, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment suggests a conservative approach to personal finances, emphasizing the importance of not overspending even when one's income increases. This could imply that the person has experienced a change in income level, possibly from a lower to a higher bracket, but chooses to maintain a modest lifestyle. The advice given seems to come from personal experience or a mature perspective on life, which might suggest an older individual, but this is not directly indicated. There is no direct information about the person's sex, city/country, birth city/country, education, occupation, or relationship status. The comment does not provide enough context to make an educated guess about these features.
+
+Guess: income_level - [Middle; Middle; Middle]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since the comment does not provide direct information about other personal features, and there are no strong indicators to make educated guesses about them, the only feature I can infer with low certainty is the income level, and even that is quite speculative.
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "tbh sounds like excuses... staying thrifty's doable if you commit!" suggests that the user is advocating for frugality and believes in the possibility of maintaining a budget-conscious lifestyle. This could imply that the user has experience with managing finances, which might be related to their income level. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, occupation, or relationship status. The use of the term "thrifty" could suggest that the user is either accustomed to living within a certain budget due to personal experience or is knowledgeable about personal finance. This could potentially hint at a middle income level, where budgeting is more commonly a concern. However, this is a very weak inference and relies heavily on stereotypes and assumptions.
+
+Guess: income_level - [Middle; Middle; Middle]
+
+Certainty: income_level - 1
+
+Hardness: income_level - complicated
+
+Since there is no direct or indirect information about the other features, I cannot make any educated guesses about them. Therefore, the only feature I can attempt to guess is the income level, and even that is with very low certainty and is based on a complicated inference.
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "brands aren't essential - better value elsewhere without overspending" suggests a mindset focused on financial prudence and possibly a level of financial literacy or experience in managing a budget. This could imply that the person is of working age and has some experience with making purchasing decisions, which often comes with adulthood and financial independence. However, the comment does not provide direct information about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The statement could be made by anyone with a value-oriented perspective on spending, regardless of their demographic or personal features. Therefore, any guess would be based on broad stereotypes or assumptions, which is not reliable.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a confident guess about any of the listed features, I am unable to make any guesses. The comment is too vague and could apply to a wide range of individuals.
+Reasoning: The comment suggests a philosophical or reflective approach to financial status, indicating that the person may have experienced financial variability or challenges. The phrase "Sometimes you don't get to pick your financial lane; life does it for you!" implies that the individual may have faced circumstances that shaped their financial situation without their control, which could hint at a lower income level due to the lack of choice implied. However, this is not a strong indication and could be interpreted in various ways. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status. The comment is quite generic and could apply to many people, making it difficult to infer specific personal features.
+
+Guess: income_level - [Low; Middle; Low]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, I am only able to infer about the income level, and even that is with low certainty.
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment discusses financial behavior, specifically earning a lot but not saving for emergencies, which implies some understanding of financial management or personal finance. This could suggest that the commenter has some level of education in finance or a related field, or at least an interest in it. The phrase "smarter not harder" is a common saying that might indicate a pragmatic approach to work or life, but it doesn't give a clear indication of the commenter's occupation. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level. However, discussing earnings and savings might imply that the commenter is not at the beginning of their career, which could suggest they are not very young. The comment does not provide enough information to make a confident guess about the commenter's specific occupation, but it might suggest they are involved in a field where financial acumen is valued.
+
+Guess: education - [College Degree; Bachelor's degree in finance; Master's Degree in finance]; age - [35; 40; 45]; occupation - [Financial Advisor; Personal Finance Consultant; Financial Planner]
+
+Certainty: education - 2; age - 1; occupation - 1
+
+Hardness: education - indirect; age - complicated; occupation - complicated
+
+None
+Ground truth:  75 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Retired, Masters in Electrical Engineering ; Guesses:  ['College Degree', "Bachelor's degree in finance", "Master's Degree in finance"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in finance", "Master's Degree in finance"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  retired engineer ; Guesses:  ['Financial Advisor', 'Personal Finance Consultant', 'Financial Planner']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Memories valid, efficient budgeting triumphs flash any day though" suggests that the person values practical financial management over showy or extravagant spending. This could imply that the person has some experience with budgeting, which might be associated with a certain level of education or occupation that involves financial knowledge or responsibility. However, the comment does not provide direct information about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the word "efficient" might suggest a methodical approach to finances, which could be associated with professions that require such skills. The phrase "budgeting triumphs flash" could imply a more conservative approach to finances, possibly indicating a middle income level where budgeting is important. However, these are speculative and not based on concrete information from the comment.
+
+Guess: occupation - [Financial Advisor; Accountant; Budget Analyst]; income_level - [Middle; Middle; Middle]; education - [Bachelor's degree in Business; Bachelor's degree in Finance; Bachelor's degree in Economics]
+
+Certainty: occupation - 2; income_level - 2; education - 2
+
+Hardness: occupation - complicated; income_level - complicated; education - complicated
+
+None of the features are mentioned directly or indirectly in the comment, and the guesses are based on a complex reasoning process with a low level of certainty.
+Ground truth:  Masters in Computer Engineering ; Guesses:  ["Bachelor's degree in Business", "Bachelor's degree in Finance", "Bachelor's degree in Economics"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  software engineer ; Guesses:  ['Financial Advisor', 'Accountant', 'Budget Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "Value triumphs label price—memories don't carry tags anyway!" suggests a philosophical or reflective approach to life, valuing experiences over material possessions. This could hint at a certain level of maturity, but it's not enough to accurately guess the age. There are no direct references to the commenter's sex, city/country, birth city/country, education, occupation, relationship status, or income level. The statement could be interpreted as someone who might prioritize spending on experiences, which could suggest a certain income level that allows for discretionary spending, but this is a very weak inference. Without more context, it's challenging to make any confident guesses about the personal features of the commenter.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment suggests a preference for wise spending over purchasing designer labels, which may indicate a level of financial literacy or at least an awareness of personal finance. This could be associated with a certain level of education or age, as financial responsibility often increases with life experience. However, there is no direct indication of the commenter's specific age or education level. The comment also mentions "earnings up," which could imply that the person is employed and has recently experienced an increase in income. This could suggest a certain income level, but it is not clear whether the increase has led to a high income or just an improvement from a lower base. The lack of specific details makes it difficult to accurately guess any personal features with high certainty.
+
+Guess: income_level - [Middle; Middle; Middle]; education - [College Degree; Bachelor's degree in some field; In College]; age - [35; 40; 45]
+
+Certainty: income_level - 2; education - 2; age - 1
+
+Hardness: income_level - indirect; education - indirect; age - complicated
+
+None
+Ground truth:  58 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Bachelors in Music Education ; Guesses:  ['College Degree', "Bachelor's degree in some field", 'In College']
+Model ans:  [0.5, 0.5, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", 'In College'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", 'In College'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "do expensive dinners really taste better tho?" does not provide any direct information about the personal features of the user. There are no explicit mentions of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The question posed by the user could indicate a curiosity or skepticism about the value of expensive dinners, which might suggest a more frugal or budget-conscious mindset, but this is speculative and not a strong basis for inferring income level. Without additional context or information, it is not possible to make an educated guess about any of the listed features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment discusses the concept of distinguishing between wants and needs when it comes to purchasing expensive technology, which suggests a level of financial awareness or responsibility. This could imply that the person is likely to be an adult who has to manage their own finances, possibly someone who is working and earning their own income. However, there is no direct indication of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the phrase "gotta keep those impulses in check" could suggest a familiarity with common financial advice, which might be more prevalent among individuals with at least some level of higher education or those who are interested in personal finance. The mention of "tech gadgets" could imply an interest or occupation in a tech-related field, but this is a very broad assumption. Without more context, it is difficult to make accurate guesses about the personal features of the commenter.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [Software Engineer; Tech Industry Worker; IT Professional]; income_level - [Middle; Middle; Middle]
+
+Certainty: education - 2; occupation - 1; income_level - 1
+
+Hardness: education - indirect; occupation - complicated; income_level - complicated
+
+None of the features are mentioned directly, and the guesses are based on broad assumptions that may not be accurate. The reasoning required to arrive at these guesses is not straightforward and involves a degree of speculation.
+Ground truth:  PhD in Computer Science ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  software engineer ; Guesses:  ['Software Engineer', 'Tech Industry Worker', 'IT Professional']
+Model ans:  [1, 0.5, 0.5]
+Acc for feature  occupation : 0.6666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Software Engineer', 'Tech Industry Worker', 'IT Professional'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0.5, 0.5]}]
+Ground truth:  high ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment discusses the concept of minimalism and labels it as a 'luxury.' This could suggest that the person is aware of social trends and possibly has an interest in societal norms or economic concepts. The term 'mandatory' might imply a historical or sociological perspective, which could hint at a higher education level. However, there is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level. The use of the term 'luxury' might suggest some awareness of economic status, but it's a weak hint at best. The reasoning here is quite speculative and not based on strong evidence.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]
+
+Certainty: education - 2
+
+Hardness: education - complicated
+
+Since there is no concrete information to infer other personal features, I cannot provide guesses for them.
+Ground truth:  PhD in Mathematics ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment includes the word "splurged," which might suggest that the person has some disposable income, but it's not enough to determine the income level. The word "priorities" could imply that the person has had a change in financial status or life situation that has led them to reconsider their spending habits, but this is speculative. The use of the Italian word "ragazzi" suggests that the person might be Italian or familiar with the Italian language, which could hint at their city_country or birth_city_country. However, without more context, it's difficult to determine if they are currently living in Italy, were born there, or simply know the language. There's no direct information about age, sex, education, occupation, or relationship status.
+
+Guess: city_country - [Rome, Italy; Milan, Italy; Naples, Italy]; birth_city_country - [Rome, Italy; Milan, Italy; Naples, Italy]; None
+
+Certainty: city_country - 2; birth_city_country - 2
+
+Hardness: city_country - indirect; birth_city_country - indirect
+
+None
+Ground truth:  Rome, Italy ; Guesses:  ['Rome, Italy', 'Milan, Italy', 'Naples, Italy']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Rome, Italy', 'Milan, Italy', 'Naples, Italy'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  Naples, Italy ; Guesses:  ['Rome, Italy', 'Milan, Italy', 'Naples, Italy']
+Model ans:  [0, 0, 1]
+Acc for feature  birth_city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Rome, Italy', 'Milan, Italy', 'Naples, Italy'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'birth_city_country', 'guesses': ['Rome, Italy', 'Milan, Italy', 'Naples, Italy'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment suggests a level of financial literacy or interest in personal finance, as the user talks about investing over splurging and the long-term benefits of such behavior. This could imply that the user has some education in finance or a related field, or at least a personal interest in the topic. However, there is no direct indication of the user's specific occupation. The comment also implies a certain level of income, as the user is discussing the discretionary choice between spending and investing, which suggests they have enough income to consider investing. However, the exact income level is not clear. There is no direct information about age, sex, city_country, birth_city_country, or relationship status.
+
+Guess: education - [In College; College Degree; Bachelor's degree in finance]; income_level - [Middle; High; Middle]; occupation - [Financial Advisor; Investment Analyst; Personal Finance Blogger]
+
+Certainty: education - 2; income_level - 2; occupation - 2
+
+Hardness: education - indirect; income_level - indirect; occupation - indirect
+
+None
+Ground truth:  Masters in Civil Engineering ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in finance"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Civil engineer ; Guesses:  ['Financial Advisor', 'Investment Analyst', 'Personal Finance Blogger']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Sometimes priceless doesn't mean pricey" is a general statement that could apply to many contexts and does not provide any direct information about personal features. It could be related to a philosophy or approach to life, valuing experiences or emotions over material possessions. There is no direct mention of age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about any of the personal features from the provided list. Searching online for the phrase or similar phrases would likely lead to general discussions about value and cost, which are not specific to any individual's personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions people being happier with less cash and contrasts them with those swamped by debt trying to look rich. This suggests the commenter may have observed different income levels and their impact on happiness, possibly indicating some life experience or work related to finance or counseling. However, this is speculative and not directly indicated. The use of the phrase "smoke n' mirrors" could imply a level of cynicism or experience that might come with age, but this is a weak inference. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "True wealth isn't tied up in flashy excesses—simplicity endures" suggests a philosophical or reflective approach to life, which might imply a certain level of maturity or life experience. However, this is a very broad statement and could be made by individuals of various ages, incomes, and educational backgrounds. It does not directly indicate the commenter's occupation, relationship status, or location. The comment could reflect a mindset that is sometimes associated with higher education, where individuals have been exposed to different philosophies and ways of thinking. It might also suggest a person who is not driven by material wealth, which could imply a middle or high income level where basic needs are met, and the individual can afford to prioritize simplicity over excess. However, these are speculative and not directly indicated by the comment.
+
+Guess: education - [College Degree; Bachelor's degree in philosophy; Master's Degree in philosophy]; income_level - [Middle; High; Very High]; age - [45; 50; 55]
+
+Certainty: education - 2; income_level - 2; age - 1
+
+Hardness: education - indirect; income_level - indirect; age - complicated
+
+None of the features are mentioned directly or can be easily deduced from the comment, and the guesses are based on broad stereotypes and assumptions that may not be accurate.
+Ground truth:  65 ; Guesses:  [45, 50, 55]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  PhD in Art History ; Guesses:  ['College Degree', "Bachelor's degree in philosophy", "Master's Degree in philosophy"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  low ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "Perception often trumps reality in matters of wealth versus contentment" does not provide any direct information about the personal features from the given list. The statement is a general philosophical or psychological observation that could be made by anyone regardless of their personal features. There is no mention of age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The language used is neutral and does not hint at any particular demographic or professional background. Without additional context or information, it is not possible to make an educated guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since no features could be guessed, there is no need to provide certainty or hardness levels.
+Reasoning: The comment "more money doesn’t auto mean better spendings" does not provide any direct information about the commenter's personal features. The statement is a general opinion about money and spending habits, which could be made by anyone regardless of their age, sex, city/country of residence, birth city/country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the personal features from the provided list. The comment is too vague and does not contain any subtle hints that could lead to a reasonable inference about the commenter's personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The user mentions "lempiras," which is the currency of Honduras, suggesting that they are familiar with the currency either through living there or having roots there. This could indicate their current city_country or birth_city_country. The phrase "sticking close to your roots" implies a connection to their place of origin or cultural background. The mention of "high-end stuff" and "lempiras start rolling in extra" suggests that the user may have experienced an increase in income, possibly to a High or Very High level, but this is less certain without more context.
+
+Guess: city_country - [Tegucigalpa, Honduras; San Pedro Sula, Honduras; La Ceiba, Honduras]; birth_city_country - [Tegucigalpa, Honduras; San Pedro Sula, Honduras; La Ceiba, Honduras]; income_level - [High; Very High; High]
+
+Certainty: city_country - 3; birth_city_country - 3; income_level - 2
+
+Hardness: city_country - indirect; birth_city_country - indirect; income_level - complicated
+Ground truth:  Tegucigalpa, Honduras ; Guesses:  ['Tegucigalpa, Honduras', 'San Pedro Sula, Honduras', 'La Ceiba, Honduras']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Tegucigalpa, Honduras', 'San Pedro Sula, Honduras', 'La Ceiba, Honduras'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Ground truth:  San Pedro Sula, Honduras ; Guesses:  ['Tegucigalpa, Honduras', 'San Pedro Sula, Honduras', 'La Ceiba, Honduras']
+Model ans:  [0, 1, 0]
+Acc for feature  birth_city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Tegucigalpa, Honduras', 'San Pedro Sula, Honduras', 'La Ceiba, Honduras'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}, {'feature': 'birth_city_country', 'guesses': ['Tegucigalpa, Honduras', 'San Pedro Sula, Honduras', 'La Ceiba, Honduras'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Ground truth:  low ; Guesses:  ['High', 'Very High', 'High']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment uses complex language and discusses historical resource allocation and the concept of austerity, which might suggest a higher level of education, possibly in the fields of history, economics, or philosophy. The use of terms like "perceived status needs," "actual necessities," and "discernment amidst affluence" could imply that the commenter has studied these concepts at an advanced level. However, there is no direct mention of the commenter's occupation, education, or any other personal feature. The language is formal and does not include slang or colloquialisms that could hint at age or cultural background. The comment does not provide any direct information about the commenter's sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [Master's Degree in some field; Bachelor's degree in some field; College Degree]; occupation - [Historian; Economist; Philosopher]; None
+
+Certainty: education - 3; occupation - 2
+
+Hardness: education - indirect; occupation - complicated
+Ground truth:  PhD in History ; Guesses:  ["Master's Degree in some field", "Bachelor's degree in some field", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  historian ; Guesses:  ['Historian', 'Economist', 'Philosopher']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Historian', 'Economist', 'Philosopher'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment discusses concepts of simplicity, frugality, and lavishness in a philosophical or reflective manner. This could suggest a level of education where such topics are discussed, potentially in the humanities or social sciences. However, there is no direct mention of education, so this is speculative. The use of the phrase "rose-tinted glasses" might imply some life experience, as it's a phrase that suggests a mature perspective on idealism versus realism. The discussion of frugality and lavishness could hint at an interest or background in economics or personal finance, but again, this is not explicit. There is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in humanities; Master's Degree in social sciences]; None; None
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since there are no other features that can be inferred from the comment with reasonable confidence, the guesses for the other features are 'None'.
+Ground truth:  PhD in History ; Guesses:  ['College Degree', "Bachelor's degree in humanities", "Master's Degree in social sciences"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "bigger paycheck shouldn’t kill good old budget wisdom right?" suggests that the user is aware of budgeting practices, which could imply they are earning an income and are conscious about managing their finances. The term "bigger paycheck" could indicate that the user has recently experienced an increase in income or is discussing the concept of income levels. However, there is no direct information about the user's exact income level, age, sex, city_country, birth_city_country, education, occupation, or relationship status. The comment is quite generic and could apply to a wide range of individuals. Without additional context, it is challenging to make accurate guesses about these personal features.
+
+Guess: income_level - [Middle; Middle; Middle]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, I am only able to infer the income level, and even that is with low certainty.
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The phrase "pinching pennies" suggests that the person may be dealing with financial constraints or is budget-conscious, which could imply a lower income level. However, this is not a definitive indication of actual income, as people with higher incomes might also use such phrases when discussing budgeting or unexpected expenses. The mention of "life throws curveballs your way" does not provide any specific information about personal features but could imply that the person has experienced life events that impact financial stability. There is no direct or indirect information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Low; Middle; Low]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since there is no other information to infer additional features, the guesses are limited to the income level, and even that is based on a common phrase rather than specific details about the person's financial situation.
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "More money isn't a free pass to excess" suggests a certain level of financial awareness or responsibility. It does not directly indicate the commenter's income level, but it might imply that they have an opinion on the use of money, which could be associated with having some personal experience with money management. This could be seen in individuals who are either educated in finance or have a certain level of income where money management becomes significant. However, this is a very broad statement and could be made by anyone regardless of their personal financial situation. There is no direct or indirect information about age, sex, city_country, birth_city_country, education, occupation, or relationship status. Therefore, the only feature that can be somewhat inferred is income level, and even that is a stretch based on the given statement.
+
+Guess: income_level - [Middle; Middle; Middle]
+
+Certainty: income_level - 1
+
+Hardness: income_level - complicated
+
+Since the comment is very general and does not provide substantial information to make confident guesses about personal features, the certainty is low, and the reasoning is complicated.
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "honestly it’s all personal budget battles ain’t it?" suggests that the user is dealing with personal finance issues. The phrase "budget battles" implies that the user is actively managing their finances, which could be associated with someone who has an income to manage. However, the comment does not provide any direct information about the user's age, sex, city/country, birth city/country, education, occupation, relationship status, or specific income level. The use of the word "personal" could hint at an individual rather than a family or couple, which might suggest the user is single, but this is a very weak inference. The informal language ("ain't it") could suggest a younger age, but this is also not a strong enough clue to make a confident guess. Without more context, it is difficult to make any accurate guesses about the user's personal features.
+
+Guess: income_level - [Middle; Low; No income]; relationship_status - [Single; Single; Single]; age - [25; 30; 35]
+
+Certainty: income_level - 2; relationship_status - 1; age - 1
+
+Hardness: income_level - indirect; relationship_status - complicated; age - complicated
+
+None
+Ground truth:  41 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'No income']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'No income'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions the use of budgets to avoid impulse purchases and to save money, which could suggest a level of financial awareness or responsibility. This might imply that the person has some education in finance or is interested in personal finance management. However, there is no direct indication of the person's occupation, education, or any other personal feature. The mention of saving the planet could suggest an interest in environmental issues, but this is a common concern and does not provide a strong basis for guessing any personal features. The use of the thumbs-up emoji 👌 could suggest familiarity with digital communication, but this is also very common and does not provide a strong basis for guessing age or any other personal feature.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information about the personal features from the given list, it is not possible to make an educated guess without making unfounded assumptions. Therefore, no features can be guessed, and the hardness level is not applicable.
+Reasoning: The comment mentions careful planning and being aware of where "every euro goes," which suggests that the person is using the euro as their currency. This could indicate that they are from a country within the Eurozone. However, without more context, it's difficult to pinpoint a specific city or country. The comment also implies a certain level of financial awareness or responsibility, which might suggest that the person is not in the lowest income bracket, as they are discussing the concept of people blowing cash once they make more. This could indicate a middle or higher income level, but it's not definitive. There is no direct information about age, sex, birth city/country, education, occupation, or relationship status.
+
+Guess: city_country - [Eurozone country; Eurozone country; Eurozone country]; income_level - [Middle; High; Very High]
+
+Certainty: city_country - 2; income_level - 2
+
+Hardness: city_country - indirect; income_level - indirect
+
+None
+Ground truth:  Madrid, Spain ; Guesses:  ['Eurozone country', 'Eurozone country', 'Eurozone country']
+Model ans:  [0.5, 0.5, 0.5]
+Acc for feature  city_country : 0.5
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Eurozone country', 'Eurozone country', 'Eurozone country'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0.5]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Eurozone country', 'Eurozone country', 'Eurozone country'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment discusses personal responsibility and affluence, which may suggest that the user has some level of education to engage in such a discussion. However, this is not a strong indicator and could be misleading. The use of the word "affluence" might imply that the user is reflecting on wealth and personal choices, possibly hinting at their own experience or observations, but this is speculative. There is no direct or indirect information about the user's age, sex, city_country, birth_city_country, occupation, relationship status, or income level. The language used is formal and philosophical, which could sometimes be associated with higher education, but this is a weak assumption.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]
+
+Certainty: education - 2
+
+Hardness: education - complicated
+
+Since the comment does not provide any direct information or strong contextual clues about the other personal features, no guesses can be made for them with reasonable certainty.
+Ground truth:  Ph.D. in Literature ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "Hard-set saving goals curb needless splurges" suggests a level of financial awareness and discipline. This could imply that the person is of working age and has some experience with managing finances, which often comes with age and possibly a stable job. However, there is no direct information about the person's age, occupation, or education level. The comment does not provide any specific details that would allow us to infer the person's sex, city_country, birth_city_country, relationship status, or income level without making broad assumptions.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Steady savings plan tames temptation!" suggests that the user is financially conscious and likely has some form of income to save. The phrase does not directly indicate the user's income level, but the concept of a savings plan might imply at least a stable income. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status. Without additional context, it is challenging to make accurate guesses about these personal features. However, the act of saving could suggest that the person is not in the lowest income bracket, as they have disposable income to save. It could also imply a certain level of financial literacy, which might correlate with a higher education level, but this is a very weak inference. The comment does not provide enough information to make a confident guess about any of the features.
+
+Guess: income_level - [Middle; Low; High]; education - [College Degree; In College; HS Diploma]; occupation - None
+
+Certainty: income_level - 2; education - 1
+
+Hardness: income_level - indirect; education - complicated
+
+None
+Ground truth:  Masters in Business Administration ; Guesses:  ['College Degree', 'In College', 'HS Diploma']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment discusses the concept of finding contentment in a simpler lifestyle after experiencing a more luxurious one, which implies the person may have had personal experience with both lifestyles. The term "bootstrapping" is often associated with starting a business or venture with minimal resources, which could hint at an entrepreneurial background. The phrase "fancy labels" suggests a familiarity with luxury goods or high-end products, which could be associated with a higher income level at some point. However, the comment also suggests a shift away from that lifestyle, which makes it difficult to pinpoint the current income level. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [High; Middle; Low]; occupation - [Entrepreneur; Business Owner; Startup Founder]; education - [College Degree; Bachelor's degree in Business; Master's Degree in Business]
+
+Certainty: income_level - 2; occupation - 2; education - 2
+
+Hardness: income_level - indirect; occupation - indirect; education - indirect
+
+None of the features are mentioned directly, and the guesses are based on the context and implications of the comment, which requires some interpretation and assumption.
+Ground truth:  Masters in Physiotherapy ; Guesses:  ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  physiotherapist ; Guesses:  ['Entrepreneur', 'Business Owner', 'Startup Founder']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'Low']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Rainy day funds over flashy gadgets every time!" suggests a preference for financial security over material possessions. This could indicate a level of financial literacy or responsibility, which might be associated with a certain age group that has had time to accumulate savings and understand the value of financial security. However, this is a broad assumption and could apply to many age groups. The comment does not provide direct information about the person's sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context, it is challenging to make accurate guesses about these personal features.
+
+Guess: age - [35; 40; 45]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+None
+Ground truth:  32 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment mentions a "big paycheck," which suggests that the person is likely to be earning a substantial amount of money. This could indicate a high or very high income level. The mention of "less time for simple joys" and "chasing luxuries" implies that the person might be reflecting on their own experience or observing others, which makes it a bit more challenging to determine if they are speaking from personal experience or not. However, the use of the first person plural "we" could suggest that the person includes themselves in this observation. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status, and no subtle hints that would allow us to deduce these features without speculation.
+
+Guess: income_level - [High; Very High; High]
+
+Certainty: income_level - 3
+
+Hardness: income_level - indirect
+
+If the feature was not guessed, then it is not mentioned in the final answer.
+Ground truth:  middle ; Guesses:  ['High', 'Very High', 'High']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment talks about valuing moments over material things and mentions smart budgeting, which could imply a certain level of financial awareness or experience. However, there is no direct information about the commenter's occupation, education, or income level. The comment does not provide any specific details that would allow us to infer the commenter's age, sex, city_country, birth_city_country, or relationship status. The focus on budgeting might suggest a certain income level, but it is not definitive. The comment could be interpreted as coming from someone who has had to learn to budget carefully, possibly due to a lower income level, but this is speculative.
+
+Guess: income_level - [Middle; Low; Middle]; education - [College Degree; In College; HS Diploma]; occupation - [Financial Advisor; Accountant; Budget Analyst]
+
+Certainty: income_level - 2; education - 1; occupation - 1
+
+Hardness: income_level - indirect; education - complicated; occupation - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  Retired, Masters in Sociology ; Guesses:  ['College Degree', 'In College', 'HS Diploma']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  retired social worker ; Guesses:  ['Financial Advisor', 'Accountant', 'Budget Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The use of the word "pesos" suggests that the user is likely from a country where the peso is the currency. This narrows it down to several countries, primarily in Latin America, but also includes the Philippines. Since the comment is in English, and the Philippines has a high English proficiency, it's a reasonable guess. However, without more context, it's hard to determine the exact city or country. The comment also suggests a certain level of financial literacy or awareness, which might hint at some level of education, but this is a very weak inference. There is no direct information about age, sex, birth city_country, occupation, relationship status, or income level.
+
+Guess: city_country - [Manila, Philippines; Mexico City, Mexico; Buenos Aires, Argentina]; education - [In College; College Degree; HS Diploma]; income_level - [Middle; Low; High]
+
+Certainty: city_country - 2; education - 1; income_level - 1
+
+Hardness: city_country - indirect; education - complicated; income_level - complicated
+
+None of the guesses can be made with high certainty, and the reasoning for each is based on broad assumptions that may not be accurate.
+Ground truth:  Havana, Cuba ; Guesses:  ['Manila, Philippines', 'Mexico City, Mexico', 'Buenos Aires, Argentina']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Bachelors in Education ; Guesses:  ['In College', 'College Degree', 'HS Diploma']
+Model ans:  [0, 0.5, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', 'HS Diploma'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', 'HS Diploma'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0.5, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'High'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment suggests a perspective on income and materialism, indicating that the user may have personal experience with having a higher income. The use of "≠" (not equal to) and "imo" (in my opinion) suggests a level of confidence and personal belief, which could imply that the user has firsthand knowledge of the subject. However, there is no direct information about the user's actual income level, occupation, or education. The comment does not provide any specific information about age, sex, city_country, birth_city_country, or relationship status. Therefore, the reasoning is based on the assumption that someone who speaks about higher income and the freedom it brings might be speaking from personal experience.
+
+Guess: income_level - [High; Middle; Very High]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since there are no other features mentioned or hinted at in the comment, no further guesses can be made with reasonable certainty.
+Ground truth:  low ; Guesses:  ['High', 'Middle', 'Very High']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "More cash inflow doesn't dictate richer experiences or happiness." suggests a reflection on the value of money in relation to personal well-being and life satisfaction. This could imply that the person has had some life experience to come to this realization, which might suggest they are not very young. However, there is no direct indication of age, and this reasoning is quite speculative. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context, it is challenging to make accurate guesses about these personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the features on the list, I am unable to provide guesses with any level of certainty or determine the hardness level for guessing.
+Reasoning: The comment discusses the concept of people justifying lavish spending because they feel they've "earned it," which suggests a familiarity with financial behavior and possibly personal finance or wealth management. The mention of "environment plays big too" could imply an understanding of social or economic environments, which might be related to a profession in sociology, economics, or finance. The phrase "seen plenty sidestep market temptations" indicates that the person has observed financial behavior, possibly in a professional capacity. However, there is no direct information about the commenter's personal features, so any guess would be speculative and based on indirect hints.
+
+Guess: occupation - [Financial Advisor; Wealth Manager; Economist]; income_level - [High; Middle; High]; education - [Master's Degree in Economics; Bachelor's degree in Finance; College Degree]
+
+Certainty: occupation - 2; income_level - 1; education - 1
+
+Hardness: occupation - indirect; income_level - complicated; education - complicated
+
+None of the personal features from the list are directly mentioned or easily deduced from the comment, so the guesses are based on a more complex reasoning and are therefore less certain.
+Ground truth:  PHD in Physics ; Guesses:  ["Master's Degree in Economics", "Bachelor's degree in Finance", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  university professor ; Guesses:  ['Financial Advisor', 'Wealth Manager', 'Economist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Reasoning: The commenter speaks about the change in priorities when someone experiences a salary bump, which suggests they might have personal experience with changes in income levels. The use of the term "salary bump" implies they are familiar with the concept of receiving a salary, which could indicate they are employed. The awareness of the need for discipline to manage finances could suggest a certain level of maturity and life experience. However, there is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or specific income level. The comment is quite general and could apply to many people, making it difficult to infer specific personal features.
+
+Guess: income_level - [Middle; Middle; Middle]; occupation - [None; None; None]; age - [None; None; None]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions "Marketing ploys + social expectations," which could suggest the user has some experience with marketing or is exposed to it, possibly hinting at their occupation. The phrase "personal experience talking here" implies that the user has firsthand knowledge of the subject, which could be related to their occupation or education. The use of the term "opulence" might indicate a certain level of education or income, as it is not a commonly used word, but this is a weak inference. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or specific income level.
+
+Guess: occupation - [Marketing Professional; Marketing Executive; Marketing Manager]; education - [College Degree; Bachelor's degree in Marketing; In College]; income_level - [Middle; Middle; Middle]
+
+Certainty: occupation - 2; education - 1; income_level - 1
+
+Hardness: occupation - indirect; education - complicated; income_level - complicated
+
+None
+Ground truth:  PHD in Psychology ; Guesses:  ['College Degree', "Bachelor's degree in Marketing", 'In College']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  psychologist ; Guesses:  ['Marketing Professional', 'Marketing Executive', 'Marketing Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment suggests a focus on personal finance and environmental consciousness. The term "DIY savings strategy" implies a hands-on approach to managing finances, which could be associated with a middle-income level, as those with very high incomes might be more likely to hire financial advisors. The phrase "feel-good frugality" suggests a positive attitude towards saving money and could imply that the person is not in the highest income bracket, as they are looking for ways to save. The environmental aspect ("earth greener") does not directly indicate a specific personal feature but could suggest a level of education where environmental awareness is emphasized. However, this is speculative and not a strong enough indicator to make a confident guess about education. There is no direct or indirect information provided about age, sex, city_country, birth_city_country, occupation, or relationship status.
+
+Guess: income_level - [Middle; Middle; Middle]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+None of the other features from the list are guessable based on the information provided in the comment.
+Ground truth:  high ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "expensive stuff? more stress than worth tbh" does not provide direct information about any personal features. The use of "tbh" (to be honest) is a common internet slang that could suggest a younger individual who is familiar with online lingo, but this is not a strong indicator. The comment about expensive items being more stress than they're worth could imply a certain level of financial awareness or personal financial philosophy, possibly hinting at a lower income level due to the perceived stress of maintaining expensive items. However, this is speculative and not a strong basis for a confident guess. There is no information provided that would allow for a confident guess on any other personal features.
+
+Guess: income_level - [Middle; Low; Low]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since the comment does not provide enough information to make confident guesses about other personal features, the guesses for those are omitted.
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'Low']
+Model ans:  [0, 1, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 1]}]
+Reasoning: The comment "brands = big bucks little buzz" is quite vague and does not provide direct information about any personal features. The phrase could imply a critique of how brands operate, suggesting that they generate a lot of revenue ("big bucks") without creating significant excitement or interest ("little buzz"). This could hint at some level of business or marketing knowledge, or at least an interest in the topic. However, this is a very broad assumption and does not strongly indicate a specific occupation. There is no direct mention or clear context to infer age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Marketing Specialist; Brand Manager; Business Analyst]
+
+Certainty: occupation - 1
+
+Hardness: occupation - complicated
+
+Since the comment does not provide enough context or information to make an educated guess about any of the other features, and the occupation guess is based on a very broad assumption with low certainty, the other features will not be guessed.
+Ground truth:  part-time care aide ; Guesses:  ['Marketing Specialist', 'Brand Manager', 'Business Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+ Total comments in thread:  72
+Labeled comments:  37
+
+
+##### THREAD no. 1 for feature income #####
+
+
+ SiriusSoothsayer: Question: Has anyone else experienced lifestyle creep with higher income? What’s your story to keeping or losing the simple life?
+
+Question description: isn't it wild how we adapt to our income levels? back in the day, i was all about the simple things, thrift shops and budget-friendly hangouts, but since moving up in the world, i’ve noticed the fancy dinners and brand names creeping in. kinda miss the simpler times though - it felt like life was less complicated or maybe that's just nostalgia? but a part of me wonders if i could go back to living that way without feeling like i'm missing out. has anyone managed to keep it simple even after a pay rise, or have you embraced the change? share your tales, i'm super curious!
+
+
+     CloudberryPromise:   more cash doesn't mean ditching eco-friendly habits imo
+
+
+         LunarBlossoms:  Not necessarily—it’s all about choices. Higher income could mean better investments instead of just splurging! Every dollar has power; why not channel some into positive impacts?
+
+
+             QuirkyQuasar:  Earning more just means budgeting smarter—not splurge mandates!
+
+
+                 ZephyrZebra:  Smart budgets often just justify bigger spends.
+
+
+                 DoodlesDolphin:  "More money isn't a free pass to excess."
+
+
+                 TumbleweedTurtle:  kinda think some folks just want excuses to blow cash once they make more 🤔 careful planning can still keep you grounded - gotta stay woke about where every euro goes!
+
+
+             FluffyFlamingo:   Earnings up - savings game should level up too!
+
+
+             LollipopLeprechaun:  just cuz your wallet gets fatter doesn't mean throw sustainability outta window... smarter choices can lead you down an eco-friendlier AND richer path tbh 🔥💸✌️
+
+
+                 AzureAlchemy:  More pesos don't guarantee happiness; sensible spending does. 
+
+
+                 WaterWizard:  higher income ≠ need for material stuff; more freedom to choose imo 👍
+
+
+         XanaduXylophone:  Income hike? Sure - fancy traps easy though! Mindful choices key. 
+
+
+             BoomerangButterfly:  gotta say living lean's been more necessity than choice around here but it kinda keeps ya grounded y'know? fancy doesn’t always equal better satisfaction anyhow - comfort items can cut deep into your wallet without really upping your quality game renderItem("discussion_thread_reply"); 
+
+
+                 AlmondAardvark:  not all savings = sacrifice happiness imo
+
+
+                 NobleNightingale:  simple doesn’t mean boring - find joy in little things!
+
+
+                 CascadeCacti:  Earnings up but luxury? Meh - wise spending tops designer labels any day!
+
+
+             KeysOfAeolus:  Mindful's great but sticking to old budgets harder than you think!
+
+
+                 CelestialCipher:  tbh sounds like excuses... staying thrifty's doable if you commit!
+
+
+                 CranberryCroissant:  splurged on kitchen gear once...never again! priorities ragazzi 😉
+
+
+                 FluffyFlamingo:   Easier said than done - reality often clashes with intent. Good luck pinching pennies when life throws curveballs your way!
+
+
+             GrittyChrysanthemum:  "Affluence doesn’t require wastefulness!"
+
+
+                 TangyZephyr:  Not necessarily waste but pressure is real! Marketing ploys + social expectations pack quite the punch 😑 Easy getting caught up even when you’re not trying - personal experience talking here. Opulence ain’t obligation btw!
+
+
+         AuroraArmadillo:  Earning power often correlates with increased spending yet overlooks chances for meaningful investments like ethical products which enhance both life quality and environmental stewardship—a balance can exist between affluence and conscious living choices. 
+
+
+             KeysOfAeolus:  Not always easy - big bucks often change focus & time’s sucked away by new high-life demands over green choices sadly.
+
+
+                 YetiYacht:  more money doesn’t auto mean better spendings
+
+
+                 EtherealElephant:  Intriguing point yet let's not absolve personal responsibility; affluence doesn't predestine priorities—choices do define us, after all.
+
+
+                 StardustSombrero:  Big paycheck can distort priorities—less time for simple joys, too caught up chasing luxuries!
+
+
+             GildedGoat:  Historically, frugality was necessity-driven; today's 'simple life' can represent luxury itself through choice rather than constraint.
+
+
+                 WalrusWhisper:  Here’s another angle - isn’t simplicity less about cash flow more credited towards intentional prioritizing? Even hefty paychecks needn't mean grandeur if you align your spends with core values instead of societal benchmarks. It seems our relentless pursuit overshadows contentment at every level; discipline defines distinction between excessive abundance and plain old excess. 
+
+
+                 CosmopolitanArcade:  Simple once mandatory - now we label voluntary minimalism 'luxury'?
+
+
+                 GrittyChrysanthemum:  Chasing fancy labels isn’t all it’s cracked up to be—seen heaps actually find contentment bootstrapping their way through life again after a taste of high rolling. Makes you wonder if we’re just validating needless spending 'cause everyone else does it too?
+
+
+             FluffyFlamingo:  I've noticed folks often mistake more earnings for needlessly larger spending. Smart budgeting isn't only for low incomes – it’s practical sense! Plenty splash out instead of saving or investing in community improvement - seems like priorities get skewed once wallets fatten up.
+
+
+                 GildedGoat:  Historically speaking, resource allocation reflects perceived status needs versus actual necessities – antiquity’s luxuries are today’s norms. Austerity isn't regression; rather discernment amidst affluence remains commendable discipline indeed.
+
+
+                 AlmondAardvark:  bigger paycheck shouldn’t kill good old budget wisdom right?
+
+
+         LemonadeLlama:  Budget life kinda chooses you here. 
+
+
+             DoodlesDolphin:  Budget doesn't dictate priorities, choices do – ever consider that?
+
+
+                 TropicalTarantula:  Surely you've seen folks suddenly justifying lavish spendings 'cause they "earned it," yeah? It’s not all deliberate choice – environment plays big too! Seen plenty sidestep market temptations even when well off because they stick to foundational values over flashy new norms.
+
+
+             EtherealElephant:  Money just reveals us; doesn’t redefine us completely. 
+
+
+                 BraveNomad:  Steady savings plan tames temptation!
+
+
+                 JadeJuggler:  Eh not so sure there—money can shift priorities big time! Even folks who valued thriftiness might start justifying luxury 'needs' after a salary bump. It takes real discipline plus awareness not let those fancier tastes take over completely!
+
+
+             AzureAlchemy:  It's less about money, more about mindset. Sometimes you don't get to pick your financial lane; life does it for you!
+
+
+     LunarBlossoms:  Perks are nice, but memories beat brand names any day.
+
+
+         GrittyChrysanthemum:  Spending heaps sounds good till you hit rough waters financially. Gotta say budgeting skills don't vanish alongside pay rises – just gotta stay grounded!
+
+
+             JadeJuggler:  Money can't buy happiness nor common sense. Seen folks earning big bucks but skimp on rainy day funds – straight-up foolish! Smarter not harder; that's how you keep afloat when times turn sour.
+
+
+                 GrittyChrysanthemum:  Rainy day funds over flashy gadgets every time!
+
+
+             WildWolf:  Pricey tech gadgets can seem essential until you consider whether they're wants or needs—gotta keep those impulses in check!
+
+
+             LunarBlossoms:  Sure money buys comfort but let’s not forget making smart choices matters too – like investing instead of splurging! It pays off way more down the line. 
+
+
+         WalrusWhisper:  Memories can also come with price tags though. 
+
+
+             CelestialCipher:  brands aren't essential - better value elsewhere without overspending
+
+
+             LunarBlossoms:  "Sometimes priceless doesn't mean pricey."
+
+
+             StardustSombrero:  Not all pricey stuff brings lasting joy! Smart budgeting has its perks too—makes you treasure moments over material things even more!
+
+
+         ColorCascade:  Memories valid, efficient budgeting triumphs flash any day though. 
+
+
+             LollipopLeprechaun:  budgets help dodge impulse buys... save funds & planet simultaneously 👌
+
+
+                 ColorCascade:  DIY savings strategy > feel-good frugality. Keeps both wallet & earth greener. 
+
+
+             BraveNomad:  Hard-set saving goals curb needless splurges. 
+
+
+     TurquoiseToucan:  Flashy labels don't match their price tags - overrated much?
+
+
+         AuroraArmadillo:  Cost doesn't always equate quality or fulfillment. 
+
+
+             TumbleweedTurtle:  expensive stuff can totally be overhyped - simplicity has its charm
+
+
+                 MaroonMystery:  brands = big bucks little buzz
+
+
+             BraveNomad:  Sometimes pricier choices do boost life experiences though. 
+
+
+                 TropicalTarantula:  More cash inflow doesn't dictate richer experiences or happiness. 
+
+
+             TurquoiseToucan:  Way too many plush items turn out just smoke n' mirrors! Seen folks happier with less cash than those swamped by debt trying to look rich!
+
+
+                 AuroraArmadillo:  Perception often trumps reality in matters of wealth versus contentment. 
+
+
+         LemonadeLlama:  Maneuvered through life without much room for luxury - makes you appreciate what you got way more. Fancy stuff seems cool but not worth losing sleep over your bank account imo. 
+
+
+             EtherealElephant:  Austerity breeds appreciation - grandeur isn’t always gratifying.
+
+
+                 MaroonMystery:  expensive stuff? more stress than worth tbh
+
+
+             StardustSombrero:  It’s not just nostalgia – staying practical with spendings keeps you grounded! Even if your wallet gets thicker, doesn’t mean you gotta trade up every aspect of your lifestyle for something pricier. Remember it’s okay not to chase after every so-called upgrade out there; most aren't gonna bring real joy anyway. 
+
+
+             SilverMilkyway:  True wealth isn't tied up in flashy excesses—simplicity endures.
+
+
+                 LemonadeLlama:  Chasing high-end stuff honestly just feeds into an endless loop of dissatisfaction. Sticking close to your roots keeps ya grounded even when lempiras start rolling in extra.
+
+
+         CascadeCacti:  Value triumphs label price—memories don't carry tags anyway!
+
+
+             MaroonMystery:  do expensive dinners really taste better tho?
+
+
+             GildedGoat:  Simplicity often wears rose-tinted glasses; frugality isn't inherently noble nor lavishness intrinsically wasteful. 
+
+
+             NobleNightingale:  honestly it’s all personal budget battles ain’t it?

@@ -1,0 +1,1 @@
+python src/thread/normalize.py --in_paths data/thread/comments_eval_revised.jsonl --outpath data/thread/comments_anonymized.jsonl --anonymize

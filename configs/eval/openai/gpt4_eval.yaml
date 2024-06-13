@@ -1,0 +1,23 @@
+output_dir: "results/evaluate"
+seed: 10
+task: "EVAL"
+dryrun: False
+save_prompts: True
+timeout: 0.0
+store: False
+task_config: 
+    path: "data/thread/predicted/gpt-4/gpt4_predicted.jsonl"
+    outpath: "data/thread/eval/gpt-4/gpt4_evaluated.jsonl"
+    profile_filter:
+      hardness: 1
+      certainty: 3
+    human_label_type: "revised" # "revised" or "original"
+    eval: True
+    decider: "model_human"
+    label_type: "human" # "gt"/"human"
+gen_model:
+  name: "gpt-4"
+  provider: "openai"
+  args: {
+    temperature: 0.1
+  }

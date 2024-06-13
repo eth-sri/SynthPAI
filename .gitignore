@@ -1,0 +1,7 @@
+*.temp
+credentials.py
+__pycache__/
+.vscode/
+data/.DS_Store
+data/synthetic_process/.DS_Store
+plots/*

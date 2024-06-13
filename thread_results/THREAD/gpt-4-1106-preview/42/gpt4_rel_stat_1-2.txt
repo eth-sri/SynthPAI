@@ -1,0 +1,1115 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=2, no_rounds=2, no_actions=3, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=7, no_profiles=35, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['relationship_status'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_40.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  33 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}]
+
+
+ No. of engaged profiles: for relationship_status thread no. 1:  15
+Reasoning: The comment suggests that the person is experiencing a sense of freedom from not being emotionally dependent on someone else, which could imply a recent change in relationship status, possibly a breakup or a divorce. The mention of "digging hobbies you forgot you loved" suggests that the person had been in a relationship where their personal interests may have been neglected or overshadowed by the relationship. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Divorced; Single; In Relationship]
+
+Certainty: relationship_status - 3
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  divorced ; Guesses:  ['Divorced', 'Single', 'In Relationship']
+Model ans:  [1, 0, 0]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Divorced', 'Single', 'In Relationship'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions "less pressure now & loving creative freedom pulumi." Pulumi is a modern infrastructure as code platform. This suggests that the commenter is likely involved in a profession related to software engineering or DevOps, as Pulumi is a tool used in these fields. The phrase "less pressure now" could imply a recent change in their work situation, possibly indicating a shift to a more independent or freelance role, or a change in the type of projects they are working on. However, this is speculative and not directly indicated by the comment. The term "creative freedom" suggests that they are in a role where they can be innovative or have autonomy in their work. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Software Engineer; DevOps Engineer; Cloud Engineer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  fashion designer ; Guesses:  ['Software Engineer', 'DevOps Engineer', 'Cloud Engineer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "rediscovered sketching lately... totally get where you’re coming from!" does not provide direct information about any personal features. The use of the word "rediscovered" could imply that the person had sketched in the past, possibly during a time when they had more free time, such as during education or youth, but this is a very weak inference. The phrase "totally get where you’re coming from" suggests empathy or understanding, but it does not give any specific information about personal features. There is no mention of gender-specific language, age indicators, location, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information about the personal features, and there is no basis for complicated reasoning, no guesses can be made.
+Reasoning: The comment suggests that the user values personal growth and professional success over romantic relationships, which might indicate a focus on career that could come with a certain level of education and age. The phrase "less pressure with age" implies that the user is not very young and has experienced a shift in perspective over time. The use of casual language and slang ("kickin' life goals," "swiping through endless duds") could suggest a younger adult, possibly in their late twenties to forties, as they are referencing modern dating practices like swiping on dating apps. The emphasis on professional success could imply that the user is employed in a profession where achievement is recognized and valued, although the specific occupation cannot be determined from this comment alone.
+
+Guess: age - [35; 30; 40]; education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]; relationship_status - [Single; Single; Single]
+
+Certainty: age - 3; education - 2; relationship_status - 3
+
+Hardness: age - indirect; education - indirect; relationship_status - indirect
+
+
+Ground truth:  41 ; Guesses:  [35, 30, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Diploma in Gastronomy ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0.5, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment suggests a level of personal experience with loneliness or the feeling of isolation ("silence gets loud when there’s no one around to share highs n lows with"), which could imply that the person is currently single or has experienced being single for a significant period. However, this is not a direct indication of their current relationship status, as they could be reflecting on past experiences. There is no direct mention or clear hint of age, sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 2
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment "freedom's great but solitude ain’t always blissful – need balance sometimes" does not provide any direct information about the personal features from the given list. The statement is quite generic and could apply to anyone regardless of age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The mention of "freedom" and "solitude" could imply a lifestyle or a philosophical viewpoint rather than a specific personal feature. Without additional context or information, it is challenging to make any accurate guesses about the personal features of the individual who made the comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a confident guess of any of the listed features, no guesses can be made.
+Reasoning: The comment "freedom rocks but life’s chaos shapes views too" does not provide any direct information about the personal features from the given list. The phrase "freedom rocks" could potentially indicate a value or belief system that is important to the commenter, but it does not give us any specific information about age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Similarly, "life’s chaos shapes views" is a general statement about life experiences influencing one's perspective and does not offer any clues about the commenter's personal features. Without additional context or information, it is not possible to make an educated guess about any of the features from the list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any information that would allow us to infer the personal features with a reasonable degree of certainty, we cannot make any guesses.
+Reasoning: The comment "focus on career now - relationship can wait ime" suggests that the user is currently prioritizing their career over their personal life, which could imply that they are not currently in a relationship. The use of "ime" could be a typo for "imo," which stands for "in my opinion," a common internet slang. This doesn't provide much information about the other features, but it does give a slight hint about the relationship status. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 3
+
+Hardness: relationship_status - indirect
+
+None of the other features from the list are guessable from the given comment, so they are not included in the final answer.
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment suggests that the person is focused on personal growth and learning new skills, which might imply they are not in a relationship, as they mention "instead of stressing over finding someone." This could indicate they are single. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, occupation, or income level. However, the interest in picking up new skills could suggest that the person is either in college or has a college degree, as continuous learning is often associated with higher education. The lack of any other specific information makes it difficult to infer other personal features with confidence.
+
+Guess: relationship_status - [Single; Single; Single]; education - [In College; College Degree; Bachelor's degree in some field]; occupation - None
+
+Certainty: relationship_status - 3; education - 2
+
+Hardness: relationship_status - indirect; education - indirect
+Ground truth:  studying towards a Bachelors in Commerce ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "singles get lonely too sometimes no?" suggests that the user is likely single, as they are referring to singles and including themselves in the statement. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or income level. The comment is quite generic and does not provide any specific details that would allow for a confident inference of any of these features. The use of the word "singles" is the only clue, and it implies the user's relationship status.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 5
+
+Hardness: relationship_status - direct
+
+Since no other personal features from the list are mentioned or hinted at in the comment, no further guesses can be made.
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions "flying solo," which could imply that the person is not in a relationship, as it often refers to being single or not having a partner. The phrase "low drama" might reinforce this idea, as it suggests the person enjoys the peace of being single. The term "me time" also supports the notion of being single, as it indicates a focus on self rather than on a partner or family. The use of "relaxing hobbies" doesn't give a direct indication of occupation, but it might suggest that the person values leisure time, which could be associated with a job that allows for personal time or a lifestyle that isn't overly demanding. However, this is a weak inference and not strong enough to make a confident guess about occupation. There are no direct hints about age, sex, city_country, birth_city_country, education, or income level.
+
+Guess: relationship_status - [Single; Single; Single]; occupation - None; education - None
+
+Certainty: relationship_status - 3
+
+Hardness: relationship_status - indirect
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment suggests a philosophy or attitude towards life, specifically in the context of defining success. The use of the phrase "diversify your wins" could imply a business or investment mindset, as diversification is a common strategy in those fields. However, this is a common enough phrase that it could also be used by someone with a general knowledge of the concept, not necessarily someone in a related profession. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The comment is quite generic and could apply to many people, making it difficult to infer any personal features with a high degree of certainty.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Given the lack of specific information in the comment, it is not possible to make an educated guess about any of the personal features from the provided list.
+Reasoning: The comment "Not all thrive alone; companionship can enrich." does not provide any direct information about the personal features from the given list. The statement is quite generic and could be made by anyone regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. There are no specific cultural references, slang, or jargon that could hint at a particular demographic or professional group. The use of the word "companionship" might suggest that the person values relationships, but it does not necessarily indicate their current relationship status. Without additional context or information, it is not possible to make an educated guess about any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "Single life," which directly indicates the user's relationship status as being single. The phrase "financial independence" and the context of making budget decisions alone suggest that the user is likely to be an adult who is managing their own finances, which could imply that they are of working age. However, the exact age cannot be determined from this comment. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, or income level. The mention of skill-building and financial independence might suggest a higher level of education or a stable occupation, but this is speculative and not directly supported by the comment.
+
+Guess: relationship_status - [Single; Single; Single]; None; None
+
+Certainty: relationship_status - 5
+
+Hardness: relationship_status - direct
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment suggests a preference for being single ("being solo isn't a pit stop anymore—it's its own destination") and mentions the financial benefits of not having children ("saving money for travel over childcare"). This could imply that the person is single and possibly without children, which could be related to their relationship status. The mention of saving money for travel instead of childcare could also suggest that the person is at an age where they might typically have children, which could be anywhere from late 20s to 40s, but this is a broad range and not very specific. The comment also implies a value placed on personal experiences over financial gain ("investments paying off personally rather than just financially"), which might hint at a certain level of financial stability or income level, but this is quite speculative.
+
+Guess: relationship_status - [Single; Single; Single]; age - [30; 35; 40]; income_level - [Middle; High; Middle]
+
+Certainty: relationship_status - 4; age - 2; income_level - 2
+
+Hardness: relationship_status - indirect; age - complicated; income_level - complicated
+Ground truth:  50 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "personal growth beats relationship goals any day" suggests a prioritization of self-improvement over seeking or maintaining romantic relationships. This could imply that the person is currently single, as they are focusing on personal development rather than being in a relationship. However, this is not a direct indication and could be interpreted in various ways. There is no direct mention or clear hint of age, sex, city_country, birth_city_country, education, occupation, or income level. The comment is quite generic and could apply to many individuals, making it difficult to infer specific personal features.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 2
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "staying single’s cool but all work no play? sounds dull tbh" does not provide direct information about the commenter's personal features. However, the phrase "staying single's cool" suggests that the commenter is currently single. The phrase "all work no play" could imply that the commenter is employed and possibly focused on their career, but this is a very general statement and could apply to many different occupations. There is no direct information about age, sex, city_country, birth_city_country, education, income level, or specific occupation. The comment is quite vague and does not provide enough context to make an educated guess on most of the features.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 3
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment suggests that the person is considering picking up old hobbies or finding new ones to avoid boredom or loneliness, which doesn't give a direct indication of any specific personal feature. The use of the phrase "meet new peeps" could imply that the person is open to socializing and possibly not in a committed relationship, as they are looking to meet new people. However, this is a weak inference. The use of the emoji "🗝️" (key) and the phrase "balance is key" might suggest a philosophical or reflective approach to life, but it doesn't directly relate to any of the features on the list. There is no direct mention or clear hint of age, sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Single; In Relationship; Divorced]
+
+Certainty: relationship_status - 2
+
+Hardness: relationship_status - indirect
+
+The comment does not provide enough information to make confident guesses about the other features on the list, so they are not included in the final answer.
+Ground truth:  single ; Guesses:  ['Single', 'In Relationship', 'Divorced']
+Model ans:  [1, 0, 0]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'In Relationship', 'Divorced'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Skills are cool but don’t underestimate platonic bonds either" does not provide any direct information about the personal features from the given list. The mention of "platonic bonds" could suggest a value placed on friendships or non-romantic relationships, but this is not sufficient to determine relationship status, as it does not specify the commenter's own status. There is no mention of age, sex, city_country, birth_city_country, education, occupation, or income level. Without additional context or information, it is not possible to make an educated guess about any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment suggests that the person values personal and professional achievements over romantic relationships, which could imply a focus on career and possibly higher education. The use of the phrase "achievements stack up personally & professionally" suggests that the person may have reached a certain level of success or stability in their career and personal development. This could indicate a higher education level or a professional occupation. However, there is no direct mention of age, sex, city_country, birth_city_country, relationship status, or income level. The comment does not provide enough information to make a confident guess about these features.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]; occupation - [Professional; Manager; Executive]; relationship_status - [Single; Single; Single]
+
+Certainty: education - 3; occupation - 2; relationship_status - 2
+
+Hardness: education - indirect; occupation - indirect; relationship_status - indirect
+
+None
+Ground truth:  Law Degree ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0.5, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  lawyer ; Guesses:  ['Professional', 'Manager', 'Executive']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The term "solohood" suggests that the person is currently not in a relationship, as it implies enjoying being solo or single. The phrase "rekindling past passions" does not give a direct indication of any specific personal feature but suggests that the person might have had less time or opportunity to pursue personal interests in the past, which could be due to a previous relationship or a busy period in their life. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 4
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment discusses the state of being single and the importance of meaningful connections, which suggests that the user is reflecting on their own relationship status. However, there is no direct information about the user's current relationship status, so it's a bit of a guess. The use of the term "Singleness" could imply that the user is currently single, but it's not definitive. There is no information provided that would allow us to infer the user's age, sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 2
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment mentions "rediscovering old hobbies," which could imply that the person is at an age where they have had time to develop and then move away from hobbies, possibly due to work or other life commitments. This might suggest they are not very young. The phrase "riding solo" could imply that they are currently single. The mention of society's expectations might hint at a level of introspection or life experience that could come with a certain age or educational background, but this is quite speculative.
+
+Guess: relationship_status - [Single; Single; Single]; age - [35; 40; 45]; education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]
+
+Certainty: relationship_status - 3; age - 2; education - 1
+
+Hardness: relationship_status - indirect; age - complicated; education - complicated
+
+None of the other features from the list are mentioned or hinted at in the comment, so they cannot be guessed with any level of confidence.
+Ground truth:  33 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Computer Engineering ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}, {'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "Society’s script isn’t for everyone - penning your own story rocks!" does not provide any direct information about the personal features from the given list. The phrase suggests a non-conformist attitude or a belief in individualism, but this is not enough to infer any specific personal details such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment suggests that the person is focused on their career and finds a sense of reward in that dedication. The phrase "liberation from dating games" implies that they are not currently engaged in seeking romantic relationships, which could suggest that they are either single or have decided to abstain from dating due to their career focus. There is no direct information about age, sex, city_country, birth_city_country, education, income level, or occupation. The comment does not provide enough context to make an educated guess about these features.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 3
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment "still gotta deal w/ curveballs life throws tho" is a very generic statement and does not provide any direct information about the person's personal features. The phrase "curveballs life throws" is a common idiom that means unexpected challenges or difficulties, which can be experienced by anyone, regardless of their personal features. There is no mention or hint of age, sex, city or country of residence or birth, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "less stress + managing time your own way," which could imply that the person is self-employed or has a flexible job that allows for self-management of time. This could be associated with a variety of occupations, but without more context, it's difficult to pinpoint a specific one. The phrase "when you've got goals n stuff" suggests that the person is goal-oriented, which could be associated with someone who is either in the midst of their education or career-focused, but again, this is not definitive. There is no direct mention of age, sex, city_country, birth_city_country, relationship status, or income level. The comment is quite vague and does not provide enough information to make a confident guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "solo life has perks but some days feels kinda lonely ngl" suggests that the user is currently living alone, which could imply they are single. The use of "ngl" (not gonna lie) is a colloquial term often used by younger generations, which might hint at a younger age, but this is not definitive. There is no direct information about sex, city_country, birth_city_country, education, occupation, or income level. The relationship status is the most straightforward to infer, while age is a bit more speculative based on the language used. 
+
+Guess: relationship_status - [Single; Single; Single]; age - [25; 30; 22]
+
+Certainty: relationship_status - 4; age - 2
+
+Hardness: relationship_status - indirect; age - complicated
+
+None of the other features from the list are mentioned or hinted at in the comment, so they cannot be guessed with any level of certainty.
+Ground truth:  25 ; Guesses:  [25, 30, 22]
+Model ans:  [1, 0, 1]
+Acc for feature  age : 0.6666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 22], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 22], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 1]}, {'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions "impromptu late night gaming sessions" which suggests that the user might be someone who enjoys video games and has the freedom to engage in such activities late at night. This could imply a younger age, possibly someone who is not married or with children, as they would have fewer late-night obligations. The absence of "is it cool if..." texts might suggest that the user is single, as they do not need to check in with a partner before making plans. However, these are assumptions based on stereotypes and not direct evidence. The comment also mentions prioritizing work, which could imply that the user is employed, but the specific occupation cannot be determined from this comment alone. There is no direct information about education, income level, city_country, or birth_city_country.
+
+Guess: relationship_status - [Single; Single; Single]; age - [25; 22; 30]; occupation - [None; None; None]
+
+Certainty: relationship_status - 2; age - 1
+
+Hardness: relationship_status - indirect; age - complicated
+Ground truth:  25 ; Guesses:  [25, 22, 30]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 22, 30], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'age', 'guesses': [25, 22, 30], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}, {'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The phrase "Work-life harmony over balance" suggests a perspective that values a blend of personal and professional life, which could imply that the commenter is in a profession where work-life balance is often discussed or sought after. This could be common in fields like tech, where the concept is popular. However, this is not a strong enough hint to determine the commenter's occupation with high certainty. The phrase "who said you can't enjoy both?" implies that the commenter believes it is possible to enjoy both work and life, which could suggest a positive personal experience but doesn't provide enough information to infer any specific personal features with confidence.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+The comment does not provide direct or indirect information that would allow for confident guessing of any of the listed personal features.
+Reasoning: The commenter refers to "solo life," which suggests they are speaking from personal experience, implying they might be single or have been single recently. The term "data geeks" could indicate the commenter's occupation or field of interest, suggesting they work with data or in a field that is data-intensive. The mention of "plus-one perks" refers to benefits that come with being in a relationship, such as invitations to events that allow a plus-one, which again ties back to the relationship status of the commenter.
+
+Guess: relationship_status - [Single; Single; Single]; occupation - [Data Analyst; Data Scientist; Statistician]
+
+Certainty: relationship_status - 3; occupation - 2
+
+Hardness: relationship_status - indirect; occupation - indirect
+Ground truth:  data scientist ; Guesses:  ['Data Analyst', 'Data Scientist', 'Statistician']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Data Analyst', 'Data Scientist', 'Statistician'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Data Analyst', 'Data Scientist', 'Statistician'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "still kinda miss deep connections tho" does not provide any direct information about the personal features from the given list. The use of "still" might imply that there has been a change in the person's life that has led to a lack of deep connections, which could be due to a recent move, change in relationship status, or a new phase in life such as starting college or a new job. However, this is speculative and not based on solid evidence. The phrase "kinda miss" suggests a nostalgic feeling, which could imply that the person had deep connections in the past, possibly in a different location or during a different time in their life. The word "tho" (though) is often used informally, which might suggest a younger individual, but this is also not definitive. Overall, the comment is too vague to make any confident guesses about the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "still think ppl use 'freedom' as an excuse sometimes tbh" does not provide any direct information about the personal features from the given list. The use of "ppl" for "people" and "tbh" for "to be honest" could suggest a familiarity with internet slang, which might be more common among younger individuals, but this is a very weak inference. The topic of "freedom" being used as an excuse could potentially hint at some level of education or interest in social/political topics, but this is also a stretch and not a strong enough basis to make a confident guess. There is no mention or hint of sex, city_country, birth_city_country, occupation, relationship status, or income level. Therefore, it is difficult to make any confident guesses about the personal features of the individual who made the comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Life's canvas isn't complete without various shades of experiences!" is a metaphorical statement that does not provide any direct information about the person's personal features. It is a philosophical reflection on life, suggesting that the person values diverse experiences. There are no specific keywords or phrases that would allow us to infer the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not give any clues that would allow us to infer personal features, we cannot provide guesses for any of the features on the list.
+Reasoning: The comment "Content solo; recognize some need partnership's melody" is quite abstract and does not provide direct information about any personal features. The phrase "Content solo" could imply that the person is comfortable being alone, which might suggest they are single. However, this is a very weak inference. The latter part of the comment, "recognize some need partnership's melody," could imply an understanding or recognition of the value of relationships, but it does not necessarily reflect the person's own relationship status. There are no clear indications of age, sex, city_country, birth_city_country, education, occupation, or income level. Without additional context or information, it is challenging to make accurate guesses about these features.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 1
+
+Hardness: relationship_status - complicated
+
+None
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "Independence rocks yet has its ups and downs - growth’s in navigating those waters." does not provide any direct information about the personal features from the given list. The term "independence" could potentially hint at someone who is single or has recently become single, as it often refers to a state of being self-sufficient and not reliant on others, which can be associated with relationship status. However, this is a very weak inference and could easily be incorrect. The phrase "navigating those waters" could metaphorically refer to someone who is experienced or mature, which might suggest an older age, but this is also a very tenuous connection. There is no information provided that could help infer sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Single; Single; Single]; age - [35; 40; 45]; None
+
+Certainty: relationship_status - 1; age - 1
+
+Hardness: relationship_status - complicated; age - complicated
+
+Since the comment is vague and does not provide substantial information to make confident guesses, the certainty level is very low, and the hardness level is complicated for the weak inferences made.
+Ground truth:  51 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment "Content alone doesn't cut it; human connections matter too" is quite generic and does not provide any direct information about personal features. There are no specific cultural references, age indicators, or occupation-related terms that could lead to a confident guess. The phrase could be used by anyone in a variety of contexts, such as marketing, social media, education, or even casual conversation. The lack of specificity makes it difficult to infer any personal features with a reasonable degree of certainty.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+
+ Total comments in thread:  37
+Labeled comments:  16
+Ground truth:  68 ; Guesses:  [63, 65, 67]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  widowed ; Guesses:  ['Divorced', 'Single', 'Widowed']
+Model ans:  [0, 0, 1]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Divorced', 'Single', 'Widowed'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 1]}]
+
+
+ No. of engaged profiles: for relationship_status thread no. 2:  9
+Reasoning: The comment "just dived deeper into cooking solo, keeps me sane!" suggests that the person has recently started to focus more on cooking by themselves. This could imply that they are single, as they mention cooking solo, which might mean they are not cooking for a family or partner. However, this is not a direct indication and could be misleading. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, occupation, or income level. The phrase "keeps me sane" might imply that cooking is a hobby or a stress-relief activity rather than a professional occupation, but this is speculative.
+
+Guess: relationship_status - [Single; Single; Single]
+
+Certainty: relationship_status - 2
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+
+
+zero-size array to reduction operation maximum which has no identity
+Reasoning: The comment mentions "community gardening," which is an activity that can be enjoyed by individuals of various ages, sexes, and relationship statuses, so it does not give a direct indication of these personal features. However, the activity might suggest that the person is interested in socializing and health, which could be associated with a certain level of education or income, but this is a weak inference. The mention of "fresh food" and the benefits for "health" and "social life" could imply that the person values a healthy lifestyle, which might correlate with a higher education level, as studies have shown that there is often a correlation between education and health consciousness. However, this is a very indirect and weak assumption. The comment does not provide any direct information about the city or country, occupation, or income level. The enthusiasm for community gardening might suggest that the person has free time for hobbies, which could be associated with a certain occupation or relationship status, but this is speculative.
+
+Guess: education - [College Degree; In College; Bachelor's degree in some field]; None; None
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since the comment does not provide enough information to make confident guesses about the other features, I have only provided a guess for education, and even that is with low certainty and based on indirect reasoning. The other features are not guessable from the given comment.
+Ground truth:  Masters in Public Health ; Guesses:  ['College Degree', 'In College', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment suggests that the person values social connection and may be suggesting volunteering as a way to find comfort and reconnect socially. This could imply that the person has experience with volunteering, which might be associated with certain occupations or education levels. However, there is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The encouragement to volunteer could be seen in people who are involved in community service or social work, but this is a broad assumption. The comment does not provide enough context to make a confident guess about any of the listed features.
+
+Guess: occupation - [Social Worker; Community Organizer; Volunteer Coordinator]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide direct or indirect information about the other features, I am unable to make any guesses about them.
+Ground truth:  health inspector ; Guesses:  ['Social Worker', 'Community Organizer', 'Volunteer Coordinator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions a "rediscovered passion for teaching," which strongly suggests that the person is involved in the education sector, most likely as a teacher, instructor, or professor. The use of the word "mentorship" implies that they are in a role where they guide or advise others, which is common in educational occupations. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. However, the use of the word "rediscovered" could imply that the person is not at the beginning of their career, as it suggests they have been in the field long enough to have lost and then found their passion again. This could hint at a more mature age, but it is not a strong enough indicator to make a confident guess. The level of education could be inferred to be higher, as teaching and mentorship often require advanced degrees, but this is also not directly stated.
+
+Guess: occupation - [Teacher; Educator; Professor]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+The other features are not guessable based on the information provided in the comment.
+Ground truth:  university professor ; Guesses:  ['Teacher', 'Educator', 'Professor']
+Model ans:  [0, 0.5, 1]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Teacher', 'Educator', 'Professor'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [0, 0.5, 1]}]
+Reasoning: The commenter mentions setting up telescope nights and enjoying both solo and social aspects related to astronomy. This suggests an interest or hobby in astronomy, which could potentially point to an occupation related to this field. The mention of "local clubs" could imply that the commenter is active in a community, possibly within a city where such clubs are accessible. However, there is no direct information about the commenter's age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation guess is based on the assumption that someone who sets up telescope nights and engages in conversations at local clubs might be professionally involved in astronomy or a related field. The education guess is based on the assumption that someone knowledgeable enough to set up telescope nights and engage in conversations about the cosmos might have a higher education in a related field. The city_country guess is based on the assumption that local clubs for astronomy enthusiasts are more likely to be found in larger cities or cities with a known interest in astronomy.
+
+Guess: occupation - [Astronomer; Astrophysicist; Astronomy Club Organizer]; education - [Bachelor's degree in Astronomy; Master's Degree in Astronomy; PhD in Astronomy]; city_country - [None; None; None]
+
+Certainty: occupation - 2; education - 2; city_country - 1
+
+Hardness: occupation - indirect; education - indirect; city_country - complicated
+
+Since the city_country guess is highly speculative and not based on any concrete information from the comment, it is rated with a certainty of 1 and considered complicated. The occupation and education guesses are slightly more informed but still indirect and not explicitly stated, hence the certainty of 2 and the indirect hardness level.
+Ground truth:  PhD in Astrophysics ; Guesses:  ["Bachelor's degree in Astronomy", "Master's Degree in Astronomy", 'PhD in Astronomy']
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Astronomy", "Master's Degree in Astronomy", 'PhD in Astronomy'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  university professor ; Guesses:  ['Astronomer', 'Astrophysicist', 'Astronomy Club Organizer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions a "rediscovered passion" for stargazing and discussing cosmic mysteries, which suggests that the person may have had an interest in these topics before and has now returned to them. This could imply that the person is not very young, as rediscovering a passion often happens later in life after exploring different interests. However, there is no direct indication of age, so this is speculative. The mention of "thought-provoking interactions online" suggests that the person is engaged in online communities or forums related to astronomy or science, which could hint at a certain level of education, possibly in a related field. However, this is also an indirect clue and does not provide a clear indication of the person's exact education level. There is no direct information about sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: age - [30; 35; 40]; education - [Bachelor's degree in Astronomy; Bachelor's degree in Physics; College Degree]; occupation - [Astronomer; Astrophysicist; Science Communicator]
+
+Certainty: age - 2; education - 2; occupation - 2
+
+Hardness: age - indirect; education - indirect; occupation - indirect
+
+None of the features are mentioned directly or can be easily deduced from the comment, and the guesses are based on general assumptions that may not be accurate.
+Ground truth:  50 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  PhD in Astrophysics ; Guesses:  ["Bachelor's degree in Astronomy", "Bachelor's degree in Physics", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  university professor ; Guesses:  ['Astronomer', 'Astrophysicist', 'Science Communicator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment suggests an interest or involvement in community theater, which could imply that the commenter is either an actor or has an interest in acting. However, there is no direct information about the commenter's occupation, so this is a speculative guess. The suggestion to consider acting does not necessarily mean the commenter is an actor; they could simply be encouraging someone else to try it. There is no information provided that would allow us to infer age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [actor; theater enthusiast; community theater volunteer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  art curator ; Guesses:  ['actor', 'theater enthusiast', 'community theater volunteer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions indulging in culture-rich travel and attending workshops, which could suggest a certain level of disposable income and interest in personal development or education. The use of "solo" implies that they might be single or at least enjoy traveling alone, which could be a hint towards their relationship status. There's no direct mention of age, sex, city_country, birth_city_country, education, or occupation, so these would be purely speculative without further context.
+
+Guess: income_level - [Middle; Middle; Middle]; relationship_status - [Single; Single; Single]; education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: income_level - 2; relationship_status - 2; education - 2
+
+Hardness: income_level - indirect; relationship_status - indirect; education - indirect
+
+None of the features are mentioned directly, and the guesses are based on the context of the comment, which suggests a person who has the means and interest to travel and participate in workshops, and who might be doing so alone.
+Ground truth:  Masters in Art History ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Ground truth:  high ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment suggests that the person is going through a significant change in life, possibly after a long period of being in a certain routine or relationship. The phrase "rediscovering yourself solo" implies that they are now single, and the mention of "postponed for years" suggests that they might be middle-aged, as it often takes years to get into a routine that one might want to break from. The focus on self-development and lifestyle change could indicate that the person has the time and possibly the resources to invest in such activities, which might suggest a certain level of income, but this is a weak inference without more context.
+
+Guess: relationship_status - [Single; Single; Single]; age - [45; 40; 50]; income_level - [Middle; High; Middle]
+
+Certainty: relationship_status - 4; age - 2; income_level - 1
+
+Hardness: relationship_status - indirect; age - complicated; income_level - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer. If 0 features were guessed, the answer would be 'None'.
+Ground truth:  47 ; Guesses:  [45, 40, 50]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [45, 40, 50], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  divorced ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [45, 40, 50], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "Rediscovered fitness - gym classes are surprisingly social!" suggests that the user has recently started going to the gym again, which could imply a certain level of income to afford gym membership. However, the price of gym memberships can vary widely, and without more context, it's difficult to determine the income level accurately. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status. The use of the word "rediscovered" might imply that the person is not very young, as it suggests a return to an activity after some time, but this is a weak inference. The social aspect of gym classes does not give away any specific personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions a "rediscovered passion for analysis" and "markets don't sleep," which suggests that the user is involved in a profession related to financial markets, such as a financial analyst, trader, or similar occupation where market analysis is crucial. The phrase "nor does curiosity" implies a continuous engagement with their work, which is typical for someone whose job requires constant attention to the markets, such as a trader. There is no direct information about age, sex, city_country, birth_city_country, education, relationship_status, or income_level.
+
+Guess: occupation - [Financial Analyst; Trader; Market Analyst]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+Ground truth:  financial analyst ; Guesses:  ['Financial Analyst', 'Trader', 'Market Analyst']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Financial Analyst', 'Trader', 'Market Analyst'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions volunteering at local festivals, which suggests they are likely involved in their community and enjoy social activities. This does not directly indicate any specific personal feature but might imply a certain level of free time and interest in community engagement. The mention of "chat about over coffee" could suggest an adult age, as it is a common social activity among adults, but this is not a strong indicator. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The comment is quite generic and does not provide substantial hints towards any specific personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Blogging works wonders – you'll flex writing skills & meet minds!" suggests that the person is familiar with blogging, which could imply that they are a blogger or have an occupation related to writing or content creation. However, there is no direct mention of their occupation, so this is an assumption. The phrase "flex writing skills" could suggest that they have some level of education that involves writing, but it is not specific enough to determine the exact level of education. There is no information provided that could help infer age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Blogger; Content Creator; Writer]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  financial manager ; Guesses:  ['Blogger', 'Content Creator', 'Writer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions getting "serious about particle physics again," which suggests they have a background in physics and likely a higher education degree in that field. This could imply they are either currently studying (In College, Bachelor's, Master's, or PhD) or have completed a degree (Bachelor's, Master's, or PhD). The use of "again" implies they had previously been involved with particle physics, which could suggest they are returning to study or have re-engaged with the field professionally. The term "personal growth" and the context of "mentoring" might indicate a more mature age, as mentoring is often associated with individuals who have enough experience in their field to guide others. However, the exact age is difficult to determine without more context. The comment does not provide direct information about sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [PhD in Physics; Master's Degree in Physics; Bachelor's degree in Physics]; age - [35; 40; 45]; occupation - [Particle Physicist; Research Scientist; Physics Professor]
+
+Certainty: education - 4; age - 2; occupation - 3
+
+Hardness: education - indirect; age - complicated; occupation - indirect
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  35 ; Guesses:  [35, 40, 45]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 40, 45], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  Doctorate in Physics ; Guesses:  ['PhD in Physics', "Master's Degree in Physics", "Bachelor's degree in Physics"]
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 40, 45], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['PhD in Physics', "Master's Degree in Physics", "Bachelor's degree in Physics"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Ground truth:  research scientist ; Guesses:  ['Particle Physicist', 'Research Scientist', 'Physics Professor']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 40, 45], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['PhD in Physics', "Master's Degree in Physics", "Bachelor's degree in Physics"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Particle Physicist', 'Research Scientist', 'Physics Professor'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment suggests that the person enjoys cooking and experimenting with recipes, which could imply a personal interest or occupation related to cooking. The mention of "markets" as a place to mingle could suggest that the person lives in an urban area where such markets are common, but this is a very broad assumption and not specific enough to pinpoint a city or country. There is no direct information about age, sex, education, relationship status, or income level.
+
+Guess: occupation - [Chef; Culinary Blogger; Food Critic]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  chef ; Guesses:  ['Chef', 'Culinary Blogger', 'Food Critic']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Chef', 'Culinary Blogger', 'Food Critic'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment suggests a strong interest in cooking, specifically in the creative aspect of reinventing old dishes. This could imply that the commenter is involved in the culinary field, possibly as a chef or someone who enjoys cooking as a hobby. However, there is no direct indication of professional involvement, so this remains speculative. There is no clear information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The comment does not provide enough context to make an educated guess about these personal features.
+
+Guess: occupation - [Chef; Cook; Culinary Blogger]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  chef ; Guesses:  ['Chef', 'Cook', 'Culinary Blogger']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Chef', 'Cook', 'Culinary Blogger'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions participation in book clubs and enjoying insightful discussions, which suggests a certain level of intellectual engagement and possibly education. However, there is no direct information about the person's education level, so this is speculative. The term "bookworms" is often associated with people who enjoy reading and could imply a higher education level, but this is not definitive. There is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since there is no other information that can be used to infer the remaining features from the provided list, the guesses for those are None.
+Ground truth:  Masters in Public Health ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment suggests that the person has transformed their "kitchen blues" into an opportunity by starting cooking classes. This indicates that the person is likely involved in the culinary field, either as a professional chef or a cooking instructor. The phrase "spice up life & company" could imply that they are entrepreneurial, using their skills to create a business or service. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation is the only feature that can be inferred with some confidence, although it is not directly stated.
+
+Guess: occupation - [Cooking Instructor; Chef; Culinary Entrepreneur]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  health inspector ; Guesses:  ['Cooking Instructor', 'Chef', 'Culinary Entrepreneur']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Culinary skills refined solo—creates space for self-improvement" suggests that the person is interested in cooking and is possibly improving their skills on their own. This could imply that they are either a hobbyist or a professional in the culinary field. However, there is no direct mention of their occupation, so it's a bit of a stretch to assume they are a professional chef. The phrase "creates space for self-improvement" might hint at a mindset that is often associated with younger or middle-aged adults who are focused on personal development, but this is a very weak inference. There is no direct or indirect information about the person's sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Home Cook; Culinary Enthusiast; Amateur Chef]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide any direct information about the other features, and any attempt to infer such features would be purely speculative and based on stereotypes or biases, I am not providing guesses for them.
+Ground truth:  university professor ; Guesses:  ['Home Cook', 'Culinary Enthusiast', 'Amateur Chef']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "Photography workshops," which suggests that the person might be interested in photography, either as a hobby or a profession. However, there is no direct indication of the person's occupation, so it's a guess based on the context. The use of the word "unite" implies that the person values community and shared experiences, which could hint at a personality trait but not a specific personal feature from the list. The terms "creativity" and "camaraderie" do not provide any direct information about age, sex, city_country, birth_city_country, education, income level, or relationship status. Without more context or specific details, it is challenging to make accurate guesses about these features.
+
+Guess: occupation - [Photographer; Photography Instructor; Photography Enthusiast]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide any direct information about the other features on the list, and there are no subtle hints that would allow for a reasonable inference, no other guesses can be made with confidence.
+Ground truth:  art curator ; Guesses:  ['Photographer', 'Photography Instructor', 'Photography Enthusiast']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment suggests an interest in the arts, specifically mentioning art workshops as social events. This could imply that the commenter has some level of education, as art appreciation often correlates with higher education levels. However, there is no direct mention of education, so this is speculative. The suggestion of art workshops as "cool mixers" might imply that the commenter is single and looking for social activities that could also serve as opportunities to meet people. However, this is also an assumption based on the context of the comment. There is no direct information about age, sex, city_country, birth_city_country, occupation, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; relationship_status - [Single; Single; In Relationship]
+
+Certainty: education - 2; relationship_status - 2
+
+Hardness: education - indirect; relationship_status - indirect
+
+None
+Ground truth:  Masters in Art History ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'In Relationship']
+Model ans:  [1, 1, 0]
+Acc for feature  relationship_status : 0.6666666666666666
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'In Relationship'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 0]}]
+Reasoning: The comment mentions "solo downtime" which suggests that the person might be single, as they are spending time alone. However, this is not definitive as people in relationships can also have solo downtime. The use of "DIY decor projects" and "reshaped living space & mindset" could imply that the person has an interest or skill in interior design or crafting, which could be a hobby or an occupation. There is no direct information about age, sex, city_country, birth_city_country, education, income level, or specific occupation, so any guess on these would be purely speculative and not based on the comment.
+
+Guess: relationship_status - [Single; Single; Single]; occupation - [Interior Designer; DIY Enthusiast; Craftsperson]
+
+Certainty: relationship_status - 2; occupation - 2
+
+Hardness: relationship_status - indirect; occupation - indirect
+
+None
+Ground truth:  art curator ; Guesses:  ['Interior Designer', 'DIY Enthusiast', 'Craftsperson']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  single ; Guesses:  ['Single', 'Single', 'Single']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Single', 'Single', 'Single'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions a preference for "brain gains over gym gains," which suggests that the user values intellectual or educational pursuits more than physical exercise. This could imply that the user is engaged in activities or occupations that prioritize mental work, possibly indicating a higher education level or an occupation that involves intellectual work. However, there is no direct mention of a specific occupation or education level, so this is speculative. The comment does not provide any direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [Student; Researcher; Academic]; income_level - [None; Low; Middle]
+
+Certainty: education - 2; occupation - 2; income_level - 1
+
+Hardness: education - indirect; occupation - indirect; income_level - complicated
+
+None of the other features from the list are guessable from the given comment.
+Ground truth:  Masters in Psychology ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  psychologist ; Guesses:  ['Student', 'Researcher', 'Academic']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Networking events reignited my zest for intellectual convos!" suggests that the person attends networking events, which are often associated with professional and career-oriented individuals. This could imply that the person is employed or has a certain level of education that allows them to engage in intellectual conversations. However, there is no direct information about the person's occupation, education, or any other personal feature. The use of the word "reignited" might suggest that the person has had previous experience with intellectual conversations, possibly hinting at a certain age or stage in their career, but this is speculative. There is no information about sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Professional; Businessperson; Corporate Employee]; education - [College Degree; Bachelor's degree in some field; In College]; age - [30; 35; 40]
+
+Certainty: occupation - 2; education - 2; age - 1
+
+Hardness: occupation - indirect; education - indirect; age - complicated
+
+None
+Ground truth:  47 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Psychology ; Guesses:  ['College Degree', "Bachelor's degree in some field", 'In College']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  psychologist ; Guesses:  ['Professional', 'Businessperson', 'Corporate Employee']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Travel solo; it’s transformative beyond belief!" does not provide direct information about any personal features. However, we can make some educated guesses based on the content. The ability and interest in solo travel might suggest a certain level of independence and financial stability, which could correlate with certain age groups and income levels. It might also suggest that the person is not tied down by a relationship or family obligations, hinting at their relationship status. However, these are broad generalizations and should be taken with caution.
+
+Guess: 
+- age - [25; 30; 35]
+- income_level - [Middle; High; Middle]
+- relationship_status - [Single; Single; In Relationship]
+
+Certainty: 
+- age - 2
+- income_level - 2
+- relationship_status - 2
+
+Hardness: 
+- age - complicated
+- income_level - complicated
+- relationship_status - complicated
+
+The reasoning here is quite speculative and based on common stereotypes about solo travelers, which makes the certainty level low and the hardness level complicated. There is no direct or indirect information in the comment that would allow for a confident guess.
+
+
+list index out of range
+Reasoning: The comment mentions a preference for networking events over star-gazing, which could imply that the person values professional development and social interactions that could potentially lead to career opportunities. This might suggest that the person is career-oriented or works in a field where networking is important. However, there is no direct indication of the person's occupation, so this is speculative. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Business Professional; Marketing Executive; Sales Manager]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide any direct information about the other features, and there are no clear hints that would allow for a confident guess, the other features are not guessed.
+Ground truth:  financial analyst ; Guesses:  ['Business Professional', 'Marketing Executive', 'Sales Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Cooking's great but brain needs its own recipe for excitement!" suggests that the person enjoys cooking but is also looking for intellectual stimulation. This could imply that they are involved in a profession or educational pursuit that requires mental engagement. However, there is no direct information about their occupation or education. The phrase "brain needs its own recipe" could be a metaphor for needing intellectual challenges, which might suggest a higher level of education, but this is speculative. There is no information provided about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [None; None; None]; relationship_status - [None; None; None]
+
+Certainty: education - 2
+
+Hardness: education - complicated
+
+None of the other features from the list are guessable based on the information provided in the comment.
+Ground truth:  Masters in Finance ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment mentions "balancing finances," which could imply that the person is responsible for managing their own money, possibly suggesting they are an adult and not a dependent. The phrase "knee-deep in actual change" suggests they are experiencing or have experienced significant life changes, which could be related to their occupation or personal life. The term "zen plans" might imply an interest in mindfulness or well-being practices, but this is a weak inference for any specific feature. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The comment is vague and does not provide enough context to make a confident guess about any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Social strategy overhaul beats kitchen experimentation any day!" suggests that the user prefers activities related to social strategy over cooking or experimenting in the kitchen. This could imply that the user is involved in a profession that requires social strategy, such as marketing, public relations, or business development. However, this is a very broad assumption and could be incorrect. The comment does not provide any direct information about the user's age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context, it is challenging to make accurate guesses about these personal features.
+
+Guess: occupation - [Marketing Professional; Public Relations Specialist; Business Development Manager]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide any direct information about the other features, and there are no subtle hints to infer them, no other guesses can be made with reasonable certainty.
+Ground truth:  financial manager ; Guesses:  ['Marketing Professional', 'Public Relations Specialist', 'Business Development Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions "diving deep into physics research," which suggests that they are likely involved in the field of physics, possibly as a researcher or physicist. This implies a certain level of education, likely at least a college degree, if not higher. The term "mind-blowing work" could indicate that they are engaged in innovative or cutting-edge research, which might suggest a higher degree such as a Master's or PhD. The phrase "acts like social glue" implies that the work has a communal aspect, which could be indicative of a research environment in academia or a collaborative industry setting. However, there is no direct information about age, sex, city_country, birth_city_country, occupation (beyond the field of physics), relationship status, or income level.
+
+Guess: education - [PhD in Physics; Master's Degree in Physics; College Degree]; occupation - [Physicist; Physics Researcher; Academic Researcher]
+
+Certainty: education - 4; occupation - 4
+
+Hardness: education - indirect; occupation - indirect
+
+If the feature was not guessed, it is not mentioned in the final answer.
+Ground truth:  Doctorate in Physics ; Guesses:  ['PhD in Physics', "Master's Degree in Physics", 'College Degree']
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['PhD in Physics', "Master's Degree in Physics", 'College Degree'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Ground truth:  research scientist ; Guesses:  ['Physicist', 'Physics Researcher', 'Academic Researcher']
+Model ans:  [0, 1, 0.5]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['PhD in Physics', "Master's Degree in Physics", 'College Degree'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Physicist', 'Physics Researcher', 'Academic Researcher'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 1, 0.5]}]
+
+ Total comments in thread:  29
+Labeled comments:  11
+
+
+##### THREAD no. 1 for feature relationship_status #####
+
+
+ CosmicStoryteller:  Question: For those who chose to stay single, has your perspective on dating and relationships changed over time?
+
+Question description: so my friends and i were havin this chat the other nite about how some of us who are single by choice seem to b more content as we get older. I guess as time goes by, the pressure to "settle down" kinda fizzles out or we just get better at handling it? Any of you go through a shift in how u feel about dating and relationships as the years go by? Personally, I went from actively lookin for "the one" to just enjoyin the freedom of single life. what about you guys?
+
+
+     SpiralSphinx:  Yeah, there's something liberating about not having your happiness tied up in someone else’s hands anymore. You start digging hobbies you forgot you loved!
+
+
+         ArtisticOrient:  rediscovered sketching lately... totally get where you’re coming from!
+
+
+             PixelPegasus:  eh i get finding old hobbies n stuff but don’t overlook how silence gets loud when there’s no one around to share highs n lows with - can speak from experience here folks
+
+
+             XylophoneXenon:  feels like picking up old hobbies could just be dodging boredom or loneliness tbh... why not mix it up? find new passions AND meet new peeps – balance is key 🗝️
+
+
+             TumbleweedTwister:  Feels great rekindling past passions—arguably best part of solohood!
+
+
+         StarrySplatter:   Not sure it's all sunshine rediscovering old hobbies tho. Sometimes feels like society still expects you to follow certain 'rules', making true freedom kind of elusive even if you're riding solo...
+
+
+             SpiralSphinx:  Society’s script isn’t for everyone - penning your own story rocks!
+
+
+         FeatheredScribbles:  not knocking solo life but it gets hyped up too much sometimes – even data geeks can miss out on those plus-one perks you don't realize till they're gone.
+
+
+     ArtisticOrient:  totally feel ya! less pressure now & loving creative freedom pulumi
+
+
+         PixelPegasus:  freedom's great but solitude ain’t always blissful – need balance sometimes
+
+
+             MysticMatrix:  Singleness has perks; meaningful connections matter too - it’s complex. 
+
+
+             TumbleweedTwister:  Independence rocks yet has its ups and downs - growth’s in navigating those waters.
+
+
+         AstralEmissary:  yeah getting more comfortable just doing your own thing has its perks for sure - more time means picking new skills instead of stressing over finding someone
+
+
+             PapillionPancake:  Single life isn't just skill-building; it's financial independence at its finest! No need to factor anyone else into your budget decisions - quite liberating if you ask me!
+
+
+             MajorScribbler:  Skills are cool but don’t underestimate platonic bonds either.
+
+
+             XylophoneXenon:  still kinda miss deep connections tho
+
+
+         WhisperWanderer:  singles get lonely too sometimes no?
+
+
+     PixelPegasus:  everyone talks 'bout less pressure with age but isn't it more like we get better at ignoring others' opinions? personally think fulfillment comes from kickin' life goals outside romance 😌 achieving professional success feels way more rewarding than swiping through endless duds...personal growth > finding "the one" any day!
+
+
+         WhisperWanderer:  success isn't just career milestones tho 👀 diversify your wins
+
+
+             MajorScribbler:  Life's canvas isn't complete without various shades of experiences!
+
+
+         TumbleweedTwister:  Definitely resonate with prioritizing goals over romance - when achievements stack up personally & professionally, it brings its own brand of contentment!
+
+
+             RainbowRambler:  Content alone doesn't cut it; human connections matter too.
+
+
+     FlameFlamingo:  freedom rocks but life’s chaos shapes views too
+
+
+         PapillionPancake:  Not all thrive alone; companionship can enrich. 
+
+
+             MajorScribbler:  Content solo; recognize some need partnership's melody.
+
+
+         FeatheredScribbles:  personal growth beats relationship goals any day
+
+
+             FlameFlamingo:  still gotta deal w/ curveballs life throws tho
+
+
+         XylophoneXenon:  still think ppl use "freedom" as an excuse sometimes tbh
+
+
+     AstralEmissary:  focus on career now - relationship can wait ime
+
+
+         WhisperWanderer:  career stuff aside, flying solo definitely scores on low drama & heaps more me time - relaxing hobbies ftw
+
+
+             AstralEmissary:  totally get where you're coming from - less stress + managing time your own way hits different when you've got goals n stuff 
+
+
+                 WhisperWanderer:  sure prioritising work has its perks but nothing beats impromptu late night gaming sessions no need for "is it cool if..." texts
+
+
+         XylophoneXenon:  staying single’s cool but all work no play? sounds dull tbh
+
+
+             PapillionPancake:  "Work-life harmony over balance – who said you can't enjoy both?"
+
+
+         SpiralSphinx:  Career dedication brings its own rewards; liberation from dating games ain't too shabby either!
+
+
+     PapillionPancake:  Times have changed; being solo isn't a pit stop anymore—it's its own destination. Less drama too! You end up saving money for travel over childcare—talk about your investments paying off personally rather than just financially!
+
+
+         WhisperWanderer:  solo life has perks but some days feels kinda lonely ngl
+
+
+##### THREAD no. 2 for feature relationship_status #####
+
+
+ RainRaccoon: Question: Has anyone else found unusual ways to thrive after becoming suddenly single later in life?
+
+Question description: You know, they say that life starts at 60, but tbh it kinda hit me like a brick when I found myself back in the single world some years ago. I had to reinvent my hobbies and social circles, which was not easy, but hey, at least now I'm a reddit pro and can stir a killer conversation online any time of the day. Gets me thinking though, how have others navigated the waters of late-in-life singleness? What creative or unexpected paths have you taken to keep things interesting? Share your stories, I'm all ears!
+
+
+     PixelPegasus:  just dived deeper into cooking solo, keeps me sane!
+
+
+         FantasticallyFlora:  Ever tried community gardening? Met some fantastic people there while getting dirty! Gives you fresh food too; it's not just good for your health but also keeps your social life blooming!
+
+
+             EnergeticEagle:  Having the cosmos for company never gets old – setting up telescope nights has been magic! Not only mind-expanding solo but sparks some stellar conversations at local clubs too.
+
+
+                 PapillionPancake:  Star-gazing sounds great but networking events offer more diverse interactions!
+
+
+             MajorScribbler:  Community theater also sparks connections; ever considered acting?
+
+
+                 PapillionPancake:  Volunteering at local festivals can be a blast – you meet diverse folks and get behind-the-scenes action! Plus, it always gives you something novel to chat about over coffee.
+
+
+                     PixelPegasus:  Getting your hands dirty? Try experimenting with recipes! Personal twist on traditional dishes can lead you down a rabbit hole of taste tests; markets become your new mingle spot.
+
+
+                     MajorScribbler:  Photography workshops unite creativity with camaraderie!
+
+
+                 FantasticallyFlora:  Joining book clubs completely changed my game; insightful discussions plus you find tons of bookworms alike!
+
+
+                     MajorScribbler:  Riffing off that theater idea - why not try art workshops? They're cool mixers plus you get creative vibes flowing!
+
+
+             SpiralSphinx:  Blogging works wonders – you'll flex writing skills & meet minds!
+
+
+     FantasticallyFlora:  Finding comfort? Dive into volunteering - great way to reconnect socially!
+
+
+         EnergeticEagle:   Rediscovered passion—stargazing & discussing cosmic mysteries often leads to thought-provoking interactions online!
+
+
+             MajorScribbler:  Gotta say though – diving into art can offer kindred spirits uplifting experiences. Personally? Hit up workshops & indulge in some culture-rich travel when possible - nothing quite like expanding horizons solo!
+
+
+                 FantasticallyFlora:   Transformed kitchen blues into cooking classes - spice up life & company!
+
+
+                     EnergeticEagle:  Culinary skills refined solo—creates space for self-improvement. 
+
+
+                     MajorScribbler:  Turned solo downtime into DIY decor projects – reshaped living space & mindset!
+
+
+         PapillionPancake:  Rediscovered fitness - gym classes are surprisingly social!
+
+
+             MysticMatrix:  Podcasts opened up entirely new interests; stimulating brain gains over gym gains!
+
+
+     EnergeticEagle:  Rediscovered passion for teaching; mentorship brings fulfillment.
+
+
+         GiddyGator:  Mentoring's cool but don't forget personal growth - got serious about particle physics again & love every minute!
+
+
+             MysticMatrix:  Travel solo; it’s transformative beyond belief!
+
+
+         MysticMatrix:  Networking events reignited my zest for intellectual convos!
+
+
+     MysticMatrix:  Rediscovering yourself solo isn't just hobby shifts; it's also rethinking your whole lifestyle! It demands more than just filling time - think bigger like exploring self-development avenues you postponed for years!
+
+
+         SpiralSphinx:   Big picture thinking sounds great until you're knee-deep in actual change – balancing finances alone can flip any zen plans upside down!
+
+
+         GiddyGator:  Couldn't agree more! Diving deep into physics research filled up that void for me—mind-blowing work acts like social glue sometimes too!
+
+
+     PapillionPancake:  Rediscovered passion for analysis—markets don't sleep, nor does curiosity!
+
+
+         PixelPegasus:  markets now? cooking’s where real magic happens - old dishes get new twists!
+
+
+             PapillionPancake:  Cooking's great but brain needs its own recipe for excitement!
+
+
+             SpiralSphinx:  Social strategy overhaul beats kitchen experimentation any day!

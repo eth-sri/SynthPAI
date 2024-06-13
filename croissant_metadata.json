@@ -1,0 +1,697 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileSet": "cr:fileSet",
+    "fileObject": "cr:fileObject",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "SynthPAI",
+  "description": "RobinSta/SynthPAI dataset hosted on Hugging Face and contributed by the HF Datasets community",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "citeAs": "Hanna Yukhymenko, Robin Staab, Mark Vero, Martin Vechev: \"A Synthetic Dataset for Personal Attribute Inference\", 2024; [arXiv:2406.07217](http://arxiv.org/abs/2406.07217)",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Hanna Yukhymenko"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Robin Staab",
+      "url": "https://huggingface.co/RobinSta"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Mark Vero"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Martin Vechev"
+    }
+  ],
+  "datePublished": "2024-06-13 00:00:00",
+  "keywords": [
+    "zero-shot-classification",
+    "summarization",
+    "text-classification",
+    "1K<n<10K",
+    "English",
+    "cc-by-nc-sa-4.0",
+    "Attribute Inference",
+    "Synthetic",
+    "Privacy",
+    "LLM",
+    "Croissant",
+    ":us: Region: US"
+  ],
+  "license": "https://choosealicense.com/licenses/cc-by-nc-sa-4.0/",
+  "url": "https://huggingface.co/datasets/RobinSta/SynthPAI",
+  "version": "1.0.0",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "repo",
+      "name": "repo",
+      "description": "The Hugging Face git repository.",
+      "contentUrl": "https://huggingface.co/datasets/RobinSta/SynthPAI",
+      "encodingFormat": "git+https",
+      "sha256": "https://github.com/mlcommons/croissant/issues/80"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "synthpai-jsonl",
+      "name": "synthpai-jsonl",
+      "description": "The underlying Parquet files as converted by Hugging Face (see: https://huggingface.co/docs/datasets-server/parquet).",
+      "containedIn": {
+        "@id": "repo"
+      },
+      "contentUrl": "synthpai.jsonl",
+      "encodingFormat": "application/jsonlines"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "default",
+      "name": "default",
+      "description": "RobinSta/SynthPAI",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "default/author",
+          "name": "default/author",
+          "description": "Codename of comment author persona",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "synthpai-jsonl"
+            },
+            "extract": {
+              "column": "author"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/username",
+          "name": "default/username",
+          "description": "Username of synthetic comment author",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "synthpai-jsonl"
+            },
+            "extract": {
+              "column": "username"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/text",
+          "name": "default/text",
+          "description": "Synthetic comment text",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "synthpai-jsonl"
+            },
+            "extract": {
+              "column": "text"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/id",
+          "name": "default/id",
+          "description": "Unique id of synthetic comment",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "synthpai-jsonl"
+            },
+            "extract": {
+              "column": "id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/thread_id",
+          "name": "default/thread_id",
+          "description": "Id of thread to which synthetic comment belongs to",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "synthpai-jsonl"
+            },
+            "extract": {
+              "column": "thread_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/parent_id",
+          "name": "default/parent_id",
+          "description": "Id of respective parent comment in the thread",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "synthpai-jsonl"
+            },
+            "extract": {
+              "column": "parent_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/profile",
+          "name": "default/profile",
+          "description": "Profile of user making the comment.",
+          "dataType": "cr:RecordSet",
+          "subField": [
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/username",
+              "name": "default/profile/username",
+              "description": "Username of the user.",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.username"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/age",
+              "name": "default/profile/age",
+              "description": "Age of the user.",
+              "dataType": "sc:Integer",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.age"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/city_country",
+              "name": "default/profile/city_country",
+              "description": "Current place of living of the user.",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.city_country"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/birth_city_country",
+              "name": "default/profile/birth_city_country",
+              "description": "Birth location of the user.",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.birth_city_country"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/education",
+              "name": "default/profile/education",
+              "description": "Highest level of obtained degree by the user.",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.education"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/occupation",
+              "name": "default/profile/occupation",
+              "description": "Current job profession of the user.",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.occupation"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/income",
+              "name": "default/profile/income",
+              "description": "Raw income (in local currency) of the user.",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.income"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/income_level",
+              "name": "default/profile/income_level",
+              "description": "Income level of the user.",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.income_level"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/relationship_status",
+              "name": "default/profile/relationship_status",
+              "description": "Current relationship status of the user.",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.relationship_status"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/profile/style",
+              "name": "default/profile/style",
+              "description": "Detailed description for the online writing style of the user.",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "profile"
+                },
+                "transform": {
+                  "jsonPath": "$.style"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/review",
+          "name": "default/review",
+          "description": "Human labels for personal attributes",
+          "dataType": "cr:RecordSet",
+          "subField": [
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/city_country/estimate",
+              "name": "default/review/city_country",
+              "description": "Human label for personal attribute city_country",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.city_country.estimate"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/city_country/hardness",
+              "name": "default/review/city_country/hardness",
+              "description": "Human label hardness for personal attribute city_country",
+              "dataType": "sc:Integer",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.city_country.hardness"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/sex/estimate",
+              "name": "default/review/sex",
+              "description": "Human label for personal attribute sex",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.sex.estimate"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/sex/hardness",
+              "name": "default/review/sex/hardness",
+              "description": "Human label hardness for personal attribute sex",
+              "dataType": "sc:Integer",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.sex.hardness"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/age/estimate",
+              "name": "default/review/age",
+              "description": "Human label for personal attribute age",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.age.estimate"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/age/hardness",
+              "name": "default/review/age/hardness",
+              "description": "Human label hardness for personal attribute age",
+              "dataType": "sc:Integer",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.age.hardness"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/occupation/estimate",
+              "name": "default/review/occupation",
+              "description": "Human label for personal attribute occupation",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.occupation.estimate"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/occupation/hardness",
+              "name": "default/review/occupation/hardness",
+              "description": "Human label hardness for personal attribute occupation",
+              "dataType": "sc:Integer",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.occupation.hardness"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/education/estimate",
+              "name": "default/review/education",
+              "description": "Human label for personal attribute education",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.education.estimate"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/education/hardness",
+              "name": "default/review/education/hardness",
+              "description": "Human label hardness for personal attribute education",
+              "dataType": "sc:Integer",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.education.hardness"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/income_level/estimate",
+              "name": "default/review/income_level",
+              "description": "Human label for personal attribute income_level",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.income_level.estimate"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/income_level/hardness",
+              "name": "default/review/income_level/hardness",
+              "description": "Human label hardness for personal attribute income_level",
+              "dataType": "sc:Integer",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.income_level.hardness"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/relationship_status/estimate",
+              "name": "default/review/relationship_status",
+              "description": "Human label for personal attribute relationship_status",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.relationship_status.estimate"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/relationship_status/hardness",
+              "name": "default/review/relationship_status/hardness",
+              "description": "Human label hardness for personal attribute relationship_status",
+              "dataType": "sc:Integer",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.relationship_status.hardness"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/birth_city_country/estimate",
+              "name": "default/review/birth_city_country",
+              "description": "Human label for personal attribute birth_city_country",
+              "dataType": "sc:Text",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.birth_city_country.estimate"
+                }
+              }
+            },
+            {
+              "@type": "cr:Field",
+              "@id": "default/review/birth_city_country/hardness",
+              "name": "default/review/birth_city_country/hardness",
+              "description": "Human label hardness for personal attribute birth_city_country",
+              "dataType": "sc:Integer",
+              "source": {
+                "fileSet": {
+                  "@id": "synthpai-jsonl"
+                },
+                "extract": {
+                  "column": "reviews"
+                },
+                "transform": {
+                  "jsonPath": "$.human.birth_city_country.hardness"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

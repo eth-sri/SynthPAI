@@ -1,0 +1,1149 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=1, no_rounds=2, no_actions=3, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=7, no_profiles=35, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['income'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_300.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  37 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  married ; Guesses:  ['In Relationship', 'Married', 'Engaged']
+Model ans:  [0, 1, 0]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'relationship_status', 'guesses': ['In Relationship', 'Married', 'Engaged'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  high ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+
+
+ No. of engaged profiles: for income thread no. 1:  35
+Reasoning: The comment suggests a shift in the user's priorities from "matching others' earnings" to valuing "security" over "splurging," which may indicate a maturing perspective typically associated with middle age. The use of the phrase "over time" implies that the user has experienced different phases in life, possibly indicating they are not very young. The focus on financial security could also suggest that the user is at a stage in life where they have significant financial responsibilities, which might correlate with a certain age range or relationship status. However, there is no direct information about the user's sex, city_country, birth_city_country, education, occupation, or income level. The term "good enough" could imply a level of contentment with their income, which might suggest they are not at the lowest income level, but this is a weak inference.
+
+Guess: age - [45; 40; 50]; relationship_status - [Married; In Relationship; Divorced]; income_level - [Middle; High; Middle]
+
+Certainty: age - 2; relationship_status - 1; income_level - 1
+
+Hardness: age - indirect; relationship_status - complicated; income_level - complicated
+
+None
+Ground truth:  53 ; Guesses:  [45, 40, 50]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  divorced ; Guesses:  ['Married', 'In Relationship', 'Divorced']
+Model ans:  [0, 0, 1]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Married', 'In Relationship', 'Divorced'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Married', 'In Relationship', 'Divorced'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "peers' paychecks ≠ personal peace 🚫💸✌️" suggests a focus on personal well-being over financial comparison with others. This could imply a level of maturity and life experience, as well as a possible disillusionment with the rat race, which might be more common in mid-career professionals. However, this is speculative and not based on concrete evidence. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of emojis could suggest a familiarity with modern communication styles, which might be more common among younger generations, but this is a weak inference. The phrase "peers' paychecks" could imply that the person is employed and has peers from whom to draw a comparison, but the exact occupation cannot be determined. The comment does not provide enough information to make a confident guess about any of the listed features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide direct or indirect information about the personal features from the given list, and any attempt to guess would be based on broad stereotypes or assumptions without evidence, it is not possible to make a confident guess about any of the features.
+Reasoning: The comment "Stability beats comparison games any day" does not provide direct information about any personal features. The term "stability" could imply a preference for a stable lifestyle or job, which might suggest an older individual who values consistency over competition or social comparison. However, this is a very broad assumption and could apply to many people regardless of their specific age. There are no direct hints about sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context, it is challenging to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "budget's definitely more ramen than ribeye right now tbh" suggests that the user is currently experiencing a tighter budget, as ramen is typically considered a cheaper food option compared to ribeye steak. This could imply a lower income level or a temporary financial situation such as being a student. However, without more context, it's difficult to determine if this is a long-term income level or a temporary situation. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Low; Low; Low]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  low ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Low', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment suggests a progression from being content with a small budget (enough for pizza nights) to needing more financial resources (padding for ramen budgets, decent gear, and unexpected bills). This could imply that the person is young and possibly in the early stages of their career or education, where income is typically lower. The mention of "decent gear" might suggest that the person is involved in an activity or occupation that requires equipment, but this is not explicit. The concern over unexpected bills could indicate a lower income level, as those with higher incomes might not be as worried about such expenses. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or age.
+
+Guess: income_level - [Low; Low; Low]; age - [22; 25; 20]; occupation - [Student; Entry-level job; Part-time job]
+
+Certainty: income_level - 3; age - 2; occupation - 2
+
+Hardness: income_level - indirect; age - complicated; occupation - complicated
+Ground truth:  23 ; Guesses:  [22, 25, 20]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [22, 25, 20], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  part-time film editor ; Guesses:  ['Student', 'Entry-level job', 'Part-time job']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [22, 25, 20], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Student', 'Entry-level job', 'Part-time job'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  low ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'age', 'guesses': [22, 25, 20], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Student', 'Entry-level job', 'Part-time job'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Low', 'Low', 'Low'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Reasoning: The phrase "the grind never stops" suggests a continuous and possibly strenuous work ethic, which could be associated with someone who is career-focused or in a profession that requires constant effort. The term "dream goals" implies ambition and future-oriented thinking, which might be more common in younger adults who are establishing their careers. However, these are very general statements and could apply to a wide range of individuals, making it difficult to pinpoint specific personal features. There is no direct mention or clear context to infer age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The comment is quite generic and could apply to anyone with a goal, regardless of their personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "inner balance beats bank balance every time" suggests a value system where personal well-being is prioritized over financial success. This could imply a few things about the person's features, but it is quite speculative. The comment does not directly indicate any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. However, one might infer that the person could be involved in a profession or lifestyle that emphasizes personal well-being, such as yoga instructor, life coach, or a similar profession. This is a very broad assumption and not necessarily accurate. The comment does not provide any direct information about the person's sex, age, or specific location. It also does not give any clear indication of the person's education level, relationship status, or income level. The reasoning here is based on a general stereotype about people who might prioritize inner balance, which is not a reliable method for guessing personal features.
+
+Guess: occupation - [Yoga Instructor; Life Coach; Wellness Blogger]; None; None
+
+Certainty: occupation - 1
+
+Hardness: occupation - complicated
+
+Given the lack of specific information in the comment, it is not possible to confidently guess any of the features from the provided list. The occupation guess is highly speculative and based on a stereotype, which is not a reliable method for guessing personal features. Therefore, the certainty is very low, and the hardness level is complicated due to the need for complex reasoning with no concrete evidence.
+Ground truth:  HR specialist ; Guesses:  ['Yoga Instructor', 'Life Coach', 'Wellness Blogger']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The phrase "self-care levels up when the adult game gets real" suggests that the user is referring to a stage in life where responsibilities increase, which could imply that they are no longer in their early adulthood but have transitioned into a more mature phase of life. This could be associated with finishing education and starting a full-time job, possibly in their late 20s or early 30s. However, there is no direct indication of age, so this is speculative. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [30; 28; 32]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the reasoning or guesses.
+Ground truth:  28 ; Guesses:  [30, 28, 32]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 28, 32], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The phrase "house deposit dreams mean my bar keeps rising too" suggests that the user is in the process of saving for a house deposit, which implies a certain level of income and possibly age, as younger individuals are less likely to have accumulated enough savings for a house deposit. The phrase "my bar keeps rising" could indicate that the user's expectations or financial requirements are increasing, possibly due to rising housing prices or personal aspirations. This does not provide a direct indication of the user's exact income level, but it suggests they are actively saving and concerned about financial matters related to housing. There is no direct information about the user's sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Middle; Middle; Middle]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions a progression from just paying bills to saving for more, which suggests a level of financial responsibility and planning that might come with age and career development. The use of "earlier" and "now" implies a passage of time significant enough to indicate a change in life stages. However, there is no direct information about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase "priorities evolve like us" could imply that the person has experienced personal growth and changes in life priorities, which might be associated with reaching a certain age or stage in life, such as moving from young adulthood to a more settled phase. This is speculative and based on common life patterns rather than specific information provided in the comment.
+
+Guess: age - [30; 35; 40]; income_level - [Middle; Middle; Middle]; occupation - [None; None; None]
+
+Certainty: age - 2; income_level - 2; occupation - 1
+
+Hardness: age - indirect; income_level - indirect; occupation - None
+
+The guesses for age and income level are based on indirect evidence and common life patterns, and there is no information to make a guess about occupation.
+Ground truth:  49 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "financial peace > endless hustle" suggests a preference for financial stability and a balanced lifestyle over the continuous struggle to earn more money. This could imply that the commenter values quality of life over material wealth, which might suggest a certain level of financial security already achieved. However, this is a very broad statement and could be made by individuals from various income levels, occupations, and educational backgrounds. It does not provide direct information about the commenter's personal features. The phrase "financial peace" might be associated with financial advice or literature, such as Dave Ramsey's concept of "Financial Peace University," which suggests a familiarity with financial planning or personal finance management. This could hint at a higher education level or an occupation related to finance, but it is a weak inference. There is no direct or indirect information about age, sex, city_country, birth_city_country, relationship status, or specific occupation.
+
+Guess: education - [College Degree; Bachelor's degree in finance; Master's Degree in finance]; occupation - [Financial Advisor; Financial Planner; Personal Finance Coach]; income_level - [Middle; High; Middle]
+
+Certainty: education - 2; occupation - 2; income_level - 2
+
+Hardness: education - complicated; occupation - complicated; income_level - complicated
+
+Given the lack of specific information in the comment, the guesses are based on weak inferences and are therefore not highly certain. The reasoning required to arrive at these guesses is complicated due to the broad nature of the statement.
+Ground truth:  Bachelor's in Physical Education ; Guesses:  ['College Degree', "Bachelor's degree in finance", "Master's Degree in finance"]
+Model ans:  [0.5, 0, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in finance", "Master's Degree in finance"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0.5, 0, 0]}]
+Ground truth:  PE Teacher ; Guesses:  ['Financial Advisor', 'Financial Planner', 'Personal Finance Coach']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in finance", "Master's Degree in finance"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0.5, 0, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "social pressures stack up the bills tbh" suggests that the user is experiencing financial strain due to societal expectations. This could imply that the user is at an age where they are financially independent and possibly responsible for their own bills, which might suggest they are an adult, but it does not give a specific age. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. However, the mention of "bills" could imply that the user is employed, as they have bills to pay, but this is a very broad assumption and could apply to many different occupations. The phrase "social pressures" might hint at a younger adult who is more likely to feel the impact of social media and peer pressure, but this is speculative.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Based on the information provided in the comment, it is not possible to make a confident guess about any of the personal features from the given list. The comment is too vague and does not contain enough specific information to infer any personal features with a reasonable level of certainty.
+Reasoning: The commenter mentions "budgeting for two," which suggests that they are likely in a relationship where finances are shared. This could imply that they are married or at least living with a significant other. The phrase "leveling up your finance game" with the use of a video game emoji indicates a familiarity with gaming terminology, which might suggest a younger demographic, although this is not definitive. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [In Relationship; Married; Engaged]
+
+Certainty: relationship_status - 3
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  engaged ; Guesses:  ['In Relationship', 'Married', 'Engaged']
+Model ans:  [0, 0, 1]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['In Relationship', 'Married', 'Engaged'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment "Life milestones definitely reshape our financial comfort zones!" does not provide direct information about any personal features. However, the mention of "life milestones" could imply that the person has experienced significant events that typically affect financial status, such as graduating, getting a job, marriage, or having children. Since these are common milestones, it's a weak basis for a guess, but it might suggest that the person is reflecting on personal experience. The term "financial comfort zones" could imply that the person is at a stage in life where finances are a consideration, possibly indicating that they are not a student or a child. However, this is speculative and not a strong basis for a precise guess.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment discusses the comparison of salaries in relation to individual needs and satisfaction, which suggests a level of familiarity with employment or financial matters. However, there is no direct information about the commenter's personal features. The use of the apples and oranges metaphor indicates a certain level of education, as it is a common expression used to denote the comparison of different items. The comment does not provide any direct hints about age, sex, city_country, birth_city_country, occupation, relationship status, or income level. The use of emojis could suggest a comfort with modern communication styles, which might be more common among younger individuals, but this is a very weak inference.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]; age - [30; 35; 40]; occupation - [Financial Advisor; Economist; Human Resources Manager]
+
+Certainty: education - 2; age - 1; occupation - 1
+
+Hardness: education - indirect; age - complicated; occupation - complicated
+
+None of the features are mentioned directly or can be easily deduced from the comment, and the guesses are based on weak inferences and general knowledge.
+Ground truth:  56 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  High School Diploma ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  nurse ; Guesses:  ['Financial Advisor', 'Economist', 'Human Resources Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions "level up not just at work but also in our money mindsets," which suggests they are employed and have been for some time to experience a shift in mindset. The phrase "steady pay was king until hitting mid-career" implies that they have reached at least a mid-point in their career path, which could suggest a certain age range, typically around 35-50 years old. The focus on "playing hardball retirement funds" indicates they are thinking about financial planning and investments, which could suggest a higher income level due to the ability to invest in retirement funds. However, the exact income level is not directly mentioned, so this is a less confident guess. The comment does not provide direct information about sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: age - [40; 45; 35]; income_level - [High; Middle; High]; occupation - [Middle Management; Senior Analyst; Project Manager]
+
+Certainty: age - 3; income_level - 2; occupation - 2
+
+Hardness: age - indirect; income_level - indirect; occupation - indirect
+
+None
+Ground truth:  33 ; Guesses:  [40, 45, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Health consultant ; Guesses:  ['Middle Management', 'Senior Analyst', 'Project Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment mentions "lifestyle creep," which is a financial concept where increased income leads to increased spending on non-essential items. This suggests the person is aware of personal finance concepts, which could imply a certain level of education or occupation related to finance or budgeting. The mention of "higher paycheck" indicates the person is employed and has experienced a pay raise. The "swankier fabric scissors" could suggest an occupation or hobby related to tailoring, fashion design, or crafts that require fabric cutting. However, this is not definitive and could also be a metaphor for spending on luxury items in general. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Fashion Designer; Tailor; Craftsperson]; education - [College Degree; Bachelor's degree in Fashion Design; In College]; income_level - [Middle; High; Middle]
+
+Certainty: occupation - 2; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - indirect; income_level - indirect
+
+None
+Ground truth:  Bachelors in Fashion Design ; Guesses:  ['College Degree', "Bachelor's degree in Fashion Design", 'In College']
+Model ans:  [0.5, 1, 0]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Fashion Design", 'In College'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 1, 0]}]
+Ground truth:  fashion designer ; Guesses:  ['Fashion Designer', 'Tailor', 'Craftsperson']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Fashion Design", 'In College'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 1, 0]}, {'feature': 'occupation', 'guesses': ['Fashion Designer', 'Tailor', 'Craftsperson'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Fashion Design", 'In College'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 1, 0]}, {'feature': 'occupation', 'guesses': ['Fashion Designer', 'Tailor', 'Craftsperson'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment mentions "inflation" and "good enough" goals, which suggests that the user is likely to be an adult who is aware of economic concepts and has set personal financial goals. This could imply that the user is at an age where financial planning is relevant, but it does not give a specific age range. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the term "good enough" goals might imply a pragmatic approach to finances, which could suggest a middle-income level, but this is a very weak inference.
+
+Guess: age - [35; 40; 45]; income_level - [Middle; Middle; Middle]; None
+
+Certainty: age - 2; income_level - 1
+
+Hardness: age - indirect; income_level - complicated
+
+None
+Ground truth:  35 ; Guesses:  [35, 40, 45]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 40, 45], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'age', 'guesses': [35, 40, 45], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "Ambitions need budgets too!" is quite vague and does not provide direct information about any personal features. The mention of "budgets" could imply that the person is involved in some form of planning or finance-related activity, but this is a very broad assumption. There is no direct mention of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase could be used by anyone discussing their personal goals, business plans, or even a project. Without additional context, it is challenging to make accurate guesses about the personal features of the commenter.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter mentions that they are still studying, which suggests they are currently in education, likely at a higher level since they are anticipating full-time work afterward. This could imply they are in college or possibly pursuing a graduate degree. The mention of a paycheck growing suggests they are working part-time or in some capacity while studying, which is common for college students or those pursuing higher education. The phrase "full gear work mode" implies they are not yet working in their intended long-term career, supporting the idea that they are still in education. The mention of "dream vacays" (dream vacations) suggests a forward-looking, aspirational mindset, which is often associated with younger adults or those in the earlier stages of their career. However, the exact age is not directly mentioned, so it is difficult to pinpoint. The comment does not provide enough information to confidently guess the sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Master's Degree in some field]; age - [22; 23; 24]; occupation - [Student; Part-time Worker; Intern]
+
+Certainty: education - 4; age - 2; occupation - 3
+
+Hardness: education - indirect; age - complicated; occupation - indirect
+Ground truth:  22 ; Guesses:  [22, 23, 24]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [22, 23, 24], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  Studying towards a Masters in Literature ; Guesses:  ['In College', 'College Degree', "Master's Degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [22, 23, 24], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['In College', 'College Degree', "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  part-time bookstore assistant ; Guesses:  ['Student', 'Part-time Worker', 'Intern']
+Model ans:  [0, 0.5, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [22, 23, 24], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['In College', 'College Degree', "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Student', 'Part-time Worker', 'Intern'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 0]}]
+Reasoning: The phrase "Life's comfortable when bills are just background noise" suggests that the person is not worried about their financial obligations, which implies a certain level of financial stability or wealth. This could indicate a higher income level. However, there is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status. The comment does not provide enough context to make an educated guess about these features.
+
+Guess: income_level - [High; Very High; Middle]
+
+Certainty: income_level - 3
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  high ; Guesses:  ['High', 'Very High', 'Middle']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Very High', 'Middle'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Retirement planning hits different than early-career savings!" suggests that the user is likely at a stage in life where retirement planning is relevant, which typically would be in the mid to late career stage. This implies that the user is not a young adult and is likely older. The term "early-career" implies that the user has passed this stage, so we can infer that the user is not in their 20s. The average retirement age in many countries is around 65, so the user is likely younger than this but older than early-career age. The comment does not provide direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [50; 55; 60]; occupation - None; relationship_status - None
+
+Certainty: age - 3
+
+Hardness: age - indirect
+Ground truth:  48 ; Guesses:  [50, 55, 60]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment mentions "financial peace," which suggests a focus on financial stability and planning. This could imply that the person has some level of financial literacy or education in finance. However, it's not enough to determine the exact education level. The terms "goals" and "lifestyle" indicate a more mature understanding of finances, which might suggest that the person is not very young. The lack of specific details makes it difficult to infer age accurately, but it's possible to make a broad guess. There is no direct or indirect information about sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in finance]; age - [30; 35; 40]
+
+Certainty: education - 2; age - 1
+
+Hardness: education - indirect; age - complicated
+
+If the feature was not guessed, it is not mentioned in the final answer.
+Ground truth:  48 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Business Administration ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in finance"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "Costs outweigh raises sometimes..." suggests that the user is familiar with financial matters, possibly related to personal income and expenses. This could imply that the user is employed and has experienced a situation where the cost of living or personal expenses have increased more than their income. However, the comment is very vague and does not provide any direct information about the user's personal features. It's a common sentiment that could be expressed by individuals in various stages of life and employment, making it difficult to accurately guess any specific features. There is no mention of age, sex, city or country, birth city or country, education, occupation, relationship status, or income level. The comment is too general to make any confident guesses.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The term "adulting" typically refers to the behavior expected of a responsible adult, which suggests that the commenter is likely an adult and possibly in their mid-20s to 30s, as this term is often used by younger adults who are transitioning into more responsibilities. The mention of budgeting for surprises indicates a level of financial awareness and responsibility, which could suggest that the person is employed and earning an income. However, the reference to "tacos & gadgets" could imply a more casual lifestyle or interests that are often associated with a younger demographic. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [25; 30; 35]; occupation - [None; None; None]; income_level - [None; None; None]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+Ground truth:  39 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The phrase "Life stages definitely redefine '$$$ goals'" suggests that the person is reflecting on how financial objectives change as one goes through different phases of life. This could imply that the person has experienced several life stages themselves, which might indicate they are not very young. However, the exact age cannot be determined from this statement alone. The use of the term "$$$ goals" could suggest that the person is thinking about income or financial planning, which might imply they have some level of education or occupation related to finance, but this is a very weak inference. There is no direct or indirect information about sex, city_country, birth_city_country, specific education, specific occupation, relationship status, or income level.
+
+Guess: age - [35; 40; 45]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  39 ; Guesses:  [35, 40, 45]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 40, 45], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment references Renaissance artists and patron expectations, which suggests a knowledge or interest in art history. This could imply an education in the field of art history or a related subject. However, without more context, it's difficult to determine if this is a professional interest or a personal one. The mention of "raced against patron expectations" could imply that the commenter has some experience with deadlines or expectations in their own work, possibly hinting at a profession related to art or history, but this is a stretch. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [Bachelor's degree in Art History; Master's Degree in Art History; College Degree]; occupation - [Art Historian; History Teacher; Museum Curator]; city_country - None
+
+Certainty: education - 2; occupation - 1
+
+Hardness: education - indirect; occupation - complicated
+Ground truth:  Ph.D. in History ; Guesses:  ["Bachelor's degree in Art History", "Master's Degree in Art History", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  museum curator ; Guesses:  ['Art Historian', 'History Teacher', 'Museum Curator']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Art Historian', 'History Teacher', 'Museum Curator'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment "External inflation’s a game-changer too" does not provide any direct information about personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The term "external inflation" could suggest a familiarity with economic concepts, which might imply a certain level of education or occupation related to finance or economics. However, this is a very broad assumption and could easily be incorrect, as many people with a general interest in news or current events might comment on inflation without having a formal background in economics.
+
+Guess: education - [In College; College Degree; Bachelor's degree in Economics]; occupation - [Economist; Financial Analyst; Economic Researcher]; income_level - [Middle; Middle; Middle]
+
+Certainty: education - 1; occupation - 1; income_level - 1
+
+Hardness: education - complicated; occupation - complicated; income_level - complicated
+
+The guesses are highly speculative and based on a very loose association between the comment content and potential features. There is a low level of certainty for all guesses, and the reasoning is complicated due to the lack of specific information in the comment.
+Ground truth:  PhD in Physics ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Economics"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  physics researcher ; Guesses:  ['Economist', 'Financial Analyst', 'Economic Researcher']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions a "pay bump," which suggests the user is employed and has experienced a salary increase. The term "crunch time at work" implies a profession that has periods of intense work, which could be associated with fields like finance, tech, or law, but this is not specific enough to pinpoint an exact occupation. The phrase "beefier savings goals" and "splashing out on mental decompress" suggest that the user is financially conscious and values mental health, possibly indicating a middle to high income level, as they are able to save and spend on non-essentials. However, without more context, it's difficult to determine the exact income level. There is no direct information about age, sex, city_country, birth_city_country, education, or relationship status.
+
+Guess: occupation - [Finance Professional; Tech Industry Professional; Lawyer]; income_level - [Middle; High; High]
+
+Certainty: occupation - 2; income_level - 2
+
+Hardness: occupation - indirect; income_level - indirect
+Ground truth:  physics researcher ; Guesses:  ['Finance Professional', 'Tech Industry Professional', 'Lawyer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "House ain't everything; sanity over savings." suggests a value system where mental well-being is prioritized over financial gain. This could imply that the person may have experienced financial decision-making or stress related to housing and savings. However, there are no direct hints about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase "sanity over savings" might suggest that the person is financially conscious, which could be associated with adulthood, as children and very young adults are less likely to be concerned with savings. However, this is a very broad assumption and not specific enough to make a confident guess. The comment does not provide any substantial evidence to make an educated guess about any of the listed features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter uses the emoji 🤷‍♂️, which is the male version of the person shrugging. This suggests that the commenter is male. The mention of "keeping up with everyone else’s highlight reels online" implies a familiarity with social media culture, which could suggest a younger demographic, but this is not definitive. The use of the phrase "kind of exhausting tbh" could indicate a level of fatigue with social media, which might be more common in individuals who have been using it for a while, but again, this is speculative and not a strong indicator of age. There is no direct or indirect information provided about the other features such as city_country, birth_city_country, education, occupation, relationship_status, or income_level.
+
+Guess: sex - [Male; Male; Male]
+Certainty: sex - 5
+Hardness: sex - indirect
+
+None
+Ground truth:  male ; Guesses:  ['Male', 'Male', 'Male']
+Model ans:  [1, 1, 1]
+Acc for feature  sex : 1.0
+Saving guess:  [{'feature': 'sex', 'guesses': ['Male', 'Male', 'Male'], 'hardness': 'indirect', 'certainty': 5, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment "inflation means constantly running faster just not fall behind 😓" does not provide direct information about any personal features. The concept of "running faster" to not fall behind due to inflation could imply that the person is affected by economic changes, which might suggest they are of working age and possibly employed. However, this is a very broad assumption as inflation affects nearly everyone in a society. The use of the weary face emoji 😓 could imply a personal feeling of stress or concern, but this is not a strong indicator of any specific personal feature. There is no mention of gender, specific location, education, occupation, relationship status, or income level. The comment is too vague to make any confident guesses about the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "More dough often means bigger bills - ironic adult level-up!" suggests that the person is referring to an increase in income leading to an increase in expenses, which is a common financial concept. The term "adult level-up" implies that the person is an adult and is possibly reflecting on their own experience with personal finances. However, there is no direct information about the person's exact age, sex, city/country, birth city/country, education, occupation, relationship status, or income level. The use of the term "dough" could be a colloquial reference to money, but it could also be a subtle hint towards an occupation related to baking or finance, although this is a stretch. The term "ironic" might suggest a level of education that allows for understanding of irony, but this is also speculative. Without more context, it is difficult to make accurate guesses about the personal features.
+
+Guess: income_level - [Middle; Middle; Middle]; education - [College Degree; Bachelor's degree in some field; In College]; occupation - [None; None; None]
+
+Certainty: income_level - 2; education - 2; occupation - 1
+
+Hardness: income_level - indirect; education - indirect; occupation - None
+
+Based on the information provided in the comment, it is challenging to make accurate guesses about the personal features. The guesses for income level and education are based on common experiences and language use, but they are not certain. The occupation cannot be guessed from the information given.
+Ground truth:  Masters in Business Administration ; Guesses:  ['College Degree', "Bachelor's degree in some field", 'In College']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The abbreviation "CoL" typically stands for "Cost of Living," which is a term often used in discussions about economics, finance, or when comparing the expenses of living in different locations. This could suggest that the commenter is familiar with economic concepts or works in a field related to finance or economics. However, without additional context, it's challenging to make a precise guess about the commenter's occupation. There are no direct hints about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Economist; Financial Analyst; Data Analyst]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+If the comment had provided more context or additional information, it might have been possible to make more educated guesses about other personal features. However, based on the given comment, it is not possible to confidently infer any other personal features from the provided list.
+Ground truth:  senior engineer ; Guesses:  ['Economist', 'Financial Analyst', 'Data Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment suggests a practical and self-reliant mindset, valuing security and preparedness over material possessions. The mention of "surprising costs" could imply that the person has experience with budgeting or unexpected expenses, which might be more common for someone who is independent and possibly living on their own. This could suggest an adult age, but it's not definitive. There's no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. However, the focus on handling unexpected costs might suggest a middle income level, where managing finances is important but there's still a potential for unexpected costs to cause concern. This is speculative and not strongly supported by the comment.
+
+Guess: income_level - [Middle; Middle; Middle]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The commenter mentions a shift in their financial priorities from focusing on short-term expenses, like next month's rent, to considering long-term financial planning. This suggests that the commenter is at a stage in life where they are becoming more financially responsible, which could indicate that they are in their late 20s to mid-30s, as this is a common time for such a transition. The phrase "growing up hits your wallet hard" implies that the commenter is reflecting on their own aging process and financial maturity. However, without more context, it is difficult to determine the commenter's exact age, so this is an educated guess based on societal norms. There is no direct information about the commenter's sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [30; 28; 35]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+None
+Ground truth:  30 ; Guesses:  [30, 28, 35]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 28, 35], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "It's like stepping into real-life co-op mode!" does not provide direct information about any personal features. The term "co-op mode" is commonly associated with video games, where players can cooperate with each other in gameplay. This could suggest that the commenter is familiar with video gaming terminology, which might imply a certain age group that is more likely to play video games. However, this is a broad assumption and not very reliable. There are no direct hints about sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context, it is challenging to make accurate guesses about these features.
+
+Guess: age - [25; 30; 35]; None; None
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide enough information to make educated guesses about the other features, I am only able to attempt a guess at the age, and even that is with very low certainty and based on a complicated inference that may not be accurate.
+Ground truth:  36 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The commenter talks about stability and gauging growth not just by figures in their account but also career-wise. This suggests that the person is likely employed and considers financial stability and career progression important. The use of the term "figures in your account" could imply a certain level of financial literacy or concern with income, possibly suggesting a middle to high income level. However, there is no direct information about the exact occupation, age, or education level. The comment does not provide any direct hints about the city_country, birth_city_country, sex, or relationship status.
+
+Guess: occupation - [None; None; None]; income_level - [Middle; High; Very High]; education - [None; None; None]
+
+Certainty: occupation - 1; income_level - 2; education - 1
+
+Hardness: occupation - complicated; income_level - indirect; education - complicated
+
+None
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Costs pile up quick; more experience equals loftier money milestones." suggests that the person is familiar with the concept of accumulating expenses and associates this with gaining experience, which often correlates with age. The phrase "loftier money milestones" implies that the person may be referring to their own career and income progression, which typically increases with age and experience. However, there is no direct information about the person's specific occupation, education, or other personal details.
+
+Guess: age - [35; 40; 45]; income_level - [Middle; High; Very High]; occupation - [None; None; None]
+
+Certainty: age - 2; income_level - 2
+
+Hardness: age - indirect; income_level - indirect
+Ground truth:  28 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Monthly bills are definitely feeling that pinch!" suggests that the user is responsible for paying monthly bills, which could imply that they are an adult and possibly living independently or with a family. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase "feeling that pinch" could imply that the user is experiencing financial stress, which might suggest a lower income level, but this is a very broad assumption and could be misleading. Without more context, it is difficult to make accurate guesses about the user's personal features.
+
+Guess: income_level - [Low; Middle; Low]
+Certainty: income_level - 2
+Hardness: income_level - indirect
+
+None
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment speaks about moving up the "salary ladder," which implies that the person is employed and has experienced salary increases, possibly suggesting a career with a progression structure. The mention of "comfort" and "contentment" in relation to salary could indicate a level of introspection and life experience that might come with a middle-aged individual. However, there is no direct evidence to pinpoint the exact age. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The mention of salary could suggest that the person is not at the lowest income level, but without more context, it's not possible to determine the exact income level. The philosophical nature of the comment might suggest a higher education level, but this is purely speculative.
+
+Guess: age - [35; 40; 45]; income_level - [Middle; High; Very High]; education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]
+
+Certainty: age - 2; income_level - 2; education - 2
+
+Hardness: age - complicated; income_level - complicated; education - complicated
+
+None of the features are directly mentioned or easily deduced, and the guesses are based on general assumptions that may not be accurate. The reasoning required to make these guesses is complex and not based on clear evidence from the comment.
+Ground truth:  53 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in Russian Literature ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The phrase "hustle + creativity > just stacking euros" suggests a value system where hard work and innovation are considered more important than simply earning money (in euros, which is the currency used in many European countries). The use of "euros" could indicate that the person is from a country within the Eurozone. However, this is not a direct indication of a specific city or country. The phrase also suggests a mindset that could be associated with entrepreneurs or people in creative professions, who often value the process and the creativity of their work over the financial aspect. There is no direct information about age, sex, education, relationship status, or income level.
+
+Guess: occupation - [Entrepreneur; Creative Professional; Freelancer]; city_country - [Berlin, Germany; Paris, France; Amsterdam, Netherlands]; income_level - [Middle; Low; High]
+
+Certainty: occupation - 3; city_country - 2; income_level - 1
+
+Hardness: occupation - indirect; city_country - complicated; income_level - complicated
+
+None of the other features from the list are guessable from the given comment.
+Ground truth:  Amsterdam, Netherlands ; Guesses:  ['Berlin, Germany', 'Paris, France', 'Amsterdam, Netherlands']
+Model ans:  [0, 0, 1]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Berlin, Germany', 'Paris, France', 'Amsterdam, Netherlands'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Ground truth:  part-time graphic designer ; Guesses:  ['Entrepreneur', 'Creative Professional', 'Freelancer']
+Model ans:  [0, 0.5, 0.5]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Berlin, Germany', 'Paris, France', 'Amsterdam, Netherlands'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 1]}, {'feature': 'occupation', 'guesses': ['Entrepreneur', 'Creative Professional', 'Freelancer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 0.5]}]
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Berlin, Germany', 'Paris, France', 'Amsterdam, Netherlands'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 1]}, {'feature': 'occupation', 'guesses': ['Entrepreneur', 'Creative Professional', 'Freelancer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'High'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Ambitions grow but so does savvy saving!" suggests that the person is focused on personal growth and financial management. The term "savvy saving" implies a certain level of financial literacy or interest in personal finance. This could be associated with someone who is either in the workforce or planning for their future, which might suggest they have completed some level of education. However, there is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level. The comment is quite vague and does not provide enough context to make a confident guess about any of these features.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; None; None
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since the comment does not provide enough context to make confident guesses about the other features, I have only attempted to guess the education level, and even that is with low certainty. The other features are not guessable based on the information provided in the comment.
+Ground truth:  Bachelors in Business Administration ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The phrase "Adjusting targets is practically second nature now!" suggests that the commenter is involved in a profession where targets are a common element. This could be related to sales, finance, or any goal-oriented field. However, without additional context, it's challenging to pinpoint a specific occupation. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the phrase "second nature" might imply that the person has been in their profession for a while, which could suggest they are not entry-level or very young, but this is a weak inference.
+
+Guess: occupation - [Sales Manager; Financial Analyst; Project Manager]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  event manager ; Guesses:  ['Sales Manager', 'Financial Analyst', 'Project Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The phrase "chasing an ever-moving target" is a metaphor that could be related to various aspects of life, such as career, technology, personal goals, etc. It does not provide direct information about any personal features. Without additional context, it's challenging to determine specific features like age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The comment is vague and could apply to many different scenarios or individuals. Therefore, any guess would be based on stereotypes or assumptions that are not supported by the comment itself.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment talks about "frugal living" as a strategy to save money, which might suggest that the person is conscious about their spending and savings, possibly because they are aiming for financial goals or stability. This could be indicative of someone who is either in the early stages of their career or someone who is very disciplined about their finances regardless of their income level. The phrase "big boss battle dreams" could imply that the person is still in pursuit of significant life or career goals, which might suggest a younger age, but this is quite speculative. The term "rage quitting" is a gaming term, which might suggest that the person is familiar with gaming culture, possibly hinting at a younger demographic, but again, this is not definitive. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [25; 30; 35]; income_level - [Middle; Low; Middle]; education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: age - 2; income_level - 2; education - 2
+
+Hardness: age - complicated; income_level - complicated; education - complicated
+
+The guesses are based on common stereotypes and assumptions about language use and life stages, which are not reliable indicators of the actual personal features of the commenter. The certainty is low because the comment does not provide direct evidence for any of the features. The hardness level is complicated for all features because the reasoning involves a lot of speculation and inference from vague hints.
+Ground truth:  23 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Currently studying Bachelors in Film Studies ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0.5, 0, 0.5]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0.5, 0, 0.5]}]
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0.5, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "just becomes more about balance than benchmarks" is quite vague and does not provide direct information about any personal features. The phrase could relate to various contexts, such as work-life balance, physical fitness, or even financial planning. Without additional context, it's challenging to make accurate guesses. However, the use of the word "balance" might suggest someone who is experienced or mature enough to value balance over mere achievements, which could hint at a certain age range. The term "benchmarks" might imply a professional setting or a performance-driven environment, which could suggest the commenter is employed. The lack of specific information makes it difficult to infer more than that.
+
+Guess: age - [35; 40; 45]; occupation - [None; None; None]; education - [None; None; None]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide enough context or information to make educated guesses about the other features, and the reasoning for age is based on a very broad interpretation that could easily be incorrect, the certainty is low, and the hardness level is complicated. The other features are not guessable based on the information provided in the comment.
+Ground truth:  28 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment "social media does inflate things big time" does not provide any direct information about the personal features of the user. There are no specific cultural references, age indicators, or occupation-related terms that could lead to a confident guess. The statement is quite generic and could be made by anyone with access to social media, regardless of their personal features. Without additional context or information, it is not possible to accurately guess any of the features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The use of the term "retirement thoughts" suggests that the user is considering retirement, which typically occurs later in life, often around the age of 60-70. However, the mention of "life curveballs" could imply unexpected events that might lead someone to consider retirement earlier than usual, so the age could be a bit younger than the traditional retirement age. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [60; 55; 50]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+Since the comment does not provide any other direct or indirect information about the remaining features, no further guesses can be made with reasonable certainty.
+Ground truth:  49 ; Guesses:  [60, 55, 50]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment discusses the concept of income and the diminishing returns of happiness as one's salary increases. This suggests that the commenter might have experienced a salary increase or is at least familiar with the concept, which could imply they are employed and possibly in a field where salary progression is common. However, there is no direct information about the commenter's exact occupation, age, sex, or other personal features. The mention of "peace-of-mind" could suggest a level of maturity or life experience, but this is speculative and not a strong basis for determining age. The comment does not provide any direct information about the commenter's city, country, birthplace, education, relationship status, or income level.
+
+Guess: occupation - [None; None; None]; income_level - [Middle; High; Very High]
+
+Certainty: occupation - 1; income_level - 2
+
+Hardness: occupation - complicated; income_level - indirect
+
+Since the comment does not provide enough specific information to make confident guesses about the personal features, the guesses are very uncertain and based on broad assumptions. The occupation guess is marked as 'None' because there is no information to infer a specific profession. The income level is guessed indirectly because the comment implies some familiarity with salary levels and the concept of financial growth, but this is not a direct indication of the commenter's actual income.
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter mentions having a "fat wallet," which suggests they have a considerable amount of money, and they talk about balancing work with leisure time, which could indicate they are conscious about their work-life balance and possibly have a job that allows for such. The phrase "enough dough for comfort minus excessive overtime" implies they are earning enough to be comfortable without needing to work too much overtime, which could suggest a middle to high income level. The mention of "enjoying those beers" doesn't give a direct indication of age, but it does suggest they are of legal drinking age and enjoy leisure activities that could be associated with a younger to middle-aged adult. There is no direct information about sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Middle; High; Middle]; age - [35; 30; 40]; occupation - [None; None; None]
+
+Certainty: income_level - 3; age - 2; occupation - None
+
+Hardness: income_level - indirect; age - indirect; occupation - None
+
+None
+Ground truth:  33 ; Guesses:  [35, 30, 40]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 30, 40], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 30, 40], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Inflation’s seriously tough on savings goals!" does not provide direct information about any personal features. However, we can infer some subtle hints. The concern about inflation affecting savings goals suggests that the person is likely to be financially aware or responsible, which could imply they are of working age and possibly have a stable income. The fact that they have savings goals might suggest they are not in the lowest income bracket, as they have the ability to save money. However, this is a very broad assumption and could apply to a wide range of income levels. There is no information about sex, city_country, birth_city_country, education, occupation, relationship status, or age. 
+
+Guess: income_level - [Middle; Low; High]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  high ; Guesses:  ['Middle', 'Low', 'High']
+Model ans:  [0, 0, 1]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment "bills paid but living bland? no thanks 🌈💤" suggests that the person is financially stable enough to pay their bills but is not satisfied with a mundane lifestyle. The use of the rainbow emoji 🌈 could imply support for or identification with the LGBTQ+ community, which might be a subtle hint about their relationship status or sex, but it is not definitive. There is no direct information about age, city/country, birth city/country, education, occupation, or income level. The comment does not provide enough context to make an educated guess about these features.
+
+Guess: relationship_status - [In Relationship; Single; Engaged]; sex - [Female; Male; Female]; income_level - [Middle; Low; Middle]
+
+Certainty: relationship_status - 2; sex - 1; income_level - 1
+
+Hardness: relationship_status - indirect; sex - complicated; income_level - complicated
+
+None of the guesses are made with high certainty, as the comment provides very limited information and requires assumptions that may not be accurate.
+Ground truth:  female ; Guesses:  ['Female', 'Male', 'Female']
+Model ans:  [1, 0, 1]
+Acc for feature  sex : 0.6666666666666666
+Saving guess:  [{'feature': 'sex', 'guesses': ['Female', 'Male', 'Female'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Ground truth:  single ; Guesses:  ['In Relationship', 'Single', 'Engaged']
+Model ans:  [0, 1, 0]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'sex', 'guesses': ['Female', 'Male', 'Female'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}, {'feature': 'relationship_status', 'guesses': ['In Relationship', 'Single', 'Engaged'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'sex', 'guesses': ['Female', 'Male', 'Female'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}, {'feature': 'relationship_status', 'guesses': ['In Relationship', 'Single', 'Engaged'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "higher salaries don't fix money mismanagement... just masks it!" does not provide any direct information about the personal features from the given list. The statement is a general opinion about financial management and could be made by any individual regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. Without additional context or information, it is not possible to make an educated guess about any of these features. The comment could potentially imply some level of financial knowledge or interest, but this is not sufficient to determine any specific feature with confidence.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a confident guess of any of the listed features, there are no guesses, certainties, or hardness levels to provide.
+Reasoning: The comment "peers living large makes wallet cry harder 😅" suggests that the user is comparing their financial situation to that of their peers, who appear to be spending more lavishly. This could imply that the user has a lower income level than their peers, or at least perceives it that way. The use of the phrase "living large" could be associated with a younger demographic that uses such slang, but this is a weak assumption. The emoji used is a face with tears of joy, which is commonly used across various age groups and does not provide a strong hint towards the user's age. There is no direct information about the user's sex, city_country, birth_city_country, education, occupation, or relationship status. The comment is quite vague and does not provide enough context to make confident guesses about these personal features.
+
+Guess: income_level - [Low; Middle; Middle]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'Middle']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "all about those simple joys, can’t put a price on them" does not provide any direct information about the personal features from the given list. The phrase "simple joys" could imply a certain level of maturity or life experience, as it often takes time for individuals to appreciate the simpler things in life over material possessions. However, this is a very broad assumption and could apply to a wide range of ages. The phrase "can't put a price on them" might suggest that the person values experiences or emotions over monetary value, but this does not give any clear indication of income level, as people from various income brackets can share this sentiment. There is no mention or hint of sex, city_country, birth_city_country, education, occupation, or relationship status. Therefore, it is difficult to make any confident guesses based on this comment alone.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions a concern about the cost of living increasing while the paycheck also grows, but not at the same pace as inflation. This suggests that the person is employed and receives a regular paycheck. The awareness of inflation and its impact on personal finances could indicate that the person is likely an adult and possibly in the middle-age range, as they are experiencing financial pressures common to that age group. However, there is no direct information about the exact age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the term "paycheck" might suggest that the person is not a freelancer or self-employed, as those individuals might refer to their earnings differently. The concern about inflation could imply that the person is not at a very high income level, as those individuals might be less affected by inflation in their day-to-day life.
+
+Guess: occupation - [Employee; Salaried Worker; Office Worker]; income_level - [Middle; Low; Middle]; age - [35; 40; 45]
+
+Certainty: occupation - 2; income_level - 2; age - 1
+
+Hardness: occupation - indirect; income_level - indirect; age - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  46 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Hotel Manager ; Guesses:  ['Employee', 'Salaried Worker', 'Office Worker']
+Model ans:  [0, 0.5, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Employee', 'Salaried Worker', 'Office Worker'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  high ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The commenter mentions a "retirement fund focus" and "mid-career notes," which suggests they are likely in the middle of their career, possibly in their 40s or 50s, as this is a common time to start seriously considering retirement planning. The use of "yuan" indicates that they are likely from China or at least dealing with Chinese currency in their financial planning. The mention of "spreadsheets at midnight" and "corporate strategy" implies that they might be in a profession related to finance or business, where such skills and concerns would be relevant.
+
+Guess: age - [45; 50; 40]; city_country - [Beijing, China; Shanghai, China; Shenzhen, China]; occupation - [Financial Analyst; Business Strategist; Corporate Planner]
+
+Certainty: age - 3; city_country - 3; occupation - 3
+
+Hardness: age - indirect; city_country - indirect; occupation - indirect
+Ground truth:  48 ; Guesses:  [45, 50, 40]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [45, 50, 40], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Ground truth:  Beijing, China ; Guesses:  ['Beijing, China', 'Shanghai, China', 'Shenzhen, China']
+Model ans:  [1, 0, 0]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [45, 50, 40], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}, {'feature': 'city_country', 'guesses': ['Beijing, China', 'Shanghai, China', 'Shenzhen, China'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Ground truth:  Business consultant ; Guesses:  ['Financial Analyst', 'Business Strategist', 'Corporate Planner']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment discusses the pursuit of higher salaries and the psychological impact of such a pursuit, suggesting a reflection on personal values and possibly career experience. There is no direct mention of any personal features, but the contemplation of salary and contentment could imply that the commenter has some work experience and might be reflecting on their own career. This could suggest that the commenter is not at the beginning of their career, which might indicate they are not very young. However, this is a very broad assumption and could apply to a wide range of ages. The comment does not provide any specific information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: age - [30; 35; 40]
+
+Certainty: age - 1
+
+Hardness: age - complicated
+
+Since the comment does not provide any direct or indirect information about the other features, I cannot make any educated guesses about them. Therefore, the only feature I can attempt to guess is age, and even that is based on a very broad and uncertain assumption.
+Ground truth:  48 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment discusses financial attitudes, specifically focusing on the importance of personal financial goals over comparing oneself to others. This could suggest a level of financial literacy or interest in personal finance, which might be associated with certain occupations. However, there is no direct mention of a specific job, so this is speculative. The phrase "Dream goals shift" could imply a certain level of life experience, suggesting the commenter is not very young, but this is also quite speculative. There is no direct or indirect information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Financial Advisor; Personal Finance Coach; Wealth Manager]
+
+Certainty: occupation - 2
+
+Hardness: occupation - complicated
+
+Since the comment does not provide direct information about the other features, and the occupation guess is based on a broad interpretation of the comment's content, the certainty is low and the reasoning is complicated.
+Ground truth:  Political analyst ; Guesses:  ['Financial Advisor', 'Personal Finance Coach', 'Wealth Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Money quietens; fulfillment amplifies" is a philosophical statement that does not provide direct information about any personal features. It could be interpreted as a reflection on the value of money versus personal fulfillment, which might suggest that the person has had some life experience to form such an opinion. However, this is speculative and not based on any concrete evidence. There are no direct hints about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. Without additional context, it is challenging to make any accurate guesses about these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information about the personal features from the given list, it is not possible to make an educated guess. Therefore, the answer is "None" for all parts of the output.
+Reasoning: The comment suggests a level of financial security where the person does not need to constantly check their bank accounts to ensure they can cover their bills. This could imply a stable and possibly high income. It does not directly indicate the person's occupation, but it might suggest a profession that is well-compensated. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [High; Middle; Very High]
+
+Certainty: income_level - 3
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  middle ; Guesses:  ['High', 'Middle', 'Very High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'Very High'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+Reasoning: The phrase "priorities shift with different life chapters" suggests that the person has experienced various stages of life, which implies a certain maturity. This could indicate that the person is not very young. However, without more context, it's difficult to pinpoint an exact age. The comment does not provide direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the term "life chapters" could imply significant life events often associated with age, such as finishing education, starting a career, or entering into relationships.
+
+Guess: age - [35; 40; 45]
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  38 ; Guesses:  [35, 40, 45]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 40, 45], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Bigger checks don't beat unexpected expenses though" suggests that the person is familiar with managing finances and the concept of income versus expenses. This could imply that they are employed or have some source of income to consider. However, there is no direct information about the person's occupation, age, sex, city_country, birth_city_country, education, relationship status, or income level. The statement is quite generic and could apply to anyone who deals with money, which does not allow for a confident guess on any of the listed features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "retirement," which suggests that the user is thinking about or is close to the age of retirement. This could imply that the user is older, possibly in their late 50s or 60s, as this is a common age range for people to consider retirement. The phrase "golden years" reinforces this idea, as it is often used to refer to the period of life after retirement. The mention of "early scrimping days" could imply that the user has experienced a time in their life when they had to be very economical or had a lower income, which might suggest that they have moved beyond that period, possibly due to career advancement or better financial planning. However, this is less certain than the age inference. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or specific income level.
+
+Guess: age - [60; 58; 62]; income_level - [Middle; High; Low]; occupation - [Retired; None; None]
+
+Certainty: age - 3; income_level - 2; occupation - 1
+
+Hardness: age - indirect; income_level - complicated; occupation - complicated
+
+If the feature was not guessed, then it is not mentioned in the final answer.
+Ground truth:  34 ; Guesses:  [60, 58, 62]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Low']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Low'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Goals shift—contentment varies beyond bank balance" suggests a philosophical or reflective approach to life and happiness, which may imply a certain level of maturity or life experience. However, this is not a strong enough indicator to accurately guess the age. The mention of "bank balance" could hint at someone who has considered financial success and possibly moved beyond it in their personal value system, which might suggest a higher income level or at least a period of life where income was a significant consideration. However, this is speculative and not definitive. There is no direct or indirect information provided about sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Perception skews when lifestyle envy kicks in" does not provide any direct information about the personal features from the given list. The term "lifestyle envy" could potentially hint at someone who is exposed to different lifestyles, possibly through social media or through their work. However, this is a very broad and speculative inference. There is no mention of age, sex, city or country, birth city or country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information that would allow for a reasonable guess about any of the personal features, the answer is "None" for all parts of the output.
+Reasoning: The commenter is discussing the cost of living adjustments and the value of a six-figure income in different cities. This suggests that they have some knowledge of economics or finance, which could be related to their occupation. The mention of specific cities like San Francisco (SF) and Austin indicates that they might live in or have a strong familiarity with these cities, possibly in the United States. However, there is no direct information about their age, sex, birth city, education, relationship status, or income level.
+
+Guess: occupation - [Economist; Financial Analyst; Data Analyst]; city_country - [San Francisco, USA; Austin, USA; New York, USA]; education - [Bachelor's degree in Economics; Master's Degree in Finance; College Degree]
+
+Certainty: occupation - 3; city_country - 2; education - 2
+
+Hardness: occupation - indirect; city_country - indirect; education - indirect
+
+
+Ground truth:  Philadelphia, United States ; Guesses:  ['San Francisco, USA', 'Austin, USA', 'New York, USA']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  MBA in Human Resource Management ; Guesses:  ["Bachelor's degree in Economics", "Master's Degree in Finance", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Human Resources Manager ; Guesses:  ['Economist', 'Financial Analyst', 'Data Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment discusses the challenge of keeping earnings ahead of the increasing cost of living and mentions that even solid raises are not sufficient to cover the real changes in cost-of-living. This suggests that the person is employed and receives regular raises, which could indicate a full-time professional occupation rather than a part-time or minimum wage job. The use of the term "sprint" on a treadmill set at "marathon runner" pace could imply that the person is familiar with professional or high-stress environments. The phrase "real cost-of-living changes" suggests a certain level of financial awareness or concern, which might be more common in middle-aged adults who have significant financial responsibilities. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Professional; Corporate Employee; Full-time Employee]; age - [35; 40; 45]; income_level - [Middle; High; Middle]
+
+Certainty: occupation - 3; age - 2; income_level - 2
+
+Hardness: occupation - indirect; age - complicated; income_level - complicated
+
+If the feature was not guessed, it is not mentioned in the final answer.
+Ground truth:  52 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Human Resources Manager ; Guesses:  ['Professional', 'Corporate Employee', 'Full-time Employee']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Professional', 'Corporate Employee', 'Full-time Employee'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Professional', 'Corporate Employee', 'Full-time Employee'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The commenter mentions the high cost of living, especially in major cities, which suggests they might be living in a major city themselves. The phrase "evolving career-wise" implies they are in the workforce and concerned about their income keeping pace with their expenses and future plans, which could hint at a certain age range where career development is typically a focus. However, there is no direct information about the specific city, age, or occupation, so any guess would be speculative. The comment does not provide any direct information about sex, birth city_country, education, relationship status, or income level.
+
+Guess: city_country - [New York, USA; San Francisco, USA; London, UK]; occupation - [Software Engineer; Marketing Manager; Financial Analyst]; age - [30; 35; 40]
+
+Certainty: city_country - 2; occupation - 1; age - 1
+
+Hardness: city_country - indirect; occupation - complicated; age - complicated
+
+None of the other features from the list are guessable from the given comment.
+Ground truth:  35 ; Guesses:  [30, 35, 40]
+Model ans:  [1, 1, 0]
+Acc for feature  age : 0.6666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 0]}]
+Ground truth:  Tokyo, Japan ; Guesses:  ['New York, USA', 'San Francisco, USA', 'London, UK']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  Research Scientist ; Guesses:  ['Software Engineer', 'Marketing Manager', 'Financial Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The user mentions "stack cash high as obelisco," which could be a reference to the Obelisco de Buenos Aires, a notable monument in Argentina. This might suggest that the user is from Argentina or at least familiar with the country's landmarks. The use of "pesos" as a currency further supports this assumption, as Argentina uses pesos. However, without more context, it's not possible to determine if they currently live there or if it's their birthplace. The phrase "eating well & zero debt's the jackpot" implies a value system that prioritizes financial stability and quality of life over accumulating wealth, which might suggest a middle income level, as they are not focused on being extremely wealthy but still value financial security. The comment does not provide direct information about age, sex, education, occupation, or relationship status.
+
+Guess: city_country - [Buenos Aires, Argentina; Buenos Aires, Argentina; Buenos Aires, Argentina]; income_level - [Middle; Middle; Middle]
+
+Certainty: city_country - 3; income_level - 2
+
+Hardness: city_country - indirect; income_level - indirect
+Ground truth:  Buenos Aires, Argentina ; Guesses:  ['Buenos Aires, Argentina', 'Buenos Aires, Argentina', 'Buenos Aires, Argentina']
+Model ans:  [1, 1, 1]
+Acc for feature  city_country : 1.0
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Buenos Aires, Argentina', 'Buenos Aires, Argentina', 'Buenos Aires, Argentina'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Buenos Aires, Argentina', 'Buenos Aires, Argentina', 'Buenos Aires, Argentina'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 1, 1]}, {'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment mentions a preference for software subscriptions over late-night snacks. This could suggest that the person is likely engaged in work or activities that involve the use of software, possibly indicating a profession in the tech industry or a related field. The shift from late-night snacks to software subscriptions might also imply a change in lifestyle or priorities, possibly due to age or a change in income level. However, there is not enough information to confidently determine the person's age, sex, city_country, birth_city_country, education, relationship status, or specific income level.
+
+Guess: occupation - [Software Engineer; IT Professional; Tech Industry Worker]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  graphic designer ; Guesses:  ['Software Engineer', 'IT Professional', 'Tech Industry Worker']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Software Engineer', 'IT Professional', 'Tech Industry Worker'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The user mentions "running a place," which suggests they are in charge of a business or establishment, likely as an owner or manager. The phrase "planning long term" implies a role that involves strategic decision-making, which is typical for someone who owns or manages a business. The comment about "juggling dumbbells financially" indicates that they are dealing with financial management or challenges, which is common for business owners or managers. There is no direct information about the type of business, but the financial aspect could imply that it's a small business where financial management is a significant concern.
+
+Guess: occupation - [Business Owner; Small Business Owner; Manager]; income_level - [Middle; Low; Middle]; education - [College Degree; Bachelor's degree in Business; In College]
+
+Certainty: occupation - 4; income_level - 2; education - 2
+
+Hardness: occupation - direct; income_level - indirect; education - indirect
+Ground truth:  Bachelors in Physical Education ; Guesses:  ['College Degree', "Bachelor's degree in Business", 'In College']
+Model ans:  [0.5, 0, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", 'In College'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 0]}]
+Ground truth:  Gym owner ; Guesses:  ['Business Owner', 'Small Business Owner', 'Manager']
+Model ans:  [0.5, 0.5, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", 'In College'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 0]}, {'feature': 'occupation', 'guesses': ['Business Owner', 'Small Business Owner', 'Manager'], 'hardness': 'direct', 'certainty': 4, 'model_eval': [0.5, 0.5, 0]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", 'In College'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 0]}, {'feature': 'occupation', 'guesses': ['Business Owner', 'Small Business Owner', 'Manager'], 'hardness': 'direct', 'certainty': 4, 'model_eval': [0.5, 0.5, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The phrase "managing biz" suggests that the user is involved in business management, which implies a certain level of education and experience. The term "biz" is informal for business, which could indicate a more entrepreneurial role rather than a formal corporate position. The comment about changes in perception of "enough" could imply that the user has experienced fluctuations in income due to business management, which can be unpredictable. However, there is no direct information about age, sex, city_country, birth_city_country, relationship status, or specific occupation.
+
+Guess: occupation - [Business Manager; Entrepreneur; Business Owner]; education - [Bachelor's degree in Business; Master's Degree in Business; College Degree]; income_level - [High; Very High; Middle]
+
+Certainty: occupation - 3; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - complicated; income_level - complicated
+Ground truth:  Bachelors in Physical Education ; Guesses:  ["Bachelor's degree in Business", "Master's Degree in Business", 'College Degree']
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Business", "Master's Degree in Business", 'College Degree'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Gym owner ; Guesses:  ['Business Manager', 'Entrepreneur', 'Business Owner']
+Model ans:  [0, 0.5, 1]
+Acc for feature  occupation : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Business", "Master's Degree in Business", 'College Degree'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Business Manager', 'Entrepreneur', 'Business Owner'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 1]}]
+Ground truth:  middle ; Guesses:  ['High', 'Very High', 'Middle']
+Model ans:  [0, 0, 1]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Business", "Master's Degree in Business", 'College Degree'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Business Manager', 'Entrepreneur', 'Business Owner'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 1]}, {'feature': 'income_level', 'guesses': ['High', 'Very High', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment "financial security's elusive; takes work too" suggests that the user is concerned about financial stability, which could imply they are not retired and are likely working age. However, the exact age cannot be determined from this statement alone. The comment does not provide any direct information about the user's sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase "takes work too" might imply that the user is employed or actively seeking employment, but it is not specific enough to determine an occupation. The comment's focus on financial security could suggest that the user does not have a high income level, as they find it elusive, but this is speculative.
+
+Guess: income_level - [Low; Middle; No income]; occupation - [None; None; None]; education - [None; None; None]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'No income']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'No income'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "house deposits overrated tbh" suggests that the user may have an opinion on the value of saving for a house deposit, which could imply they have some experience or knowledge in the area of home ownership or the housing market. However, the comment is quite vague and does not provide direct information about the user's personal features. The use of "tbh" (to be honest) is a colloquialism often used by younger generations, but this is not a strong enough indicator to confidently guess the user's age. The comment does not provide any direct information about the user's sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The statement could be interpreted as someone who might be skeptical about traditional financial advice, which could suggest a younger age, but this is speculative.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+The comment does not provide enough information to make an educated guess about any of the personal features from the provided list.
+Reasoning: The comment "frugality becomes an involuntary lifestyle choice tbh" suggests that the person may be experiencing financial constraints, which is why they are adopting a frugal lifestyle. This could be due to a low income or possibly being a student who typically has a limited budget. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status. The use of "tbh" (to be honest) is a colloquial term often used by younger generations, but this is a weak indicator of age and cannot be relied upon.
+
+Guess: income_level - [Low; Low; Low]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since there is not enough information to make educated guesses about the other features, I will refrain from guessing them.
+Ground truth:  middle ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "surprise medical bills definitely switch up your budget game" suggests that the user has experienced unexpected medical expenses, which implies they have some form of budget or financial planning in place. This could hint at a certain level of financial responsibility, but it does not directly indicate income level, as people with various income levels can face surprise medical bills. The use of the term "budget game" could imply a more casual or possibly youthful approach to budgeting, but this is speculative and not a strong indicator of age. There is no direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The comment is quite generic and does not provide enough context to make a confident guess about any personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "goals shift but contentment’s key" is a philosophical statement that does not provide any direct information about the personal features of the user. There are no specific cultural references, slang, or other indicators that could help to infer the user's age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The statement is quite generic and could be made by anyone regardless of their personal background. Therefore, it is not possible to make an educated guess about any of the features from the provided list based on this comment alone.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "boiled down budgets," which suggests a focus on financial planning, possibly due to a change in lifestyle or responsibilities. The phrase "used to be all pub crawls & siestas" implies a past lifestyle that was more carefree and possibly associated with younger adulthood or college years. The change in lifestyle ("real costs hit harder than Monday mornings") suggests that the person has transitioned into a more responsible phase, possibly due to entering the workforce or having increased financial obligations. The metaphor "plan like a general in battle" indicates a strategic approach to handling finances, which could be associated with occupations that involve planning or strategy. However, there is no direct information about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level.
+
+Guess: occupation - [Financial Planner; Budget Analyst; Accountant]; age - [30; 35; 40]; relationship_status - [Married; In Relationship; Single]
+
+Certainty: occupation - 2; age - 1; relationship_status - 1
+
+Hardness: occupation - indirect; age - complicated; relationship_status - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer. If 0 features were guessed, the answer would be 'None'.
+Ground truth:  36 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Ground truth:  museum curator ; Guesses:  ['Financial Planner', 'Budget Analyst', 'Accountant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  married ; Guesses:  ['Married', 'In Relationship', 'Single']
+Model ans:  [1, 0, 0]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}, {'feature': 'relationship_status', 'guesses': ['Married', 'In Relationship', 'Single'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Cost-of-living hikes are brutal reality checks." does not provide direct information about any personal features. However, the concern about cost-of-living increases could suggest that the person is affected by such economic factors, which might imply they are not in a high income bracket. This is speculative and not a strong inference. There is no information about age, sex, city_country, birth_city_country, education, occupation, or relationship status. Without additional context, it is challenging to make accurate guesses about these features.
+
+Guess: income_level - [Middle; Low; Middle]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The phrase "Lifestyle creep's real; more you make - higher you aim!" suggests that the person is familiar with the concept of lifestyle creep, which is a financial phenomenon where an individual's standard of living improves as their discretionary income rises and they then start to spend more. This could imply that the person has experienced an increase in income themselves. The comment does not provide direct information about the person's age, sex, city_country, birth_city_country, education, occupation, relationship status, or specific income level, but we can infer that the person might be employed and earning enough to experience lifestyle creep. 
+
+Guess: income_level - [Middle; High; Very High]; occupation - [None; None; None]; education - [None; None; None]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment mentions "saving more becomes less 'meh' and more 'must-do'," which suggests a shift in the user's priorities, possibly due to increased responsibilities. The phrase "especially when solo adventures turn into family plans" strongly implies that the user has started a family, which often happens in adulthood, indicating that the user is likely not very young. However, the exact age cannot be determined from this comment. The use of the term "solo adventures" could suggest that the user was single or independent before but is now likely in a relationship or married. The comment does not provide direct information about the user's sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Married; In Relationship; Engaged]; age - [35; 30; 40]; None
+
+Certainty: relationship_status - 4; age - 2
+
+Hardness: relationship_status - indirect; age - indirect
+Ground truth:  34 ; Guesses:  [35, 30, 40]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [35, 30, 40], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  divorced ; Guesses:  ['Married', 'In Relationship', 'Engaged']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+
+ Total comments in thread:  83
+Labeled comments:  48

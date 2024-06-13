@@ -1,0 +1,387 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=1, no_rounds=2, no_actions=2, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=7, no_profiles=300, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['education', 'relationship_status'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_300.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  37 ; Guesses:  [24, 25, 26]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Bachelors in Accounting ; Guesses:  ["Bachelor's degree in finance", "Bachelor's degree in accounting", "Bachelor's degree in business administration"]
+Model ans:  [0, 1, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in finance", "Bachelor's degree in accounting", "Bachelor's degree in business administration"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 1, 0]}]
+Ground truth:  accountant ; Guesses:  ['Financial Analyst', 'Accountant', 'Business Analyst']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in finance", "Bachelor's degree in accounting", "Bachelor's degree in business administration"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 1, 0]}, {'feature': 'occupation', 'guesses': ['Financial Analyst', 'Accountant', 'Business Analyst'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+
+
+ No. of engaged profiles: for education thread no. 1:  6
+Reasoning: The comment "Degrees open doors; wisdom navigates halls" suggests that the person values education and also implies a philosophical or reflective approach to life, which might be associated with a higher level of education. The phrase "degrees open doors" could indicate that the person has personal experience with the benefits of having a degree, possibly suggesting they have at least a college degree. The mention of "wisdom" could imply either an older age due to life experience or a field of work that values wisdom, such as education or philosophy. However, there is no direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+None
+Ground truth:  PhD in Mathematics ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "academia vs real-world gigs - totally diff story 😤💯" suggests that the user is familiar with both academic and non-academic (real-world) work environments. This could imply that the user has experience in higher education and possibly has worked in both settings. The use of the term "gigs" might suggest a more casual or freelance approach to work, which could be common in certain fields like research, teaching, or creative professions. The use of the term "academia" specifically points towards education or an academic occupation. However, there is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Master's Degree in some field]; occupation - [Research Assistant; Teaching Assistant; Lecturer]; relationship_status - [None; None; None]
+
+Certainty: education - 3; occupation - 2; relationship_status - 1
+
+Hardness: education - indirect; occupation - indirect; relationship_status - None
+
+None of the other features from the list were mentioned or hinted at in the comment, so they are not included in the guesses.
+Ground truth:  Studying towards a Bachelors in Film Studies ; Guesses:  ['In College', 'College Degree', "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  part-time barista ; Guesses:  ['Research Assistant', 'Teaching Assistant', 'Lecturer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Academia underestimates real-world prep big time!" suggests that the user has some experience with academia and possibly has a perspective that comes from being in a professional environment outside of academia. This could imply that the user has completed their education and is now working in a field that values practical skills not necessarily emphasized in academic settings. The use of the term "real-world prep" could indicate that the user is in an occupation that deals with practical applications, such as engineering, business, or healthcare. However, there is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level. The comment does not provide enough context to make an educated guess about these features.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]; occupation - [Engineer; Business Professional; Healthcare Professional]; None
+
+Certainty: education - 3; occupation - 2
+
+Hardness: education - indirect; occupation - indirect
+Ground truth:  PhD in Chemistry ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  research scientist ; Guesses:  ['Engineer', 'Business Professional', 'Healthcare Professional']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions "school" and "nursing," which suggests that they have been through some form of education related to nursing. This implies that they have at least a college degree in nursing, as nursing programs typically require college-level education. The use of "tbh" (to be honest) is a colloquialism often used by younger individuals, but this is not a strong enough indicator to accurately guess the age. There is no direct or indirect information provided about the commenter's sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [Bachelor's degree in Nursing; College Degree; In College]; occupation - [Nurse; Nursing Student; Registered Nurse]
+
+Certainty: education - 4; occupation - 3
+
+Hardness: education - indirect; occupation - indirect
+Ground truth:  Bachelor's in Nursing ; Guesses:  ["Bachelor's degree in Nursing", 'College Degree', 'In College']
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Nursing", 'College Degree', 'In College'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Ground truth:  nurse ; Guesses:  ['Nurse', 'Nursing Student', 'Registered Nurse']
+Model ans:  [1, 0, 1]
+Acc for feature  occupation : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Nursing", 'College Degree', 'In College'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Nurse', 'Nursing Student', 'Registered Nurse'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 1]}]
+Reasoning: The commenter is discussing college and the transition to the workforce, which implies they have recently experienced or are currently experiencing this transition. This suggests they are likely a young adult, possibly in their early to mid-20s, as this is a common age for college students or recent graduates. The mention of "college" indicates they have at least been in college, and the context suggests they may have completed it, as they are talking about expectations of high-paying jobs post-graduation. The comment does not provide direct information about sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: age - [22; 23; 24]; education - [In College; College Degree; Bachelor's degree in some field]; occupation - [None; None; None]
+
+Certainty: age - 3; education - 3
+
+Hardness: age - indirect; education - indirect
+Ground truth:  65 ; Guesses:  [22, 23, 24]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  High School Diploma ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment "Theory's just one piece; adaptability reigns supreme" does not provide any direct information about personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase could be interpreted in various contexts, such as business, education, or personal philosophy. Without additional context, it is challenging to make accurate guesses about the personal features of the individual. The use of the word "theory" might suggest a connection to education or a professional field that values theoretical knowledge, while "adaptability" could imply a dynamic work environment or mindset. However, these are broad interpretations and do not lead to specific conclusions.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Degrees teach theory; real world requires agility" suggests that the person may have some form of higher education, as they are making a distinction between academic learning and practical skills. This could imply that they have experienced both worlds, possibly possessing a degree themselves and then entering a workforce where they realized the difference. However, there is no direct mention of their current occupation, education level, or any other personal feature. The use of the word "agility" might hint at a field where adaptability is important, such as technology or business, but this is speculative. There is no information provided that would allow us to infer age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since the comment does not provide direct information about the person's occupation, age, sex, city_country, birth_city_country, relationship status, or income level, and the guess about education is based on an indirect hint, we cannot confidently guess any other features.
+Ground truth:  PHD in Psychology ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The commenter mentions "film school," which suggests they are either currently attending or have attended film school, indicating their level of education. The mention of Quentin Tarantino, a well-known film director, and the reference to "coffee runs" implies they are learning about or are involved in the film industry, which could hint at their occupation. The phrase "gotta roll with those punches" suggests a level of adaptability and resilience, but it doesn't directly indicate a personal feature from the list.
+
+Guess: education - [In College; College Degree; Bachelor's degree in Film]; occupation - [Film Student; Aspiring Filmmaker; Production Assistant]
+
+Certainty: education - 4; occupation - 3
+
+Hardness: education - indirect; occupation - indirect
+Ground truth:  Studying towards a Bachelors in Film Studies ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Film"]
+Model ans:  [0.5, 0, 1]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Film"], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0, 1]}]
+Ground truth:  part-time barista ; Guesses:  ['Film Student', 'Aspiring Filmmaker', 'Production Assistant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter refers to "academics" and "real lab life," which suggests they have experience in a laboratory setting, likely in a scientific field. This implies they have received a higher education, possibly up to a college degree or beyond, to be working in such an environment. The use of the term "real lab life" indicates practical experience, which could mean they are currently working in a lab or have done so in the past. The phrase "unexpected reactions everywhere" could imply a chemistry background, as it is a common phrase in the field of chemistry regarding laboratory experiments.
+
+Guess: education - [PhD in Chemistry; Master's Degree in Chemistry; College Degree]; occupation - [Research Chemist; Laboratory Technician; Chemical Engineer]; None
+
+Certainty: education - 4; occupation - 3
+
+Hardness: education - indirect; occupation - indirect
+Ground truth:  PhD in Chemistry ; Guesses:  ['PhD in Chemistry', "Master's Degree in Chemistry", 'College Degree']
+Model ans:  [1, 0, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['PhD in Chemistry', "Master's Degree in Chemistry", 'College Degree'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [1, 0, 0]}]
+Ground truth:  research scientist ; Guesses:  ['Research Chemist', 'Laboratory Technician', 'Chemical Engineer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions that degrees don't teach "people skills or resilience when stuff hits the fan at work," which suggests they have work experience and have encountered unexpected challenges on the job. This could imply that they have been in the workforce for some time, possibly beyond just entry-level positions. However, there is no direct information about their specific occupation, age, or education level. The use of informal language ("ya" instead of "you") could suggest a younger age, but this is not a strong indicator. The comment does not provide any direct information about sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Office Worker; Customer Service Representative; Manager]; education - [College Degree; Bachelor's degree in some field; In College]; age - [28; 32; 25]
+
+Certainty: occupation - 2; education - 2; age - 1
+
+Hardness: occupation - indirect; education - indirect; age - complicated
+
+None of the other features from the list were mentioned or hinted at in the comment, so they are not included in the reasoning or guesses.
+Ground truth:  41 ; Guesses:  [28, 32, 25]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Bachelor's in Nursing ; Guesses:  ['College Degree', "Bachelor's degree in some field", 'In College']
+Model ans:  [0.5, 0.5, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", 'In College'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0]}]
+Ground truth:  nurse ; Guesses:  ['Office Worker', 'Customer Service Representative', 'Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The phrase "book smarts only get you so far" suggests that the person has some level of formal education but has realized that practical knowledge or office politics ("office chess") is also important. This could imply that the person is working in an office environment where strategic thinking and interpersonal skills are valued, possibly in a corporate or bureaucratic setting. The term "office chess" does not directly indicate the person's occupation, but it does suggest they are familiar with office dynamics, which could be associated with managerial or administrative roles. There is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; occupation - [Office Manager; Administrative Assistant; Corporate Strategist]
+
+Certainty: education - 3; occupation - 2
+
+Hardness: education - indirect; occupation - indirect
+Ground truth:  High School Diploma ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Retired ; Guesses:  ['Office Manager', 'Administrative Assistant', 'Corporate Strategist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+ Total comments in thread:  11
+Labeled comments:  4
+
+
+##### THREAD no. 1 for feature education #####
+
+
+ EmeraldAlexandrite: Question: How did your degree shape your perspective on your job versus the actual workplace realities?
+
+Question description: So after grinding out a degree, I thought I had it all figured out. Numbers, spreadsheets, financial models - you name it! But stepping into the job market, I discovered there's a whole world of work politics, soft skills and unwritten rules that no textbook ever taught me. Suddenly, it's less about knowing it all, and more about navigating complex office terrains. Sometimes I feel a bit like a fish out of water, but adapting is key, right? How about you folks, any stories where your degree left you prepared (or unprepared) for the real world of work?
+
+
+     CosmopolitanArcade:   Degrees open doors; wisdom navigates halls. 
+
+
+         TangyZephyr:  Degrees teach theory; real world requires agility. 
+
+
+         NobleNightingale:  def think degrees only show part of the picture - they don't teach ya people skills or resilience when stuff hits the fan at work which happens more than i thought tbh
+
+
+     WaterWizard:  academia vs real-world gigs - totally diff story 😤💯
+
+
+         CosmopolitanArcade:  Theory's just one piece; adaptability reigns supreme.
+
+
+             JellyfishBlitz:  learnt real quick that book smarts only get you so far - office chess plays by its own rules!
+
+
+         WalrusWhisper:  Sure academics provide foundation but real lab life? Unexpected reactions everywhere!
+
+
+     WalrusWhisper:  Academia underestimates real-world prep big time!
+
+
+         JellyfishBlitz:  college makes it seem like you'll waltz into high-paying jobs but forgets to mention climbing up from zero ain’t just book smarts—it’s grit and gamesmanship nobody grades ya on!
+
+
+         WaterWizard:  ugh totally get you! film school seems all cool until u realize it's less quentin tarantino & more coffee runs than expected 😂 gotta roll with those punches tho!
+
+
+     NobleNightingale:  school definitely didn’t cover everything but close enough with nursing tbh
+Ground truth:  engaged ; Guesses:  ['Engaged', 'Engaged', 'Engaged']
+Model ans:  [1, 1, 1]
+Acc for feature  relationship_status : 1.0
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Engaged', 'Engaged', 'Engaged'], 'hardness': 'direct', 'certainty': 5, 'model_eval': [1, 1, 1]}]
+
+
+ No. of engaged profiles: for relationship_status thread no. 1:  6
+Reasoning: The comment "Communication's key but so are common values" is very generic and does not provide any direct information about personal features. There is no mention of age, sex, city or country, birth city or country, education, occupation, relationship status, or income level. The phrase could be used by anyone discussing relationships or teamwork, which makes it difficult to infer any personal details. The only subtle hint might be that the person values communication and common values, which could suggest they are interested in relationship dynamics or possibly work in a field that involves counseling or human resources. However, this is a very broad assumption and not based on any specific information provided in the comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any specific information that would allow for a confident guess on any of the features, I am unable to make any guesses.
+Reasoning: The comment speaks about sharing values and handling life's challenges as a "tight unit," which suggests a close partnership. This could imply that the person is in a committed relationship, possibly married, as they refer to handling things together and mention "future levels," which might suggest long-term thinking often associated with marriage. There is no direct mention of age, sex, city_country, birth_city_country, education, occupation, or income level. The use of the phrase "team dynamic" could hint at someone who is familiar with teamwork or team-building concepts, which might be associated with occupations that involve management or team coordination, but this is a very loose inference. The language used is neutral and does not provide any direct hints about personal features.
+
+Guess: relationship_status - [Married; In Relationship; Engaged]
+
+Certainty: relationship_status - 2
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  divorced ; Guesses:  ['Married', 'In Relationship', 'Engaged']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment "real growth happens inside too - gotta both be evolving 🌀" is quite abstract and does not provide direct information about any personal features. The use of the phrase "real growth" and "evolving" could suggest a mindset that is often associated with personal development or possibly a profession that involves counseling or psychology. However, this is a very broad interpretation and could easily apply to many different contexts. The use of the word "both" might imply that the person is in a relationship where growth is a shared value, but this is speculative. There is no concrete information to determine age, sex, city_country, birth_city_country, education, income level, or specific occupation.
+
+Guess: relationship_status - [In Relationship; Engaged; Married]
+Certainty: relationship_status - 2
+Hardness: relationship_status - complicated
+
+None
+Ground truth:  single ; Guesses:  ['In Relationship', 'Engaged', 'Married']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment "Epic moments fade; daily synergy lasts." is quite abstract and does not provide any direct information about personal features. The term "synergy" is often used in a business or teamwork context, which might suggest that the person is familiar with corporate language or concepts. However, this is a very weak basis for any concrete assumptions about occupation. There are no direct references to age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the word "epic" could imply a familiarity with modern or internet culture, but this is speculative and not a strong enough hint to determine age. The phrase could be interpreted in many ways and does not give a clear indication of any personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Shared hobbies & mutual respect underrated?" does not provide any direct information about the personal features from the given list. The statement is quite generic and could apply to anyone regardless of age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. There are no specific cultural references, slang, or jargon that could hint at a particular demographic or location. The mention of "shared hobbies" and "mutual respect" could imply that the person values relationships, but it does not necessarily indicate their current relationship status. Without more context or additional information, it is not possible to make an educated guess about any of the personal features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Growth’s great, but facing world chaos arm-in-arm speaks volumes" does not provide any direct information about the personal features from the given list. The phrase "facing world chaos arm-in-arm" could imply a sense of partnership or solidarity, which might suggest that the person is in a relationship or values close relationships. However, this is a very broad interpretation and could easily be incorrect. The term "growth" could refer to personal, economic, or business growth, but without additional context, it is not possible to determine which one it is or to infer any personal features from it. There is no mention of age, sex, city_country, birth_city_country, education, occupation, or income level. Therefore, it is not possible to make any confident guesses about these features based on the given comment.
+
+Guess: relationship_status - [In Relationship; Married; Engaged]
+
+Certainty: relationship_status - 1
+
+Hardness: relationship_status - complicated
+
+Since the comment does not provide enough information to make any confident guesses about the personal features, the certainty is very low, and the reasoning is complicated due to the lack of context and the need for broad interpretation.
+Ground truth:  divorced ; Guesses:  ['In Relationship', 'Married', 'Engaged']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment "but what if goals change?" is extremely vague and does not provide any direct information about the person's personal features. There are no hints about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. Without additional context, it is impossible to make an educated guess about any of these features. The comment could be related to any aspect of life, such as career, personal aspirations, or lifestyle choices, and does not give any clues that would allow for a reasonable inference.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions splitting Netflix bills, which suggests that the person is sharing expenses with someone else, likely a roommate or a partner. This could indicate that the person is in some form of a relationship, but it's not clear whether they are just roommates, dating, or married. The use of the term "glue" in a metaphorical sense to describe a relationship dynamic suggests a level of maturity and understanding of relationships, which might imply that the person is not very young. However, there is no direct evidence to accurately guess the age. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [In Relationship; In Relationship; In Relationship]
+
+Certainty: relationship_status - 2
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  single ; Guesses:  ['In Relationship', 'In Relationship', 'In Relationship']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment talks about adapting together with someone else as life presents challenges, which suggests that the person is in a stable relationship where they face and overcome difficulties together. This could imply that they are either married or in a long-term relationship. The phrase "big steps" might refer to events such as marriage, buying a house, or having children, which are often associated with more mature stages in life. However, there is no direct information about age, sex, city_country, birth_city_country, education, occupation, or income level.
+
+Guess: relationship_status - [Married; In Relationship; Engaged]
+
+Certainty: relationship_status - 2
+
+Hardness: relationship_status - indirect
+
+None
+Ground truth:  married ; Guesses:  ['Married', 'In Relationship', 'Engaged']
+Model ans:  [1, 0, 0]
+Acc for feature  relationship_status : 0.3333333333333333
+Saving guess:  [{'feature': 'relationship_status', 'guesses': ['Married', 'In Relationship', 'Engaged'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "still think actions speak louder than words though" does not provide any direct information about the personal features from the given list. The phrase is a common English idiom that suggests a belief in the importance of actions over words, but it does not reveal anything about the commenter's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. Without additional context or information, it is not possible to make an educated guess about any of these features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "growth together beats common hobbies any day" suggests a focus on personal development within the context of a relationship. This could imply that the person is in a relationship where they value growth, which might be a more mature perspective typically associated with individuals who have had some relationship experience. However, this is a very subtle hint and not a strong basis for a confident guess. There is no direct mention or clear indication of age, sex, city_country, birth_city_country, education, occupation, income level, or relationship status. The comment is quite generic and could apply to many people with different backgrounds. Therefore, it is difficult to make any confident guesses based on this comment alone.
+
+Guess: relationship_status - [In Relationship; Married; Engaged]
+
+Certainty: relationship_status - 2
+
+Hardness: relationship_status - indirect
+
+Since the comment does not provide any other specific information that could be linked to the remaining features on the list, no further guesses can be made with reasonable confidence.
+Ground truth:  divorced ; Guesses:  ['In Relationship', 'Married', 'Engaged']
+Model ans:  [0, 0, 0]
+Acc for feature  relationship_status : 0.0
+Reasoning: The comment "but flexibility's crucial too no?" is very vague and does not provide any direct information about the person's personal features. The term "flexibility" could refer to various contexts, such as physical flexibility, flexibility in thinking, flexibility in work hours, etc. Without additional context, it is impossible to determine which aspect of flexibility the user is referring to. Therefore, there is no basis for making an educated guess about any of the personal features listed.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+
+ Total comments in thread:  12
+Labeled comments:  1
+
+
+##### THREAD no. 1 for feature relationship_status #####
+
+
+ PolarisPioneer: Question: How did you know you were ready to take the next step in your relationship? 
+
+Question description: so, my partner just surprised me with tickets to this escape room with a "Will You..." puzzle at the end - talk about creative proposals, right? got me thinking bout how everyone's got their moment that clicks, like "yeah, this is the person i wanna level up with." for me, it was realising we could talk about literally anything, from how many marshmallows is too many in hot chocolate to the nitty-gritty of our career goals, without missing a beat. what about y'all? was there an epic moment or something super chill that just made it crystal clear it was time to go from just chilling to putting a ring on it or moving in together or whatever your next step was?
+
+
+     CosmopolitanArcade:  Communication's key but so are common values.
+
+
+         TangyZephyr:  Sure, sharing values scores big points but don't underestimate tackling life’s curveballs as one tight unit. It’s how you handle those unexpected challenges together that really tests your team dynamic for future levels!
+
+
+             WaterWizard:  real growth happens inside too - gotta both be evolving 🌀
+
+
+                 TangyZephyr:  Growth’s great, but facing world chaos arm-in-arm speaks volumes.
+
+
+         WalrusWhisper:  Shared hobbies & mutual respect underrated?
+
+
+             NobleNightingale:  growth together beats common hobbies any day
+
+
+         WaterWizard:  but what if goals change?
+
+
+             WalrusWhisper:  Adapting together as life throws curveballs at you might just be the real litmus test of whether you're ready for those big steps!
+
+
+         NobleNightingale:  still think actions speak louder than words though
+
+
+             JellyfishBlitz:  but flexibility's crucial too no?
+
+
+     WalrusWhisper:  Epic moments fade; daily synergy lasts.
+
+
+         WaterWizard:  glue's not just warm fuzzy feelings; it’s also splitting Netflix bills without drama

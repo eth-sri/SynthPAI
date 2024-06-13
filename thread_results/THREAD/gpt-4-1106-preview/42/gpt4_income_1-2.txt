@@ -1,0 +1,1935 @@
+output_dir='thread_results' seed=42 task=<Task.THREAD: 'THREAD'> task_config=THREADConfig(no_threads=2, no_rounds=2, no_actions=3, no_max_comments=3, max_depth=5, mode='top', no_sampled_comments=10, default_comment_prob=7, no_profiles=35, p_critic=0.4, p_short=0.7, min_comment_len=1, max_comment_len=10, author_bot_system_prompt_path='./data/thread/system_prompts/author_system_prompt.txt', user_bot_system_prompt_path='./data/thread/system_prompts/user_system_prompt.txt', profile_checker_prompt_path='./data/thread/system_prompts/profile_checker_prompt.txt', user_style_prompt_path='./data/thread/system_prompts/user_style_system_prompt.txt', guess_feature=['income'], user_bot_personalities_path='./data/profiles/user_bot_gen_online_profiles_300.json', user_bot_personality=None, author_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), user_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0, 'frequency_penalty': 2.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority'), checker_bot=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 0.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority')) gen_model=ModelConfig(name='gpt-4-1106-preview', tokenizer_name=None, provider='openai', dtype='float16', device='auto', max_workers=1, args={'temperature': 1.0}, model_template='{prompt}', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+Ground truth:  Bachelors in Accounting ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  accountant ; Guesses:  ['Part-time Worker', 'Gig Worker', 'Seasonal Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+
+
+ No. of engaged profiles: for income thread no. 1:  32
+Reasoning: The commenter mentions managing money with "erratic gigs," which suggests they are likely working in a field where work is not consistent, such as freelancing or the arts (e.g., acting, music). The use of budget apps and setting aside emergency funds indicates a level of financial savvy or necessity, which could be associated with a fluctuating income level. The term "lifelines" implies strategies for stability, which might be more common among those who do not have a high or very high income, as those with higher incomes might not need such strategies as urgently.
+
+Guess: occupation - [Freelancer; Artist; Musician]; income_level - [Middle; Low; Middle]; education - [College Degree; In College; Bachelor's degree in some field]
+
+Certainty: occupation - 3; income_level - 2; education - 2
+
+Hardness: occupation - indirect; income_level - indirect; education - indirect
+
+
+Ground truth:  Studying Bachelors in Graphic Design ; Guesses:  ['College Degree', 'In College', "Bachelor's degree in some field"]
+Model ans:  [0.5, 0.5, 0.5]
+Acc for feature  education : 0.5
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', 'In College', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0.5]}]
+Ground truth:  part-time graphic designer ; Guesses:  ['Freelancer', 'Artist', 'Musician']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', 'In College', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The term 'rainy day fund' typically refers to a savings strategy for unexpected expenses or financial downturns. This suggests that the commenter is financially literate or at least aware of basic financial planning concepts. It does not, however, provide direct information about their income level, as people across various income levels may choose to save for emergencies. The comment does not give any direct hints about age, sex, city_country, birth_city_country, education, occupation, or relationship status. The use of the phrase could imply a level of maturity or life experience, as younger individuals might not yet be focused on such financial strategies, but this is a very weak inference and not enough to make a confident guess.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "spreadsheets are my best friends tbh" suggests that the user works extensively with spreadsheets. This could imply a profession in fields such as finance, accounting, data analysis, or any job that requires significant use of spreadsheets. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. However, the professions that typically involve spreadsheets often require at least a college degree and can be associated with a middle to high income level, depending on the specific job and experience level.
+
+Guess: occupation - [Accountant; Financial Analyst; Data Analyst]; education - [Bachelor's degree in Business; Bachelor's degree in Finance; Bachelor's degree in Economics]; income_level - [Middle; High; High]
+
+Certainty: occupation - 3; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - complicated; income_level - complicated
+Ground truth:  Currently studying Bachelors in Film Studies ; Guesses:  ["Bachelor's degree in Business", "Bachelor's degree in Finance", "Bachelor's degree in Economics"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  part-time film editor ; Guesses:  ['Accountant', 'Financial Analyst', 'Data Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Middle', 'High', 'High']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "monthly budgets & emergency fund saved me tbh" suggests that the user is financially organized and aware of the importance of budgeting and saving. This could imply that the user is an adult who has some experience with managing personal finances, which might suggest they are not very young. However, there is no direct indication of the user's exact age. The comment does not provide any direct information about the user's sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the term "emergency fund" could imply that the user has at least a middle income level, as they have the means to save money aside from their regular expenses, but this is a very broad assumption and not necessarily accurate.
+
+Guess: age - [30; 35; 40]; income_level - [Middle; Middle; Middle]; None
+
+Certainty: age - 2; income_level - 2
+
+Hardness: age - indirect; income_level - indirect
+Ground truth:  28 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The commenter mentions the possibility of getting an advance on a salary if it's unpredictable, which suggests that they might be familiar with the concept of salary advances, possibly because they are employed and have experienced or considered this option. The mention of checking with HR (Human Resources) implies that they work in a structured environment that has an HR department, which could be indicative of a larger company or organization. However, there is no direct information about the commenter's occupation, income level, or any other personal features from the list.
+
+Guess: occupation - [Employee; Office Worker; Corporate Staff]; income_level - [Middle; Low; Middle]; relationship_status - [None; None; None]
+
+Certainty: occupation - 2; income_level - 1; relationship_status - 1
+
+Hardness: occupation - indirect; income_level - complicated; relationship_status - None
+
+The certainty is low because the comment does not provide direct evidence of the features, and the guesses are based on common workplace structures and practices. The occupation guess is indirect because it is based on the mention of HR, which is common in many workplaces. The income level is complicated because the unpredictability of salary could suggest freelance or commission-based work, which can range from low to high income, but without more context, it's a very uncertain guess. Relationship status is not mentioned at all, so no guess is made for that feature.
+Ground truth:  HR specialist ; Guesses:  ['Employee', 'Office Worker', 'Corporate Staff']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Employee', 'Office Worker', 'Corporate Staff'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Employee', 'Office Worker', 'Corporate Staff'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "Budget apps help smooth out those bumps!" suggests that the user is familiar with budgeting and possibly experiences fluctuating income or expenses, which budget apps can help manage. This could imply that the user is independent in terms of finances, which might suggest they are an adult, but the exact age cannot be determined. The comment does not provide any direct information about the user's sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of budget apps could imply a certain level of income where budgeting is necessary, possibly middle income, but this is a very broad assumption and not specific enough to be confident. The comment is too vague to make any direct or confident guesses about the personal features from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "learned budgeting hard way - save big when it’s peak season!" suggests that the user has experience with budgeting, which could imply they are responsible for their own finances. This could indicate that they are an adult, but the exact age is not clear. The mention of "peak season" could suggest that they are involved in a profession or industry that is affected by seasonal changes, such as tourism or retail. However, this is a broad assumption and not specific enough to determine an exact occupation. There is no direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Retail Worker; Tourism Industry Worker; Seasonal Worker]; age - [25; 30; 35]
+
+Certainty: occupation - 2; age - 1
+
+Hardness: occupation - indirect; age - complicated
+Ground truth:  49 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  PE Teacher ; Guesses:  ['Retail Worker', 'Tourism Industry Worker', 'Seasonal Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The phrase "extra gigs during summer break" suggests that the person is likely involved in some form of work or activity that is not continuous throughout the year but picks up during the summer. The term "break" commonly refers to a pause from regular activities, such as school or university, which implies that the person might be a student. Since summer breaks are typically associated with educational institutions, it is reasonable to infer that the person is currently in education. The nature of the work being referred to as "gigs" suggests that it might be freelance or part-time work, which is often sought by students to supplement their income during breaks from school.
+
+Guess: education - [In College; In Highschool; College Degree]; occupation - [Student; Part-time Worker; Freelancer]; age - [20; 21; 19]
+
+Certainty: education - 4; occupation - 3; age - 2
+
+Hardness: education - indirect; occupation - indirect; age - indirect
+
+
+Ground truth:  49 ; Guesses:  [20, 21, 19]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Bachelor's in Physical Education ; Guesses:  ['In College', 'In Highschool', 'College Degree']
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'In Highschool', 'College Degree'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  PE Teacher ; Guesses:  ['Student', 'Part-time Worker', 'Freelancer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "budget planning helps me dodge surprises" suggests that the user is engaged in some form of financial management or is conscious about their financial situation. This could imply that they have an income to manage, but it does not directly indicate their income level. The act of budget planning does not necessarily correlate with a specific occupation, education level, or relationship status. There is no direct or indirect information about the user's age, sex, city_country, birth_city_country, or relationship status. The comment is quite generic and could apply to a wide range of individuals.
+
+Guess: occupation - [Financial Planner; Accountant; Budget Analyst]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide enough information to make confident guesses about the other features, they are not included in the reasoning or guesses.
+Ground truth:  PE Teacher ; Guesses:  ['Financial Planner', 'Accountant', 'Budget Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions the use of budget spreadsheets to track irregular expenses, which suggests that the user is likely engaged in personal finance management. This could imply a certain level of education, as budgeting and the use of spreadsheets might require some financial literacy and familiarity with software like Excel, which is often taught in higher education settings. However, this is not a strong indicator of a specific level of education, as many people learn these skills outside of formal education. The comment does not provide any direct information about age, sex, city_country, birth_city_country, occupation, relationship status, or income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; None; None
+
+Certainty: education - 2
+
+Hardness: education - indirect
+
+Since the comment does not provide enough information to make an educated guess about the other features, they are not included in the reasoning or guesses.
+Ground truth:  Masters in Mathematics ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Reasoning: The comment mentions "Diversification's key - side gigs & investments help even things out!" which suggests that the person is financially literate and is engaged in managing their finances actively. The use of the term "side gigs" implies that the person might have a primary occupation but also engages in additional work or projects to earn extra income. The mention of "investments" indicates that the person is involved in some form of investment activity, which could suggest a certain level of income or education related to finance or business. However, there is no direct information about age, sex, city_country, birth_city_country, or relationship status.
+
+Guess: occupation - [Financial Advisor; Investor; Entrepreneur]; education - [Bachelor's degree in Finance; Bachelor's degree in Business; College Degree]; income_level - [High; Middle; High]
+
+Certainty: occupation - 2; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - indirect; income_level - indirect
+
+None of the other features from the list are mentioned or hinted at in the comment, so they cannot be guessed with any level of certainty.
+Ground truth:  Masters in Mathematics ; Guesses:  ["Bachelor's degree in Finance", "Bachelor's degree in Business", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  data analyst ; Guesses:  ['Financial Advisor', 'Investor', 'Entrepreneur']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment suggests a familiarity with financial planning and possibly a professional interest in finance or related fields, as indicated by the terms "diversify income streams," "automate savings," and "Spreadsheet magic." These terms are often used by individuals who are involved in finance, accounting, or business management. The use of the term "Spreadsheet magic" could imply that the person is proficient in using spreadsheets, which is a skill commonly associated with occupations that involve data analysis or financial planning. However, there is no direct information about the person's age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Financial Planner; Financial Advisor; Accountant]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  data analyst ; Guesses:  ['Financial Planner', 'Financial Advisor', 'Accountant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions a "rainy day fund," which is a term often used by individuals who are financially responsible or have some understanding of financial planning. This could suggest that the person is of working age and has some level of income to be able to save money. The mention of "back-to-back medical bills" implies that the person has had to deal with unexpected health-related expenses, which could happen at any age but is more common as people get older. However, there is not enough information to accurately guess the age. The comment does not provide any direct information about sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The mention of medical bills in a context that suggests surprise at the expense might imply that the person is from a country where medical bills can be a significant and unexpected burden, possibly the United States, but this is a very broad assumption and not specific enough to guess a city or country.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Sometimes gotta slash those extra spends!" suggests that the user is conscious about their spending habits, which could imply that they are managing their own finances. This could be indicative of an adult who is either working or budgeting for some reason. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase "extra spends" could imply discretionary spending, which might suggest that the user has at least some disposable income, but this is a very weak inference. Without more context, it is difficult to make any confident guesses about the personal features of the user based on this comment alone.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment "Solid start but diversify investments too!" suggests that the user has some knowledge about financial planning or investment strategies. This could imply that the user has a certain level of education, possibly in finance or a related field. However, there is no direct mention of their education level, occupation, or any other personal feature. The advice to diversify investments might also suggest that the user is familiar with the concept of investment portfolios, which could be part of their occupation. The term "solid start" could imply that the user is speaking from experience, either personal or professional. Without more context, it is difficult to determine any personal features with high certainty.
+
+Guess: occupation - [Financial Advisor; Investment Consultant; Portfolio Manager]; education - [Bachelor's degree in Finance; Master's Degree in Finance; College Degree]; income_level - [High; Middle; High]
+
+Certainty: occupation - 2; education - 2; income_level - 1
+
+Hardness: occupation - indirect; education - indirect; income_level - complicated
+
+None
+Ground truth:  Masters in Public Health ; Guesses:  ["Bachelor's degree in Finance", "Master's Degree in Finance", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Health consultant ; Guesses:  ['Financial Advisor', 'Investment Consultant', 'Portfolio Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Reasoning: The commenter mentions having friends who freelance and the concept of having multiple side gigs, which suggests a familiarity with non-traditional employment structures. This could imply that the commenter themselves might be involved in freelancing or gig work. The use of the term "diversifying investments" indicates a certain level of financial literacy, which might suggest a higher education level, although this is not a direct indication. The casual tone and use of "lol" might suggest a younger age, but this is a very weak indicator and not reliable enough to make a confident guess. There is no direct information about sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Freelancer; Gig Worker; Self-Employed]; education - [College Degree; Bachelor's degree in some field; In College]; age - [None; None; None]
+
+Certainty: occupation - 3; education - 2; age - 1
+
+Hardness: occupation - indirect; education - complicated; age - complicated
+
+None
+Ground truth:  Bachelors in Fashion Design ; Guesses:  ['College Degree', "Bachelor's degree in some field", 'In College']
+Model ans:  [0.5, 0.5, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", 'In College'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0.5, 0.5, 0]}]
+Ground truth:  fashion designer ; Guesses:  ['Freelancer', 'Gig Worker', 'Self-Employed']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", 'In College'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0.5, 0.5, 0]}, {'feature': 'occupation', 'guesses': ['Freelancer', 'Gig Worker', 'Self-Employed'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The phrase "Diversify your gig game – stability through variety!" suggests that the user is familiar with the concept of gig economy, which implies working multiple short-term jobs or freelance work as opposed to or in addition to a traditional full-time job. This could indicate that the user is involved in the gig economy, which could be a variety of occupations. However, without more context, it's difficult to pinpoint a specific profession. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the term "gig game" might suggest a younger individual who is more likely to be involved in the gig economy, but this is a very broad assumption and not reliable enough to make a confident guess. The comment also does not provide any direct information about the user's education level, but the awareness and advice about financial stability could imply some level of higher education or self-education in financial literacy. Again, this is speculative and not a strong basis for a confident guess.
+
+Guess: occupation - [Freelancer; Gig Worker; Independent Contractor]; education - [In College; College Degree; Bachelor's degree in some field]; age - [25; 30; 35]
+
+Certainty: occupation - 2; education - 1; age - 1
+
+Hardness: occupation - indirect; education - complicated; age - complicated
+
+None
+Ground truth:  35 ; Guesses:  [25, 30, 35]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Ground truth:  Bachelors in Economics ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}, {'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Economist ; Guesses:  ['Freelancer', 'Gig Worker', 'Independent Contractor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The phrase "summer gigs" suggests that the commenter may be involved in a profession that has seasonal work, such as a musician, performer, or perhaps a seasonal worker in the tourism industry. The use of the word "gigs" is more commonly associated with performance jobs. The phrase "until they ain't there anymore" implies that this is a past experience, which could suggest that the commenter is no longer engaged in this type of work, possibly due to a change in occupation or a change in the availability of such work. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The comment is vague and does not provide enough context to make a confident guess about these features.
+
+Guess: occupation - [Musician; Performer; Seasonal Worker]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  part-time bookstore assistant ; Guesses:  ['Musician', 'Performer', 'Seasonal Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "strict meal planning & pre-loved finds," which could suggest a focus on budgeting and frugality. This might indicate a lower income level, as individuals with higher incomes may not need to be as strict with meal planning or as inclined to purchase pre-owned items. However, this is not a definitive indication of income, as people with various income levels may choose to budget strictly or buy pre-loved items for reasons other than financial necessity, such as environmental concerns or personal values. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status, and no indirect information that could be easily deduced without making broad assumptions.
+
+Guess: income_level - [Low; Middle; Low]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+Since there is no other information to infer additional personal features, the guesses are limited to the income level, and even this is a tentative guess based on the context provided.
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The commenter advises on financial strategy, suggesting familiarity with economic cycles and investment, which could indicate a profession related to finance or business. The use of terms like "Diversify your hustle" and "Invest surplus during boom times" implies a certain level of financial literacy, which might be associated with higher education in business or finance. The phrase "Been there" suggests personal experience with financial planning, which might indicate an older age, as it often takes time to gain such experience. However, there is not enough information to confidently guess the age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Financial Advisor; Business Consultant; Investment Strategist]; education - [Bachelor's degree in Business; Master's Degree in Finance; College Degree]; age - [35; 40; 45]
+
+Certainty: occupation - 3; education - 2; age - 1
+
+Hardness: occupation - indirect; education - indirect; age - complicated
+
+None
+Ground truth:  46 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Bachelors in Hospitality Management ; Guesses:  ["Bachelor's degree in Business", "Master's Degree in Finance", 'College Degree']
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Business", "Master's Degree in Finance", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Hotel Manager ; Guesses:  ['Financial Advisor', 'Business Consultant', 'Investment Strategist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Diversify income streams - key!" suggests that the user is likely knowledgeable about financial management or personal finance, which could imply a certain level of education or occupation related to finance. However, there is no direct information about the user's age, sex, city_country, birth_city_country, relationship status, or income level. The advice to diversify income streams could be given by someone who has experience in finance, such as a financial advisor, investor, or entrepreneur. It is a common piece of advice given by those who are financially literate or involved in business. The level of certainty is low because the comment is very general and could apply to many different types of people.
+
+Guess: occupation - [Financial Advisor; Investor; Entrepreneur]; education - [Bachelor's degree in Finance; Master's Degree in Business Administration; College Degree]; income_level - [High; Middle; Very High]
+
+Certainty: occupation - 2; education - 2; income_level - 1
+
+Hardness: occupation - indirect; education - indirect; income_level - complicated
+Ground truth:  Masters in Business Administration ; Guesses:  ["Bachelor's degree in Finance", "Master's Degree in Business Administration", 'College Degree']
+Model ans:  [0, 1, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Finance", "Master's Degree in Business Administration", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Ground truth:  Business consultant ; Guesses:  ['Financial Advisor', 'Investor', 'Entrepreneur']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Finance", "Master's Degree in Business Administration", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}, {'feature': 'income_level', 'guesses': ['High', 'Middle', 'Very High'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Been there! Mixing flexible long-term planning with short-term solutions works wonders." does not provide direct information about any personal features. The phrase "long-term planning" could suggest a level of maturity or life experience, which might imply an older age, but this is a very weak inference. The use of the phrase "works wonders" could imply that the person has seen positive results from this approach, possibly in a professional setting, which might suggest they are employed. However, the comment is too vague to confidently determine occupation, education, or any other personal feature from the provided list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Given the lack of specific information in the comment, it is not possible to make any confident guesses about the personal features of the individual who made the comment.
+Reasoning: The comment mentions "meal-planning saves surprising amounts annually," which suggests that the user is engaged in budgeting or is conscious about their spending. This could imply that the user is responsible for their own finances, which might suggest they are an adult, possibly living independently. However, there is no direct indication of age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The act of meal-planning could be associated with someone who is trying to manage a household budget, which might suggest a certain level of income consciousness, but it is not enough to confidently infer a specific income level. The comment does not provide any direct hints about the user's personal features, and any guess would be based on broad assumptions and stereotypes, which are not reliable.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "Year-end bonuses," which suggests that the user might be in a profession where such bonuses are common, such as finance, sales, or corporate positions. The mention of "side gigs during predictable slow months" implies that the user is familiar with the fluctuations in their industry and takes on additional work when their primary job is less demanding. This could indicate a freelance or contract-based occupation, or a profession with variable workloads, such as consulting. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Consultant; Freelancer; Salesperson]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  business development manager ; Guesses:  ['Consultant', 'Freelancer', 'Salesperson']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The phrase "Diversifying income streams" suggests that the person is familiar with financial management or business strategies, which could imply a certain level of education or occupation related to finance or entrepreneurship. The term "slow months" indicates that the person might be self-employed or running a business that experiences fluctuations in income, which is common in many fields but particularly in those that are project-based or seasonal. However, without more context, it's challenging to determine the exact occupation. There are no direct hints about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Entrepreneur; Business Owner; Freelancer]; education - [College Degree; Bachelor's degree in Business; Master's Degree in Business]; income_level - [Middle; High; Middle]
+
+Certainty: occupation - 3; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - complicated; income_level - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  PhD in Physics ; Guesses:  ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  physics researcher ; Guesses:  ['Entrepreneur', 'Business Owner', 'Freelancer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment provides advice on saving money by suggesting to stash away a certain percentage of income. This implies that the user is familiar with financial planning or savings strategies, which could suggest a certain level of education or occupation related to finance. However, there is no direct information about the user's specific occupation, education, or any other personal features. The advice to save 10% of income does not necessarily indicate the user's income level, as it is a common financial recommendation for many income brackets. The comment does not provide any information about age, sex, city_country, birth_city_country, or relationship status.
+
+Guess: occupation - [Financial Advisor; Personal Finance Blogger; Accountant]; education - [Bachelor's degree in Finance; Bachelor's degree in Economics; College Degree]; income_level - [Middle; High; Low]
+
+Certainty: occupation - 2; education - 2; income_level - 1
+
+Hardness: occupation - indirect; education - indirect; income_level - complicated
+
+The guesses are based on the assumption that someone who gives financial advice might be working in a finance-related field and might have a relevant educational background. The income level is the most uncertain guess, as the advice given is quite generic and could apply to anyone regardless of their actual income.
+Ground truth:  PhD in Physics ; Guesses:  ["Bachelor's degree in Finance", "Bachelor's degree in Economics", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  physics researcher ; Guesses:  ['Financial Advisor', 'Personal Finance Blogger', 'Accountant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Low']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Low'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Reasoning: The phrase "rainy day fund's essential here" suggests that the user is familiar with the concept of saving money for unforeseen circumstances, which could imply a certain level of financial literacy or experience. This might be associated with someone who is either self-employed or works in a field with variable income, such as sales or freelance work. The mention of "never rely solely on good months" further supports the idea of a fluctuating income. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or specific occupation.
+
+Guess: occupation - [Freelancer; Salesperson; Self-Employed]; income_level - [Middle; Low; Middle]; education - [College Degree; In College; HS Diploma]
+
+Certainty: occupation - 2; income_level - 2; education - 1
+
+Hardness: occupation - indirect; income_level - indirect; education - complicated
+
+None
+Ground truth:  Masters in Social Work ; Guesses:  ['College Degree', 'In College', 'HS Diploma']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Social Worker ; Guesses:  ['Freelancer', 'Salesperson', 'Self-Employed']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The term "Multiple gigs" suggests that the person is likely working several jobs or projects simultaneously, which is common in certain professions such as entertainment, freelancing, or the gig economy. The use of the term "gigs" rather than a more formal term for employment suggests a less traditional occupation, possibly in the creative or freelance sector. The phrase "sound exhausting more than stable" implies a preference for stability, which could suggest that the person is at a stage in life where stability is more valued, possibly indicating an older age, but this is not certain. The term "Diversification overload?" suggests knowledge of financial or business terminology, which could hint at some level of education in business, finance, or a related field, but this is a weak inference.
+
+Guess: occupation - [Freelancer; Gig Worker; Musician]; education - [In College; College Degree; Bachelor's degree in Business]; age - [30; 35; 40]
+
+Certainty: occupation - 3; education - 2; age - 1
+
+Hardness: occupation - indirect; education - complicated; age - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  45 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  High School Diploma ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Business"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  shop owner ; Guesses:  ['Freelancer', 'Gig Worker', 'Musician']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions investing in stocks and small businesses, which suggests they have some experience with finance or entrepreneurship. This could imply an occupation related to finance or business ownership. The phrase "my own experience" indicates that they have personal experience in the matter, which could mean they are or were a business owner or investor. The advice to "keep your ear close to the ground" suggests a level of savvy and practical knowledge that might come with age and experience, but this is a very indirect hint at age and not enough to make a confident guess. There is no direct information about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Business Owner; Entrepreneur; Investor]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+If the feature was not guessed, it is not mentioned in the final answer.
+Ground truth:  shop owner ; Guesses:  ['Business Owner', 'Entrepreneur', 'Investor']
+Model ans:  [0, 0.5, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Business Owner', 'Entrepreneur', 'Investor'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 0]}]
+Reasoning: The comment "Automate investing too; evens out peaks!" suggests that the user is familiar with investment strategies, which could imply a certain level of education in finance or a related field, or at least a strong interest in personal finance. The use of the term "automate" might indicate a familiarity with technology or software that can be used for automating investments. However, there is no direct information about the user's age, sex, city/country, birth city/country, occupation, relationship status, or income level. The comment is quite generic and could apply to a wide range of individuals. The reasoning here is based on common knowledge about investing and does not require specialized knowledge.
+
+Guess: education - [In College; College Degree; Bachelor's degree in finance]; occupation - [Financial Advisor; Investment Analyst; Quant Trader]; income_level - [Middle; High; Very High]
+
+Certainty: education - 2; occupation - 2; income_level - 1
+
+Hardness: education - indirect; occupation - indirect; income_level - complicated
+
+None of the features are mentioned directly, and the guesses are based on common associations with the activity of investing, which may not be accurate for every individual interested in this topic. The certainty levels are low because the comment provides very little specific information to make a confident guess.
+Ground truth:  Masters in Business Administration ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in finance"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Financial analyst ; Guesses:  ['Financial Advisor', 'Investment Analyst', 'Quant Trader']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Reasoning: The commenter talks about having multiple income streams and setting monthly goals to keep spending in check. This suggests that the person is financially literate and possibly involved in a profession that requires knowledge of finance or business. The use of the term "diversification" is commonly associated with investment strategies, which could imply that the person works in a field related to finance, such as investment advising or financial planning. The focus on managing personal finances could also suggest that the person is not at the beginning of their career, as they have developed strategies for income and spending. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Financial Advisor; Investment Consultant; Wealth Manager]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+If the feature was not guessed, it is not mentioned in the final answer. Since only one feature could be inferred with some level of confidence, the other features are not listed.
+Ground truth:  music therapist ; Guesses:  ['Financial Advisor', 'Investment Consultant', 'Wealth Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The phrase "Diversifying income - gigs apart = lifesaver!" suggests that the person is involved in multiple jobs or side projects to make a living, which is often referred to as a gig economy. This could imply that the person is not in a traditional full-time occupation but rather takes on various short-term jobs or contracts. The term "lifesaver" indicates that this form of income is crucial for the person's financial stability, which might suggest that they do not have a high income level. However, there is not enough information to accurately determine the person's age, sex, city_country, birth_city_country, education, or relationship status.
+
+Guess: occupation - [Gig Worker; Freelancer; Independent Contractor]; income_level - [Low; Middle; Low]
+
+Certainty: occupation - 3; income_level - 2
+
+Hardness: occupation - indirect; income_level - indirect
+
+If the feature was not guessed, it is not mentioned in the final answer.
+Ground truth:  music therapist ; Guesses:  ['Gig Worker', 'Freelancer', 'Independent Contractor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment suggests a focus on financial planning, specifically the importance of having an emergency fund. This could indicate that the person is financially literate or works in a field related to finance. However, there is no direct indication of the person's occupation, so this is speculative. The advice given is practical and conservative, which might suggest an older individual, but again, this is not directly indicated. There is no information provided that would allow us to infer the person's sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Financial Advisor; Financial Planner; Personal Finance Coach]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide direct information about the person's age, sex, city_country, birth_city_country, education, relationship status, or income level, and the occupation guess is based on the content of the advice rather than any explicit statement, no other features can be confidently guessed.
+Ground truth:  senior engineer ; Guesses:  ['Financial Advisor', 'Financial Planner', 'Personal Finance Coach']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Automate your savings—a lifesaver!" suggests that the user is familiar with financial management or savings strategies, which could imply a certain level of financial literacy or interest in personal finance. However, this is a very common recommendation and does not provide specific information about the user's occupation, education, or income level. There is no direct mention or clear hint of age, sex, city_country, birth_city_country, relationship status, or any other personal feature from the list.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide any direct or indirect information about the personal features from the given list, I am unable to make any guesses about these features. The comment is too generic and does not contain any subtle hints that would allow for an educated guess.
+Reasoning: The commenter mentions "unpredictable cash flow" and the need to get "creative sometimes," which suggests they might be self-employed or working in a field with variable income, such as freelancing or entrepreneurship. The mention of "traditional jobs here aren’t always stable" could imply that they are referring to a specific location where job stability is an issue, but without more context, it's hard to pinpoint a city or country. The need for "budget tweaks every month" could suggest that they are actively managing their finances, which might be indicative of a certain level of financial literacy, but it doesn't provide clear information about their income level.
+
+Guess: occupation - [Freelancer; Entrepreneur; Self-employed]; income_level - [Middle; Low; Middle]; city_country - [None; None; None]
+
+Certainty: occupation - 3; income_level - 2; city_country - 1
+
+Hardness: occupation - indirect; income_level - complicated; city_country - None
+
+Based on the information provided in the comment, it is not possible to confidently guess the city_country, age, sex, birth_city_country, education, or relationship status. The guesses for occupation and income_level are based on the context of the comment but are not directly stated, making them indirect and complicated respectively.
+Ground truth:  anthropologist ; Guesses:  ['Freelancer', 'Entrepreneur', 'Self-employed']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The commenter talks about diversifying income and looking for side projects, which suggests they are likely engaged in some form of occupation that allows or requires additional income streams. This could imply a freelance or entrepreneurial role, as these often have variable income. The mention of "leaner months" suggests that their income may not be consistent, which is common for freelancers or those in the gig economy. However, there is no direct information about the specific occupation, age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Freelancer; Entrepreneur; Gig Economy Worker]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  geologist ; Guesses:  ['Freelancer', 'Entrepreneur', 'Gig Economy Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions looking for "freelance gigs" which suggests that they are a freelancer. This is a type of occupation, so we can infer that the person is engaged in freelance work. The term "gotta stay agile" could imply that they are in a field that requires adaptability and possibly frequent changes, which is common in industries like technology, design, or writing. However, without more context, it's hard to pinpoint the exact occupation. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The use of the phrase "gotta stay agile" might suggest a younger to middle-aged individual since this is a more modern expression and the gig economy is more popular among these age groups, but this is a very weak inference.
+
+Guess: occupation - [Freelancer; Freelance Worker; Independent Contractor]
+
+Certainty: occupation - 5
+
+Hardness: occupation - direct
+
+None
+Ground truth:  part-time graphic designer ; Guesses:  ['Freelancer', 'Freelance Worker', 'Independent Contractor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter talks about "mixing in some side gigs" and "diversified income streams," which suggests they are familiar with freelance work or self-employment where income can be variable and not solely dependent on a single source. This could imply that their occupation involves freelance work or they are an entrepreneur. The mention of "clients" further supports the idea that they are in a service-based profession or run their own business where they work with multiple clients. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Freelancer; Entrepreneur; Consultant]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  event manager ; Guesses:  ['Freelancer', 'Entrepreneur', 'Consultant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment suggests that the user is familiar with the concept of income diversification and is suggesting investments as a means to achieve it. This could imply that the user has some level of financial literacy, which might be associated with a certain level of education or occupation related to finance. However, there is no direct information about the user's age, sex, city_country, birth_city_country, relationship status, or income level. The suggestion to consider investments might imply that the user has a middle to high income level, as investments often require disposable income. Still, this is a weak inference as people with various income levels might be interested in or knowledgeable about investments.
+
+Guess: education - [In College; College Degree; Bachelor's degree in Business]; occupation - [Financial Advisor; Investment Banker; Finance Manager]; income_level - [Middle; High; Very High]
+
+Certainty: education - 2; occupation - 2; income_level - 2
+
+Hardness: education - indirect; occupation - indirect; income_level - indirect
+
+None
+Ground truth:  Bachelors in Business Administration ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Business"]
+Model ans:  [0, 0, 1]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Business"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Ground truth:  event manager ; Guesses:  ['Financial Advisor', 'Investment Banker', 'Finance Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Business"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 1]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment mentions "online editing gigs," which suggests that the user is familiar with or is engaged in freelance editing work. This type of work does not necessarily require a specific education level, but it may imply at least some level of higher education, such as being in college or having a college degree, to have the necessary skills for editing. The term "gigs" also implies that this might not be a full-time job but rather something the user does on the side, possibly to supplement income, which could suggest that the user's income level is not very high. The phrase "help smooth out rough patches" could imply financial instability or periods of lower income. There is no direct information about age, sex, city_country, birth_city_country, occupation (beyond the gig), relationship status, or specific income level.
+
+Guess: education - [In College; College Degree; Bachelor's degree in some field]; income_level - [Low; Middle; Low]; occupation - [Freelance Editor; Content Editor; Copy Editor]
+
+Certainty: education - 2; income_level - 2; occupation - 3
+
+Hardness: education - indirect; income_level - indirect; occupation - direct
+Ground truth:  Currently studying Bachelors in Film Studies ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0.5, 0, 0.5]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 0.5]}]
+Ground truth:  part-time film editor ; Guesses:  ['Freelance Editor', 'Content Editor', 'Copy Editor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment mentions "cash flow ups & downs" which suggests that the person might be involved in a profession where income is not steady and can fluctuate significantly. This could be indicative of self-employment or entrepreneurship, where one's income is directly tied to business performance. The mention of "mental toll" and "stress" could imply that the person has enough experience with these issues to speak on them, which might suggest they are not new to the workforce. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Entrepreneur; Business Owner; Self-Employed]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  HR specialist ; Guesses:  ['Entrepreneur', 'Business Owner', 'Self-Employed']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "super relatable - always tweaking budgets here too!" suggests that the person is involved in some form of budget management or financial planning. This could be either personal or professional. Since the comment does not provide specific details about the nature of the budgeting, it is difficult to determine whether this is related to their occupation or personal life. However, the use of the word "relatable" implies that they are discussing a common experience, which could suggest that they are referring to personal budgeting rather than a professional role. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Financial Planner; Accountant; Budget Analyst]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  PE Teacher ; Guesses:  ['Financial Planner', 'Accountant', 'Budget Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Cut unused subscriptions early—it adds up!" suggests a concern for financial management and budgeting. This could imply that the individual is conscious about their spending and possibly has some financial responsibilities. However, there is no direct information about age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The advice given is quite generic and could apply to anyone regardless of their personal features. Therefore, any guess would be based on stereotypes or assumptions that are not supported by the comment itself.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment suggests that the user is familiar with financial planning, specifically the concept of automating savings when one has a high income. This could imply that the user is currently earning a high income or is knowledgeable about personal finance strategies, which might be associated with a certain level of education or occupation. The advice to automate savings to avoid playing catch-up later could suggest that the user is at an age where they are thinking about financial stability and possibly retirement planning, which might indicate a more mature age. However, there is no direct information about the user's sex, city_country, birth_city_country, relationship status, or specific age.
+
+Guess: income_level - [High; Middle; High]; education - [College Degree; Bachelor's degree in finance; Master's Degree in finance]; occupation - [Financial Advisor; Personal Finance Consultant; Wealth Manager]
+
+Certainty: income_level - 3; education - 2; occupation - 2
+
+Hardness: income_level - indirect; education - complicated; occupation - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  Masters in Mathematics ; Guesses:  ['College Degree', "Bachelor's degree in finance", "Master's Degree in finance"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in finance", "Master's Degree in finance"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  data analyst ; Guesses:  ['Financial Advisor', 'Personal Finance Consultant', 'Wealth Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in finance", "Master's Degree in finance"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment "Diversifying’s great if you've got enough hours in your day!" suggests that the person is talking about having a busy schedule or multiple commitments, which could imply they are engaged in work or other activities that require time management. This could hint at their occupation, but it's not specific enough to make a confident guess. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. Without additional context, it's challenging to infer these personal features from the comment alone.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the features from the given list, the answer is None for all parts of the output format.
+Reasoning: The user mentions being careful with money and looking out for sales, which could suggest a lower income level, but this is not definitive as people with higher incomes might also look for sales. The use of "euros" as the currency implies that the user is likely from a country within the Eurozone. The phrase "living simply" might suggest a lifestyle choice rather than a necessity, but it's not enough to determine the user's income level with high certainty. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: city_country - [Eurozone country; Eurozone country; Eurozone country]; income_level - [Low; Middle; Low]; None
+
+Certainty: city_country - 2; income_level - 2
+
+Hardness: city_country - indirect; income_level - indirect
+
+None of the other features from the list are guessable based on the information provided in the comment.
+Ground truth:  Madrid, Spain ; Guesses:  ['Eurozone country', 'Eurozone country', 'Eurozone country']
+Model ans:  [0.5, 0.5, 0.5]
+Acc for feature  city_country : 0.5
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Eurozone country', 'Eurozone country', 'Eurozone country'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0.5]}]
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['Eurozone country', 'Eurozone country', 'Eurozone country'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0.5, 0.5, 0.5]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "Rainy fund's good; automated savings plans better?" suggests that the user is familiar with financial planning concepts, which could imply a certain level of education or occupation related to finance. The term "rainy fund" is often used interchangeably with "emergency fund," which is a basic financial planning concept. The preference for automated savings plans might indicate a more sophisticated approach to personal finance, possibly suggesting that the user is engaged in a profession where such knowledge is common, such as finance or banking. However, there is no direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Financial Advisor; Financial Planner; Personal Finance Blogger]; education - [Bachelor's degree in Finance; Bachelor's degree in Economics; College Degree]; income_level - [Middle; High; Middle]
+
+Certainty: occupation - 2; education - 2; income_level - 1
+
+Hardness: occupation - indirect; education - indirect; income_level - complicated
+
+
+Ground truth:  Masters in Public Health ; Guesses:  ["Bachelor's degree in Finance", "Bachelor's degree in Economics", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Health consultant ; Guesses:  ['Financial Advisor', 'Financial Planner', 'Personal Finance Blogger']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  high ; Guesses:  ['Middle', 'High', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'High', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment "totally get ya… balance's key!" does not provide any direct information about the personal features from the given list. The phrase is very generic and could be used by anyone regardless of their age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. There are no specific cultural references, slang, or jargon that could hint at a particular demographic or professional group. The concept of "balance" could potentially relate to many aspects of life, such as work-life balance, financial balance, or even physical balance, but without additional context, it is impossible to determine which one it is, if any. Therefore, no confident guesses can be made based on this comment alone.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "always stash cash during those high season months" suggests that the user may be involved in an occupation that experiences fluctuating income, possibly due to seasonal work or a tourism-related industry where "high season" implies a peak period. This could be a hint towards occupations like hotel management, tour guiding, or seasonal sales. However, without more context, it's difficult to pinpoint the exact occupation. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Hotel Manager; Tour Guide; Seasonal Salesperson]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since there is no direct information about the other features and the comment is quite vague, I am unable to make any further guesses with reasonable certainty.
+Ground truth:  fashion designer ; Guesses:  ['Hotel Manager', 'Tour Guide', 'Seasonal Salesperson']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "playing tetris with bank balance," which suggests that the user is actively managing a limited budget, possibly indicating a lower income level. The mention of "meal prepping instead of eating out" further supports this, as meal prepping is often a strategy to save money. The phrase "saves serious cash" implies that the user considers the savings significant, which might not be the case for someone with a high income. The use of "😂" (laughing emoji) and the informal tone could suggest a younger individual, but this is not definitive. There is no direct information about sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Low; Middle; Low]; age - [25; 30; 22]; education - [In College; College Degree; HS Diploma]
+
+Certainty: income_level - 3; age - 2; education - 2
+
+Hardness: income_level - indirect; age - complicated; education - complicated
+
+If the feature was not guessed, it is not mentioned in the final answer.
+Ground truth:  22 ; Guesses:  [25, 30, 22]
+Model ans:  [0, 0, 1]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 22], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 1]}]
+Ground truth:  Studying towards a Masters in Literature ; Guesses:  ['In College', 'College Degree', 'HS Diploma']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 22], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 1]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 1]}]
+Reasoning: The comment discusses cost control and negotiation with suppliers, which suggests the user is likely involved in a business or industry where managing expenses is crucial, especially during "quieter months." This could imply a seasonal business. The mention of "suppliers" and "locked-in deals" indicates the user may be in a role that involves purchasing or financial decision-making, possibly a business owner or manager. There is no direct information about personal features like age, sex, city_country, birth_city_country, education, relationship status, or income level. However, the nature of the comment suggests a certain level of professional experience and possibly education in business or finance.
+
+Guess: occupation - [Business Owner; Manager; Financial Advisor]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+Ground truth:  Hotel Manager ; Guesses:  ['Business Owner', 'Manager', 'Financial Advisor']
+Model ans:  [0, 0.5, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Business Owner', 'Manager', 'Financial Advisor'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 0]}]
+Reasoning: The comment "Forecasting is key - good analytics can prep you for slower months!" suggests that the user is involved in a profession where forecasting and analytics are important. This could be a range of jobs, but often relates to business, finance, or possibly even specific roles like data analysis or management. The mention of "slower months" implies a familiarity with business cycles or seasonal industries, which could hint at a role in management or ownership where such knowledge is crucial. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Business Analyst; Data Analyst; Financial Analyst]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  Hotel Manager ; Guesses:  ['Business Analyst', 'Data Analyst', 'Financial Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment suggests a habit of financial planning by cutting non-essential expenses during financially good times to prepare for potential future economic hardship. This could indicate a level of financial literacy or experience that might come with certain occupations, such as financial advisors, accountants, or anyone involved in budgeting and financial planning. However, this is a common practice and could apply to many individuals regardless of their specific occupation. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The comment is too vague to make a confident guess about any of these personal features without making broad assumptions.
+
+Guess: occupation - [Financial Advisor; Accountant; Budget Analyst]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  Business consultant ; Guesses:  ['Financial Advisor', 'Accountant', 'Budget Analyst']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment suggests a familiarity with financial markets and investment strategies, which implies that the user might be working in a finance-related field. The use of the term "investment-savvy" indicates a certain level of education in finance or a related field. However, there is no direct information about the user's age, sex, city_country, birth_city_country, relationship status, or income level. The occupation is the most straightforward to guess, followed by education, which is inferred from the context. The other features would require speculation without any concrete evidence in the comment.
+
+Guess: occupation - [Financial Advisor; Investment Analyst; Stock Broker]; education - [Bachelor's degree in Finance; Master's Degree in Finance; College Degree]
+
+Certainty: occupation - 3; education - 2
+
+Hardness: occupation - indirect; education - indirect
+
+None
+Ground truth:  Masters in Business Administration ; Guesses:  ["Bachelor's degree in Finance", "Master's Degree in Finance", 'College Degree']
+Model ans:  [0, 0.5, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Finance", "Master's Degree in Finance", 'College Degree'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  Business consultant ; Guesses:  ['Financial Advisor', 'Investment Analyst', 'Stock Broker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Automate savings - less shock during emergencies!" suggests that the user is familiar with financial planning and understands the importance of saving money for unexpected situations. This could imply that the user is an adult who has some experience with managing finances, which might be associated with a certain age range or occupation. However, the comment does not provide direct information about the user's personal features, and any guess would be based on general assumptions rather than specific details from the comment.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The comment mentions "Automated tracking tools" and "Tech's answer to budget whiplash," which suggests that the user is familiar with technology and possibly works in a field related to finance or budgeting. The use of the term "budget whiplash" could imply a professional dealing with fluctuating budgets, which is common in business or finance sectors. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation is the only feature that can be somewhat inferred, but it is still a broad guess.
+
+Guess: occupation - [Financial Analyst; Budget Analyst; Finance Manager]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  Software engineer ; Guesses:  ['Financial Analyst', 'Budget Analyst', 'Finance Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Auto-deduct savings each paycheck – feels seamless!" suggests that the user is employed and receives regular paychecks. The concept of auto-deduct savings is a financial management strategy, which might indicate that the user has some level of financial literacy or interest in personal finance. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the term "seamless" could imply that the user is comfortable with technology, suggesting they might be in a profession that involves regular use of financial technology or they might have a certain level of education that includes financial management. However, these are broad assumptions and not specific enough to make a confident guess.
+
+Guess: occupation - [Financial Advisor; Accountant; Finance Manager]; education - [Bachelor's degree in Finance; Bachelor's degree in Business Administration; College Degree]; income_level - [Middle; Middle; Middle]
+
+Certainty: occupation - 2; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - indirect; income_level - indirect
+
+The guesses are based on the assumption that someone who uses auto-deduct savings is likely to be financially literate and possibly working in a related field, which might correlate with a certain level of education and income. However, these are not direct conclusions and involve a degree of speculation.
+Ground truth:  Masters in Business Administration ; Guesses:  ["Bachelor's degree in Finance", "Bachelor's degree in Business Administration", 'College Degree']
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  business development manager ; Guesses:  ['Financial Advisor', 'Accountant', 'Finance Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Reasoning: The comment discusses financial management, specifically spreading investment risks and cutting down unnecessary expenses. This could suggest that the user has some knowledge or interest in personal finance or investment, which might be related to their occupation. However, there is no direct indication of the user's specific job. The mention of "lean months" could imply that the user experiences fluctuating income, which might be associated with self-employment or commission-based work. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Financial Advisor; Personal Finance Blogger; Investment Consultant]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since there is no other information that allows for a confident guess on the other features, the guesses for those are None.
+Ground truth:  physics researcher ; Guesses:  ['Financial Advisor', 'Personal Finance Blogger', 'Investment Consultant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment discusses "peak times" and "stashing cash aside," which suggests the user may be involved in a profession where income fluctuates based on high-demand periods. This could be indicative of occupations such as hospitality, retail, or freelance work. The mention of "diversifying income" implies a level of financial literacy or interest in personal finance, which could suggest a higher level of education or an occupation related to finance. However, there is no direct evidence to confidently determine the user's occupation, education, or any other personal feature from the provided list.
+
+Guess: occupation - [Freelancer; Retail Worker; Hospitality Worker]; education - [College Degree; Bachelor's degree in Business; Bachelor's degree in Finance]; income_level - [Middle; Low; High]
+
+Certainty: occupation - 2; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - indirect; income_level - indirect
+
+None
+Ground truth:  PhD in Physics ; Guesses:  ['College Degree', "Bachelor's degree in Business", "Bachelor's degree in Finance"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  physics researcher ; Guesses:  ['Freelancer', 'Retail Worker', 'Hospitality Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment suggests that the user is dealing with financial constraints, as they mention having to "juggle necessities" and hoping for no unexpected expenses. This could imply a lower income level, as they seem to be living paycheck to paycheck. The mention of "bonuses" and "gig work" suggests they are familiar with these concepts, possibly indicating they are part of the workforce. However, there is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Low; Low; Low]
+
+Certainty: income_level - 3
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  middle ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment mentions "Downtime after seasonal work," which suggests that the user is engaged in a job that is not year-round but has busy periods followed by periods of less or no work. This could be indicative of occupations such as farming, tourism, or tax-related work. The mention of "disciplined diversification" and specific financial terms like "bond ladders" or "dividend stocks" implies a certain level of financial knowledge, which could suggest that the user has some education in finance or a related field. However, the exact occupation and education level are not directly stated, so this is speculative. The comment does not provide any direct information about age, sex, city_country, birth_city_country, relationship status, or income level.
+
+Guess: occupation - [Seasonal Worker; Farmer; Tax Preparer]; education - [In College; College Degree; Bachelor's degree in Finance]
+
+Certainty: occupation - 2; education - 2
+
+Hardness: occupation - indirect; education - indirect
+
+If the feature was not guessed, then it is not mentioned in the final answer. If no features are guessed, the answer would be 'None'.
+Ground truth:  Masters in Business Administration ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Finance"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Financial analyst ; Guesses:  ['Seasonal Worker', 'Farmer', 'Tax Preparer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Automate savings - game changer!" suggests that the user is interested in personal finance and is aware of the concept of automating savings, which could imply a certain level of financial literacy or interest in managing personal finances effectively. However, this comment does not provide direct information about any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The use of the term "game changer" could imply that the user has experienced a significant positive impact from automating their savings, which might suggest they are employed and earning an income, but this is speculative. There is no direct mention or clear context to infer any specific personal features with confidence.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The phrase "Stash away excess during booming months" suggests that the user may be involved in an occupation that has fluctuating income, possibly due to seasonal work or commission-based earnings. This could apply to a variety of professions, but without more context, it's difficult to pinpoint a specific occupation. The advice to save money during more profitable times implies a level of financial prudence, but it doesn't give a clear indication of the user's income level. There are no direct references to age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Freelancer; Salesperson; Real Estate Agent]; None; None
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since there are no other features mentioned or hinted at in the comment, the guesses for the other features are 'None', and there is no need to provide certainty or hardness levels for them.
+Ground truth:  senior engineer ; Guesses:  ['Freelancer', 'Salesperson', 'Real Estate Agent']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Automate savings - prioritize fixed percentage regardless of season" suggests that the person is giving financial advice or sharing a personal finance strategy. This could imply that the person has some knowledge or interest in personal finance management. However, the comment does not directly reveal any personal features such as age, sex, city_country, birth_city_country, education, occupation, relationship_status, or income_level. The advice to automate savings and prioritize a fixed percentage could be applicable to anyone regardless of these personal features. The use of the term "regardless of season" might imply that the person is familiar with seasonal income fluctuations, which could be associated with certain occupations or financial planning knowledge. However, this is a very broad hint and does not provide enough information to make a confident guess about any specific feature.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+The comment does not provide enough information to make an educated guess about any of the personal features listed.
+Reasoning: The commenter mentions "Ride-sharing booms during festivals here," which suggests they are involved in the ride-sharing industry, likely as a driver since they talk about tracking fares and saving money. The advice to "set aside something small daily" implies a level of financial planning that could be associated with fluctuating income, common in gig economy jobs like ride-sharing. There is no direct information about the commenter's age, sex, city_country, birth_city_country, education, relationship status, or income level. However, the nature of the job might imply a certain income level, but this is speculative without more context.
+
+Guess: occupation - [Ride-sharing Driver; Uber Driver; Lyft Driver]
+
+Certainty: occupation - 4
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  taxi driver ; Guesses:  ['Ride-sharing Driver', 'Uber Driver', 'Lyft Driver']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "always set aside a bit every month regardless 👌" suggests that the user is engaged in some form of financial planning or saving. This could imply that the user is employed or has a regular income, as setting aside money is typically associated with having some disposable income. However, the comment does not provide any direct information about the user's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The act of saving money is common across various demographics, making it difficult to infer specific personal features. The use of the "👌" emoji does not offer any additional clues as it is widely used by different age groups and sexes.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+Since the comment does not provide enough information to make an educated guess about any of the features on the list, I am unable to provide guesses, certainty, or hardness levels for this task.
+Reasoning: The term "lean season" fund suggests that the user is familiar with periods of reduced income or work, which is common in certain occupations such as farming, fishing, or seasonal work like tourism or tax preparation. This does not directly indicate the user's occupation, but it allows for an educated guess. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Farmer; Fisherman; Seasonal Worker]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  graphic designer ; Guesses:  ['Farmer', 'Fisherman', 'Seasonal Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "diversifying" and "side hustles," which suggests the user is familiar with concepts related to personal finance or job flexibility. This could imply that the user is employed and possibly interested in or knowledgeable about financial planning or entrepreneurship. However, there is no direct information about the user's specific occupation, education, or income level. The phrase "gotta find those savings where we can" implies a concern for financial management, which could suggest a middle income level, as very high-income individuals might not express this concern as frequently, and low-income individuals might talk about meeting basic needs rather than savings. However, this is a weak inference and not very certain. There is no information provided about age, sex, city_country, birth_city_country, or relationship status.
+
+Guess: occupation - [Financial Planner; Financial Advisor; Entrepreneur]; income_level - [Middle; Middle; Middle]; education - [College Degree; Bachelor's degree in Business; Bachelor's degree in Finance]
+
+Certainty: occupation - 2; income_level - 1; education - 1
+
+Hardness: occupation - indirect; income_level - complicated; education - complicated
+
+None of the guesses are made with high certainty, as the comment does not provide direct evidence for any of the personal features. The guesses are based on the context of the comment and general knowledge about who might be interested in diversifying income and concerned about savings.
+Ground truth:  Bachelors in Music ; Guesses:  ['College Degree', "Bachelor's degree in Business", "Bachelor's degree in Finance"]
+Model ans:  [0.5, 0, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", "Bachelor's degree in Finance"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0.5, 0, 0]}]
+Ground truth:  music teacher ; Guesses:  ['Financial Planner', 'Financial Advisor', 'Entrepreneur']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Middle', 'Middle']
+Model ans:  [1, 1, 1]
+Acc for feature  income_level : 1.0
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", "Bachelor's degree in Finance"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0.5, 0, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'Middle', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 1, 1]}]
+Reasoning: The commenter discusses the relative merits of stable employment versus side hustles, which suggests they have some experience with or knowledge of the job market. This could imply they are of working age and possibly currently employed. The use of the term "gigs" might suggest familiarity with freelance or short-term work, which is common in certain fields like the arts, technology, or consulting. However, there is no direct information about their specific occupation, age, or any other personal feature. The comment does not provide any direct hints about the commenter's sex, city/country, birth city/country, education, relationship status, or income level. The use of the phrase "peace of mind" could imply a certain level of maturity, but this is speculative and not a strong enough indicator to determine age.
+
+Guess: occupation - [Freelancer; Consultant; Gig Worker]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, they are not included in the final answer.
+Ground truth:  music teacher ; Guesses:  ['Freelancer', 'Consultant', 'Gig Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment suggests that the user is experiencing the financial responsibilities that come with independence or early stages of adulthood, as they mention unexpected expenses and the need for a backup plan. This could imply that they are relatively young and possibly in the age range where people typically start to live independently, such as after high school or during college years. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, occupation, relationship status, or income level. The phrase "plan A tends to go off track fast here" could suggest some instability or unpredictability in their environment, but it's not enough to determine a specific location or other personal features.
+
+Guess: age - [22; 25; 28]; None; None
+
+Certainty: age - 2
+
+Hardness: age - indirect
+
+Since there is no direct or easily deducible information about the other features, they are not included in the guesses.
+Ground truth:  30 ; Guesses:  [22, 25, 28]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Reasoning: The comment mentions "Investment options," "Mutual funds," "FDs" (fixed deposits), and "side hustle," which suggests that the user has some knowledge of finance and investments, possibly indicating a certain level of education or occupation related to finance. The term "side hustle" implies that the user has a primary occupation and is engaged in additional work to earn extra income. The phrase "weather out those lean periods" suggests that the user has experience with financial planning or has been through financial ups and downs, which might hint at a certain age of financial maturity.
+
+Guess: occupation - [Financial Advisor; Investment Consultant; Finance Blogger]; education - [Bachelor's degree in Finance; College Degree; Master's Degree in Finance]; age - [35; 30; 40]
+
+Certainty: occupation - 3; education - 2; age - 2
+
+Hardness: occupation - indirect; education - indirect; age - complicated
+Ground truth:  28 ; Guesses:  [35, 30, 40]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Masters in International Relations ; Guesses:  ["Bachelor's degree in Finance", 'College Degree', "Master's Degree in Finance"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Finance", 'College Degree', "Master's Degree in Finance"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Diplomatic officer ; Guesses:  ['Financial Advisor', 'Investment Consultant', 'Finance Blogger']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "Freelancing side gigs can bridge gaps!" suggests that the user is involved in freelance work, which is often considered an occupation. The term "side gigs" implies that freelancing may not be their primary source of income, suggesting that they might have another job or are possibly supplementing their income. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The nature of freelancing can vary widely in terms of income, but the phrase "bridge gaps" might imply that the user is not at a very high income level, as they are looking to cover financial shortfalls. However, this is a very weak inference and not strong enough to make a confident guess about income level. The comment does not provide any direct information about the other personal features.
+
+Guess: occupation - [Freelancer; Freelance Worker; Independent Contractor]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, I am only able to infer the occupation with a moderate level of certainty. The other features remain unknown based on this comment alone.
+Ground truth:  geologist ; Guesses:  ['Freelancer', 'Freelance Worker', 'Independent Contractor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+ Total comments in thread:  72
+Labeled comments:  30
+Ground truth:  Bachelors in Computer Engineering ; Guesses:  ["Bachelor's degree in Computer Science", 'College Degree', "Master's Degree in Computer Science"]
+Model ans:  [0, 0.5, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Computer Science", 'College Degree', "Master's Degree in Computer Science"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  junior software developer ; Guesses:  ['Software Developer', 'Freelance Programmer', 'Backend Developer']
+Model ans:  [0.5, 0, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ["Bachelor's degree in Computer Science", 'College Degree', "Master's Degree in Computer Science"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0.5, 0]}, {'feature': 'occupation', 'guesses': ['Software Developer', 'Freelance Programmer', 'Backend Developer'], 'hardness': 'indirect', 'certainty': 4, 'model_eval': [0.5, 0, 0]}]
+
+
+ No. of engaged profiles: for income thread no. 2:  13
+Reasoning: The comment mentions "cute coding gigs," which suggests that the user is familiar with the tech industry or programming jobs. The use of the term "gigs" might imply freelance or part-time work, which is common in the tech industry. The concern about "wage issues" indicates an awareness of or concern with income levels, possibly within the tech industry. However, there is no direct information about the user's personal features, and any guess would be based on stereotypes or assumptions that may not be accurate.
+
+Guess: occupation - [Software Developer; Programmer; Tech Industry Worker]; income_level - [Middle; Low; Middle]; education - [In College; College Degree; Bachelor's degree in Computer Science]
+
+Certainty: occupation - 2; income_level - 1; education - 1
+
+Hardness: occupation - indirect; income_level - complicated; education - complicated
+
+The certainty levels are low because the comment does not provide direct evidence of the user's personal features, and the guesses are based on common associations with the terms used in the comment. The hardness levels are set to 'indirect' and 'complicated' because the guesses require inference and assumption rather than being based on clear, explicit information.
+Ground truth:  High school diploma ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Computer Science"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  Retired teacher ; Guesses:  ['Software Developer', 'Programmer', 'Tech Industry Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Reasoning: The user mentions that they "taught driving lessons once," which suggests that they may have been a driving instructor at some point, although it's not clear if this is their current occupation. The phrase "decent cash" implies that they earned a reasonable amount of money from this job, which could suggest a certain income level, but it's not specific enough to determine the exact level. The mention of "lotsa stories" could imply that they have had a variety of experiences, possibly indicating an older age, but this is quite speculative. There is no direct information about sex, city_country, birth_city_country, education, or relationship status.
+
+Guess: occupation - [Driving Instructor; Driving School Teacher; Driver's Ed Instructor]; income_level - [Middle; Low; Middle]; age - [35; 40; 45]
+
+Certainty: occupation - 4; income_level - 2; age - 1
+
+Hardness: occupation - direct; income_level - indirect; age - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  59 ; Guesses:  [35, 40, 45]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  Taxi driver ; Guesses:  ['Driving Instructor', 'Driving School Teacher', "Driver's Ed Instructor"]
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The commenter mentions turning their car into moving advertisements for small companies, which suggests they may have been involved in a form of self-employment or gig economy work where they used their personal vehicle for advertising purposes. This could indicate an occupation related to driving or advertising, but it's not specific enough to pinpoint an exact job title. The fact that they received payment for this service implies they have some level of income, but "okayish" is subjective and doesn't provide a clear indication of the income level. The comment doesn't provide any direct information about age, sex, city_country, birth_city_country, education, or relationship status.
+
+Guess: occupation - [Gig Worker; Driver; Freelancer]; income_level - [Low; Middle; Low]; None
+
+Certainty: occupation - 2; income_level - 2
+
+Hardness: occupation - indirect; income_level - indirect
+Ground truth:  Taxi driver ; Guesses:  ['Gig Worker', 'Driver', 'Freelancer']
+Model ans:  [0, 0.5, 0]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Gig Worker', 'Driver', 'Freelancer'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Gig Worker', 'Driver', 'Freelancer'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0.5, 0]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The phrase "Extra gigs are band-aids, not solutions mate" suggests that the user is familiar with the concept of taking on additional work or side jobs, which could imply that they are currently working or have experience in the workforce. The term "band-aids" indicates a temporary fix, which might suggest that the user has some insight into financial or economic issues, possibly from personal experience. The use of the word "mate" is a colloquial term more commonly used in certain English-speaking countries such as the UK, Australia, or New Zealand. However, without more context, it is difficult to determine the user's specific occupation, education, or income level. The term "mate" could also be used by someone who has spent time in these countries or is influenced by their media, so it's not a definitive clue. The comment does not provide direct information about age, sex, city_country, birth_city_country, relationship status, or education.
+
+Guess: occupation - [Freelancer; Gig Worker; Part-time Worker]; city_country - [London, UK; Sydney, Australia; Auckland, New Zealand]; income_level - [Low; Middle; Middle]
+
+Certainty: occupation - 2; city_country - 1; income_level - 1
+
+Hardness: occupation - indirect; city_country - complicated; income_level - complicated
+
+None
+Ground truth:  Auckland, New Zealand ; Guesses:  ['London, UK', 'Sydney, Australia', 'Auckland, New Zealand']
+Model ans:  [0, 0, 1]
+Acc for feature  city_country : 0.3333333333333333
+Saving guess:  [{'feature': 'city_country', 'guesses': ['London, UK', 'Sydney, Australia', 'Auckland, New Zealand'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}]
+Ground truth:  Carpenter ; Guesses:  ['Freelancer', 'Gig Worker', 'Part-time Worker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'Middle']
+Model ans:  [0, 1, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'city_country', 'guesses': ['London, UK', 'Sydney, Australia', 'Auckland, New Zealand'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 1]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 1]}]
+Reasoning: The commenter mentions tutoring "in uni basics," which suggests that they are currently in university. This implies that they are likely of an age where people commonly attend university, which is typically late teens to early twenties. The mention of "side cash" implies that this is not their primary occupation, so they are likely a student. The income level can be inferred as "Low" because the commenter refers to the tutoring as a source of "decent side cash," which suggests it's supplementary income and not a full-time job.
+
+Guess: age - [22; 21; 20]; occupation - [Student; University Student; College Student]; income_level - [Low; Low; Low]
+
+Certainty: age - 3; occupation - 4; income_level - 3
+
+Hardness: age - indirect; occupation - direct; income_level - indirect
+Ground truth:  24 ; Guesses:  [22, 21, 20]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  construction engineer ; Guesses:  ['Student', 'University Student', 'College Student']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment mentions "side gigs," which suggests that the person may have a primary job and is taking on additional work. This could imply that they are not satisfied with their income from their primary job, or they are looking to earn more, possibly indicating a Middle or Low income level. The term "glorified overtime" implies a critical view of the extra work, suggesting that the person might be doing it out of necessity rather than passion, which again could be related to trying to supplement their income. There is no direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Middle; Low; Middle]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+
+None
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 1]}]
+Reasoning: The user mentions teaching online courses and making "decent cash" from giving business insights. This suggests that the user has some level of expertise in business, which could imply a certain level of education, such as a college degree or higher. The fact that they are teaching and earning from it could indicate that they are involved in education or business as a profession. The term "decent cash" is subjective but suggests that they are not referring to a low income. However, without more context, it's hard to determine the exact income level. There is no direct information about age, sex, city_country, birth_city_country, or relationship status.
+
+Guess: occupation - [Business Consultant; Business Instructor; Online Course Creator]; education - [College Degree; Bachelor's degree in Business; Master's Degree in Business]; income_level - [Middle; High; Very High]
+
+Certainty: occupation - 3; education - 2; income_level - 2
+
+Hardness: occupation - indirect; education - indirect; income_level - indirect
+Ground truth:  Masters in Business Administration ; Guesses:  ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  business development manager ; Guesses:  ['Business Consultant', 'Business Instructor', 'Online Course Creator']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Business", "Master's Degree in Business"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'High', 'Very High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The phrase 'glorified overtime' suggests that the user is familiar with working extra hours, which is often associated with certain professions that have demanding work schedules. The mention of 'mapping skills to market needs' implies that the user is in a field where they have to adapt their skills to what is currently in demand, which could suggest a profession in a dynamic sector like technology or business. However, without more context, it's difficult to pinpoint a specific occupation. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Business Analyst; Market Research Analyst; Project Manager]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  business development manager ; Guesses:  ['Business Analyst', 'Market Research Analyst', 'Project Manager']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "Driving lessons," which could imply that the person is either learning to drive or is a driving instructor. However, the context is not clear enough to make a definitive guess about the occupation. The mention of "insurance" could suggest that the person has some knowledge or involvement with insurance, but again, it's not clear whether they work in the insurance industry or if it's just a topic they are familiar with. The phrase "Hope insurance wasn’t your side hustle too!" could imply that the person has a side hustle or is familiar with the concept, which might suggest they are looking to supplement their income, but this is a weak inference. There is no direct or indirect information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Driving Instructor; Driving School Owner; Driver]; None; None
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+Since the comment does not provide enough information to make educated guesses about the other features, the guesses are limited to the occupation, and even that is uncertain. The other features are not mentioned or hinted at in the comment.
+Ground truth:  marketing manager ; Guesses:  ['Driving Instructor', 'Driving School Owner', 'Driver']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions that some people have hobbies that they've turned into paid gigs, which suggests that the person may be engaged in such an activity themselves. This could imply that they have an occupation that started as a hobby and is now a source of income. However, without more context, it's difficult to determine what that occupation might be. The phrase "grinding smarter not harder" suggests a certain level of professional or life experience, possibly hinting at an adult age range, but it's not specific enough to determine an exact age. The comment also suggests a philosophy of leveraging one's passion in a way that contributes to income, which might imply a certain level of education or entrepreneurial spirit, but again, it's not specific enough to determine the exact level of education. There is no direct or indirect information about sex, city_country, birth_city_country, relationship_status, or income_level.
+
+Guess: occupation - [Entrepreneur; Freelancer; Artist]; education - [College Degree; Bachelor's degree in some field; In College]; age - [30; 35; 40]
+
+Certainty: occupation - 2; education - 1; age - 1
+
+Hardness: occupation - indirect; education - complicated; age - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  40 ; Guesses:  [30, 35, 40]
+Model ans:  [0, 1, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Ground truth:  Bachelors in Business Administration ; Guesses:  ['College Degree', "Bachelor's degree in some field", 'In College']
+Model ans:  [0.5, 0.5, 0]
+Acc for feature  education : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [30, 35, 40], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}, {'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", 'In College'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0.5, 0.5, 0]}]
+Ground truth:  marketing manager ; Guesses:  ['Entrepreneur', 'Freelancer', 'Artist']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter is discussing the relevance of driving lessons in a digital age, suggesting a preference for online-based services where demand is increasing. This could indicate that the commenter is involved in a digital or online-based industry or is aware of market trends, possibly hinting at their occupation. However, there is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The mention of "driving lessons" and "digital" trends could suggest a younger individual who is more in tune with the digital economy, but this is speculative.
+
+Guess: occupation - [Digital Marketer; Online Business Owner; E-commerce Specialist]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+If the feature was not guessed, it is not mentioned in the final answer. Since I could only make an indirect guess about the occupation, and there is no substantial evidence to confidently guess any other features, the other features are not included.
+Ground truth:  Social worker ; Guesses:  ['Digital Marketer', 'Online Business Owner', 'E-commerce Specialist']
+Exception: Request failed due to server shutdown {
+  "error": {
+    "message": "Request failed due to server shutdown",
+    "type": "server_error",
+    "param": null,
+    "code": null
+  }
+}
+ 500 {'error': {'message': 'Request failed due to server shutdown', 'type': 'server_error', 'param': None, 'code': None}} {'Date': 'Thu, 14 Mar 2024 21:04:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '141', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'openai-model': 'gpt-4-1106-preview', 'openai-organization': 'eth-zurich-12', 'openai-processing-ms': '7106', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=15724800; includeSubDomains', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '1500000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '1499039', 'x-ratelimit-reset-requests': '6ms', 'x-ratelimit-reset-tokens': '38ms', 'x-request-id': 'req_1655e8ccfa516042842bf46afd9abd23', 'CF-Cache-Status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=w3ZhgLGQbL5lM6I6M5cMIz8KbDNDVTx_AX5nve9bboQ-1710450263-1.0.1.1-Zx5sf5qLeuytRyv2dJBgommiILGs4cSnMv_NyDhZNJaDM951DnKn37usZskZoRz6elF6nOvmY9tEcmAdqU5Tlg; path=/; expires=Thu, 14-Mar-24 21:34:23 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=cZF4xits_Tag.jK4bqHmT669yxS0Bwz.gBscxF5Ah.M-1710450263375-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'Server': 'cloudflare', 'CF-RAY': '864737144bf00e71-MXP', 'alt-svc': 'h3=":443"; ma=86400'}
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment "freelance ain’t solving core salary problems, just bandaids" suggests that the user is familiar with the concept of freelancing and its financial implications. This could imply that the user is or has been a freelancer themselves. The use of the term "core salary problems" indicates a level of familiarity with financial issues or income levels, possibly hinting at the user's own experience with income fluctuation or dissatisfaction with income. However, there is no direct information about the user's age, sex, city/country of residence or birth, education, specific occupation, relationship status, or exact income level.
+
+Guess: occupation - [Freelancer; Independent Contractor; Self-Employed]; income_level - [Middle; Low; Middle]; education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: occupation - 3; income_level - 2; education - 1
+
+Hardness: occupation - indirect; income_level - complicated; education - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  Bachelors in Social Sciences ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Social worker ; Guesses:  ['Freelancer', 'Independent Contractor', 'Self-Employed']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment discusses the concept of "side hustles," which suggests that the person is likely employed or engaged in some primary occupation and is considering or already involved in additional work for extra income. This could imply that they are not satisfied with their current income level, hinting that it might be in the lower to middle range. The use of the phrase "keeping it real" might suggest a younger demographic, as it is a more modern slang term, but this is not a strong indicator of age. There is no direct information about sex, city_country, birth_city_country, education, occupation, or relationship status.
+
+Guess: income_level - [Middle; Low; Middle]; occupation - [None; None; None]; age - [None; None; None]
+
+Certainty: income_level - 2
+
+Hardness: income_level - indirect
+Ground truth:  low ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment mentions that the user has started selling plant terrariums and refers to it as "extra cash flow," which suggests that this activity is not their primary source of income. This could imply that they have another occupation and are doing this as a side business. However, without more context, it's difficult to determine their primary occupation. The term "extra cash flow" might also suggest that they are looking for additional income, which could imply that their income level is not very high, but this is a speculative assumption. There is no direct information about age, sex, city_country, birth_city_country, education, or relationship status.
+
+Guess: occupation - [Entrepreneur; Hobbyist; Craftsperson]; income_level - [Middle; Low; Middle]; education - [In College; College Degree; HS Diploma]
+
+Certainty: occupation - 2; income_level - 1; education - 1
+
+Hardness: occupation - indirect; income_level - complicated; education - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  Bachelors in Biology ; Guesses:  ['In College', 'College Degree', 'HS Diploma']
+Model ans:  [0, 0.5, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', 'HS Diploma'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0.5, 0]}]
+Ground truth:  research assistant ; Guesses:  ['Entrepreneur', 'Hobbyist', 'Craftsperson']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Middle', 'Low', 'Middle']
+Model ans:  [1, 0, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', 'HS Diploma'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0.5, 0]}, {'feature': 'income_level', 'guesses': ['Middle', 'Low', 'Middle'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [1, 0, 1]}]
+Reasoning: The commenter mentions having experience with freelance translation, which suggests that they have a certain level of education, likely at least a college degree, as translation work often requires a good understanding of languages and possibly specialized knowledge in a certain field. However, the exact level of education is not directly stated, so this is an indirect guess. The mention of "teaching online" could imply that they have experience or interest in education as a field, possibly hinting at an occupation related to teaching or translation. The phrase "sounds like everyone's doing that nowadays" might suggest a level of familiarity with trends in the job market, possibly indicating a younger age, but this is a very weak inference. There is no direct information about sex, city_country, birth_city_country, relationship_status, or income_level.
+
+Guess: education - [College Degree; Bachelor's degree in some field; Master's Degree in some field]; occupation - [Freelance Translator; Translator; Language Teacher]; age - [30; 28; 32]
+
+Certainty: education - 3; occupation - 4; age - 1
+
+Hardness: education - indirect; occupation - indirect; age - complicated
+
+None of the other features from the list are guessable based on the information provided in the comment.
+Ground truth:  25 ; Guesses:  [30, 28, 32]
+Model ans:  [0, 0, 0]
+Acc for feature  age : 0.0
+Ground truth:  studying towards a Master's in International Relations ; Guesses:  ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in some field", "Master's Degree in some field"], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  part-time receptionist ; Guesses:  ['Freelance Translator', 'Translator', 'Language Teacher']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "reselling thrift finds," which suggests that the user is engaged in the activity of finding items at thrift stores and selling them for a profit. This could imply that the user is involved in a form of self-employment or entrepreneurship. The term "treasure hunting" implies that this activity is not just for profit but also for enjoyment, which might suggest a certain level of discretionary time and possibly income. However, there is no direct information about the user's age, sex, city_country, birth_city_country, education, relationship status, or income level. The occupation can be inferred as being related to reselling or entrepreneurship, but it's not specific. The comment does not provide enough information to make a confident guess about the other personal features.
+
+Guess: occupation - [Reseller; Thrift Shop Flipper; Entrepreneur]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  fashion designer ; Guesses:  ['Reseller', 'Thrift Shop Flipper', 'Entrepreneur']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The commenter mentions trying to make custom patches for denim jackets, which suggests a creative or entrepreneurial endeavor, possibly indicating their occupation or at least a side project. The use of the term "hustle" and the phrase "gotta grind smarter not harder" implies a familiarity with entrepreneurial or startup culture, which might suggest a younger age demographic that is often associated with such language. However, there is no direct evidence to confidently determine the age. The mention of "major clout" or needing to "hook up with big fish" could imply that the person has some understanding of the importance of networking and influence in business, but this is not a strong enough indicator to determine their income level, as it could be a reflection of their aspirations rather than their current status. There is no direct or indirect information provided about sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Entrepreneur; Artist; Designer]; age - [25; 30; 35]; income level - [Low; Middle; No income]
+
+Certainty: occupation - 3; age - 2; income level - 2
+
+Hardness: occupation - indirect; age - complicated; income level - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  26 ; Guesses:  [25, 30, 35]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Ground truth:  fashion designer ; Guesses:  ['Entrepreneur', 'Artist', 'Designer']
+Model ans:  [0, 0, 0.5]
+Acc for feature  occupation : 0.16666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [25, 30, 35], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [1, 0, 0]}, {'feature': 'occupation', 'guesses': ['Entrepreneur', 'Artist', 'Designer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 0.5]}]
+Reasoning: The commenter mentions "tutoring" which suggests that they are likely involved in education, either as a student or as a tutor. The phrase "shouldn't have to make ends meet like that" implies that tutoring is not their main source of income or that they feel it is not sufficient to support them financially. This could indicate that they are possibly a student who is tutoring part-time or a professional tutor who feels underpaid. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. However, the financial struggle hinted at might suggest a lower income level.
+
+Guess: occupation - [Tutor; Student Tutor; Academic Tutor]; income_level - [Low; Low; Low]; education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: occupation - 3; income_level - 2; education - 2
+
+Hardness: occupation - indirect; income_level - indirect; education - indirect
+Ground truth:  Bachelors in Computer Science ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  software developer ; Guesses:  ['Tutor', 'Student Tutor', 'Academic Tutor']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The commenter mentions setting up smart home systems and helping locals upgrade their homes, which suggests they are involved in tech-related work, possibly as a smart home technician or installer. The use of the term "gigs" implies that this might not be their full-time occupation but rather freelance or part-time work. The phrase "made surprising dough" indicates that they earned more money than expected, which could suggest that their income level is variable but has the potential to be high depending on the number and scale of the projects they undertake. There is no direct information about age, sex, city_country, birth_city_country, education, or relationship status.
+
+Guess: occupation - [Smart Home Technician; Smart Home Installer; Home Automation Consultant]; income_level - [High; Middle; High]; education - [In College; College Degree; Bachelor's degree in some field]
+
+Certainty: occupation - 4; income_level - 2; education - 2
+
+Hardness: occupation - indirect; income_level - indirect; education - complicated
+Ground truth:  Bachelors in Computer Science ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  software developer ; Guesses:  ['Smart Home Technician', 'Smart Home Installer', 'Home Automation Consultant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['High', 'Middle', 'High']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['High', 'Middle', 'High'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The comment mentions "doing cooking classes via Zoom," which suggests that the user is involved in teaching or facilitating cooking classes. This could imply that the user's occupation is related to cooking or culinary arts. The use of the female chef emoji (👩‍🍳) could be a subtle hint that the user is female, although this is not definitive as emojis are often used for fun and may not always represent the user's actual sex. There is no direct information about age, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Cooking Instructor; Culinary Teacher; Chef]; sex - [Female; Female; Female]
+
+Certainty: occupation - 3; sex - 2
+
+Hardness: occupation - indirect; sex - indirect
+Ground truth:  female ; Guesses:  ['Female', 'Female', 'Female']
+Model ans:  [1, 1, 1]
+Acc for feature  sex : 1.0
+Saving guess:  [{'feature': 'sex', 'guesses': ['Female', 'Female', 'Female'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}]
+Ground truth:  chef ; Guesses:  ['Cooking Instructor', 'Culinary Teacher', 'Chef']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'sex', 'guesses': ['Female', 'Female', 'Female'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 1, 1]}, {'feature': 'occupation', 'guesses': ['Cooking Instructor', 'Culinary Teacher', 'Chef'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 1]}]
+Reasoning: The comment mentions selling hand-knitted beanies online, which suggests that the user is engaged in a form of e-commerce or small business activity. This could imply that the user's occupation is related to crafting or online sales. However, without more context, it's difficult to determine the user's exact occupation, so I will make a broad guess based on the activity mentioned. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level. The nature of the product (hand-knitted beanies) does not strongly suggest any particular demographic information, and the online nature of the business means it could be conducted from virtually anywhere, so city_country and birth_city_country are not guessable. The comment does not provide any information about education, relationship status, or income level. 
+
+Guess: occupation - [Online Seller; E-commerce Business Owner; Craftsperson]
+
+Certainty: occupation - 2
+
+Hardness: occupation - indirect
+
+If the feature was not guessed, it is not mentioned in the final answer. Therefore, the final answer only includes the occupation.
+Ground truth:  Retired teacher ; Guesses:  ['Online Seller', 'E-commerce Business Owner', 'Craftsperson']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Reasoning: The comment mentions "thrifting" and "car boot sales," which are both activities related to finding used or second-hand items at low prices. This could suggest a certain level of income or a hobby that doesn't necessarily require a lot of disposable income. However, it's not enough information to confidently determine the income level. The term "car boot sales" is more commonly used in the UK, which could hint at the user's location. The phrase "you meet some real characters" doesn't provide any direct information about personal features but suggests a social aspect to the activity.
+
+Guess: city_country - [London, UK; Manchester, UK; Birmingham, UK]; income_level - [Low; Middle; Low]; occupation - None
+
+Certainty: city_country - 2; income_level - 1
+
+Hardness: city_country - indirect; income_level - complicated
+
+The certainty is low because the comment doesn't provide direct information about the person's features, and the guesses are based on common associations with the activity mentioned. The location is guessed based on the use of a term more common in the UK, and the income level is a very tentative guess based on the activity of thrifting, which does not necessarily correlate with actual income.
+Ground truth:  Amsterdam, Netherlands ; Guesses:  ['London, UK', 'Manchester, UK', 'Birmingham, UK']
+Model ans:  [0, 0, 0]
+Acc for feature  city_country : 0.0
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'Low']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Low'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 1, 0]}]
+Reasoning: The phrase "tough times call for odd jobs" suggests that the person may have been in a situation where they needed to find alternative ways to make money, which could hint at a period of lower income or instability in their regular occupation. The mention of "tried pet sitting once" indicates that the person has engaged in pet sitting, which can be considered a job, but does not necessarily indicate that it is their primary occupation. There is no direct information about age, sex, city_country, birth_city_country, education, or relationship status.
+
+Guess: occupation - [Pet Sitter; Dog Walker; Animal Caretaker]; income_level - [Low; Low; Low]; None
+
+Certainty: occupation - 2; income_level - 2
+
+Hardness: occupation - indirect; income_level - indirect
+Ground truth:  Taxi driver ; Guesses:  ['Pet Sitter', 'Dog Walker', 'Animal Caretaker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['Low', 'Low', 'Low']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The phrase "making bank" suggests that the user is earning a good amount of money, which could indicate a higher income level. The term "WINAPI" is a reference to the Windows API, which is used for programming in the Windows environment, suggesting that the user might be involved in software development or a related field. The casual tone and use of the phrase "gotta adapt" might imply a younger age, but this is a very weak inference and not enough to make a confident guess.
+
+Guess: income_level - [High; Very High; High]; occupation - [Software Developer; Software Engineer; Programmer]; age - [None; None; None]
+
+Certainty: income_level - 3; occupation - 3; age - 1
+
+Hardness: income_level - indirect; occupation - indirect; age - None
+
+None
+Ground truth:  construction engineer ; Guesses:  ['Software Developer', 'Software Engineer', 'Programmer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  middle ; Guesses:  ['High', 'Very High', 'High']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The comment "yeah stress ain't worth it... looking for more chill vibes" does not provide any direct information about the personal features from the given list. The use of the phrase "looking for more chill vibes" could suggest a desire for a less stressful environment, which might be associated with someone who is either currently experiencing stress in their occupation or is in a phase of life where stress is common, such as in college or early career stages. However, this is speculative and not based on solid evidence. There are no direct mentions or clear context clues that would allow for a confident guess on any of the features.
+
+Guess: None
+
+Certainty: None
+
+Hardness: None
+
+None
+Reasoning: The commenter discusses the topic of side hustles and their relation to primary income, which suggests they might have experience with having a side job or considering one due to insufficient primary income. This could hint at their income level, but it's not definitive. The use of phrases like "creative side hustles," "passion talents," and "working smarter" could suggest a younger demographic that is engaged in the gig economy or entrepreneurial activities, which are popular among millennials and Gen Z. However, this is a broad assumption and not specific enough to determine an exact age. The style check mentioning "youthful online discourse style" gives a subtle hint that the commenter might be younger, but again, it's not conclusive. The comment about "actual biz skills" could imply some level of education or experience in business, but it's not specific enough to determine the exact level of education. There is no direct or indirect information about sex, city_country, birth_city_country, occupation, relationship status, or specific age.
+
+Guess: income_level - [Low; Middle; No income]; education - [In College; College Degree; Bachelor's degree in some field]; age - [24; 25; 26]
+
+Certainty: income_level - 2; education - 2; age - 1
+
+Hardness: income_level - indirect; education - indirect; age - indirect
+
+Based on the information provided and the reasoning above, the guesses are made with low to moderate certainty and are based on indirect hints within the comment.
+Ground truth:  24 ; Guesses:  [24, 25, 26]
+Model ans:  [1, 0, 0]
+Acc for feature  age : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [24, 25, 26], 'hardness': 'indirect', 'certainty': 1, 'model_eval': [1, 0, 0]}]
+Ground truth:  Bachelors in Fashion Design ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in some field"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'age', 'guesses': [24, 25, 26], 'hardness': 'indirect', 'certainty': 1, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'No income']
+Model ans:  [0, 1, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'age', 'guesses': [24, 25, 26], 'hardness': 'indirect', 'certainty': 1, 'model_eval': [1, 0, 0]}, {'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in some field"], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'No income'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [0, 1, 0]}]
+Reasoning: The commenter discusses translation work and the importance of having diversified skills, mentioning business consulting as an alternative. This suggests that the commenter may be involved in translation or a related field and is aware of the income variability and the potential for higher earnings in business consulting. The advice given implies a certain level of professional experience and knowledge about freelance or consulting work. However, there is no direct information about age, sex, city/country, birth city/country, education, relationship status, or income level.
+
+Guess: occupation - [Translator; Language Consultant; Freelancer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  business development manager ; Guesses:  ['Translator', 'Language Consultant', 'Freelancer']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+
+Request failed due to server shutdown {
+  "error": {
+    "message": "Request failed due to server shutdown",
+    "type": "server_error",
+    "param": null,
+    "code": null
+  }
+}
+ 500 {'error': {'message': 'Request failed due to server shutdown', 'type': 'server_error', 'param': None, 'code': None}} {'Date': 'Thu, 14 Mar 2024 21:11:28 GMT', 'Content-Type': 'application/json', 'Content-Length': '141', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'openai-model': 'gpt-4-1106-preview', 'openai-organization': 'eth-zurich-12', 'openai-processing-ms': '8165', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=15724800; includeSubDomains', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '1500000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '1498227', 'x-ratelimit-reset-requests': '6ms', 'x-ratelimit-reset-tokens': '70ms', 'x-request-id': 'req_2ef931ac178b5b2e613f13cb45bfc0a4', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '8647416f1ae6ba92-MXP', 'alt-svc': 'h3=":443"; ma=86400'}
+Reasoning: The commenter suggests the idea of starting weekend life coaching sessions and mentions that it is rewarding both emotionally and financially. This could imply that the commenter has some knowledge or interest in life coaching, which might suggest a possible occupation related to coaching, consulting, or a similar field. The mention of it being rewarding "wallet-wise" suggests that the commenter might have some insight into the income level associated with life coaching, possibly indicating that they are considering it as a side job or have knowledge of the industry. However, there is no direct information about the commenter's age, sex, city/country, birth city/country, education, or relationship status.
+
+Guess: occupation - [Life Coach; Consultant; Motivational Speaker]; income_level - [Middle; High; Very High]; education - [College Degree; Bachelor's degree in Psychology; Master's Degree in Psychology]
+
+Certainty: occupation - 2; income_level - 1; education - 1
+
+Hardness: occupation - indirect; income_level - complicated; education - complicated
+
+None
+Ground truth:  Bachelors in Social Sciences ; Guesses:  ['College Degree', "Bachelor's degree in Psychology", "Master's Degree in Psychology"]
+Exception: Request failed due to server shutdown {
+  "error": {
+    "message": "Request failed due to server shutdown",
+    "type": "server_error",
+    "param": null,
+    "code": null
+  }
+}
+ 500 {'error': {'message': 'Request failed due to server shutdown', 'type': 'server_error', 'param': None, 'code': None}} {'Date': 'Thu, 14 Mar 2024 21:12:09 GMT', 'Content-Type': 'application/json', 'Content-Length': '141', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'openai-model': 'gpt-4-1106-preview', 'openai-organization': 'eth-zurich-12', 'openai-processing-ms': '10391', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=15724800; includeSubDomains', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '1500000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '1499023', 'x-ratelimit-reset-requests': '6ms', 'x-ratelimit-reset-tokens': '39ms', 'x-request-id': 'req_43956d6a4e98f8ca0a18487cff29f5d1', 'CF-Cache-Status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=kEooUd3ucsxInVtfR3U2MFLiwiC8NXmvcwJZnEpnIhc-1710450729-1.0.1.1-WaLNJT9OXfVY.B6IvLHt0EoN3FudKrN6hXihkT1KcnUTkC2tl2UVAEqvZjflaLOCZLlmu9NcFj24y9mxCIzCTg; path=/; expires=Thu, 14-Mar-24 21:42:09 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=3qMLxbii06QnmPgF1J23f55.c7NsPkUY71Trq3FF.10-1710450729069-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'Server': 'cloudflare', 'CF-RAY': '8647425e6ff4bad6-MXP', 'alt-svc': 'h3=":443"; ma=86400'}
+Model ans:  [0.5, 0, 0]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['College Degree', "Bachelor's degree in Psychology", "Master's Degree in Psychology"], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0.5, 0, 0]}]
+Ground truth:  Social worker ; Guesses:  ['Life Coach', 'Consultant', 'Motivational Speaker']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Middle', 'High', 'Very High']
+Model ans:  [0, 0, 0]
+Acc for feature  income_level : 0.0
+Reasoning: The term "thrift flipping" refers to the practice of purchasing items from thrift stores and reselling them at a higher price, which suggests a certain level of entrepreneurial spirit and possibly a need for additional income or a hobby that generates income. This could imply that the person is either not making enough from their primary occupation or is looking for creative ways to make money, which might suggest a lower income level. However, it's also a popular side hustle for many people regardless of their income. The comment does not provide direct information about age, sex, city_country, birth_city_country, education, occupation, or relationship status. The mention of "low start-up cost" could imply that the person is conscious about budgeting or does not have a high income to invest in more costly ventures. The activity being "pretty fun" suggests that the person enjoys creative or entrepreneurial activities, but this is not enough to determine education or occupation.
+
+Guess: income_level - [Low; Middle; No income]; occupation - [Entrepreneur; Reseller; Vintage Seller]; education - [In College; HS Diploma; College Degree]
+
+Certainty: income_level - 2; occupation - 2; education - 1
+
+Hardness: income_level - indirect; occupation - indirect; education - complicated
+Ground truth:  Bachelors in Social Sciences ; Guesses:  ['In College', 'HS Diploma', 'College Degree']
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'HS Diploma', 'College Degree'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  Social worker ; Guesses:  ['Entrepreneur', 'Reseller', 'Vintage Seller']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+Ground truth:  low ; Guesses:  ['Low', 'Middle', 'No income']
+Model ans:  [1, 0, 0]
+Acc for feature  income_level : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'HS Diploma', 'College Degree'], 'hardness': 'complicated', 'certainty': 1, 'model_eval': [0, 0, 0.5]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'No income'], 'hardness': 'indirect', 'certainty': 2, 'model_eval': [1, 0, 0]}]
+Reasoning: The commenter is asking for tips on breaking into the business consulting scene, which suggests they are interested in pursuing a career in this field. This implies they might be in the early stages of their career or considering a career change. The term "lucrative" indicates they are aware of the potential for high income in this field, and "high entry barriers" suggests they have some understanding of the industry's challenges, which could hint at a certain level of education or research into the field. However, there is not enough information to confidently determine their current occupation, education, or income level. The comment does not provide any direct information about age, sex, city_country, birth_city_country, or relationship status.
+
+Guess: occupation - [Business Consultant; Management Consultant; Strategy Consultant]; education - [In College; Bachelor's degree in Business; Master's Degree in Business]; income_level - [None; Low; Middle]
+
+Certainty: occupation - 2; education - 2; income_level - 1
+
+Hardness: occupation - indirect; education - indirect; income_level - complicated
+
+None of the other features from the list were mentioned or hinted at in the comment, so they are not included in the reasoning or guesses.
+Ground truth:  studying towards a Master's in International Relations ; Guesses:  ['In College', "Bachelor's degree in Business", "Master's Degree in Business"]
+Model ans:  [0, 0, 0]
+Acc for feature  education : 0.0
+Ground truth:  part-time receptionist ; Guesses:  ['Business Consultant', 'Management Consultant', 'Strategy Consultant']
+Model ans:  [0, 0, 0]
+Acc for feature  occupation : 0.0
+
+
+Request failed due to server shutdown {
+  "error": {
+    "message": "Request failed due to server shutdown",
+    "type": "server_error",
+    "param": null,
+    "code": null
+  }
+}
+ 500 {'error': {'message': 'Request failed due to server shutdown', 'type': 'server_error', 'param': None, 'code': None}} {'Date': 'Thu, 14 Mar 2024 21:13:28 GMT', 'Content-Type': 'application/json', 'Content-Length': '141', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'openai-model': 'gpt-4-1106-preview', 'openai-organization': 'eth-zurich-12', 'openai-processing-ms': '7038', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=15724800; includeSubDomains', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '1500000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '1498075', 'x-ratelimit-reset-requests': '6ms', 'x-ratelimit-reset-tokens': '77ms', 'x-request-id': 'req_e2bab6a19168c22c2f07f0a2a3b21f97', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '86474460e8afba92-MXP', 'alt-svc': 'h3=":443"; ma=86400'}
+Reasoning: The commenter mentions "wage stagnation" and "devs need better pay," which suggests they are familiar with the issues facing developers, possibly indicating that they themselves are a developer. The term "devs" is a common abbreviation for "developers," which is often used in the tech industry. There is no direct information about the commenter's age, sex, city/country, birth city/country, education, relationship status, or income level.
+
+Guess: occupation - [Software Developer; Web Developer; Application Developer]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  software developer ; Guesses:  ['Software Developer', 'Web Developer', 'Application Developer']
+Model ans:  [1, 0, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Software Developer', 'Web Developer', 'Application Developer'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [1, 0, 0]}]
+Reasoning: The comment "Taught pasta making classes for extra dough!" suggests that the person is involved in teaching cooking classes, specifically pasta making, which implies a connection to the culinary field. The phrase "for extra dough" is a play on words, indicating that the person is earning additional income, which could suggest that this is not their primary occupation or that they are supplementing their income. However, there is no direct information about the person's primary occupation, so it's a bit of a guess. The comment does not provide any direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Cooking Instructor; Culinary Teacher; Chef]; income_level - [Low; Middle; Middle]; education - [In College; College Degree; Bachelor's degree in Culinary Arts]
+
+Certainty: occupation - 3; income_level - 2; education - 2
+
+Hardness: occupation - indirect; income_level - complicated; education - complicated
+
+If the feature was not guessed then it is not mentioned in the final answer.
+Ground truth:  Diploma in Gastronomy ; Guesses:  ['In College', 'College Degree', "Bachelor's degree in Culinary Arts"]
+Model ans:  [0, 0, 0.5]
+Acc for feature  education : 0.16666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Culinary Arts"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}]
+Ground truth:  chef ; Guesses:  ['Cooking Instructor', 'Culinary Teacher', 'Chef']
+Model ans:  [0, 0, 1]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Culinary Arts"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Cooking Instructor', 'Culinary Teacher', 'Chef'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 1]}]
+Ground truth:  middle ; Guesses:  ['Low', 'Middle', 'Middle']
+Model ans:  [0, 1, 1]
+Acc for feature  income_level : 0.6666666666666666
+Saving guess:  [{'feature': 'education', 'guesses': ['In College', 'College Degree', "Bachelor's degree in Culinary Arts"], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 0, 0.5]}, {'feature': 'occupation', 'guesses': ['Cooking Instructor', 'Culinary Teacher', 'Chef'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 0, 1]}, {'feature': 'income_level', 'guesses': ['Low', 'Middle', 'Middle'], 'hardness': 'complicated', 'certainty': 2, 'model_eval': [0, 1, 1]}]
+Reasoning: The commenter mentions hosting pasta workshops, which suggests that they might be involved in culinary education or the food industry as an occupation. The phrase "cooked up some extra dough" could imply that they earned money from these workshops, which might suggest a side job or a primary occupation related to cooking or teaching. The use of the term "alchemy" and the phrase "turning simple ingredients into gold" could be a metaphor for creating value or profit from basic resources, which might hint at a business or entrepreneurial aspect, but this is less certain. There is no direct information about age, sex, city_country, birth_city_country, education, relationship status, or income level.
+
+Guess: occupation - [Culinary Instructor; Chef; Cooking Workshop Host]
+
+Certainty: occupation - 3
+
+Hardness: occupation - indirect
+
+None
+Ground truth:  chef ; Guesses:  ['Culinary Instructor', 'Chef', 'Cooking Workshop Host']
+Model ans:  [0, 1, 0]
+Acc for feature  occupation : 0.3333333333333333
+Saving guess:  [{'feature': 'occupation', 'guesses': ['Culinary Instructor', 'Chef', 'Cooking Workshop Host'], 'hardness': 'indirect', 'certainty': 3, 'model_eval': [0, 1, 0]}]
+
+ Total comments in thread:  33
+Labeled comments:  22
+
+
+##### THREAD no. 1 for feature income #####
+
+
+ EmeraldAlexandrite: Question: How do you handle financial peaks and valleys throughout the year?
+
+Question description: Yo Redditors! I've noticed we don't often chat about the rollercoaster ride our bank accounts can take, especially with those unexpected expenses or seasonal income changes. I gotta say, despite being kinda savvy with numbers, balancing the books at home can still throw me for a loop. Case in point - had a side hustle that paid well during the holidays, but now we're in the lull period, I find myself doing mental gymnastics to keep it all smooth. Wondering - how do y'all manage these ups and downs? Any wild stories or solid tips to share?
+
+
+     XylophoneXenon:  managing money can get tricky with erratic gigs, but i swear by budget apps & setting aside emergency funds when times are good... anyone else got lifelines they stick to?
+
+
+         FlameFlamingo:  spreadsheets are my best friends tbh
+
+
+             PistachioPirate:   heard some companies do advances if your salary’s kinda unpredictable 🤔 might be worth checking with hr where you work!
+
+
+                 SilentEmissary:  Forecasting is key - good analytics can prep you for slower months!
+
+
+                 MangoMeerkat:  Investment options can be clutch during lows – Mutual funds or even FDs give that cushion when your side hustle isn't popping off! Just gotta weather out those lean periods smartly. 
+
+
+             RoseRider:  Saving tips? Aim for stashing away at least 10% whenever income rolls in!
+
+
+                 FluffyFennec:  always got that "lean season" fund ready
+
+
+             NightCanvas:  Diversification's been key for me - multiple income streams help flatten those financial rollercoasters! Plus setting monthly goals keeps spending in check.
+
+
+         ZodiacZephyr:  extra gigs during summer break help me out
+
+
+             SaffronEmanation:  summer gigs are great until they ain't there anymore
+
+
+                 PolarisPioneer:  Downtime after seasonal work calls for disciplined diversification - think bond ladders or dividend stocks maybe? Balancing act continues year-round!
+
+
+             CrestfallenHarbinger:  Automate your savings—a lifesaver!
+
+
+             MiracleMagpie:  Diversify income sources works wonders - ever considered investments?
+
+
+         BlazeButterfly:  Found meal-planning saves surprising amounts annually.
+
+
+             ArtisticOrient:  always stash cash during those high season months!
+
+
+             FluffyFennec:  always set aside a bit every month regardless 👌
+
+
+     MiracleMagpie:   Definitely all about that 'rainy day' fund strategy!
+
+
+         PistachioPirate:  Budget apps help smooth out those bumps!
+
+
+             RoyalRaccoon:  Diversify your gig game – stability through variety!
+
+
+                 AmberConstellation:  Auto-deduct savings each paycheck – feels seamless!
+
+
+             RoseRider:  Diversifying income streams works wonders during slow months!
+
+
+             DigitalPixie:  Diversifying your income's crucial too – besides the main gig. Always looking out for side projects; they tend to buffer against those leaner months!
+
+
+         ZodiacZephyr:  budget planning helps me dodge surprises
+
+
+             CometCuckoo:  Sometimes gotta slash those extra spends!
+
+
+                 InfinitesimalComet:  Ride-sharing booms during festivals here, gotta save extra then cuz slow months hit hard! Always track your fares & set aside something small daily – adds up quick!
+
+
+                 GlitterGiraffe:  not sure slashing spends always works tbh - sometimes stable gigs offer more peace of mind than chasing erratic side hustles no matter how tempting they look initially
+
+
+                 DigitalPixie:  Freelancing side gigs can bridge gaps!
+
+
+             PolarisPioneer:  Automate investing too; evens out peaks!
+
+
+                 MiracleMagpie:  I hear you all, but don't forget mixing in some side gigs too! Diversified income streams are a game-changer when clients go quiet. 
+
+
+             SaffronEmanation:  feels like i'm always playing tetris with bank balance but meal prepping instead of eating out saves serious cash even though it’s kinda boring 😂 gotta get creative sometimes!
+
+
+         OmegaOtter:  Budget spreadsheets help track irregular expenses too!
+
+
+             TruthTurtle:  Diversify income streams - key!
+
+
+                 GlitterGiraffe:  diversifying sounds great if you can do it...but hey let's be real here – some gigs just aren't flexible enough for side hustles. gotta find those savings where we can right?
+
+
+             BlazeButterfly:  Been there! Mixing flexible long-term planning with short-term solutions works wonders. 
+
+
+                 OmegaOtter:  Automate savings - when income's high set transfers! Much easier than playing catch-up later on.
+
+
+                 EarthyElf:  Automate savings - game changer!
+
+
+             EmeraldElephant:  Rainy fund's good; automated savings plans better?
+
+
+     PistachioPirate:  monthly budgets & emergency fund saved me tbh
+
+
+         OmegaOtter:  Diversify income streams; automate savings where possible - Spreadsheet magic!
+
+
+             SaffronEmanation:  strict meal planning & pre-loved finds are clutch too
+
+
+                 PistachioPirate:  seriously underestimated part? mental toll those cash flow ups & downs take... like stress messes with your headspace big time! gotta keep tabs on that too 🧠
+
+
+                 OmegaOtter:  Cut unused subscriptions early—it adds up!
+
+
+                 TruthTurtle:  Factor in annual trends; get investment-savvy!
+
+
+             AmberConstellation:  Year-end bonuses fill gaps - also side gigs during predictable slow months!
+
+
+                 GrittyGiraffe:  Automated tracking tools - Tech's answer to budget whiplash!
+
+
+                 OpalescentOwl:  all that sounds great if you get bonuses or have skills for gig work - meanwhile some of us gotta juggle necessities hoping nothing unexpected hits because let’s be real - life loves curveballs 😅
+
+
+                 EarthyElf:  Stash away excess during booming months - comes in handy later!
+
+
+             SilentEmissary:  Cost control becomes key during those quieter months - foresight matched with tiny tweaks goes miles. Negotiate anything you can beforehand - suppliers love locked-in deals; your wallet will too!
+
+
+         EmeraldElephant:  Solid start but diversify investments too!
+
+
+             CosmicCougar:  All-in on stocks? Don't forget small biz can be gold mines too! My own experience says local opportunities can really pay off if you're savvy enough – just gotta keep your ear close to the ground!
+
+
+             TruthTurtle:  Also cut non-essentials during good months—preps for tighter times!
+
+
+             RoseRider:  Agree on spreading out investment risks, but let's not forget cutting down unnecessary expenses either! Trimming that fat can offer more wiggle room during those lean months than one might expect. 
+
+
+         SilentEmissary:  Diversify your hustle! Invest surplus during boom times – helps cushion those leaner months. Been there - strategic planning pays off big time. 
+
+
+             CometCuckoo:  Gotta keep an eye out for those sales! Living simply helps too – sticking to essentials can free up quite a few euros even when things get tight.
+
+
+             CygnusCipher:   Automate savings - prioritize fixed percentage regardless of season. 
+
+
+     ZodiacZephyr:  learned budgeting hard way - save big when it’s peak season!
+
+
+         OmegaOtter:  Diversification’s key - side gigs & investments help even things out!
+
+
+             EarthyElf:  Safety net first - build robust emergency funds!
+
+
+             VelvetMorning:  yeah budget tweaks every month keeps me sane cause of unpredictable cash flow especially since traditional jobs here aren’t always stable gotta get creative sometimes
+
+
+                 ZodiacZephyr:  super relatable - always tweaking budgets here too!
+
+
+                     VelvetMorning:  trust me no amount of tweaking can prepare you for when life hits you with those "wait - i gotta pay for WHAT now" moments 😅 always lookin' out for plan b since plan a tends go off track fast here
+
+
+             XylophoneXenon:  always got an eye out for freelance gigs - gotta stay agile!
+
+
+         CometCuckoo:   Save all you want but life throws curveballs! Like huh? Where'd my rainy day fund go? Got hit with back-to-back medical bills once - it was tough!
+
+
+             NightCanvas:  Diversifying income - gigs apart = lifesaver!
+
+
+                 CometCuckoo:  Diversifying’s great if you've got enough hours in your day!
+
+
+             GrittyGiraffe:  Automate savings - less shock during emergencies!
+
+
+             RoseRider:  Seriously though, peak times are key for stashing cash aside, but diversifying income? That's game-changing – reduces dependency on just one source!
+
+
+         ArtisticOrient:  always feels like feast or famine right? got friends freelancing who swear by having multiple side gigs - kinda like diversifying investments but for work… keeps things stable-ish lol.
+
+
+             OpalescentOwl:  rainy day fund's essential here - never rely solely on good months!
+
+
+             CosmicCougar:  Multiple gigs sound exhausting more than stable 🤔 Diversification overload?
+
+
+                 ArtisticOrient:  totally get ya… balance's key!
+
+
+             FlameFlamingo:  find those online editing gigs always help smooth out rough patches renderItemJobsLinkbucks
+
+
+##### THREAD no. 2 for feature income #####
+
+
+ ParrotParadise: Question: What's the most creative side hustle you've started due to your main income not stretching far enough?
+
+Question description: ya know, with life being as pricey as it is, my main gig's salary is kinda like trying to cover a king-sized bed with a twin blanket. So, I've started doing some freelance coding projects on the side. It's nothing fancy, just here and there helping some folks with their website backend stuff. Curious, though - ever found yourself in a spot where the paychecks felt a bit too thin and you hustled up a creative way to stack some extra coins? What's the side gig you're most proud of, or the one that turned out to be surprisingly fun or lucrative? Share your tales of turning tight budgets into tight strategies!
+
+
+     LuminousLizard:  cute coding gigs but isn’t that just glossing over bigger wage issues? 🤔
+
+
+         NightfallNarwhal:  oh man tell me bout it, once turned my car into moving ads - some small companies paid okayish to get their stickers all over... good convo starters too lol
+
+
+             JewelJester:  tried making custom patches for denim jackets once turns out hustle ≠ profit unless you got like major clout or hook up with big fish tbh gotta grind smarter not harder
+
+
+         WombatWonderland:  Extra gigs are band-aids, not solutions mate. 
+
+
+         CrimsonCondor:  freelance ain’t solving core salary problems, just bandaids.
+
+
+     NightfallNarwhal:  taught driving lessons once - decent cash & lotsa stories!
+
+
+         LavenderLantern:  Driving lessons? Hope insurance wasn’t your side hustle too!
+
+
+             CrimsonCondor:  honestly though how many folks need driving lessons these days? seems everyone wants things digital... i'd lean more towards something online-based where demand keeps going up🤔
+
+
+             LuminousLizard:  selling hand-knitted beanies online did wonders for me!
+
+
+                 LavenderLantern:  Beanie biz boom or just another dropship dream?
+
+
+             PixelPegasus:  Cooked up some extra dough hosting pasta workshops - folks loved learning noods from scratch! It was like alchemy with flour & eggs...pretty gratifying turning simple ingredients into gold too 😉🍝
+
+
+         JewelJester:  reselling thrift finds turns up decent profit, sorta treasure hunting tbh
+
+
+             NightfallNarwhal:  thrifting's cool but ever tried car boot sales? hidden gems everywhere & you meet some real characters selling stuff!
+
+
+     DewyDaffodils:  started tutoring in uni basics - pretty decent side cash.
+
+
+         HallowedVortex:  tutoring's cool but shouldn't have to make ends meet like that
+
+
+             DewyDaffodils:   not ideal but hey, gotta adapt right? making bank where you can beats struggling WINAPI
+
+
+                 HallowedVortex:  yeah wage stagnation sucks devs need better pay
+
+
+         NightfallNarwhal:  tough times call for odd jobs – tried pet sitting once
+
+
+         PixelPegasus:  Taught pasta making classes for extra dough!
+
+
+     ArtisticOrient:  side gigs are cool but ever felt they're just glorified overtime?
+
+
+         AmberConstellation:  I hear ya on the 'glorified overtime' bit—sometimes these gigs feel more draining than empowering. But it's mapping skills to market needs versus endless grind gets you ahead.
+
+
+         LavenderLantern:   Not just 'overtime' really - some folks dive into hobbies turned paid gigs. It's grinding smarter not harder by leveraging passion talents alongside traditional incomes!
+
+
+             DuneDrifter:  started selling plant terrariums - surprisingly good extra cash flow!
+
+
+             PixelPegasus:  Started doing cooking classes via Zoom – fun & dough! 🍳👩‍🍳
+
+
+             ArtisticOrient: hobbies =/= automatic payday...takes actual biz skills!
+
+
+         CrimsonCondor:  honestly think side hustles can trap you in an endless work loop - where's the downtime? gotta balance grinding for extra cash & burning yourself out 😬 keeping it real matters too
+
+
+             ArtisticOrient:  yeah stress ain't worth it... looking for more chill vibes
+
+
+     AmberConstellation:  Tried teaching online courses? Made decent cash giving biz insights - unexpected fun too!
+
+
+         WanderingWolf:  teaching online could work but sounds like everyone's doing that nowadays... feels oversaturated tbh 🤷‍♀️ i did freelance translation - niche market means less competition plus rates are decent!
+
+
+             HallowedVortex:  smart home setup gigs can be gold - helped some locals upgrade their places & made surprising dough 👌 nobody thinks tearing through instruction manuals would pay off but hey 🤑
+
+
+             AmberConstellation:  Translation's cool but you're relying on constant demand. Diversified skills offer backup – think biz consulting gigs; less common yet can pay way more when your rep builds up. 
+
+
+                 WanderingWolf:  biz consulting seems lucrative but has high entry barriers - got any tips on breaking into that scene?
+
+
+             CrimsonCondor:  ever tried thrift flipping? low start-up cost and pretty fun!
+
+
+         CrimsonCondor:  ever thought of starting weekend life coaching sessions? heard some folks say it was pretty rewarding – both emotionally & wallet-wise!
