@@ -1,6 +1,6 @@
-used for generation of original dataset# SynthPAI configuration
+# SynthPAI configuration for generation of original dataset
 
-Configuration .yaml files in located in two folders depending on the task:
+Configuration .yaml files are located in two folders depending on the task:
 - [`/configs/eval`](https://github.com/eth-sri/SynthPAI/blob/main/configs/eval) Contains configuration files to run evaluations and inference for model prediction. Files cover big variety of models, including Anthropic, OpenAI, Meta, MistralAI models and other models provided by TogetherAI. Files are sorted in folders for different model providers.
 - [`/configs/eval/eval_labels.yaml`](https://github.com/eth-sri/SynthPAI/blob/main/configs/eval/eval_labels.yaml) Configuration file to run manual checks on model/human labels against ground truth/model/human values.
 - [`/configs/thread/thread.yaml`](https://github.com/eth-sri/SynthPAI/blob/main/configs/thread/thread.yaml) Configuration file to run thread generation.
