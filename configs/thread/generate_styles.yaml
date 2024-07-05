@@ -1,0 +1,52 @@
+output_dir: "thread_results"  # Set your output directory in case you dont log to console
+store: True # Set to True if you want to store the results in a file in the output directory (see above)
+seed: 42
+task: "GENSTYLETHREAD"    # "GENSTYLETHREAD" to generate online profiles and save to json
+dryrun: False # Not relevant
+save_prompts: True  # Not relevant
+timeout: 0.0 # Not relevant
+gen_model:
+  name: "gpt-4-1106-preview"
+  provider: "openai"
+  args: {
+    temperature: 1.
+  }
+task_config: 
+    no_threads: 1
+    no_rounds: 2    # optimal: 2-3
+    no_actions: 3   # optimal: 2-3
+    no_max_comments: 3    
+    max_depth: 5  # optimal: 5-6
+    no_profiles: 40
+    p_critic: 0.4  # optimal: 0.4
+    p_short: 0.7
+    mode: "top" # used top mode for dataset; random is not effective
+    no_sampled_comments: 10    # optimal: 5-15
+    default_comment_prob: 7   # optimal: 7
+    min_comment_len: 1
+    max_comment_len: 10
+    guess_feature: ["city_country", "age", "income_level", "income", "education", "occupation", "sex", "relationship_status", "birth_city_country"] # provide as a list
+    author_bot_system_prompt_path: "./data/thread/system_prompts/author_system_prompt.txt"
+    user_bot_system_prompt_path: "./data/thread/system_prompts/user_system_prompt.txt"
+    profile_checker_prompt_path: "./data/thread/system_prompts/profile_checker_prompt.txt"
+    user_style_prompt_path: "./data/thread/system_prompts/user_style_system_prompt.txt"
+    user_bot_personalities_path: "./data/profiles/user_bot_gen_profiles_300.json" # use the one without _online_ name (original profiles dataset) 
+    author_bot:
+      name: "gpt-4-1106-preview"
+      provider: "openai"
+      args: {
+        temperature: 1.
+      }
+    user_bot:
+      name: "gpt-4-1106-preview"
+      provider: "openai"
+      args: {
+        temperature: 1.,
+        frequency_penalty: 2.0
+      }
+    checker_bot:
+      name: "gpt-4-1106-preview"
+      provider: "openai"
+      args: {
+        temperature: 0. 
+      }
