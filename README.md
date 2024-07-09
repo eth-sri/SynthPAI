@@ -4,7 +4,7 @@ This is the repository for reproducing results from the paper **[A Synthetic Dat
 
 The SynthPAI synthetic personal attribute inference dataset is aimed at complementing our earlier study ([Beyond Memorization: Violating Privacy Via Inference with Large Language Models](https://arxiv.org/abs/2310.07298)) on the personal attribute inference capabilities of LLMs.
 
-The SynthPAI dataset is available on **[HuggingFace](https://huggingface.co/datasets/RobinSta/SynthPAI)** <a href="https://huggingface.co/datasets/RobinSta/SynthPAI"><img width="20" alt="portfolio_view" align="here" src="https://huggingface.co/front/assets/huggingface_logo.svg"></a>
+The SynthPAI dataset is available on **[HuggingFace](https://huggingface.co/datasets/RobinSta/SynthPAI)** <a href="https://huggingface.co/datasets/RobinSta/SynthPAI"><img width="20" alt="portfolio_view" align="here" src="https://huggingface.co/front/assets/huggingface_logo.svg"></a> You can also compare your private attribute inference skills with GPT-4 on SynthPAI in [our HuggingFace space](https://hannayukhymenko-synthpai-inference.hf.space). 
 
 Benchmark reference on [Papers With Code](https://paperswithcode.com/paper/a-synthetic-dataset-for-personal-attribute): [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/a-synthetic-dataset-for-personal-attribute/personality-trait-recognition-on-synthpai)](https://paperswithcode.com/sota/personality-trait-recognition-on-synthpai?p=a-synthetic-dataset-for-personal-attribute)
 
