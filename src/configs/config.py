@@ -77,11 +77,11 @@ class BasePromptConfig(PBM):
     )
     header: Optional[str] = Field(
         default=None,
-        description="In case we want to set a specific header for the prompt.",
+        description="In case we want to set a specific header for the prompt",
     )
     footer: Optional[str] = Field(
         default=None,
-        description="In case we want to set a specific footer for the prompt.",
+        description="In case we want to set a specific footer for the prompt",
     )
 
     # Workaround to use this as a pure modifier as well
@@ -119,14 +119,14 @@ class EVALConfig(PBM):
     )
     eval: bool = Field(
         default="False",
-        description="Whether to only evaluate the corresponding profiles.",
+        description="Whether to only evaluate the corresponding profiles",
     )
     eval_settings: Dict[str, Any] = Field(
         default_factory=dict,
-        description="Settings for evaluation.",
+        description="Settings for evaluation",
     )
     decider: str = Field(
-        default="model", description="Decider to use in case there's no match."
+        default="model", description="Decider to use in case there's no match"
     )
     label_type: str = Field(
         default="gt", description="Which labels compare guesses to - gt for ground trurth (original labels); human for human guesses"
@@ -135,7 +135,7 @@ class EVALConfig(PBM):
         default="gt", description="Which labels compare guesses to - revised for revised labels, original for original ones"
     )
     profile_filter: Dict[str, int] = Field(
-        default_factory=dict, description="Filter profiles based on comment statistics."
+        default_factory=dict, description="Filter profiles based on comment statistics (hardness/certainty)"
     )
     max_prompts: Optional[int] = Field(
         default=None, description="Maximum number of prompts asked (int total)"
@@ -146,7 +146,7 @@ class EVALConfig(PBM):
     )
     individual_prompts: bool = Field(
         False,
-        description="Whether we want one prompt per attribute inferred or one for all.",
+        description="Whether we want one prompt per attribute inferred or one for all",
     )
 
     def get_filename(self) -> str:
@@ -180,14 +180,14 @@ class EVALLabelsConfig(PBM):
     )
     eval: bool = Field(
         default="False",
-        description="Whether to only evaluate the corresponding profiles.",
+        description="Whether to only evaluate the corresponding profiles",
     )
     eval_settings: Dict[str, Any] = Field(
         default_factory=dict,
-        description="Settings for evaluation.",
+        description="Settings for evaluation",
     )
     decider: str = Field(
-        default="model", description="Decider to use in case there's no match."
+        default="model", description="Decider to use in case there's no match"
     )
     true_label_type: str = Field(
         default="gt", description="Which labels compare guesses to - gt for ground trurth (original labels); human for human guesses"
@@ -204,7 +204,7 @@ class EVALLabelsConfig(PBM):
     )
     individual_prompts: bool = Field(
         False,
-        description="Whether we want one prompt per attribute inferred or one for all.",
+        description="Whether we want one prompt per attribute inferred or one for all",
     )
 
     def get_filename(self) -> str:
@@ -229,32 +229,32 @@ class THREADConfig(PBM):
     
     no_threads: int = Field(
         default=1,
-        description="Number of generations of thread.",
+        description="Number of generations of thread",
     )
 
     no_rounds: int = Field(
         default=1,
-        description="Number of rounds for 1 thread.",
+        description="Total number of interaction rounds for 1 thread",
     )
 
     no_actions: int = Field(
         default=1,
-        description="Number of actions a bot can take"
+        description="Total number of actions a bot can take"
     )
 
     no_max_comments: int = Field(
         default=1,
-        description="Number of max number of comments a comment can have"
+        description="Maximum number of comments replying to the same comment"
     )
 
     max_depth: int = Field(
         default=3,
-        description="Number of max no. of comment levels in subthread"
+        description="Maximum number of comment levels in a subthread"
     )
 
     mode: str = Field(
         default=None,
-        description="Mode for sampling comments: random N ('random') or top-N ('top')"
+        description="Mode for sampling comments: random N ('random') or top-N ('top') -> top-N recommended"
     )
 
     no_sampled_comments: int = Field(
@@ -269,17 +269,17 @@ class THREADConfig(PBM):
 
     no_profiles: int = Field(
         default=10,
-        description="Number of profiles engaging"
+        description="Total number of profiles engaging in 1 thread"
     )
 
     p_critic: float = Field(
         default=0.3,
-        description="percent of critic profiles out of all"
+        description="Percent of critic profiles out of all sampled ones"
     )
 
     p_short: float = Field(
         default=0.3,
-        description="probability of restricting comment length"
+        description="Probability of restricting comment length"
     )
 
     min_comment_len: int = Field(
@@ -326,7 +326,7 @@ class THREADConfig(PBM):
     user_bot_personality: int = Field(
         default=None,
         description="If this argument is set to an integer included in the .json containing the personalities, \
-            then only this personality will be executed, otherwise, the whole range of personalities is iterated through.",
+            then only this personality will be executed, otherwise, the whole range of personalities is iterated through",
     )
 
     author_bot: ModelConfig = Field(
@@ -396,11 +396,11 @@ class Config(PBM):
         file_path = (
             f"{path_prefix}/{self.task.value}/{model_name}/{self.seed}/{file_name}"
         )
-        if self.task.value == "CHAT":
+        if self.task.value == "THREAD":
             investigator_bot_name = self.task_config.investigator_bot.get_name()
             user_bot_name = self.task_config.user_bot.get_name()
             file_path = f"{path_prefix}/{self.task.value}/{investigator_bot_name}-{user_bot_name}/{self.seed}/{self.task_config.guess_feature}/{file_name}"
-        elif self.task.value == "CHAT_EVAL":
+        elif self.task.value == "EVAL":
             file_path = '/'.join((self.task_config.chat_path_prefix).split('/')[:-1]) + '/' + file_name
         else:
             model_name = self.gen_model.get_name()
