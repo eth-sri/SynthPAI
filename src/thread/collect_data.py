@@ -54,7 +54,7 @@ for person, texts in texts_by_person.items():
     with open(output_file, 'w') as f:
         json.dump(output_data, f)
 
-no_com = [] # check comments without comments
+no_com = [] # check profiles/comments without comments
 
 for t in range(300):
 

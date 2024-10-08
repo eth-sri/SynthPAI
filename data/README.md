@@ -40,3 +40,10 @@ Predictions are stored in `[model_name]_predicted.jsonl` file in value dict for 
 Evaluation results are stored in `[model_name]_evaluated.jsonl` file in value dict for `evaluations` key.
 
 To keep our paper experiments transparent, we have saved evaluation runs in `decider=model` mode in `[model_name]_revised_human_evaluated.jsonl` (against human labels) and `[model_name]_gt_evaluated.jsonl` (against ground truth labels) files. Howevre, the evaluation logic of LLM judging model is not consistent and is not reliable with feature value real meaning. Therefore, the authors recommend using `decider=model_human` mode to double-check LLM's evaluation. All the files named in format `[model_name]_evaluated.jsonl` were done in this mode.
+
+## Note about data and inference format
+
+We use Large Language Models to guess on texts twice:
+1) For "labelling" private attributes in the dataset when the texts are created on **comment** level - those labels were later manually verified and corrected by a human; these are later saved as `guesses` for every synthetic comment as can been in the [SynthPAI dataset](https://github.com/eth-sri/SynthPAI/blob/main/data/synthpai.jsonl).
+
+2) For actual benchmarking of LLMs on private attribute inference  - performed on **profile** level (all comments written by the same profile are being passed into model). Examples of these can be seen in `guess` list in inference .jsonl files from [`/data/thread/predicted`](https://github.com/eth-sri/SynthPAI/blob/main/data/thread/predicted) folder.

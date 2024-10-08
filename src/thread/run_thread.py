@@ -41,7 +41,7 @@ class RedditThread:
             return score, path
         
         if node.author == pers:
-            score += 5.0    # proposed values: 3.0 (min), 5.0 (recommended) or 10.0 (max)
+            score += 5.0    # proposed values: 3.0 (min), 5.0 (recommended) or 10.0 (max) - can be adjusted
         else:
             score += 1.0
         path.append(node)

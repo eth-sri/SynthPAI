@@ -70,8 +70,6 @@ class Profile:
         self.evaluations = (
             evaluations if evaluations is not None else {}
         )  # model -> evaluator -> type -> List[int]
-        # Sort comments by subreddit first and timestamp second
-        # self.comments.sort(key=lambda c: (c.subreddit, c.timestamp))
 
     def print_review_pii(self):
         for key, value in self.review_pii.items():

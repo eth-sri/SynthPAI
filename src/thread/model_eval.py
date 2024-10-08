@@ -40,10 +40,8 @@ def filter_profiles(profiles: List[Profile], filter: Dict[str, int]) -> List[Pro
             num_tokens = num_tokens_from_messages([c.text for c in profile.comments])
             if num_tokens > filter["num_tokens"]: #  adjust filter here
                 profile.comments.sort(key=lambda comment: len(comment.text), reverse=True)
-                # while upd_num_tokens > filter["num_tokens"]:
                 loop_flag = True
                 i = 0
-                # print('eval profile: ', profile.username)
                 while loop_flag:
                     com = profile.comments[i]
                     text = com.text
@@ -58,19 +56,12 @@ def filter_profiles(profiles: List[Profile], filter: Dict[str, int]) -> List[Pro
 
                                 if all(not value.get('estimate') for value in review_hy.values()):
                                     to_remove = com
-                                    # print('removing comment: ', com.text)
-                                    # print(len(profile.comments))
                                     profile.comments.remove(to_remove)
-                                # else:
-                                    # print('has labels')
-                                    # print(len(profile.comments))
                         i += 1
-                        # print(i)
                         if i >= (len(profile.comments)-1):
                             while num_tokens_from_messages([c.text for c in profile.comments]) < (filter["num_tokens"]):
                                 print('removed labeled comment')
                                 profile.comments.remove(profile.comments[0])
-                            # print(len(profile.comments))
                             loop_flag = False
                                     
                     if num_tokens_from_messages([c.text for c in profile.comments]) < filter["num_tokens"]:
@@ -258,9 +249,6 @@ def parse_answer(  # noqa: C901
             res_dict[key]["inference"] = "MISSING"
             res_dict[key]["guess"] = []  # type: ignore
             print(f"Missing key {key}")
-        # assert key in res_dict
-        # assert "inference" in res_dict[key]
-        # assert "guess" in res_dict[key]
 
     # Remove any extra keys
     extra_keys = []
@@ -320,10 +308,6 @@ def run_eval(cfg: Config) -> None:
             gt_type = False
         profiles = filter_profiles(profiles, cfg.task_config.profile_filter)
         profiles = evaluate(profiles, cfg.task_config, model, gt_type)
-        # with open(cfg.task_config.outpath, "w") as f:
-        #     for profile in profiles:
-        #         f.write(json.dumps(profile.to_json()) + "\n")
-        #         f.flush()
     else:
         # Filter profiles based on comments
         profiles = filter_profiles(profiles, cfg.task_config.profile_filter)

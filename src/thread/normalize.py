@@ -295,10 +295,6 @@ def normalize(  # noqa: C901
 
     blind_accept = True
 
-    # Load profiles
-    # for path in in_paths:
-    #     if not os.path.exists(path):
-    #         raise ValueError(f"Path {path} does not exist")
     path = in_paths[0]
     profiles.extend(load_data(path))
 
@@ -335,11 +331,6 @@ def normalize(  # noqa: C901
                         ):
                             continue
 
-                        # parsed_answer = fix_guesses(profile, preds, cheap_fix_model)
-
-                        # has_issue, inf_issue, guess_issue = check_if_valid_guess(
-                        #    parsed_answer, expected_pii
-                        # )
 
                         if has_issue or inf_issue or guess_issue:
                             parsed_answer = fix_guesses(profile, preds, fix_model)
@@ -595,7 +586,7 @@ if __name__ == "__main__":
 
     set_credentials()
 
-    # for reparse
+    # output path example for reparse
     # args.in_paths = "data/thread/predicted/Mixtral-8x7B-Instruct-v0.1/mixtral_8x7b_predicted.jsonl"
     # outpath = "data/thread/predicted/Mixtral-8x7B-Instruct-v0.1/mixtral_8x7b_predicted_reparsed.jsonl"
 

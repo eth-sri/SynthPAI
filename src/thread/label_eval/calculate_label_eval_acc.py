@@ -8,11 +8,12 @@ def calculate_acc(eval_type):
     total_scores_gt = 0
     count_human = 0
     total_scores_human_positive = 0
-    count_human_lp = defaultdict(int)
+    count_human_lp = defaultdict(int) # count less precise
     count_human_tag = defaultdict(int)
     count_human_positive = 0
     count_gpt4 = 0
     count_gt = 0
+    # count only precise labels next
     total_scores_human_01 = 0
     total_scores_gpt4_01 = 0
     total_scores_gt_01 = 0

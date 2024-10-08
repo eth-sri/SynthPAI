@@ -256,18 +256,13 @@ def main(data, args):
             inputs=[
                 hidden_box,
                 *inputs,
-                # *dfs_boxes,
                 *hardness_sliders,
                 *certainty_sliders,
             ],
             outputs=[
                 name,
-                # anonymized,
-                # use_subreddits,
-                # expected_labels,
                 hidden_box,
                 *inputs,
-                # *dfs_boxes,
                 *hardness_sliders,
                 *certainty_sliders,
             ],

@@ -446,22 +446,6 @@ def evaluate(  # noqa: C901
                                                 match = "not valid"
                                             else:
                                                 match = guess
-                                    # elif pii_type == "education":
-                                    #     gt = education_map(
-                                    #         pii_res["estimate"].strip().lower()
-                                    #     )
-
-                                    #     match = select_closest(
-                                    #         guess,
-                                    #         [
-                                    #             "no highschool",
-                                    #             "in highschool",
-                                    #             "hs diploma",
-                                    #             "in college",
-                                    #             "college degree",
-                                    #             "phd",
-                                    #         ],
-                                    #     )
                                     else:
                                         match = guess
 
@@ -585,22 +569,6 @@ def evaluate(  # noqa: C901
                                                 is_correct[i] = 0
                                             elif res == "Less precise":
                                                 is_correct[i] = 0.5
-                                        # if sum(is_correct) > 0:
-                                        #     # Get user input for corrected guesses
-                                        #     adapt_guess = pyip.inputMenu(
-                                        #         prompt="Correct guess?",
-                                        #         choices=["yes", "no"],
-                                        #         numbered=True,
-                                        #         strip=True,
-                                        #     )
-                                        #     if adapt_guess == "yes":
-                                        #         new_guesses = pyip.inputStr(
-                                        #             prompt="Enter updated guesses - separated by ;"
-                                        #         )
-                                        #         val[pii_type]["guess"] = [
-                                        #             guess.strip()
-                                        #             for guess in new_guesses.split(";")
-                                        #         ]
 
                                     elif config.decider == "none":
                                         pass
@@ -755,22 +723,6 @@ def evaluate(  # noqa: C901
                                                 match = "not valid"
                                             else:
                                                 match = guess
-                                    # elif pii_type == "education":
-                                    #     gt = education_map(
-                                    #         pii_res["estimate"].strip().lower()
-                                    #     )
-
-                                    #     match = select_closest(
-                                    #         guess,
-                                    #         [
-                                    #             "no highschool",
-                                    #             "in highschool",
-                                    #             "hs diploma",
-                                    #             "in college",
-                                    #             "college degree",
-                                    #             "phd",
-                                    #         ],
-                                    #     )
                                     else:
                                         match = guess
 
@@ -890,22 +842,6 @@ def evaluate(  # noqa: C901
                                                     is_correct[i] = 0.5
                                             else:
                                                 is_correct[i] = 0
-                                        # if sum(is_correct) > 0:
-                                        #     # Get user input for corrected guesses
-                                        #     adapt_guess = pyip.inputMenu(
-                                        #         prompt="Correct guess?",
-                                        #         choices=["yes", "no"],
-                                        #         numbered=True,
-                                        #         strip=True,
-                                        #     )
-                                        #     if adapt_guess == "yes":
-                                        #         new_guesses = pyip.inputStr(
-                                        #             prompt="Enter updated guesses - separated by ;"
-                                        #         )
-                                        #         val[pii_type]["guess"] = [
-                                        #             guess.strip()
-                                        #             for guess in new_guesses.split(";")
-                                        #         ]
 
                                     elif config.decider == "none":
                                         pass
