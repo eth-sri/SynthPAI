@@ -200,13 +200,22 @@ Scripts to run experiments are stored in [`scripts`](https://github.com/eth-sri/
 ## Citation
 
 ```
-@misc{yukhymenko2024synthetic,
-      title={A Synthetic Dataset for Personal Attribute Inference}, 
-      author={Hanna Yukhymenko and Robin Staab and Mark Vero and Martin Vechev},
-      year={2024},
-      eprint={2406.07217},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@inproceedings{yukhymenko2024synthetic,
+    title={A Synthetic Dataset for Personal Attribute Inference}, 
+    author={Hanna Yukhymenko and Robin Staab and Mark Vero and Martin Vechev},
+    year={2024},
+    booktitle={Thirty-eighth Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+    url={https://openreview.net/forum?id=1nqfIQIQBf}
 }
 ```
 
+Please also consider citing [Beyond Memorization: Violating Privacy via Inference with Large Language Models](https://arxiv.org/abs/2310.07298) which provides a substantial foundation for this paper.
+
+```
+@inproceedings{staab24beyond,
+    title={Beyond Memorization: Violating Privacy via Inference with Large Language Models},
+    author={Robin Staab and Mark Vero and Mislav Balunović and Martin Vechev},
+    booktitle={The Twelfth International Conference on Learning Representations},
+    year={2024},
+}
+```
