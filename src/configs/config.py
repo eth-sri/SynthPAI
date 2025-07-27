@@ -401,7 +401,9 @@ class Config(PBM):
             user_bot_name = self.task_config.user_bot.get_name()
             file_path = f"{path_prefix}/{self.task.value}/{investigator_bot_name}-{user_bot_name}/{self.seed}/{self.task_config.guess_feature}/{file_name}"
         elif self.task.value == "EVAL":
-            file_path = '/'.join((self.task_config.chat_path_prefix).split('/')[:-1]) + '/' + file_name
+            file_path = (
+                    f"{path_prefix}/{self.task.value}/{model_name}/{self.seed}/{file_name}"
+            )
         else:
             model_name = self.gen_model.get_name()
             file_path = (
